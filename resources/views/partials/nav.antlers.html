@@ -1,0 +1,29 @@
+<header>
+    <div class="container">
+        <div style="height: 72px;" class="row">
+            <div class="col-3"><a href="../../"><img id="logo" src="/assets/main/img/logo.svg"></a></div>
+            <div style="flex-direction: column; align-items: flex-end; justify-content: center; display: flex;" class="col-9">
+                <nav class="navbar navbar-light navbar-expand-lg">
+                    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <ul class="nav navbar-nav">
+                                {{ nav from="/" include_home="false" is_hidden:isnt="true" scope="tag" }}
+                                    <li {{ if is_current or is_parent }} class="active"{{ /if }}>
+                                        <a href="{{ url }}">
+                                            <h4>
+                                            {{ tag:nav_title or title }}
+                                            </h4>
+                                        </a>
+                                    </li>
+                                {{ /nav }}
+                            </ul>
+                        </div>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+

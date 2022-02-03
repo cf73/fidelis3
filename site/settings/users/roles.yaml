@@ -1,0 +1,40 @@
+d32e14fb-08c9-44c2-aaf8-21200852bafd:
+  title: Admin
+  permissions:
+    - super
+cc61c163-1ef2-472d-86d9-1416bf69814d:
+  title: Editor
+  slug: editor
+  permissions:
+    - 'cp:access'
+    - 'content:view_drafts_on_frontend'
+    - 'pages:view'
+    - 'pages:edit'
+    - 'collections:evergreen-carousel:view'
+    - 'collections:evergreen-carousel:edit'
+    - 'collections:evergreen-carousel:create'
+    - 'collections:evergreen-carousel:delete'
+    - 'collections:manufacturers:view'
+    - 'collections:manufacturers:edit'
+    - 'collections:manufacturers:create'
+    - 'collections:manufacturers:delete'
+    - 'collections:news:view'
+    - 'collections:news:edit'
+    - 'collections:news:create'
+    - 'collections:news:delete'
+    - 'collections:pre-owned:view'
+    - 'collections:pre-owned:edit'
+    - 'collections:pre-owned:create'
+    - 'collections:pre-owned:delete'
+    - 'collections:products:view'
+    - 'collections:products:edit'
+    - 'collections:products:create'
+    - 'collections:products:delete'
+    - 'taxonomies:product-categories:view'
+    - 'taxonomies:product-categories:edit'
+    - 'globals:global:view'
+    - 'globals:global:edit'
+    - 'assets:main:view'
+    - 'assets:main:edit'
+    - 'assets:main:create'
+    - 'assets:main:delete'

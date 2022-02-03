@@ -1,0 +1,43 @@
+<div class="container" id="content-area">
+    <!-- <img id="hero" src="assets/img/store.png"> -->
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <h1 class="vertical-spacer">Products</h1>
+            <p class="vertical-spacer_medium" style="max-width: 700px; margin-left: auto; margin-right: auto;">{{blurb}}</p>
+            <div role="tablist" id="accordion">
+                {{taxonomy:system_category sort="ordder:asc" scope="syst"}}
+                    <div class="card no-border">
+                        <div class="card-header" role="tab">
+                            <h2 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion .item-{{increment from='1'}}" href="#accordion .item-{{increment:url from='1'}}">{{title}}</a></h2>
+                        </div>
+                        <div class="collapse  item-{{increment:other from='1'}}" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body spacing">
+                                <div class="row">
+                                    {{taxonomy:product-categories :system_category:is="syst:title"}}
+                                        <div class="col-6 col-md-4">
+                                            <a href="products/{{slug}}">
+                                                {{ partial:card-category :image="category_hero_image"}}
+                                            </a>
+                                        </div>
+                                    {{/taxonomy:product-categories}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/taxonomy:system_category}}
+            </div>
+            
+            <div id="productTabs">
+            <div class="row">
+                {{taxonomy:product-categories }}
+                <div class="col-xs-6 col-sm-4 col-lg-3">
+                    <a href="products/{{slug}}">
+                        {{ partial:card-category :image="category_hero_image"}}
+                    </a>
+                </div>
+                {{/taxonomy:product-categories}}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+manufacturer: 8e3632e0-a274-4666-ace2-130c4832b773
+product_hero_image: mcd350-front-top.jpg
+available_for_demo: true
+description: '<p>The MCD350 SACD/CD Player delivers a pure playback experience from your SACDs and CDs. It features a balanced 2-channel, 32-bit/192kHz Digital-to-Analog Converter (DAC). Fixed analog stereo outputs are available in both balanced and unbalanced offerings; a coax and optical output are also available if you prefer to send the digital audio signal to an external DAC, preamplifier or home theater processor. All analog plus the digital coax outputs are gold plated or superior corrosion resistance. The MCD350 features 2x read speed so that all discs placed in its rigid aluminum die-cast tray are read at higher speeds allowing their data to be stored in a buffer memory for a better error correction and tracking. A twin laser optical pickup uses a single objective lens with two laser units each employing different wavelengths that are optimized for SACD and CD playback. The classic McIntosh black glass front panel with an illuminated logo and aluminum end caps complete the unit.</p>'
+price: 5500
+show_price: false
+available_to_buy_online: false
+monthly_featuree: false
+specs: '<ul><li>Number of Channels :2</li><li>Fixed Output Level :2.0Vrms Unbalanced<br>4.0Vrms Balanced</li><li>Variable Output Level :N/A</li><li>Output Impedance :600 ohms Unbalanced and Balanced</li><li>Frequency Response4Hz to 40kHz, +0.5, -2dB (SACD)<br>4Hz to 20kHz, ±0.5dB (CD)</li><li>Signal To Noise RatioBetter than 108dB (A-weighted)</li><li>Dynamic Range Better than 100dB</li><li>Total Harmonic Distortion0.003% @ 1000Hz (SACD)<br>0.002% @ 1000Hz (CD)</li><li>Channel SeparationBetter than 98dB (1,000Hz)</li><li>Headphone Output Impedance :N/A</li></ul><ul><li>Digital-to-Analog Converter (DAC) Type2-channel, 32-bit/192kHz PCM/DSD</li><li>Coaxial Sample Rate :N/A</li><li>Optical Sample Rate :N/A</li><li>USB Sample Rate :N/A</li><li>Digital Coaxial Input :N/A</li><li>Digital Optical Input :N/A</li><li>Digital Output Sample RateUp to 24-bit/192kHz</li><li>Digital Optical Output-15dbm to -21dbm</li><li>Digital USB Input Type :N/A</li><li>Digital Coaxial Output :0.5V p-p/75 ohms</li><li>Digital XLR Output :N/A</li><li>Digital MCT (DIN) Output :N/A</li><li>Digital Output Jitter :N/A</li></ul><h4>CONNECTIVITY</h4><ul><li>Balanced Fixed Output :1</li><li>Unbalanced Fixed Output :1</li><li>Balanced Variable Output :0</li><li>Unbalanced Variable Output :0</li><li>Digital Coaxial Input :0</li><li>Digital Optical Input :0</li><li>Digital USB Input :0</li><li>Digital USB Input Type:N/A</li><li>Digital Coaxial Output :1</li><li>Digital Optical Output :1</li><li>Digital XLR Output :0</li><li>Digital MCT (DIN) Output :0</li><li>Headphone Output :0</li></ul>'
+has_files: false
+title: MCD350
+id: 0a71fe83-0e0b-4454-b0c5-09c59ffb354c
+product-categories: cd-players
+system_category: source
+blueprint: product

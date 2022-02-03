@@ -1,0 +1,40 @@
+<div class="container" id="content-area">
+    
+    <div class="row vertical-spacer">
+        <div class="col center">
+            <h1 class="vertical-spacer">{{title}}</h1>
+            {{if tagline}}
+                <p style="max-width: 700px; margin: 0 auto; margin-bottom: 30px;">{{tagline}}</p>
+            {{/if}}
+            {{if website}}
+                <a href="{{website}}" target="_blank">
+                    <p class="meta">
+                        <svg style="margin-right: 3px;" class="bi bi-arrow-up-right-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H6.5a.5.5 0 0 1 0-1z"/>
+                          </svg>
+                    {{website}} 
+                </p></a>
+            {{/if}}
+        </div>  
+    </div>
+    
+    <div class="row" style="margin-bottom: 60px;">
+        {{collection:products :manufacturer:is="id" sort="product-categories:asc"}}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="../products/{{product-categories}}{{slug}}{{/product-categories}}/{{slug}}" style="color: inherit;">
+                    {{partial:card_product-category :image="product_hero_image"}}
+                    {{/partial:card_product-category}}
+                </a>
+            </div>
+        {{/collection:products}}
+    </div>
+
+    {{if description}}
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 vertical-spacer_medium">
+            <h3 class="goldtext">From the manufacturer:</h3>
+            {{description}}
+        </div>  
+    </div>
+    {{/if}}
+</div>

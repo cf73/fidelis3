@@ -1,0 +1,11 @@
+taxonomies:
+  product-categories: products/{slug}
+
+collections:
+  products: products/{product-categories}/{slug}
+  manufacturers: manufacturers/{slug}
+  pre-owned: pre-owned/{slug}
+  news: news/{year}/{slug}
+
+routes:
+  /feed.json: FeedController@json

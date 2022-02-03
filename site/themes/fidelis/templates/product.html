@@ -1,0 +1,196 @@
+
+    <div id="product-hero_area" class="navbar-margin">
+        <div class="container" style="height: 100%; width: 100%;
+        height: 100%;
+       ">
+            <div id="breadcrumb" class="row" >
+                <div class="col">
+                    <ol id="knockout" class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/products"><span>Products</span></a></li>
+                        <li class="breadcrumb-item">
+                            <span>
+                                {{product-categories}}
+                                    <a href="/products/{{slug}}">{{title}}</a>
+                                {{/product-categories}}
+                            </span>
+                        </li>
+                        <li class="breadcrumb-item"><span>{{page:title}}</span></li>
+                    </ol>
+                </div>
+            </div>
+            <div id="productName" class="row">
+                <div class="col-lg-7 order-lg-2" style="display: flex; align-items: center; justify-content: center;">
+                    <img id="heroImage" src="{{product_hero_image}}">
+                </div>
+                <div class="col-lg-5 order-lg-1" style="align-items: center; justify-content: center; display: flex;">
+                    <div>
+                        <div class="row vertical-spacer">
+                            <div class="col">
+                                <a href="/manufacturers/{{relate:manufacturer}}{{slug}}{{/relate:manufacturer}}">
+                                    <h2>{{relate:manufacturer}}{{title}}{{/relate:manufacturer}}</h2>
+                                </a>
+                                <h1 class="vertical-spacer_small">{{title}}</h1>
+                                <a href="product-category.html">
+                                    <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}"><h4>{{product-categories}}{{title}}{{/product-categories}}</h4></a>
+                                </a>
+                            </div>
+                        </div>
+
+                        {{ if available_for_demo }}
+                        <div class="row vertical-spacer">
+                            <div class="col">
+                                <a href="mailto:info@fidelisav.com?subject=Home%20Demo%20Request:%20{{relate:manufacturer}}{{title}}{{/relate:manufacturer}}%20{{title}}">
+                                    <div class="tag">
+                                        <p class="meta">HOME DEMO AVAILABLE</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {{ /if }}
+
+                        {{if show_price}}
+                            <h3 class="vertical-spacer">${{price format_number="2|.|,"}}</h3>
+                            {{else}}
+                            <p>Call for more info<br>603-880-4434</p>
+                        {{/if}}
+
+                        {{if available_to_buy_online}}
+                        <div class="paypal vertical-spacer">
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_xclick">
+                                <input type="hidden" name="business" value="info@fidelisav.com">
+                                <input type="hidden" name="lc" value="US">
+                                <input type="hidden" name="item_name" value="{{title}}">
+                                <input type="hidden" name="amount" value="{{price}}">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="button_subtype" value="services">
+                                <input type="hidden" name="no_note" value="0">
+                                <input type="hidden" name="shipping" value="0">
+                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                        </div>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+<div class="container" id="content-area" style="margin-top: 30px;">
+    
+   {{ if quote }}
+    <div class="row">
+        <div class="col">
+            <blockquote class="blockquote">
+                <div class="quote vertical-spacer">{{quote}}</div>
+                <footer class="blockquote-footer meta">{{quote_attribution}}</footer>
+            </blockquote>
+        </div>
+    </div>
+    {{ /if }}
+    {{if description || specs || specs_pdf_file || reivews_set}}
+    <div class="row vertical-spacer_large">
+        <div class="col-lg-8 offset-lg-2">
+            <div>
+                <ul class="nav nav-tabs d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
+                    {{if description}}
+                    <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Description</a></li>
+                    {{/if}}
+                    {{if specs || specs_pdf_file}}
+                     <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Specs</a></li>
+                     {{/if}}
+                     {{if reivews_set}}
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3">Reviews</a></li>
+                    {{/if}}
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="tab-1">
+                       {{description}}
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                        {{if specs_pdf_file}}
+                            <h4>downloads:</h4><br>
+                            <ul>
+                                <li>
+                                    <a class="no-underline" href="{{specs_pdf_file}}{{value}}{{/specs_pdf_file}}">{{specs_pdf_file_title}}</a>
+                                </li>
+                            </ul>
+                            {{if specs}}
+                            <hr>
+                            <h4>specs:</h4>
+                            {{specs}}
+                            {{/if}}
+                        {{else}}
+                            {{if specs}}
+                                {{specs}}
+                                <!-- <ul>
+                                    {{specifications}}
+                                        <li>{{value}}</li>
+                                    {{/specifications}}
+                                </ul> -->
+                                
+                                {{else}}
+                                    <p>No specs available</p>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-3">
+                        {{if reivews_set}}
+                            {{reivews_set}}
+                                <p>{{excerpt}}</p>
+                                <a href="{{link}}" target="_blank" style="padding-bottom: 3px; border-bottom: solid thin lightgrey; display: inline-block;">
+                                    <p class="blockquote-footer meta" style="margin-bottom: 0;">
+                                        {{attribution}}
+                                        <svg class="bi bi-arrow-up-right-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H6.5a.5.5 0 0 1 0-1z"/>
+                                        </svg>
+                                    </p>
+                                </a>
+                            {{/reivews_set}}
+                        {{else}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{ if pairs_well_with }}
+    <div class="row vertical-spacer" id="pairs-with">
+        <div class="col-12"><hr>
+            <h2 class="vertical-spacer">Good synergies with {{relate:manufacturer}}{{title}}{{/relate:manufacturer}}'s <strong>{{title}}</strong></h2>
+            
+        </div>
+        {{relate:pairs_well_with}}
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}/{{slug}}" style="color: inherit;">
+                    {{partial:card :image="product_hero_image"}}
+                </a>
+            </div>
+        {{/relate:pairs_well_with}}
+    </div>
+    {{ /if }}
+    {{ if also_consider }}
+    <div class="row" id="also-consider">
+        <div class="col-12"><hr>  
+            <h2 class="vertical-spacer">Or check out...</h2> 
+        </div>
+        {{relate:also_consider}}
+            {{if no_results}}
+            {{else}}
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}/{{slug}}" style="color: inherit;">
+                    {{partial:card :image="product_hero_image"}}
+                </a>
+            </div>
+            {{/if}}
+        {{/relate:also_consider}}
+    </div>
+    {{ /if }}
+</div>

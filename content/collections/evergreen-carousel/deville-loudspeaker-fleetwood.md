@@ -1,0 +1,4 @@
+image: deville-7558.jpg
+title: 'Deville Loudspeaker Fleetwood'
+id: f3538ab8-baed-4ae9-9ad6-43a0e5b57d6b
+blueprint: evergreen

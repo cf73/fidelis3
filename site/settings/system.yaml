@@ -1,0 +1,9 @@
+app_key: UsZTLr22LNA3kBIJBdOefUf97KQV7QGP
+yaml_parser: symfony
+locales:
+  en:
+    full: en_US
+    name: English
+    # url: 'http://conradfulbrookdesign.com'
+    url: ''
+timezone: UTC

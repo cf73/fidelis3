@@ -102,6 +102,7 @@ return [
         resource_path('forms'),
         resource_path('users'),
         storage_path('forms'),
+public_path('assets/main'),
     ],
 
     /*

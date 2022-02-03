@@ -1,0 +1,167 @@
+//card basics -- reset typography on cards
+.card {
+    margin-bottom: 30px;
+}
+.card p {
+    margin-bottom: 0;
+}
+.card a {
+    color: $earthblack;
+}
+
+
+//relates to accordions which use 'card header' as their row title
+.card-header{
+    padding: 6px 0;
+    margin-bottom: 12px;
+    background-color: white;
+    border-bottom: 1px solid $brass;
+}
+.card-header a {
+    color: $earthblack;
+}
+
+.card-header a:hover {
+    text-decoration: none;
+}
+.card-body {
+    padding: 0;
+}
+
+
+
+//content of the card -- pushes it downwards to be a square shape
+.item {
+    // border: solid thin lightgrey; 
+    border-radius: 9px;
+    background-color: $lightgold;
+    width: 100%;
+    position: relative;
+    border-bottom: solid 3px $lightgold; 
+    transition: all 200ms ease;
+    transition: .5s;
+    &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        }
+    &:hover {
+        background-color: $brass;
+        // box-shadow: $brass 0px 18px 40px ;
+            border-bottom: solid 3px $brass; 
+        // transition: .5s;
+        // // box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.2);
+        // -webkit-transform: translate(0px, -2px);
+        // -ms-transform: translate(0px, -2px);
+        // transform: translate(0px, -2px);
+        transition: all 200ms ease;
+    }
+}
+.item-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.item-label {
+    position: absolute;
+    bottom: 18px;
+    padding: 0 18px;
+    width: 100%;
+    text-align: center;
+    & h3 {
+        margin: 0;
+        color: $earthblack;
+    }
+}
+.newsitem {
+    border-bottom: solid thin $lightgold; 
+    border-radius: 9px;
+    background-color: white;
+    width: 100%;
+    transition: all 200ms ease;
+    transition: .5s;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+//card image treatment by type of card
+    //full bleed card
+.card-category-image {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 48px;
+    mix-blend-mode: multiply;
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+}
+    //product card
+.card-image {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 72px;
+    text-align: center;
+    mix-blend-mode: multiply;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+    //featured card
+.card-featured-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    text-align: center;
+    mix-blend-mode: multiply;
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+}
+.featured-label {
+    background-color: #ffffffeb;
+    z-index: 99;
+    width: 66%;
+    color: $earthblack;
+    position: absolute;
+    border-radius: 4px;
+    left: 3px;
+    bottom: 0;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+
+
+
+.cardImage {
+    border-radius: 6px;
+}
+.shaded {
+    background-color: $lightgold;
+}
+
+#findYourNext a {
+    color: $earthblack;
+}
+
+
+.feature-CTA {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: calc(100% - 60px);
+    text-align: center;
+    z-index: 999;
+    margin-left: 30px;
+    margin-right: 30px;
+}

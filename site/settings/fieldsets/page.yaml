@@ -1,0 +1,9 @@
+sections:
+  main:
+    display: Main
+    fields:
+      blurb:
+        type: text
+        display: Blurb
+taxonomies: false
+title: Page

@@ -1,0 +1,34 @@
+hide: true
+sections:
+  main:
+    display: Main
+    fields:
+      monthly_features:
+        max_items: '2'
+        collection:
+          - products
+        mode: tags
+        type: collection
+        display: 'Monthly Features'
+      whats_next_in_your_system:
+        max_items: 6
+        taxonomy: product-categories
+        mode: tags
+        type: taxonomy
+        instructions: 'Choose product categories to feature on home page'
+        display: 'What''s next in your system?'
+      testimonial:
+        type: textarea
+        display: Testimonial
+      about_fidelis_text:
+        type: textarea
+        display: 'About Fidelis text'
+      fidelis_image:
+        container: main
+        folder: /
+        restrict: false
+        max_files: 1
+        type: assets
+        display: 'Fidelis image'
+taxonomies: false
+title: Home

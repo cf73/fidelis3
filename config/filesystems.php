@@ -73,6 +73,13 @@ return [
             'visibility' => 'public',
         ],
 
+'assets_main' => [
+    'driver' => 'local',
+    'root' => public_path('assets/main'),
+    'url' => '/assets/main',
+    'visibility' => 'public',
+],
+
     ],
 
     /*

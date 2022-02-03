@@ -1,0 +1,24 @@
+<div class="card no-border">
+    <div class="card-body">
+        <div class="item">
+            <div class="item-content">
+                <div class="card-image" style="background-image:url({{image}}); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="item-label">
+        {{if show_price}}
+        <h4 style="opacity: 0.5;">${{price format_number="2|.|,"}}</h4>
+        {{/if}}
+        <h5 class="dimLinkEarth">{{title}}</h5>
+        
+       
+        
+        <!-- <h6>
+            {{product-categories}}
+                {{title}}
+            {{/product-categories}}
+        </h6> -->
+    </div>
+</div>

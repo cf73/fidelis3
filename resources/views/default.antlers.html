@@ -1,0 +1,80 @@
+<div id="hero-carousel" class="vertical-spacer" style="margin-top: 72px;">
+    <div class="carousel slide carousel-fade vertical-spacer" data-ride="carousel" id="carousel-1">
+        <div class="carousel-inner" role="listbox">
+            {{collection:evergreen-carousel}}
+                <div class="carousel-item {{if first}} active {{/if}}" style="background-image: url({{image}}); background-position: center; background-size: cover; display: flex; flex-direction: column; justify-content: center;">
+
+                </div>
+            {{/collection:evergreen-carousel}}
+        </div>
+        <ol class="carousel-indicators">
+            {{collection:evergreen-carousel}}
+            <li data-target="#carousel-1" data-slide-to="{{increment from='0'}}" class="{{ if first }}active{{ /if }}"></li>
+            {{/collection:evergreen-carousel}}
+        </ol>
+    </div>
+</div>
+<div class="container">
+    <div class="hero-statement">
+        <h1 class="vertical-spacer">Music for Life</h1>
+        <h2>Bringing the passion of two-channel audio to your home.</h2>
+    </div>
+    <section id="findYourNext" class="vertical-spacer">
+        <div class="section-header"> 
+            <h4 class="title earth-black">what's next?</h4>
+        </div>
+        <div class="row">
+            {{relate:whats_next_in_your_system}}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="products/{{slug}}">
+                    {{partial:card-category :image="category_hero_image"}}
+                    </a>
+                </div>
+            {{/relate:whats_next_in_your_system}}
+        </div>
+    </section>
+    <section id="news" class="vertical-spacer">
+        <div class="section-header"> 
+            <h4 class="title earth-black">news</h4>
+        </div>
+        <div class="row">
+            <div class="col">
+               
+                {{partial:newsitem}}
+
+            </div>  
+        </div>
+    </section>
+    <section id="testimonials" class="vertical-spacer_large">
+        <div class="section-header">
+            <h4 class="title earth-black">testimonials</h4>
+        </div>
+        <div class="vertical-spacer">
+            <div class="carousel slide carousel-fade vertical-spacer" data-ride="carousel" id="carousel-10">
+                <div class="carousel-inner" role="listbox">
+                    {{collection:testimonials limit="1"}}
+                        <div class="carousel-item {{if first}} active {{/if}}" style="height:auto; text-align: center;">
+                            <span class="quote">{{testimonial}}</span>
+                    </div>
+                    {{/collection:testimonials}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <img src="{{fidelis_image}}" alt="Image of Fidelis NH store" width="100%">
+        <div class="section-header">
+            <h4 class="title earth-black">music for life</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 vertical-spacer">
+                <p style="text-align: center;">
+                    {{about_fidelis_text}}
+                </p>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.9515120954716!2d-71.52135908457376!3d42.789374915873516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e2530521a5e453%3A0xaea15476c1df3afb!2sFidelis%20Home%20Audio!5e0!3m2!1sen!2sus!4v1604856777191!5m2!1sen!2sus" width="100%" height="450" frameborder="0" style="border:0; border-radius: 6px; overflow: hidden;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+</div>

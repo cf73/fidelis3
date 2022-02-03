@@ -1,0 +1,117 @@
+title: Manufacturer
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: logo
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          display: Logo
+          max_files: 1
+      -
+        handle: tagline
+        field:
+          type: text
+          display: Tagline
+      -
+        handle: website
+        field:
+          type: text
+          display: Website
+      -
+        handle: product-categories
+        field:
+          type: terms
+          mode: tags
+          display: 'Product Categories'
+          taxonomies:
+            - product-categories
+      -
+        handle: hero_image
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          display: 'Hero image'
+          max_files: 1
+      -
+        handle: description
+        field:
+          type: bard
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: false
+          restrict_assets: false
+          display: Description
+      -
+        handle: dealer
+        field:
+          type: replicator
+          display: Dealers
+          sets:
+            text:
+              display: Dealer
+              fields:
+                -
+                  handle: name_of_dealer
+                  field:
+                    type: text
+                    display: 'Name of Dealer'
+                -
+                  handle: address_line_1
+                  field:
+                    type: text
+                    display: 'Address line 1'
+                -
+                  handle: address_line_2
+                  field:
+                    type: text
+                    display: 'Address line 2 (optional)'
+                -
+                  handle: city
+                  field:
+                    type: text
+                    display: City
+                -
+                  handle: state
+                  field:
+                    type: text
+                    display: State
+                -
+                  handle: zip
+                  field:
+                    type: text
+                    display: ZIP
+                -
+                  handle: phone_number
+                  field:
+                    type: text
+                    display: 'Phone number'
+                -
+                  handle: email
+                  field:
+                    type: text
+                    display: Email
+          show_when:
+            website: asdasd
+taxonomies: false

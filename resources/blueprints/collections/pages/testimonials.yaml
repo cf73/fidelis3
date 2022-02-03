@@ -1,0 +1,11 @@
+title: Testimonials
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: testimonial
+        field:
+          type: textarea
+          display: Testimonial
+taxonomies: false

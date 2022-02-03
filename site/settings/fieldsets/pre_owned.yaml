@@ -1,0 +1,66 @@
+sections:
+  main:
+    display: Main
+    fields:
+      date_listed:
+        allow_blank: false
+        allow_time: true
+        require_time: false
+        earliest_date: 'January 1, 1900'
+        type: date
+        display: 'Date listed'
+      original_accessories:
+        type: text
+        display: 'Original accessories'
+      new_retail_price:
+        type: integer
+        display: 'New Retail Price'
+      your_price:
+        type: integer
+        display: 'Your Price'
+      shipping:
+        type: integer
+        display: Shipping
+      images:
+        container: main
+        folder: /
+        restrict: false
+        type: assets
+        display: Images
+      description:
+        buttons:
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - removeformat
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: false
+        restrict_assets: false
+        type: bard
+        display: Description
+      pairs_well_with:
+        max_items: '4'
+        collection:
+          - products
+        mode: tags
+        type: collection
+        instructions: 'Choose one product from each other category that this product pairs well with'
+        display: 'Pairs Well With'
+      also_consider:
+        max_items: '4'
+        collection:
+          - products
+        mode: tags
+        type: collection
+        instructions: 'Choose up to four other products in the same category and general price range'
+        display: 'Also Consider'
+taxonomies: false
+title: Pre-owned

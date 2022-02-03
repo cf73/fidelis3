@@ -1,0 +1,191 @@
+$sansserif: "Poppins";
+$serif: baskerville-urw;
+
+
+h1 {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 54px;
+  color: $earthblack;
+  margin: 0;
+}
+
+h2 {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h3 {
+    font-size: 19px;
+    line-height: 27px;
+    font-family: $sansserif, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 36px;
+    color: $earthblack;
+    letter-spacing: 0.02em;
+}
+
+h4 {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+h6 {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 0;
+  text-transform: uppercase;
+  font-size: 9px;
+  color: $compliantgold;
+  margin-top: 24px;
+}
+.meta {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 30px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $sansserif, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.03em;
+}
+.brightlink {
+  color: $linkblue;
+  &:hover {
+    text-decoration: underline !important;
+    color: $linkblue;
+  }
+}
+.h1small {
+  font-size: 42px;
+  line-height: 48px;
+}
+.body-sans {
+// font-family: $sansserif;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 24px;
+// letter-spacing: 0.04em;
+}
+
+.caption {
+    font-family: $serif;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+.title {
+    color: $earthblack;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $compliantgold;
+}
+.large {
+  font-size: 24px;
+}
+.quote {
+    font-family: $sansserif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 30px;
+    line-height: 36px;
+    color: $brandgold;
+}
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+.blockquote {
+text-align: center;
+margin-bottom: 60px;
+}
+
+.blockquote-footer {
+  color: $brandgold;
+}
+
+a {
+  color: $earthblack;
+  &:hover {
+    color: $earthred;
+  }
+}
+
+
+// responsive adjustments ------------------------------------------------------
+//phone
+@media (min-width: $sm) {
+  .quote {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+//IPAD
+@media (min-width: $md) {
+  h1 {
+    text-align: center;
+    font-size: 84px;
+    line-height: 90px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .quote {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .h1small {
+    font-size: 48px;
+    line-height: 54px;
+  }
+}
+
+//LAPTOP
+@media (min-width: $lg) {
+  .quote {
+      font-size: 36px;
+      line-height: 42px;
+  }
+  .h1small {
+    font-size: 60px;
+    line-height: 66px;
+  }
+}

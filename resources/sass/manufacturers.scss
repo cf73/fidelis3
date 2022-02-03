@@ -1,0 +1,18 @@
+#manufacturers {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+#manufacturers a {
+    color: $earthblack;
+}
+
+#manufacturers a:hover {
+    color: $brandgold;
+    text-decoration: none;
+}
+
+#manufacturers li {
+    padding: 12px 0;
+    border-bottom: solid thin $brandgold;
+}

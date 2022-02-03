@@ -1,0 +1,18 @@
+title: Default
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          width: 66
+          localizable: true
+      -
+        handle: slug
+        field:
+          type: text
+          width: 33
+taxonomies: true
+order: 1

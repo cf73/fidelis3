@@ -1,0 +1,12 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: ordder
+        field:
+          type: integer
+          instructions: 'Choose a number to change the sequence the System Categories display in on the Products page'
+          display: Order
+taxonomies: true
+title: 'System Category'

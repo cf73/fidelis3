@@ -1,0 +1,70 @@
+title: News
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          display: Title
+          localizable: true
+          validate:
+            - required
+            - 'max:150'
+      -
+        handle: image
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          max_files: 1
+          display: Image
+          validate: required
+      -
+        handle: summary
+        field:
+          type: textarea
+          display: Summary
+          validate: 'max:500'
+      -
+        handle: main_content
+        field:
+          type: bard
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: false
+          restrict_assets: false
+          display: 'Main content'
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required

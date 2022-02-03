@@ -1,0 +1,84 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: date_listed
+        field:
+          type: date
+          allow_blank: false
+          require_time: false
+          earliest_date: 'January 1, 1900'
+          display: 'Date listed'
+          time_enabled: true
+      -
+        handle: original_accessories
+        field:
+          type: text
+          display: 'Original accessories'
+      -
+        handle: new_retail_price
+        field:
+          type: integer
+          display: 'New Retail Price'
+      -
+        handle: your_price
+        field:
+          type: integer
+          display: 'Your Price'
+      -
+        handle: shipping
+        field:
+          type: integer
+          display: Shipping
+      -
+        handle: images
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          display: Images
+      -
+        handle: description
+        field:
+          type: bard
+          buttons:
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - removeformat
+            - anchor
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: false
+          restrict_assets: false
+          display: Description
+      -
+        handle: pairs_well_with
+        field:
+          type: entries
+          max_items: '4'
+          mode: tags
+          instructions: 'Choose one product from each other category that this product pairs well with'
+          display: 'Pairs Well With'
+          collections:
+            - products
+      -
+        handle: also_consider
+        field:
+          type: entries
+          max_items: '4'
+          mode: tags
+          instructions: 'Choose up to four other products in the same category and general price range'
+          display: 'Also Consider'
+          collections:
+            - products
+taxonomies: false
+title: Pre-owned

@@ -1,0 +1,21 @@
+title: 'Product Category'
+sections:
+  main:
+    display: Main
+    fields:
+      category_description:
+        type: textarea
+        display: 'Category Description'
+      category_hero_image:
+        container: main
+        restrict: false
+        max_files: 1
+        type: assets
+        display: 'Category hero image'
+      system_category:
+        max_items: 1
+        taxonomy: system_category
+        mode: tags
+        type: taxonomy
+        display: 'System Category'
+taxonomies: true

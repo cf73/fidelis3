@@ -1,0 +1,8 @@
+title: Pre-owned
+template: pre-owned_detail
+route: 'pre-owned/{slug}'
+date: true
+date_behavior:
+  past: public
+  future: unlisted
+sort_dir: desc

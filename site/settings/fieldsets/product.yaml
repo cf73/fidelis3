@@ -1,0 +1,196 @@
+title: Product
+sections:
+  main:
+    display: Main
+    fields:
+      manufacturer:
+        max_items: '1'
+        collection:
+          - manufacturers
+        mode: panes
+        type: collection
+        display: Manufacturer
+        validate: required
+      product_hero_image:
+        container: main
+        folder: /
+        restrict: false
+        max_files: 1
+        type: assets
+        display: 'Product Hero Image'
+      available_for_demo:
+        type: toggle
+        display: 'Available for demo?'
+        default: 'true'
+      quote:
+        type: textarea
+        instructions: 'This quote should come from a review, NOT the manufacturer. Keep it to around 3 lines long, max. Don''t use links inside the quote.'
+        display: Quote
+        validate: 'between:0,333'
+      quote_attribution:
+        type: textarea
+        display: 'Quote Attribution'
+        show_when:
+          quote: 'not null'
+      description:
+        buttons:
+          - h2
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: false
+        restrict_assets: false
+        type: bard
+        display: Description
+      price:
+        type: integer
+        display: Price
+        validate: required
+      show_price:
+        type: toggle
+        display: 'Show price'
+        default: true
+      available_to_buy_online:
+        type: toggle
+        display: 'Available to buy online'
+        default: true
+      shipping:
+        type: integer
+        display: Shipping
+      pairs_well_with:
+        max_items: '4'
+        collection:
+          - products
+        mode: tags
+        type: collection
+        instructions: 'Choose one product from each other category that this product pairs well with'
+        display: 'Pairs Well With'
+      also_consider:
+        max_items: '4'
+        collection:
+          - products
+        mode: tags
+        type: collection
+        instructions: 'Choose up to four other products in the same category and general price range'
+        display: 'Also Consider'
+      product-categories:
+        taxonomy: product-categories
+        mode: tags
+        type: taxonomy
+        display: 'Product Categories'
+        max_items: 1
+        validate: required
+      system_category:
+        max_items: 1
+        taxonomy: system_category
+        mode: tags
+        type: taxonomy
+        display: 'System category'
+        validate: required
+      monthly_featuree:
+        type: revealer
+        display: 'Monthly feature?'
+      featured_description:
+        type: textarea
+        display: 'Monthly feature description'
+        show_when:
+          monthly_featuree: true
+  specs:
+    display: Specs
+    fields:
+      specs:
+        buttons:
+          - h2
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: false
+        restrict_assets: false
+        type: bard
+        display: Specs
+      has_files:
+        type: revealer
+        display: 'Add files?'
+      specs_pdf_file_title:
+        type: text
+        display: 'Specs PDF file title'
+        show_when:
+          has_files: true
+      specs_pdf_file:
+        container: main
+        folder: /
+        restrict: false
+        type: assets
+        instructions: 'If there is a PDF file of specs for this product, upload it here.'
+        display: 'Specs PDF file'
+        show_when:
+          has_files: true
+  reviews:
+    display: Reviews
+    fields:
+      reivews_set:
+        type: replicator
+        display: Reviews
+        sets:
+          Review:
+            fields:
+              excerpt:
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                style: sans
+                spellcheck: true
+                allow_source: true
+                allow_internal_links: true
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                semantic_elements: false
+                restrict_assets: false
+                type: bard
+                display: Exceprt
+              attribution:
+                type: text
+                display: Attribution
+              link:
+                type: text
+                display: Link
+              date_of_review:
+                allow_blank: false
+                allow_time: true
+                require_time: false
+                earliest_date: 'January 1, 1900'
+                type: date
+                display: 'Date of review'
+taxonomies: false

@@ -1,0 +1,86 @@
+title: Manufacturer
+sections:
+  main:
+    display: Main
+    fields:
+      logo:
+        container: main
+        folder: /
+        restrict: false
+        type: assets
+        display: Logo
+        max_files: 1
+      tagline:
+        type: text
+        display: Tagline
+      website:
+        type: text
+        display: Website
+      product-categories:
+        taxonomy: product-categories
+        mode: tags
+        type: taxonomy
+        display: 'Product Categories'
+      hero_image:
+        container: main
+        folder: /
+        restrict: false
+        type: assets
+        display: 'Hero image'
+        max_files: 1
+      description:
+        buttons:
+          - h2
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: false
+        restrict_assets: false
+        type: bard
+        display: Description
+      dealer:
+        type: replicator
+        display: Dealers
+        sets:
+          text:
+            display: Dealer
+            fields:
+              name_of_dealer:
+                type: text
+                display: 'Name of Dealer'
+              address_line_1:
+                type: text
+                display: 'Address line 1'
+              address_line_2:
+                type: text
+                display: 'Address line 2 (optional)'
+              city:
+                type: text
+                display: City
+              state:
+                type: text
+                display: State
+              zip:
+                type: text
+                display: ZIP
+              phone_number:
+                type: text
+                display: 'Phone number'
+              email:
+                type: text
+                display: Email
+        show_when:
+          website: asdasd
+taxonomies: false

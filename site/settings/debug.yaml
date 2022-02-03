@@ -1,0 +1,4 @@
+debug: false
+loggers:
+  file:
+    daily: true

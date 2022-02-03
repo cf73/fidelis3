@@ -1,0 +1,108 @@
+<div id="content-area" class="container">
+    <div class="row vertical-spacer">
+        <div class="col vertical-spacer_small">
+            <h2 class="vertical-spacer_small">{{title}}</h2>
+            <h4>Listed: {{date}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div id="pre-owned-carousel">
+                <div class="carousel slide carousel-fade vertical-spacer" data-ride="carousel" id="carousel-1">
+                    <div class="carousel-inner" role="listbox">
+                        {{ images }}
+           
+                            <div class="carousel-item {{if first}} active {{/if}}" style="height:auto; border-radius: 6px; overflow: hidden;">
+                                <img width="100%" src="{{value}}" alt="{{title}}">
+                            </div>
+                            {{/images}}
+                    </div>
+                    
+                    <ol class="carousel-indicators">
+                        
+                        {{images}}
+                        <li data-target="#carousel-1" data-slide-to="{{increment from='0'}}" class="{{ if first }}active{{ /if }}"></li>
+                        {{/images}}
+                    </ol>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="col-md-5">
+            
+            <div class="row">
+                <div class="col">
+                    <p style="margin-top: 0;"><strike>New Retail Price: ${{new_retail_price format_number="2|.|,"}}</strike></p>
+                    <h2 style="margin-top: 0;" class="vertical-spacer">Your Price: ${{your_price format_number="2|.|,"}}</h2>
+                </div>
+                <div class="col">
+                    {{if your_price}}
+                    <div class="paypal vertical-spacer">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="info@fidelisav.com">
+                            <input type="hidden" name="lc" value="US">
+                            <input type="hidden" name="item_name" value="{{title}}">
+                            <input type="hidden" name="amount" value="{{your_price}}">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="button_subtype" value="services">
+                            <input type="hidden" name="no_note" value="0">
+                            <input type="hidden" name="shipping" value="{{shipping}}">
+                            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+            <hr>
+            <p>
+                {{description}}
+            </p>
+            {{if original_accessories}}
+                <h3>Original Accessories:</h3>
+                <p>
+                    {{original_accessories}}
+                </p>
+            {{/if}}
+        </div>     
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ if pairs_well_with }}
+            <div class="row vertical-spacer" id="pairs-with">
+                <div class="col-12"><hr>
+                    <h2 class="vertical-spacer">Pairs well with</h2>
+                    
+                </div>
+                {{relate:pairs_well_with}}
+                    <div class="col-6 col-sm-4 col-lg-3">
+                        <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}/{{slug}}">
+                            {{partial:card :image="product_hero_image"}}
+                        </a>
+                    </div>
+                {{/relate:pairs_well_with}}
+            </div>
+            {{ /if }}
+            {{ if also_consider }}
+            <div class="row" id="also-consider">
+                <div class="col-12"><hr>  
+                    <h2 class="vertical-spacer">Also consider</h2> 
+                </div>
+                {{relate:also_consider}}
+                    {{if no_results}}
+                    {{else}}
+                    <div class="col-6 col-sm-4 col-lg-3">
+                        <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}/{{slug}}">
+                            {{partial:card :image="product_hero_image"}}
+                        </a>
+                    </div>
+                    {{/if}}
+                {{/relate:also_consider}}
+            </div>
+            {{ /if }}
+        </div>
+    </div>
+</div>

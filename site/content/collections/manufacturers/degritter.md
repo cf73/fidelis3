@@ -1,0 +1,9 @@
+logo: /assets/degritter-logo.svg
+tagline: 'Ultrasonic Record Cleaner'
+website: 'https://degritter.com/?gclid=Cj0KCQjwk4yGBhDQARIsACGfAesScuOAKlL0z-HH_p300QHGCYFNhUOXHjdUwhy94nMQ0JyLYaEuT4UaAlgeEALw_wcB'
+hero_image: /assets/degritter-1623441583.jpg
+description: '<h2>Ultrasonic Cleaning</h2><p>The core of Degritter is the&nbsp;<strong>120kHz ultrasonic cleaning system</strong>. It has been carefully designed in house to make sure that records are cleaned thoroughly and without any damage to the surface of the record.</p><p>Ultrasonic cleaning works by creating a large number of microscopical bubbles in the cleaning bath, a phenomena called cavitation. The bubbles are a vacuum created by high frequency pressure waves moving through the water. Every ultrasonic cycle bubbles are formed and collapsed, releasing energy as heat and minuscule strong water jets. These effects combined thoroughly clean all surfaces down to a microscopic level.</p><p>A 120kHz frequency provides finer and more evenly distributed cleaning action than lower frequency systems. In fact, this technology at even higher frequencies is used to clean parts in the semiconductor industry, where surfaces need to be pure on a molecular level.</p><p>Degritter uses a custom ultrasonic bath with a custom&nbsp;<strong>300W ultrasonic amplifier</strong>&nbsp;that has been designed specifically for cleaning vinyl records. The cleaning bath has four ultrasonic transducers (emitters), two on both sides covering the whole record. Degritter also comes with&nbsp;<strong>Frequency Sweep feature</strong>, which provides better cavitation energy and power distribution. Degritter is the only cleaning solution on the market working at 120kHz and having the Frequency Sweep feature.</p>'
+title: Degritter
+id: 842b6e7b-c048-43d6-b29e-a4b5924cbb31
+product-categories:
+  - accessories

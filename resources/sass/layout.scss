@@ -1,0 +1,164 @@
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    color: $earthblack;
+}
+
+//breakpoints
+$sm: 540px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+  
+  header {
+      height: 72px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      background-color: rgba(255,255,255,.96);
+      border-bottom: solid thin lightgrey;
+  }
+  
+  footer {
+      // min-height: 200px;
+      // margin-top: 120px;
+      // padding-top: 30px;
+      // border-top: solid thin $brandgold;
+      // background-color: $velvet;
+  }
+  
+  #PageFooter {
+      padding-top: 30px;
+      margin-top: 120px;
+      border-top: solid thin $brandgold;
+  }
+  
+  .ruled {
+      border-top: solid thin $earthblack;
+  }
+  
+  #hero {
+      width: 100%;
+      height: 600px;
+    //   margin-top: 96px;
+      margin-bottom: 30px;
+  }
+  .hero-statement {
+      text-align: center;
+  }
+  #content-area {
+      margin-top: 144px;
+      margin-bottom: 120px;
+  }
+  
+  #logo {
+    margin-top: 15px;
+  }
+  
+  .section-header {
+    text-align: center;
+    height: 30px;
+    margin: 60px auto;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    border-bottom: solid thin $compliantgold;
+  }
+  
+  .section-header .title {
+    background-color: white;
+    padding: 0 30px;
+  }
+  
+  #testimonials {
+      // background-color: $velvet;
+      padding: 0;
+      border-radius: 3px;
+  }
+  
+#product-hero_area {
+    margin-top:72px;
+    overflow: hidden;
+    position: relative;
+    & img {
+        mix-blend-mode: multiply;
+    }
+    background: rgb(246,245,243);
+    background: linear-gradient(180deg, rgba(246,245,243,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+
+#accordion {
+    display: none;
+}
+
+#productName {
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    & div {
+        flex-direction: column;
+    }
+}
+#heroImage {
+    max-width: 100%;
+    max-height: 60vh;
+    margin-bottom: 15px;
+}
+.navbar-collapse {
+    position: fixed;
+    flex-grow: 1;
+    left: 0;
+    top: 72px;
+    font-size: 48px;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fffffff0;
+}
+
+
+
+
+
+
+// responsive adjustments ------------------------------------------------------
+
+//IPAD
+@media (min-width: $md) {
+    h1 {
+        font-size: 72px;
+    }
+}
+
+//LAPTOP
+@media (min-width: $lg) {
+    #productName {
+        & div {
+            flex-direction: row;
+        }
+    }
+    #heroImage {
+        max-height: 60vh; max-width: 100%;
+        margin-bottom: 0;
+    }
+    .navbar-collapse {
+        position: relative;
+        flex-grow: 1;
+        right: 0;
+        top: 0;
+        font-size:14px;
+        /* left: 0; */
+        text-align: right;
+        width: auto;
+        height: auto;
+        background-color: #FFFFFF00;
+    }
+    
+    
+}
+//DESKTOP

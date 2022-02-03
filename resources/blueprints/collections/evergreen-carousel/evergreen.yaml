@@ -1,0 +1,34 @@
+title: Evergreen
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: image
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          display: Image
+          max_files: 1
+      -
+        handle: caption
+        field:
+          type: text
+          display: Caption
+      -
+        handle: button
+        field:
+          type: text
+          display: Button
+      -
+        handle: link_to
+        field:
+          type: entries
+          max_items: '1'
+          mode: tags
+          display: 'Link to...'
+          collections:
+            - products
+taxonomies: false

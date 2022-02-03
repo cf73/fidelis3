@@ -1,0 +1,50 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: exceprt
+        field:
+          type: bard
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: false
+          restrict_assets: false
+          display: Exceprt
+      -
+        handle: attribution
+        field:
+          type: text
+          display: Attribution
+          validate: required
+      -
+        handle: link
+        field:
+          type: text
+          display: Link
+      -
+        handle: date_of_review
+        field:
+          type: date
+          allow_blank: false
+          require_time: false
+          earliest_date: 'January 1, 1900'
+          display: 'Date of review'
+          time_enabled: true
+taxonomies: true
+title: Reviews

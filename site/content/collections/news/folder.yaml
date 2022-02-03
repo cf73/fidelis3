@@ -1,0 +1,4 @@
+title: News
+order: date
+fieldset: news
+template: newsitem

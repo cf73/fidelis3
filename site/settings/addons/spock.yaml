@@ -1,0 +1,5 @@
+environments:
+  - production
+git_push: true
+git_username: cf73
+git_email: conrad.fulbrook@gmail.com

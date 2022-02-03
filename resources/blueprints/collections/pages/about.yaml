@@ -1,0 +1,38 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: image
+        field:
+          type: assets
+          container: main
+          folder: /
+          restrict: false
+          max_files: 1
+          instructions: 'Ideally a ''historical'' image from Harvard Square days, or a show or get-together... something with people in it.'
+          display: Image
+      -
+        handle: about
+        field:
+          type: bard
+          buttons:
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - removeformat
+            - anchor
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: false
+          restrict_assets: false
+          instructions: 'Summary of the history of Fidelis and the services offered'
+          display: About
+taxonomies: true
+title: About

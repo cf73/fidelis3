@@ -1,0 +1,9 @@
+title: Testimonials
+sections:
+  main:
+    display: Main
+    fields:
+      testimonial:
+        type: textarea
+        display: Testimonial
+taxonomies: false

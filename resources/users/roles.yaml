@@ -1,4 +1,47 @@
-# admin:
-#   title: Administrator
-#   permissions:
-#     - super
+admin:
+  title: Admin
+  permissions:
+    - super
+editor:
+  title: Editor
+  slug: editor
+  permissions:
+    - 'access cp'
+    - 'content:view_drafts_on_frontend'
+    - 'view pages entries'
+    - 'edit pages entries'
+    - 'collections:evergreen-carousel:view'
+    - 'collections:evergreen-carousel:edit'
+    - 'collections:evergreen-carousel:create'
+    - 'collections:evergreen-carousel:delete'
+    - 'view manufacturers entries'
+    - 'edit manufacturers entries'
+    - 'reorder manufacturers entries'
+    - 'create manufacturers entries'
+    - 'publish manufacturers entries'
+    - 'delete manufacturers entries'
+    - 'view news entries'
+    - 'edit news entries'
+    - 'reorder news entries'
+    - 'create news entries'
+    - 'publish news entries'
+    - 'delete news entries'
+    - 'collections:pre-owned:view'
+    - 'collections:pre-owned:edit'
+    - 'collections:pre-owned:create'
+    - 'collections:pre-owned:delete'
+    - 'view products entries'
+    - 'edit products entries'
+    - 'reorder products entries'
+    - 'create products entries'
+    - 'publish products entries'
+    - 'delete products entries'
+    - 'taxonomies:product-categories:view'
+    - 'taxonomies:product-categories:edit'
+    - 'edit global globals'
+    - 'view main assets'
+    - 'edit main assets'
+    - 'move main assets'
+    - 'rename main assets'
+    - 'upload main assets'
+    - 'delete main assets'

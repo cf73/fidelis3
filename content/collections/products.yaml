@@ -1,0 +1,12 @@
+title: Products
+template: product
+layout: layout
+taxonomies:
+  - product-categories
+revisions: false
+route: 'products/{product-categories}/{slug}'
+sort_dir: asc
+inject:
+  columns:
+    - title
+    - manufacturer.title

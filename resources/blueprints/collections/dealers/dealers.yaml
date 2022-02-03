@@ -1,0 +1,56 @@
+title: Dealers
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: website
+        field:
+          type: text
+          display: Website
+      -
+        handle: email
+        field:
+          type: text
+          display: Email
+      -
+        handle: phone
+        field:
+          type: integer
+          display: Phone
+      -
+        handle: fax
+        field:
+          type: integer
+          display: Fax
+      -
+        handle: location
+        field:
+          type: location
+          display: Location
+      -
+        handle: address_line_1
+        field:
+          type: text
+          display: 'Address Line 1'
+      -
+        handle: address_line_2
+        field:
+          type: text
+          display: 'Address Line 2'
+      -
+        handle: town
+        field:
+          type: text
+          display: Town
+      -
+        handle: state
+        field:
+          type: text
+          display: State
+      -
+        handle: zip
+        field:
+          type: text
+          display: ZIP
+taxonomies: true

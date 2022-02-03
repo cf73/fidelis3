@@ -1,0 +1,10 @@
+logo: vandersteen-logo.jpg
+tagline: 'Vandersteen Audio always has been and always will be a technology company'
+website: 'https://www.vandersteen.com/'
+hero_image: vandersteen-image.jpg
+description: '<p>Vandersteen Audio always has been and always will be a technology company. Vandersteen speakers for decades were built around Richard Vandersteen’s patented reflection-free aerodynamic midrange drivers, which remain paragons of low-distortion musicality. Minimal-baffle cabinets, bi-wiring, resonance-reducing spiked feet, battery-biased crossovers, high-pass-filtered powered subwoofers and powered-bass speakers with built-in room EQ are just some of the innovations that originated with Vandersteen Audio’s speaker products.</p><p>Vandersteen Audio’s speaker designs today are built around the most advanced dynamic drivers ever conceived, the patented Perfect-Piston<strong>™</strong>&nbsp;drivers featured exclusively in Vandersteen Audio’s Model 7 and Model 5A Carbon speakers.&nbsp;<strong>Richard Vandersteen</strong>&nbsp;spent 10 years developing these Perfect Piston drivers, which utilize a totally unique carbon-fiber/balsa wood/carbon-fiber sandwich that provides perfectly pistonic driver performance and accuracy without the sonic colorations inherent in metal drivers.</p><p>These innovations illustrate the difference between a speaker company and a true technology company, and begins to describe why listening to Vandersteen Audio’s speakers and electronics is such a transcendent, one-of-a-kind musical experience. The kind of unforgettable experience that stands out in a world of products that are all “good.”&nbsp;</p><p>Vandersteen Audio designs and manufactures time- and phase- correct loudspeakers and superb electronics. &nbsp;Every Vandersteen loudspeaker is designed to be as true and accurate to the signal received from the amplifier as possible, but with unsurpassed natural musicality and “Dimensional Purity.” All Vandersteen products are proudly designed and manufactured in the USA, in Hanford, CA.</p>'
+title: 'Vandersteen Audio'
+id: 937e64e5-24d2-4cbc-9f2a-3358dee35f04
+product-categories:
+  - speakers
+blueprint: manufacturer
