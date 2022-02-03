@@ -31,7 +31,9 @@
                                 </a>
                                 <h1 class="vertical-spacer_small">{{title}}</h1>
                                 <a href="product-category.html">
-                                    <a href="/products/{{product-categories}}{{slug}}{{/product-categories}}"><h4>{{product-categories}}{{title}}{{/product-categories}}</h4></a>
+                                    {{product-categories}}
+                                    <a href="/product-categories/{{slug}}"><h4>{{title}}</h4></a>
+                                    {{/product-categories}}
                                 </a>
                             </div>
                         </div>
