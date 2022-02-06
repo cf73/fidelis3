@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e60aa6b6d24c3c2c5e4254bcc79d7c81",
+    "content-hash": "c19d83d27edb5745992bf0f17e298510",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -4297,6 +4297,52 @@
                 "source": "https://github.com/Seldaek/phar-utils/tree/1.2.0"
             },
             "time": "2021-12-10T11:20:11+00:00"
+        },
+        {
+            "name": "sortarad/lol",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sortarad/lol.git",
+                "reference": "0783fd2044aae281ed53e8801c227723260b7542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sortarad/lol/zipball/0783fd2044aae281ed53e8801c227723260b7542",
+                "reference": "0783fd2044aae281ed53e8801c227723260b7542",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Lol",
+                    "description": "Lol addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Sortarad\\Lol\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sortarad\\Lol\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "XKCD Comics for Statamic",
+            "homepage": "https://github.com/sortarad/lol",
+            "keywords": [
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/sortarad/lol/issues",
+                "source": "https://github.com/sortarad/lol/tree/1.0.3"
+            },
+            "time": "2020-12-01T20:22:09+00:00"
         },
         {
             "name": "spatie/blink",
