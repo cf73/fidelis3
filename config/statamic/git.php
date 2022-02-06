@@ -148,7 +148,7 @@ return [
     |
     */
 
-    'push' => env('STATAMIC_GIT_PUSH', false),
+    'push' => env('STATAMIC_GIT_PUSH', true),
 
     /*
     |--------------------------------------------------------------------------
