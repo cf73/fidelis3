@@ -12,9 +12,9 @@
     <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
 
     <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="//fast.fonts.net/jsapi/b6418e6b-61bf-4281-8fff-8cea13095f95.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,500;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,800;1,100;1,200;1,300;1,400;1,600;1,800&family=Work+Sans:wght@100;300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/lkl2bsa.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/fidelis.css">
@@ -30,23 +30,25 @@
     <div style="background-color: #313131; width: 100%; padding-bottom: 30px;" class="footerarea">
         <div class="container" id="PageFooter">
             <footer>
-                <div class="row" style="color: white;">
-                    <div class="col-md-6 col-lg-4">
-                        <h4>CONTACT US</h4>
-                        <p class="body-sans">T: {{phone_number}}<br>F: {{fax_number}}<br>E: {{email}}<br></p>
+                <div class="row" style="color: #dddddd;">
+                    <div class="col-lg-4">
+                        <h3 class="brandgold">Music for Life</h3><br>
+                        <p>&copy; {{ now format="Y" }} Fidelis</p>
+                        <p><a href="/policies" style="color: inherit;">Policies</a></p>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <h4>STORE HOURS<br></h4>
+                        <h3 class="brandgold">Store Hours</h3><br>
                         <ul style="list-style-type: none; margin-left: -40px;">
                             {{times}}
-                                <li>{{value}}</li>
+                                <li><p>{{value}}</p></li>
                             {{/times}}
                         </ul>
                     </div>
-                    <div class="col-lg-4">
-                        <!-- <img class="vertical-spacer" src="../../assets/img/logo.svg"> -->
-                        <p class="copyright body-sans">&copy; {{ now format="Y" }} Fidelis</p>
-                        <p><a href="/policies" style="color: inherit;">Policies</a></p>
+                    <div class="col-md-6 col-lg-4">
+                        <h3 class="brandgold">Contact Us</h3><br>
+                        <p>phone: {{phone_number}}</p>
+                        <p>{{fax_number}}</p>
+                        <p>email: {{email}}</p>
                     </div>
                 </div>
             </footer>

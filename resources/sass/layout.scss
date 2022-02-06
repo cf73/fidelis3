@@ -5,6 +5,7 @@ body, html {
 
 body {
     color: $earthblack;
+    font-weight: 300;
 }
 
 //breakpoints
@@ -99,7 +100,7 @@ $xl: 1200px;
 #productName {
     text-align: center;
     padding-bottom: 30px;
-    margin: 0 auto;
+    margin-top: 45px;
     & div {
         flex-direction: column;
     }

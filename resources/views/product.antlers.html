@@ -6,15 +6,15 @@
             <div id="breadcrumb" class="row" >
                 <div class="col">
                     <ol id="knockout" class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/products"><span>Products</span></a></li>
+                        <li class="breadcrumb-item"><a href="/products"><h4>Products</h4></a></li>
                         <li class="breadcrumb-item">
                             <span>
                                 {{product-categories}}
-                                    <a href="/product-categories/{{slug}}">{{title}}</a>
+                                    <a href="/product-categories/{{slug}}"><h4>{{title}}</h4></a>
                                 {{/product-categories}}
                             </span>
                         </li>
-                        <li class="breadcrumb-item"><span>{{page:title}}</span></li>
+                        <li class="breadcrumb-item"><h4>{{page:title}}</h4></li>
                     </ol>
                 </div>
             </div>
@@ -91,7 +91,7 @@
         <div class="col">
             <blockquote class="blockquote">
                 <div class="quote vertical-spacer">{{quote}}</div>
-                <footer class="blockquote-footer meta">{{quote_attribution}}</footer>
+                <footer class="blockquote-footer"><h4>{{quote_attribution}}</h4></footer>
             </blockquote>
         </div>
     </div>
@@ -147,12 +147,12 @@
                             {{reivews_set}}
                                 <p>{{excerpt}}</p>
                                 <a href="{{link}}" target="_blank" style="padding-bottom: 3px; border-bottom: solid thin lightgrey; display: inline-block;">
-                                    <p class="blockquote-footer meta" style="margin-bottom: 0;">
+                                    <h4 class="blockquote-footer" style="margin-bottom: 0;">
                                         {{attribution}}
                                         <svg class="bi bi-arrow-up-right-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H6.5a.5.5 0 0 1 0-1z"/>
                                         </svg>
-                                    </p>
+                                    </h4>
                                 </a>
                             {{/reivews_set}}
                         {{else}}

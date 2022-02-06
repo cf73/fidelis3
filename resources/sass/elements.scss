@@ -30,13 +30,6 @@ a {
 }
 
 .breadcrumb {
-    color: $earthblack;
-    font-family: $sansserif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
@@ -72,6 +65,7 @@ ol.breadcrumb {
     border-bottom: solid 3px $earthred;
     font-family: $sansserif;
     color: $earthred;
+    font-weight: 600;
     &:hover {
         border: none;
         border-bottom: solid 3px $earthred;
