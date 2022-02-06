@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'enabled' => env('STATAMIC_GIT_ENABLED', false),
+    'enabled' => env('STATAMIC_GIT_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return [
         resource_path('forms'),
         resource_path('users'),
         storage_path('forms'),
-public_path('assets/main'),
+        public_path('assets/main'),
     ],
 
     /*
