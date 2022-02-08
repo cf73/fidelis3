@@ -14,12 +14,15 @@ sections:
         handle: manufacturer
         field:
           type: entries
-          max_items: '1'
-          mode: panes
+          max_items: 1
+          mode: select
           display: Manufacturer
           validate: required
           collections:
             - manufacturers
+          instructions_position: above
+          listable: hidden
+          create: false
       -
         handle: product_hero_image
         field:
@@ -120,12 +123,12 @@ sections:
         handle: product-categories
         field:
           type: terms
-          mode: tags
-          display: 'Product Categories'
-          max_items: 1
-          validate: required
           taxonomies:
             - product-categories
+          display: 'Product Categories'
+          mode: tags
+          max_items: 1
+          validate: required
       -
         handle: system_category
         field:
