@@ -223,8 +223,8 @@ price: 2400
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
-  - 72d5e848-86b9-4b26-9b65-311b35ae5033
   - 28bc46cc-646b-4b5e-b8c0-5a38e8d5e90b
+  - 77ba446b-cef2-4b08-84a0-af4e1ef4d7b7
 also_consider:
   - 5f3d8288-1d97-437d-b613-30649e0b76e7
 specs:
@@ -491,5 +491,5 @@ product-categories: server-streaming
 system_category: source
 shipping: 40
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644341464
+updated_at: 1644341680
 ---
