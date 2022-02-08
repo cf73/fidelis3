@@ -1,8 +1,7 @@
 ---
 id: c73bb071-a4e4-4b86-b72d-cf2309c11e7a
 blueprint: product
-manufacturer:
-  - 19c5d57b-0567-40d5-9d10-bb7ab10356aa
+manufacturer: 2d4462ce-e555-48e6-8858-18d3882e980b
 product_hero_image: mind_2_black_left.jpg
 available_for_demo: true
 quote: 'Not only does MIND 2 allow to access, browse and play the music you care for (from your computer, NAS, mobile devices and various internet based music services), it also gives you the control of your MOON Hi-Fi system for ultimate ease of use. This is what streaming music is all about!'
@@ -490,6 +489,6 @@ title: 'MIND 2'
 product-categories: server-streaming
 system_category: source
 shipping: 40
-updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644341680
+updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
+updated_at: 1644345498
 ---
