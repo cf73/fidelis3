@@ -18,5 +18,54 @@ also_consider:
 product-categories: server-streaming
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644420968
+updated_at: 1644421132
+quote: 'The Zenith Mk3 delivers a potent and flexible spec with one of the best interfaces going and is compatible with Roon front ends. The price maybe high, but it delivers an outstanding performance that will inspire confidence even for those starting out in network audio, and so should be near the top of any shortlist.'
+quote_attribution: 'Hi-Fi Choice'
+description:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '⦿ New Custom Motherboard with reduced EMI'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ Dual Ethernet Ports for LAN and Streamer with dedicated isolation transformers'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ Innovative Triple-Linear Power Supply with ultra-low noise regulators and premium Mundorf Capacitors'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ 8GB RAM with 4GB In-Memory playback'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ Asymmetrical isolation feet inspired by the ZENith SE'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ Ultra-low Noise USB Audio Output'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ SSD Storage with newly improved vibration and EMI treatment'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ New Generation Quad-core Intel CPU'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '⦿ Medical-Grade Mains Filter'
 ---
