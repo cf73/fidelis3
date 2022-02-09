@@ -1,7 +1,7 @@
 ---
 id: b80f543d-f4f8-43f9-a5b8-17b3db5e7132
 blueprint: product
-title: 'ZENith 1TB'
+title: 'ZENith MkIII 1TB'
 manufacturer: 236454e8-3435-4850-9539-4399e0916f07
 product_hero_image: Innuos-ZENith-Mk3-Black-Perspective.jpg
 available_for_demo: true
@@ -18,5 +18,5 @@ also_consider:
 product-categories: server-streaming
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644420868
+updated_at: 1644420968
 ---
