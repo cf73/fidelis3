@@ -1,3 +1,7 @@
+---
+id: 0720cbdb-2025-474e-bfd2-2fe5bb2390fc
+published: false
+blueprint: product
 manufacturer: ba0eacf2-f95d-4721-8c0f-90efe0acc714
 product_hero_image: k101120-1611680368.jpg
 available_for_demo: true
@@ -12,7 +16,6 @@ monthly_featuree: false
 specs: '<ul><li>Casework Color:&nbsp;Silver or Black<br></li><li>Passive &nbsp;Silent Cooling<br></li><li>All Case Parts CNC Machined From Solid Alloy Block<br></li><li><b>Isolated USB Input</b></li><li><b>Word Clock Output</b></li><li><b>S/PDIF Output</b><br>– RCA and BNC options<br>– PCM to 24bit/192kHz<br>– DoP to DSD64</li><li><b>AES3 Output</b><br>– XLR<br>– PCM to 24bit/192kHz<br>– DoP to DSD64</li><li><b>I2S Output</b><br>– HDMI<br>– PCM to 32bit/384kHz<br>– DoP to DSD256<br>– Native to DSD512</li><li><b>Width:&nbsp;</b>240mm</li><li><b>Depth:&nbsp;</b>290mm&nbsp;</li><li><b>Height At Front (Including Feet):&nbsp;</b>30mm&nbsp;</li><li><b>Weight:&nbsp;</b>3.1Kg</li><li><b>Warranty</b><br>– 2 Years<br>– Extendable to 3 Years With Registration<br>– 6 Months On Pre-Installed Storage</li></ul><p><b><br></b></p>'
 has_files: false
 title: K10
-id: 0720cbdb-2025-474e-bfd2-2fe5bb2390fc
 product-categories: server-streaming
 system_category: source
-blueprint: product
+---
