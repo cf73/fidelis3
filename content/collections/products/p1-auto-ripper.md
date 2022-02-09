@@ -1,3 +1,7 @@
+---
+id: 30b14657-8e96-4d12-b562-af7fbec05170
+published: false
+blueprint: product
 manufacturer: ba0eacf2-f95d-4721-8c0f-90efe0acc714
 product_hero_image: k101120.jpg
 available_for_demo: true
@@ -12,7 +16,6 @@ monthly_featuree: false
 specs: '<ul><li>Casework Color: Silver or Black&nbsp;<br></li><li>Passive Fanless Silent Cooling</li><li>All Case Parts CNC Machined From Solid Alloy Block</li><li>Automatic CD Ripping App</li><li>Width:&nbsp;240mm</li><li>Depth:&nbsp;290mm</li><li>Height At Front (Including Feet):&nbsp;30mm</li><li>Weight:&nbsp;2.9Kg</li><li>Warranty<br>– 2 Years<br>– Extendable to 3 Years With Registration<br>– 6 Months On Pre-Installed Storage</li></ul>'
 has_files: false
 title: K10
-id: 30b14657-8e96-4d12-b562-af7fbec05170
 product-categories: cd-players
 system_category: source
-blueprint: product
+---
