@@ -16,6 +16,9 @@
                 </h3> 
                 <p style="margin: 0;"><strike>Original Retail Price: ${{new_retail_price format_number="2|.|,"}}</strike></p>
                 <p style="margin-top: 0;">Your Price: <strong>${{your_price format_number="2|.|,"}}</strong></p>
+                {{ if local_only }}
+                <p>Available for local purchase only. No shipping charge is applied when you order.</p>
+                {{/if}}
                 <p><a href="{{url}}"><strong>View details</strong></a></p>
             </div>
             <div class="col-md-5">
