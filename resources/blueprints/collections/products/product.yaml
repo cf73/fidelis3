@@ -95,6 +95,15 @@ sections:
           display: 'Available to buy online'
           default: true
       -
+        handle: local_only
+        field:
+          default: false
+          display: 'Local only?'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+      -
         handle: shipping
         field:
           type: integer
