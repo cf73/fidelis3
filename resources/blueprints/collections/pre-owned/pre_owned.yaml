@@ -26,6 +26,16 @@ sections:
           type: integer
           display: 'Your Price'
       -
+        handle: local_only
+        field:
+          default: false
+          display: 'Local only?'
+          type: toggle
+          icon: toggle
+          instructions: 'Turn this on if you want to restrict the sale to local only; shipping charges will be removed.'
+          listable: hidden
+          instructions_position: above
+      -
         handle: shipping
         field:
           type: integer
