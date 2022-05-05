@@ -216,10 +216,10 @@ reivews_set:
     link: 'https://www.trustedreviews.com/reviews/cambridge-audio-duo'
     date_of_review: '2020-07-24'
     enabled: true
-title: 'Alva Duo'
+title: Duo
 product-categories: phono-pre-amps
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1651761051
+updated_at: 1651761158
 ---
