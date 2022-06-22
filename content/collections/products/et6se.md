@@ -497,5 +497,10 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655911924
+updated_at: 1655929816
+pairs_well_with:
+  - d3431257-09aa-450d-b152-3353d279ff18
+  - 77f0a3e8-a54a-4e90-ac9a-f4aeba2f5c50
+also_consider:
+  - 7838f0f7-a209-4819-b9c6-2a4289fb23b6
 ---
