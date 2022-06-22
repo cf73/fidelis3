@@ -58,5 +58,5 @@ description:
             type: bold
         text: 'Our products are a manifestation of our passion. Performance cannot merely be measured; it must be heard. It just sounds right.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655911305
+updated_at: 1655911383
 ---
