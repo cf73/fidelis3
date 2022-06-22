@@ -92,10 +92,10 @@ price: 7000
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 150
+shipping: 200
 pairs_well_with:
   - e33ff794-fdc3-4d03-9e64-eb96d982a610
-product-categories: pre-amps
+product-categories: power-amplifiers
 system_category: amplification
 specs:
   -
@@ -355,5 +355,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655923966
+updated_at: 1655924053
 ---
