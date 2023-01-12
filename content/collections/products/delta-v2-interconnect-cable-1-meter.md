@@ -1,16 +1,360 @@
+---
+id: 07c801ac-62a0-4bf8-b4ba-888ffc21d31e
+blueprint: product
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
 product_hero_image: ic-dlt_v2-rca-full-02-1200x800.jpg
 available_for_demo: true
-description: '<p>Delta v2 Interconnects are also available for Balanced XLR applications &nbsp;</p><p><br></p><p>The insulation that protects wire can create a ghost-like signal that subtly blurs the source audio signal. The scientific term for this is:&nbsp;<i>dielectric absorption and re-radiation</i>.&nbsp;<b><i>ΞTRON<sup>®</sup></i></b>&nbsp;is a technology developed by Shunyata Research that prevents this type of signal cable micro-distortion.&nbsp;&nbsp;It&nbsp;requires a special type of conductor that has two signal paths. An&nbsp;<i>electric-field compensation circuit</i>&nbsp;creates a contra-signal that prevents the insulation from developing a charge.&nbsp;&nbsp;<i>ΞTRON<b><sup>®</sup></b>&nbsp;</i>™cables preserve the integrity of the source signal even when using very long cable runs are required.</p><h5>Multiple international patents:</h5><p><br>US 8,912,436 // WO WO2012045033A1 // EP 262261B1 // CN103201800B // CH ZL201180047344.2</p><p><strong>‌‌ArNi</strong><sup>®&nbsp;</sup>wire was designed by Shunyata Research to be the finest quality wire available. It begins with the highest purity of copper and silver metals available, including Ohno (<em>single crystal</em>), PCOCC silver and OFE C0101 conductors.&nbsp;Fluorocarbon dielectrics, usually only found in aerospace applications that have exceptional electrical characteristics including extremely low dielectric absorption, high dielectric strength and superb heat resistance.&nbsp;&nbsp;When used in digital wiring it significantly reduces transient energy storage and release which affects phase noise performance.</p><p><i>— And finally every cable undergoes our proprietary KPIP™ process</i>.</p><p><strong>VTX™</strong>&nbsp;— Shunyata Research’s exclusive VTX™ conductors are formed into a virtual tube with the core of the conductor being hollow. This ensures that all the current flows through the outer periphery of the conductor which minimizes skin effects and random eddy currents.&nbsp; VTX™ conductors are made with single crystal Ohno, certified OFE or silver wire.</p><p>—&nbsp;<i>Superior by design</i></p><p>‌<strong>Ohno</strong>&nbsp;wire, also called ‌PCOCC was invented in 1986 by professor Atsumi ‌Ohno of the Chiba Institute of Technology in Japan. Copper wire is created by an extrusion process that pulls a rod of cold copper through a small orifice which creates multiple crystalline boundaries. By contrast, ‌‌Ohno wire is made by a process using heated molds that cast a wire to form a single crystalline structure. ‌‌Ohno wire is well known for its exceptionally pure, grain-free sonic qualities.</p><p><br></p><p><br></p>'
-price: 998
+description:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Delta v2 Interconnects are also available for Balanced XLR applications \_"
+  -
+    type: paragraph
+    content:
+      -
+        type: hard_break
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "The insulation that protects wire can create a ghost-like signal that subtly blurs the source audio signal. The scientific term for this is:\_"
+      -
+        type: text
+        text: 'dielectric absorption and re-radiation'
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: ".\_"
+      -
+        type: text
+        text: ΞTRON
+        marks:
+          -
+            type: bold
+          -
+            type: italic
+      -
+        type: text
+        text: ®
+        marks:
+          -
+            type: bold
+          -
+            type: italic
+          -
+            type: superscript
+      -
+        type: text
+        text: "\_is a technology developed by Shunyata Research that prevents this type of signal cable micro-distortion.\_\_It\_requires a special type of conductor that has two signal paths. An\_"
+      -
+        type: text
+        text: 'electric-field compensation circuit'
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: "\_creates a contra-signal that prevents the insulation from developing a charge.\_\_"
+      -
+        type: text
+        text: ΞTRON
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: ®
+        marks:
+          -
+            type: italic
+          -
+            type: bold
+          -
+            type: superscript
+      -
+        type: text
+        text: "\_"
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: '™cables preserve the integrity of the source signal even when using very long cable runs are required.'
+  -
+    type: heading
+    attrs:
+      level: '5'
+    content:
+      -
+        type: text
+        text: 'Multiple international patents:'
+  -
+    type: paragraph
+    content:
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'US 8,912,436 // WO WO2012045033A1 // EP 262261B1 // CN103201800B // CH ZL201180047344.2'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: ‌‌ArNi
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "®\_"
+        marks:
+          -
+            type: superscript
+      -
+        type: text
+        text: 'wire was designed by Shunyata Research to be the finest quality wire available. It begins with the highest purity of copper and silver metals available, including Ohno ('
+      -
+        type: text
+        text: 'single crystal'
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: "), PCOCC silver and OFE C0101 conductors.\_Fluorocarbon dielectrics, usually only found in aerospace applications that have exceptional electrical characteristics including extremely low dielectric absorption, high dielectric strength and superb heat resistance.\_\_When used in digital wiring it significantly reduces transient energy storage and release which affects phase noise performance."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '— And finally every cable undergoes our proprietary KPIP™ process'
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: .
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: VTX™
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "\_— Shunyata Research’s exclusive VTX™ conductors are formed into a virtual tube with the core of the conductor being hollow. This ensures that all the current flows through the outer periphery of the conductor which minimizes skin effects and random eddy currents.\_ VTX™ conductors are made with single crystal Ohno, certified OFE or silver wire."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "—\_"
+      -
+        type: text
+        text: 'Superior by design'
+        marks:
+          -
+            type: italic
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: ‌
+      -
+        type: text
+        text: Ohno
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "\_wire, also called ‌PCOCC was invented in 1986 by professor Atsumi ‌Ohno of the Chiba Institute of Technology in Japan. Copper wire is created by an extrusion process that pulls a rod of cold copper through a small orifice which creates multiple crystalline boundaries. By contrast, ‌‌Ohno wire is made by a process using heated molds that cast a wire to form a single crystalline structure. ‌‌Ohno wire is well known for its exceptionally pure, grain-free sonic qualities."
+  -
+    type: paragraph
+    content:
+      -
+        type: hard_break
+  -
+    type: paragraph
+    content:
+      -
+        type: hard_break
+price: 1500
 show_price: true
 available_to_buy_online: true
 shipping: 25
-monthly_featuree: false
-specs: '<h3><br>Specifications</h3><h3>DELTA v2 RCA</h3><p><strong>Cable Type</strong>:&nbsp;<i>ΞTRON<b><sup>®&nbsp;</sup></b></i>coaxial</p><p><strong>Conductors</strong>:&nbsp;<i>ArNi&nbsp;</i><sup>®</sup>&nbsp;VTX / OFE / Ohno</p><p><strong>Dielectric</strong>: fluorocarbon</p><p><strong>Connectors:</strong>&nbsp;SR-RCA-v</p><p><strong>TAP Modules</strong>: NA</p><p><strong>KPIP Processing:</strong>&nbsp;4-days</p><p><strong>Standard Length:</strong>&nbsp;1.00 meters</p><p><strong>Safety Assurance</strong></p><p>Continuity and polarity tests – by two technicians<br>HiPOT tests insulation breakdown @ 1,200 VAC</p>'
-has_files: false
-title: 'Delta v2 Interconnect Cable, 1 Meter'
-id: 07c801ac-62a0-4bf8-b4ba-888ffc21d31e
+specs:
+  -
+    type: heading
+    attrs:
+      level: '3'
+    content:
+      -
+        type: hard_break
+      -
+        type: text
+        text: Specifications
+  -
+    type: heading
+    attrs:
+      level: '3'
+    content:
+      -
+        type: text
+        text: 'DELTA v2 RCA'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Cable Type'
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: ":\_"
+      -
+        type: text
+        text: ΞTRON
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: "®\_"
+        marks:
+          -
+            type: italic
+          -
+            type: bold
+          -
+            type: superscript
+      -
+        type: text
+        text: coaxial
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Conductors
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: ":\_"
+      -
+        type: text
+        text: "ArNi\_"
+        marks:
+          -
+            type: italic
+      -
+        type: text
+        text: ®
+        marks:
+          -
+            type: superscript
+      -
+        type: text
+        text: "\_VTX / OFE / Ohno"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Dielectric
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: ': fluorocarbon'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Connectors:'
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "\_SR-RCA-v"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'TAP Modules'
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: ': NA'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'KPIP Processing:'
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "\_4-days"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Standard Length:'
+        marks:
+          -
+            type: bold
+      -
+        type: text
+        text: "\_1.00 meters"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Safety Assurance'
+        marks:
+          -
+            type: bold
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Continuity and polarity tests – by two technicians'
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'HiPOT tests insulation breakdown @ 1,200 VAC'
+title: 'Delta v2 Interconnect Cable, 1 Meter, RCA'
 product-categories: interconnects
 system_category: cables
-blueprint: product
+local_only: false
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1671554225
+---

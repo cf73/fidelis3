@@ -1,3 +1,7 @@
+---
+id: b59991bb-76cd-40e1-bf7f-c75d8dec6b8a
+published: false
+blueprint: product
 manufacturer: 6ec811a8-2431-483e-a84d-0d2a3dd38bcc
 product_hero_image: kaya_25_v3.jpg
 available_for_demo: true
@@ -16,7 +20,6 @@ monthly_featuree: false
 specs: '<ul><li>Configuration: 2 way 2 driver system<br></li><li>Cabinet material: Glass reinforced Soric-cored sandwich composite<br></li><li>Cabinet colour: Piano Black, Pearl White, Oyster Matte<br></li><li>Bespoke colour: Available on request<br></li><li>Drive units: HF: D26 – 26mm tapered tube loaded alloy dome, LF: C125D – 1 x 125mm alloy cone<br></li><li>Bass loading: Exponentially Tapered Tube enhanced bass reflex<br></li><li>Sensitivity: 85dB @ 2.83VRMS at 1m on axis<br></li><li>Nominal impedacnce (Ω): 8 Ohm (7.5 Ohm Min)<br></li><li>Frequency range (Hz): 40 – 25,000 Hz (-6dB)<br></li><li>First D26 Break Up mode: 44,000 Hz<br></li><li>Harmonic distortion (2nd and 3rd harmonics): &lt; 0.5% over frequency range at 1W<br></li><li>Cross over frequencies (Hz): 3,000<br></li><li>Recommended amplifier power: 25W – 125W<br></li><li>Loudspeaker dimensions: 1,160mm (H) x 263mm (W) x 340mm (D)<br></li><li>Net weight: 24kg<br></li><li>Shipping dimensions: 1,245mm (H) x 680mm (W) x 450mm (D)<br></li><li>Shipping weight: 60kg (pair)<br></li></ul><p><br></p>'
 has_files: false
 title: 'Kaya 25'
-id: b59991bb-76cd-40e1-bf7f-c75d8dec6b8a
 product-categories: speakers
 system_category: speakers
-blueprint: product
+---

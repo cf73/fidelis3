@@ -1,3 +1,6 @@
+---
+id: f574539b-9d61-4aea-b5a4-f1f116b97f6c
+blueprint: product
 manufacturer: 6ec811a8-2431-483e-a84d-0d2a3dd38bcc
 product_hero_image: kaya_45.jpg
 available_for_demo: true
@@ -22,7 +25,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/vivid-kaya-45-loudspeaker'
     date_of_review: '2020-07-27'
 title: 'Kaya 45'
-id: f574539b-9d61-4aea-b5a4-f1f116b97f6c
 product-categories: speakers
 system_category: speakers
-blueprint: product
+---

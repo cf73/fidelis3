@@ -1,7 +1,7 @@
 ---
 id: 288b15eb-0a04-440a-8e44-7e67b7860ea1
 blueprint: product
-title: 'DeVille SQ'
+title: 'DeVille SQ Speakers w/Matching Stands'
 manufacturer: 2754a72b-67e0-4cb0-99f6-314ba70331f2
 product_hero_image: DeVille-SQ-6975-scaled.webp
 available_for_demo: true
@@ -13,8 +13,8 @@ description:
     content:
       -
         type: text
-        text: 'The DeVille SQ (Superior Quality) is the ultimate DeVille. The entire enclosure is made out of solid Pennsylvania ash, either natural (light color) or torrefied (roasted) in either light, medium or dark. The phase plug is cast from a 3D printed sand mold in solid bronze, then patinated, polished and lacquered. Internal wiring is solid silver, and the crossover components are the finest quality.'
-price: 18600
+        text: 'The DeVille SQ (Superior Quality) is the ultimate DeVille. The entire enclosure is made out of solid Pennsylvania ash, either natural (light color) or torrefied (roasted) in either light, medium or dark. The phase plug is cast from a 3D printed sand mold in solid bronze, then patinated, polished and lacquered. Internal wiring is solid silver, and the crossover components are the finest quality. Pricing is for light torrefied ash tops, bottoms and horns with matching stands. Additional finishes available for extra expense. '
+price: 20150
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -143,5 +143,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1652215474
+updated_at: 1667426444
 ---

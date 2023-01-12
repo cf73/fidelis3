@@ -108,9 +108,10 @@ specs:
       -
         type: text
         text: "Finishes - Piano Gloss Walnut / Piano Gloss Black / Piano Gloss White\_\_"
-title: F502SP
+title: 'F502 SP'
 product-categories: speakers
 system_category: speakers
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644361778
+updated_at: 1659119927
+local_only: false
 ---

@@ -1,3 +1,7 @@
+---
+id: a8d98f8f-2f49-4a5d-ac79-c65970146bef
+published: false
+blueprint: product
 manufacturer: 6ec811a8-2431-483e-a84d-0d2a3dd38bcc
 product_hero_image: 414vivid.promo_.jpg
 available_for_demo: true
@@ -26,7 +30,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/vivid-audio-giya-g1-spirit-loudspeaker'
     date_of_review: '2017-12-19'
 title: 'Giya G1S'
-id: a8d98f8f-2f49-4a5d-ac79-c65970146bef
 product-categories: speakers
 system_category: speakers
-blueprint: product
+---

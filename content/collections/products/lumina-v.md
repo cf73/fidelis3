@@ -36,7 +36,7 @@ description:
       -
         type: text
         text: 'The Lumina V is rich with new electro-acoustic solutions.'
-price: 2895
+price: 2995
 show_price: true
 available_to_buy_online: false
 local_only: true
@@ -226,5 +226,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1652214211
+updated_at: 1667405151
 ---

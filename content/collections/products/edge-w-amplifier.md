@@ -1,3 +1,7 @@
+---
+id: 503ffe12-728f-4622-8ab5-9e3245718797
+published: false
+blueprint: product
 manufacturer: c6c9a7b2-9411-4aef-9327-2da9347a5437
 product_hero_image: acamedgew.jpg
 available_for_demo: true
@@ -20,7 +24,6 @@ reivews_set:
     link: 'https://www.fidelity-online.de/cambridge-audio-edge/'
     date_of_review: '2018-12-14'
 title: 'Edge W'
-id: 503ffe12-728f-4622-8ab5-9e3245718797
 product-categories: power-amplifiers
 system_category: amplification
-blueprint: product
+---

@@ -1,3 +1,7 @@
+---
+id: 1ea9442b-1029-4c49-95dd-0abf4c5da8ff
+published: false
+blueprint: product
 manufacturer: e1fa309d-b433-4837-bc50-a69ae5777ab0
 product_hero_image: bricasti-m28_front_side_.jpg
 available_for_demo: true
@@ -18,7 +22,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/bricasti-design-m28-monoblock-power-amplifier'
     date_of_review: '2020-07-20'
 title: M28
-id: 1ea9442b-1029-4c49-95dd-0abf4c5da8ff
 product-categories: power-amplifiers
 system_category: amplification
-blueprint: product
+---

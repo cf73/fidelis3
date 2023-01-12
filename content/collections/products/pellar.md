@@ -19,7 +19,7 @@ description:
       -
         type: text
         text: 'Bringing greater ownership accessibility for prudent audiophiles, the Pellar is unusual at this price level, having the flexibility of three gain options for MM, low and high gain MC cartridge types.'
-price: 1395
+price: 1100
 show_price: true
 available_to_buy_online: true
 shipping: 30
@@ -194,5 +194,5 @@ product-categories: phono-pre-amps
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656017146
+updated_at: 1670615063
 ---
