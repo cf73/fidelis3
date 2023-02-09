@@ -11,7 +11,31 @@
             </div>
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-lg-8 offset-lg-2">
-                    <div>{{main_content}}</div>
+                    <div class="spacer_small">{{main_content}}</div>
+                    <div>
+                        {{more_content}}
+                        {{ if type == "text" }}
+        
+                        <div class="text spacer_small">
+                            {{ text }}
+                        </div>
+                
+                        {{ elseif type == "image" }}
+                
+                        <div class="row spacer_small">
+                            {{photo}}
+                            <div class="col">
+                                <figure>
+                                    <img src="{{ url }}" width="100%" style="margin-bottom: 6px;" alt="{{ caption }}" />
+                                    <figcaption style="max-width: 66%;">{{ caption }}</figcaption>
+                                </figure>
+                            </div>
+                            {{/photo}}
+                        </div>
+                
+                        {{ /if }}
+                    {{/more_content}}
+                    </div>
                 </div>
             </div>
             
