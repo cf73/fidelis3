@@ -59,5 +59,6 @@ description:
         type: text
         text: 'A/V RoomService sells and/or recommends AC line treatment devices that improve the performance of your electronics.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1676394267
+updated_at: 1676394505
+hero_image: Olsen-25.jpg
 ---
