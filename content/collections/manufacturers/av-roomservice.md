@@ -2,7 +2,7 @@
 id: 3b95261f-19b1-4a2e-a6b5-a245d6efac0d
 blueprint: manufacturer
 title: 'AV RoomService'
-logo: AV-Room-Service-logo_FINAL_FINAL3-(7).ai-Feb-2023.pdf
+logo: AV-Room-Service-logo_FINAL2_654x270.png
 tagline: 'The Science of Perfected Sound'
 website: 'https://avroomservice.com/'
 description:
@@ -59,5 +59,5 @@ description:
         type: text
         text: 'A/V RoomService sells and/or recommends AC line treatment devices that improve the performance of your electronics.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1676394179
+updated_at: 1676394267
 ---
