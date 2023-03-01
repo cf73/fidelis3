@@ -20,7 +20,7 @@ description:
       -
         type: text
         text: 'Thanks to the VOLTAiR technology the performance of the s1200 is detail-rich, vivid, honest and plain simply beautiful.'
-price: 7499
+price: 5999
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -53,5 +53,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1664649492
+updated_at: 1677703962
 ---
