@@ -10,6 +10,7 @@ product-categories:
   - phono-pre-amps
   - power-amplifiers
   - pre-amps
+  - dacs
 hero_image: ProFi-WebTitle_Director_Mk2-1536x1123.jpg
 description:
   -
@@ -82,5 +83,5 @@ description:
         type: text
         text: "\_technology."
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1664634919
+updated_at: 1677704288
 ---
