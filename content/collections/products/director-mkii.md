@@ -14,7 +14,7 @@ description:
       -
         type: text
         text: 'The central unit of the HiFi system is the preamplifier. With remote source selection and volume control, tape monitor path, retro-look-VU-meters, premium DA-converter and the all superior VOLTAiR technology, the Director Mk2 caters for musical blockbusters.'
-price: 3999
+price: 3599
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -40,5 +40,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1677703726
+updated_at: 1677703896
 ---
