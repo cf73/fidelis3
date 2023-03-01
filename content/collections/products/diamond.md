@@ -18,7 +18,7 @@ description:
       -
         type: text
         text: 'Diamond is the perfect DAC and preamplifier for everyone who plays music exclusively from digital sources. Diamond offers connectivity for six digital sources and an external word clock. The superior VOLTAiR technology and the premium DAC with the unequalled DLP120 combined with an analog volume control allowing for highest resolution at any volume makes the Diamond an one-of-a-kind DA converter that delivers finest soundstages with an unrivalled analog feel.'
-price: 2500
+price: 2499
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -30,5 +30,5 @@ also_consider:
 product-categories: dacs
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1677703652
+updated_at: 1677704183
 ---
