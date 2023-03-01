@@ -3,7 +3,7 @@ id: 5b0cd614-070b-414f-bce6-6ad0601c49d3
 blueprint: product
 title: 'Phonitor SE + DAC768xs'
 manufacturer: acf161da-7e67-422e-8398-0e869e7d70d6
-product_hero_image: ProFi-WebTitle_Phonitor_se-2048x1331.jpg
+product_hero_image: Phonitor_se_front_silver_2560.png
 available_for_demo: true
 quote: 'The Phonitor se again performs in the next highest quality class. It behaves as an audiophile amplifier should: tonally balanced and neutral, high-resolution, noise-free, with superior dynamics and, of course, reserves that deliver sufficient levels even with quieter tuned designs.'
 quote_attribution: Headphonecheck
@@ -485,5 +485,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1677702777
+updated_at: 1677702865
 ---
