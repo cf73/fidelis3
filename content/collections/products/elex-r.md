@@ -156,7 +156,7 @@ description:
     content:
       -
         type: hard_break
-price: 1695
+price: 1395
 show_price: true
 available_to_buy_online: true
 specs:
@@ -543,7 +543,7 @@ title: Elex-R
 product-categories: integrated-amplifiers
 system_category: amplification
 local_only: false
-shipping: 40
+shipping: 50
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1660139984
+updated_at: 1679419687
 ---
