@@ -17,7 +17,7 @@ price: 1875
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 60
+shipping: 80
 pairs_well_with:
   - b0ba896d-63bb-40c1-8418-8d4810e9f2c3
   - 2e27f47a-3920-4771-b868-961192e47d81
@@ -159,5 +159,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1679420066
+updated_at: 1679420102
+product_hero_image: ELEX_MK4_INTRO_2_(1).jpg
 ---
