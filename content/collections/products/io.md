@@ -19,10 +19,10 @@ description:
       -
         type: text
         text: "Two line level inputs and a high quality moving magnet phono input are available as sources.\_There is a headphone output provided on the front of the unit for powering standard hi-fi headphones; this is driven from the power amplifier stage of the unit through relays to avoid signal degradation when headphones are inserted or the product is muted.\_A new remote handset is included as well."
-price: 649
+price: 725
 show_price: true
 available_to_buy_online: true
-shipping: 30
+shipping: 40
 pairs_well_with:
   - b549f44a-83e5-48cb-be18-8ee3c92364fd
   - 2bd9ea9c-e5b2-42ab-ac7c-58bc4a73a068
@@ -248,5 +248,5 @@ product-categories: integrated-amplifiers
 system_category: amplification
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1646149406
+updated_at: 1679419606
 ---
