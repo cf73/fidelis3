@@ -174,5 +174,5 @@ product-categories: stands
 system_category: setting
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1680874927
+updated_at: 1680874943
 ---
