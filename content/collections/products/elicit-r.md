@@ -1,26 +1,192 @@
+---
+id: 535bc488-1918-4fc1-984c-22a73c530548
+blueprint: product
 manufacturer: 721789d8-be8d-44cc-9c35-a5c8b27ddb09
 product_hero_image: elicit-r-1593665031.jpg
 available_for_demo: false
 quote: 'Circumstance may have helped this amp become our favorite at this price, but its constant ability to impress with its fine detail retrieval and superb timing is the reason it''s been able to hold on to our affections against good competition.'
 quote_attribution: 'WHAT Hi-Fi'
-description: '<p><strong>Technology</strong></p><p>The output amplifier used in the Elicit-<em>R</em>&nbsp;was born after extensive research by our engineers to develop a low source Class A driver stage, based around a complementary pair of Darlington output transistors, forming an emulated Class A driver stage.</p><p><strong>Features</strong></p><p>The Elicit-<em>R</em>&nbsp;includes a high quality, built in, moving magnet phono stage designed to maximise the potential of your vinyl system. A simple switch on the rear panel allows the same input to be switched to a secondary set at line level. This input is specially configured to offer further isolation and reduce noise. This makes it ideally suited for connection of more sensitive products such as an external MM or MC phono stage.</p><p>If your system is not vinyl based, the same socket allows this line input to be used with any line level product (such as a CD player or DAC), ensuring maximised connectivity via the back panel. These features, coupled with Polypropylene capacitors throughout the signal path, improved power supplies&nbsp;and increased output power to 100 watts per channel, all housed in a brand new custom designed case, combine to give the best performance Elicit to date.</p><h1><br></h1>'
-price: 2995
+description:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'The new Elicit MK5 calls on decades of electronic design experience. It is a complex blend of three of our most successful products which promises to deliver big on sound, power, features and style. The Elicit MK5 is capable of driving difficult loudspeakers with ease and will integrate perfectly into any audio system by offering a wide range of connectivity options. In addition to line, digital, and a high-quality moving magnet (MM) phono input, you will also find pre-out, Direct in, Record loop functionality and the high-performance headphone input.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "The Elicit MK5 now shares other design features taken directly from the highly acclaimed\_Aethos amplifier. You will find the same discrete FET based pre-amplifier circuit, plus an Alps volume potentiometer has been introduced to further improve sonic and technical performance. As you would expect, special attention has been paid to the selection of key audio components. Discrete circuitry, high-quality relays, polypropylene capacitors, and Sanken output transistors are used throughout the design.\_"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "The galvanically/optically isolated digital inputs utilize a Wolfson S/PDIF receiver IC to provide exceptional detail and clarity from any connected source. Output is provided by a Wolfson DAC and Rega designed discrete line-driver circuit.\_The new Elicit MK5 calls upon decades of award-winning experience in amplifier and digital circuit design which culminates in a perfectly engineered balance of reliability, connectivity and above all, accurate music reproduction."
+  -
+    type: heading
+    attrs:
+      level: '1'
+    content:
+      -
+        type: hard_break
+price: 3345
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
-  - 181580b8-b006-42fd-9b68-fe580347b020
-monthly_featuree: false
-specs: '<h1>Power Output</h1><ul><li>105 Watts per channel into 8</li><li>127 Watts per channel into 6</li><li>162 Watts per channel into 4</li><li>Input sensitivity for 105 Watts into 8</li><li>Line inputs (input 1 switch set to line) 1-5 and record - 196mV load 10K</li><li>Phono (input 1 switch set to phono) - 2mV Load 47K in parallel with 220pF</li><li>Direct input - 760mV Load 50K</li><li>Power amplifier gain - 31.6dB</li><li>Record output - 196mV for rated inputs</li><li>Pre-amplifier output - 760mV for rated inputs</li><li>Dimensions: W&nbsp;432mm x D&nbsp;325mm x H&nbsp;82mm</li><li>Weight - 13kg&nbsp;</li></ul>'
-has_files: false
+  - efeac1cd-aca9-4934-a714-e431dccf0434
+  - 13b88f58-1be8-4fde-bbb7-c38f6ff4453f
+specs:
+  -
+    type: heading
+    attrs:
+      level: 2
+    content:
+      -
+        type: text
+        text: 'KEY FEATURES'
+  -
+    type: bullet_list
+    content:
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "105 W per channel into 8\_Ω"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "High quality moving magnet phono\_stage"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "2 x Digital inputs - 1 x optical and 1 x\_Co-Axial"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "High performance Rega DAC circuit for digital\_inputs"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "4 Line level\_inputs"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "Headphone\_input"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "Direct\_Input"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "Record\_input"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "New advanced\_pre-amplifier"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "Alps volume\_potentiometer"
+      -
+        type: list_item
+        content:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: "Thermal\_Cut-Out"
+  -
+    type: paragraph
 reivews_set:
   -
     type: Review
-    excerpt: '<h2>Verdict</h2><p>Circumstance may have helped this amp become our favorite at this price, but its constant ability to impress with its fine detail retrieval and superb timing is the reason it''s been able to hold on to our affections against good competition.</p><p>It might be one of the more priciest amps, but one listen to it will show you why.</p>'
+    excerpt:
+      -
+        type: heading
+        attrs:
+          level: '2'
+        content:
+          -
+            type: text
+            text: Verdict
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Circumstance may have helped this amp become our favorite at this price, but its constant ability to impress with its fine detail retrieval and superb timing is the reason it''s been able to hold on to our affections against good competition.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'It might be one of the more priciest amps, but one listen to it will show you why.'
     attribution: 'WHAT Hi-Fi'
     link: 'https://www.whathifi.com/rega/elicit-r/review'
     date_of_review: '2015-02-18'
-title: Elicit-R
-id: 535bc488-1918-4fc1-984c-22a73c530548
+    enabled: true
+title: 'Elicit Mk V'
 product-categories: integrated-amplifiers
 system_category: amplification
-blueprint: product
+local_only: false
+shipping: 100
+also_consider:
+  - 3d979e9b-2ca0-48ad-b7af-2582aded146f
+  - e425ff24-ff10-4be3-b97f-f0a075a95db8
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1662066388
+---

@@ -53,6 +53,71 @@ sections:
           semantic_elements: false
           restrict_assets: false
           display: 'Main content'
+      -
+        handle: more_content
+        field:
+          collapse: false
+          sets:
+            text:
+              display: Text
+              fields:
+                -
+                  handle: text
+                  field:
+                    always_show_set_button: false
+                    buttons:
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - removeformat
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    fullscreen: true
+                    allow_source: true
+                    enable_input_rules: true
+                    enable_paste_rules: true
+                    antlers: false
+                    display: Text
+                    type: bard
+                    icon: bard
+                    listable: hidden
+                    instructions_position: above
+            image:
+              display: Image
+              fields:
+                -
+                  handle: photo
+                  field:
+                    mode: list
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 3
+                    display: Photo
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                -
+                  handle: caption
+                  field:
+                    antlers: false
+                    display: Caption
+                    type: textarea
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+          display: 'More content'
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
   sidebar:
     display: Sidebar
     fields:

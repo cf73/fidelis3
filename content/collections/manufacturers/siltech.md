@@ -7,8 +7,8 @@ tagline: 'Products of sound engineering'
 website: 'https://www.siltechcables.com/'
 product-categories:
   - interconnects
-  - power-amplifiers
   - speaker-cables
+  - power-cables
 hero_image: 380L_A-1647016725.jpg
 description:
   -
@@ -24,5 +24,5 @@ description:
         type: text
         text: "Siltech’s superior metallurgy and innovative precision construction techniques underpin the exceptional sound of our designs – which now extend to state-of-the-art amplification and loudspeakers. Our emphasis on engineering delivers superlative sound.\_"
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1647016784
+updated_at: 1655924151
 ---

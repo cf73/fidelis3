@@ -1,3 +1,7 @@
+---
+id: 78e941b4-eced-402c-a7f5-a28f4fffdf1d
+published: false
+blueprint: product
 manufacturer: 6ec811a8-2431-483e-a84d-0d2a3dd38bcc
 product_hero_image: kaya-k90.jpg
 available_for_demo: true
@@ -24,7 +28,6 @@ reivews_set:
     link: 'https://hometheaterreview.com/vivid-audio-kaya-90-floorstanding-speaker-reviewed/'
     date_of_review: '2020-07-27'
 title: 'Kaya 90'
-id: 78e941b4-eced-402c-a7f5-a28f4fffdf1d
 product-categories: speakers
 system_category: speakers
-blueprint: product
+---

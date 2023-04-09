@@ -1,3 +1,7 @@
+---
+id: 7266d9a8-8c7b-4ca1-9446-acefebd7a66e
+published: false
+blueprint: product
 manufacturer: 8e3632e0-a274-4666-ace2-130c4832b773
 product_hero_image: mha150-front-top-usb-1607866520.jpg
 available_for_demo: true
@@ -10,7 +14,6 @@ available_to_buy_online: false
 monthly_featuree: false
 has_files: false
 title: MHA150
-id: 7266d9a8-8c7b-4ca1-9446-acefebd7a66e
 product-categories: headphone-amplifiers
 system_category: amplification
-blueprint: product
+---

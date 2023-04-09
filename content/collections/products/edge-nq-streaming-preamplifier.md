@@ -1,3 +1,7 @@
+---
+id: a5c96282-3f4b-4bc7-acfc-5be5826258b5
+published: false
+blueprint: product
 manufacturer: c6c9a7b2-9411-4aef-9327-2da9347a5437
 product_hero_image: edge_nq_front_flat.jpg
 available_for_demo: true
@@ -18,7 +22,6 @@ reivews_set:
     link: 'https://www.whathifi.com/us/reviews/cambridge-audio-edge-nq'
     date_of_review: '2018-12-04'
 title: 'Edge NQ'
-id: a5c96282-3f4b-4bc7-acfc-5be5826258b5
 product-categories: pre-amps
 system_category: multi-function
-blueprint: product
+---

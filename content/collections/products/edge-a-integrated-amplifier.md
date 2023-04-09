@@ -1,3 +1,7 @@
+---
+id: 0857b16a-9b60-4465-8b3c-e94b646e9059
+published: false
+blueprint: product
 manufacturer: c6c9a7b2-9411-4aef-9327-2da9347a5437
 product_hero_image: httpswww.audioadvice.compubmediacatalogproductcacam-edgea.jpg
 available_for_demo: true
@@ -21,7 +25,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/cambridge-audio-edge-integrated-amplifier'
     date_of_review: '2018-12-20'
 title: 'Edge A'
-id: 0857b16a-9b60-4465-8b3c-e94b646e9059
 product-categories: integrated-amplifiers
 system_category: amplification
-blueprint: product
+---
