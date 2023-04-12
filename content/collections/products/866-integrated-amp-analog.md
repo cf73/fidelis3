@@ -45,7 +45,7 @@ description:
       -
         type: text
         text: "\_to take home an 866. It’s everything you could want and more."
-price: 14250
+price: 15500
 show_price: true
 available_to_buy_online: true
 specs:
@@ -258,5 +258,5 @@ system_category: amplification
 local_only: false
 shipping: 200
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656014089
+updated_at: 1681303070
 ---
