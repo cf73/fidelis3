@@ -86,7 +86,7 @@ description:
               -
                 type: text
                 text: "PEAK POWER:\_ 8 OHMS - 250W"
-price: 15750
+price: 17000
 show_price: true
 available_to_buy_online: true
 specs:
@@ -304,5 +304,5 @@ pairs_well_with:
 also_consider:
   - 6c6593bb-326e-44ad-a14b-3272e3fd1540
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656014037
+updated_at: 1681303040
 ---
