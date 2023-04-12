@@ -28,7 +28,7 @@ description:
       -
         type: text
         text: 'But that’s where the similarities end. Where the 2008 was pure excess, the 508 is pure efficiency. As the smallest Boulder in more than two decades, the 508 packs an enormous amount of performance in a single, small chassis. A chassis that is carved from a single block of metal, no less. All of the proper inputs, outputs, and adjustments are here. As is the one constant from every Boulder product since Day One: a stunning level of performance.'
-price: 5250
+price: 5400
 show_price: true
 available_to_buy_online: true
 specs:
@@ -170,5 +170,5 @@ system_category: source
 local_only: false
 shipping: 80
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656014263
+updated_at: 1681303182
 ---
