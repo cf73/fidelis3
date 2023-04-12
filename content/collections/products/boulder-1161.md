@@ -35,7 +35,7 @@ description:
       -
         type: text
         text: ". So you see, it is possible to have everything, even with less.\_\_"
-price: 23000
+price: 24000
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
@@ -173,5 +173,5 @@ system_category: amplification
 local_only: false
 shipping: 300
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656014145
+updated_at: 1681303145
 ---
