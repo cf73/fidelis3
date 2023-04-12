@@ -22,7 +22,7 @@ description:
       -
         type: text
         text: "\_for exceptional ability. Awe-inspiring and modern, yet\_staying true to Boulder’s long-standing guiding principle: maximize\_performance. Every circuit has\_been refined and every mechanical\_detail has been optimized. Everything about the 1160 is\_executed\_to a spectacularly\_high standard. As a result, it is\_exactly what you would expect: brilliant."
-price: 34500
+price: 36000
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
@@ -239,5 +239,5 @@ system_category: amplification
 local_only: false
 shipping: 400
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656014185
+updated_at: 1681303119
 ---
