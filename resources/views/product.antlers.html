@@ -56,6 +56,7 @@
                             <p>Call for more info<br>603-880-4434</p>
                         {{/if}}
 
+                       
                         {{if available_to_buy_online}}
                         <div class="paypal vertical-spacer">
                             {{ if local_only }}
@@ -213,3 +214,16 @@
     </div>
     {{ /if }}
 </div>
+{{if available_to_buy_online}}
+<button class="snipcart-add-item"
+    data-item-id="{{id}}"
+    data-item-url="{{url}}"
+    data-item-price="{{price}}"
+    data-item-description="by {{manufacturer:title}}"
+    data-item-image="{{product_hero_image}}"
+    data-item-name="{{title}}">
+    .
+</button>
+{{else}}
+<p>Not available for online purchase. But come in and check it out!</p>
+{{/if}}
