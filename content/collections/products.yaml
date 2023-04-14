@@ -4,7 +4,7 @@ layout: layout
 taxonomies:
   - product-categories
 revisions: false
-route: 'products/{product-categories}/{slug}'
+route: '/products/{product-categories}/{slug}'
 sort_dir: asc
 inject:
   columns:

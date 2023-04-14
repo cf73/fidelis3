@@ -56,19 +56,8 @@
                             <p>Call for more info<br>603-880-4434</p>
                         {{/if}}
 
+                       
                         {{if available_to_buy_online}}
-                        <button class="snipcart-add-item"
-                            data-item-id="{{id}}"
-                            data-item-price="{{price}}"
-                            data-item-description="by {{manufacturer:title}}"
-                            data-item-image="{{product_hero_image}}"
-                            data-item-name="{{title}}">
-                            Add to cart
-                        </button>
-                        {{else}}
-                        <p>Not available for online purchase. But come in and check it out!</p>
-                        {{/if}}
-                        <!-- {{if available_to_buy_online}}
                         <div class="paypal vertical-spacer">
                             {{ if local_only }}
                             <p>Available for local purchase only. No shipping charge is applied when you order.</p>
@@ -101,7 +90,7 @@
                                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
-                            {{/if}} -->
+                            {{/if}}
                         </div>
                         {{/if}}
                     </div>
@@ -225,3 +214,16 @@
     </div>
     {{ /if }}
 </div>
+{{if available_to_buy_online}}
+<button class="snipcart-add-item"
+    data-item-id="{{id}}"
+    data-item-url="{{url}}"
+    data-item-price="{{price}}"
+    data-item-description="by {{manufacturer:title}}"
+    data-item-image="{{product_hero_image}}"
+    data-item-name="{{title}}">
+    .
+</button>
+{{else}}
+<p>Not available for online purchase. But come in and check it out!</p>
+{{/if}}
