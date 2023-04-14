@@ -1,5 +1,6 @@
 ---
 id: 2284b560-bb12-403a-957f-f4ab4e251649
+published: false
 blueprint: product
 title: 'Audiophile-grade rubber band'
 manufacturer: 1c11d0b2-7e5d-4d06-903b-83261879fb1d
