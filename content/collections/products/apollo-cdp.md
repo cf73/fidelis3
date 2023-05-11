@@ -1,3 +1,7 @@
+---
+id: bb269bbd-f395-4bf9-9368-9a18df099ba4
+published: false
+blueprint: product
 manufacturer: 721789d8-be8d-44cc-9c35-a5c8b27ddb09
 product_hero_image: rega-apollo.jpg
 available_for_demo: true
@@ -18,7 +22,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/rega-research-apollo-cd-player'
     date_of_review: '2018-05-17'
 title: 'Apollo CDP'
-id: bb269bbd-f395-4bf9-9368-9a18df099ba4
 product-categories: cd-players
 system_category: source
-blueprint: product
+---
