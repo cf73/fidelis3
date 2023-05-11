@@ -1,5 +1,6 @@
 ---
 id: ddb73d29-b87d-4190-a68b-b21b327802a1
+published: false
 blueprint: product
 title: MCT80
 manufacturer: 8e3632e0-a274-4666-ace2-130c4832b773
