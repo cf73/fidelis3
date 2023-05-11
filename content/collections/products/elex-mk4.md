@@ -159,6 +159,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1683821891
-product_hero_image: ELEX_MK4_INTRO_2_(1)-1683821884.jpg
+updated_at: 1683821948
+product_hero_image: ELEX_MK4_MOD2_V2_(3).jpg
 ---
