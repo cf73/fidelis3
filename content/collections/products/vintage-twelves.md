@@ -42,139 +42,178 @@ specs:
         marks:
           -
             type: bold
-        text: 'System Type:'
+        text: 'System Type: '
+      -
+        type: text
+        text: '2 way, downwards firing port, with BassTrax Tractrix diffuser'
   -
     type: paragraph
     content:
       -
         type: text
-        text: '2 way, downwards firing port, with BassTrax Tractrix diffuser'
-      -
-        type: text
         marks:
           -
             type: bold
-        text: 'Recommended amplifier power (Watt RMS)'
+        text: 'Recommended amplifier power (Watt RMS): '
       -
         type: text
         text: '20 - 350'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Peak power handling (Watt)'
+        text: 'Peak power handling (Watt): '
       -
         type: text
         text: '700'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Continuous power handling (Watt RMS)'
+        text: 'Continuous power handling (Watt RMS): '
       -
         type: text
         text: '175'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Sensitivity (2.83 Volt @ 1m)'
+        text: 'Sensitivity (2.83 Volt @ 1m): '
       -
         type: text
         text: 96dB
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Nominal impedance'
+        text: 'Nominal impedance: '
       -
         type: text
         text: '8 Ohm'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Frequency response (-6dB typical in room)'
+        text: 'Frequency response (-6dB typical in room): '
       -
         type: text
         text: '24Hz- 26kHz'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Drive unit complement'
+        text: 'Drive unit complement: '
       -
         type: text
         text: '1 x 300mm IsoFlare point source driver, multi-fibre bass / midrange cone, with 75mm titanium alloy dome compression tweeter, neodymium magnet system'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Crossover frequency'
+        text: 'Crossover frequency: '
       -
         type: text
         text: 750Hz
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Crossover type'
+        text: 'Crossover type: '
       -
         type: text
         text: 'Bi-wired passive low loss, 2nd order low pass, 2nd order high pass, Deep Cryogenically Treated'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'System adjustments'
+        text: 'System adjustments: '
       -
         type: text
         text: 'High frequency energy (750Hz - 26kHz) +/- 3dB Presence (2.5kHz - 5.0kHz) +/- 3dB'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Dimensions - HxWxD'
+        text: 'Dimensions - HxWxD: '
       -
         type: text
-        text: '1102 x 572 x 591mm (43.4 x 22.5 x 23.3")'
+        text: '1102 x 572 x 591mm (43.4 x 22.5 x 23.3"'
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Weight - Each'
+        text: 'Weight - Each: '
       -
         type: text
         text: 77.1kg
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: Finishes
+        text: 'Finishes: '
       -
         type: text
         text: Walnut
+  -
+    type: paragraph
+    content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'Cabinet Construction'
+        text: 'Cabinet Construction: '
       -
         type: text
         text: 'Birch ply with oiled walnut and solid walnut trim, extensive internal bracing'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1685027996
+updated_at: 1685028309
 ---
