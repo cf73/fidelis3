@@ -7,7 +7,7 @@ tagline: 'Hand-Made, High Efficiency Music Monitors'
 website: 'https://www.thehereticspeaker.com/'
 product-categories:
   - speakers
-hero_image: MAin-heretic-web.jpg
+hero_image: HEREDICT-FAMILY-1-1.jpg
 description:
   -
     type: heading
@@ -54,5 +54,5 @@ description:
         type: text
         text: ' dream loudspeakers. We kept the void-free, birch multiply construction, bolted twin baffles, Golden number proportions, and duct free venting but added absolute cutting edge drive units and serial crossover topology on Mil specs circuit boards.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1660859371
+updated_at: 1685476127
 ---
