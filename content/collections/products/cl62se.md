@@ -1,7 +1,7 @@
 ---
 id: d3431257-09aa-450d-b152-3353d279ff18
 blueprint: product
-title: CL62SE
+title: 'Classic 62SE'
 manufacturer: e733dd29-2f70-4ac1-b171-1d22f8d82336
 product_hero_image: conrad-johnson-Classic62-beauty-with-cage-1080-16-9-1655923361.jpg
 available_for_demo: true
@@ -88,11 +88,11 @@ description:
           -
             type: bold
         text: 'Those who wish to take the experience a step further will want to investigate the upgraded Classic Sixty-Two SE and Classic One-Twenty SE amplifiers. These special edition versions upgrade the output tubes to KT120s and incorporate CJD Teflon Capacitors and ultra high-performance metal foil resistors in strategic applications in the circuit. Any of the Classic amplifier models are sure to rekindle your passion for enjoying great music in your home.'
-price: 7000
+price: 7500
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 200
+shipping: 150
 pairs_well_with:
   - e33ff794-fdc3-4d03-9e64-eb96d982a610
 product-categories: power-amplifiers
@@ -355,5 +355,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655924053
+updated_at: 1689870414
 ---
