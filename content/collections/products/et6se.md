@@ -140,7 +140,7 @@ description:
           -
             type: bold
         text: 'Arrange to audition one at a Conrad-Johnson dealer to find out for yourself – you’ll be surprised at just how affordable true high-end performance can be.'
-price: 6250
+price: 6750
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -497,7 +497,7 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655929816
+updated_at: 1689870308
 pairs_well_with:
   - d3431257-09aa-450d-b152-3353d279ff18
   - 77f0a3e8-a54a-4e90-ac9a-f4aeba2f5c50
