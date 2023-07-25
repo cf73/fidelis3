@@ -17,7 +17,7 @@ description:
       -
         type: text
         text: "The frérot creates the great audiophile experience for a small budget!\_Equipped with the same technology as its big brother DAC1, it has everything you need to conjure up the music stage in your living room."
-price: 1475
+price: 1650
 show_price: true
 available_to_buy_online: true
 shipping: 40
@@ -30,5 +30,5 @@ product-categories: dacs
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1683819203
+updated_at: 1690307347
 ---
