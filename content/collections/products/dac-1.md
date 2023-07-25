@@ -1,7 +1,7 @@
 ---
 id: 36acdcc0-1173-46f8-bf31-4e2739d4ac9f
 blueprint: product
-title: 'DAC-1 MkII'
+title: 'DAC1 MkII'
 manufacturer: 575687fd-e7e6-4bad-8457-cbd607a7bda9
 product_hero_image: Merason_DAC1_Black_Front.jpg
 available_for_demo: true
@@ -38,7 +38,7 @@ description:
       -
         type: text
         text: 'Made in Switzerland: The manufacture of the housing, the front panel and the control knobs and the printing, component placement, assembly, commissioning and inspection are carried out exclusively in Switzerland.'
-price: 8000
+price: 8750
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -196,5 +196,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1683819170
+updated_at: 1690307489
 ---
