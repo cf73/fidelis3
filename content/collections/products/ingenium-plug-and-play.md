@@ -88,7 +88,7 @@ description:
         text: 'It''s reassuringly an AVID turntable at an affordable price.'
       -
         type: hard_break
-price: 1800
+price: 1999
 show_price: true
 available_to_buy_online: true
 specs:
@@ -219,5 +219,5 @@ system_category: source
 local_only: false
 shipping: 80
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1670614933
+updated_at: 1692386392
 ---
