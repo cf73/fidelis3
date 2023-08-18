@@ -1,4 +1,0 @@
-image: trus---stenheim-rm_012_web.jpg
-title: Stenheim
-id: a0595d09-3746-43ad-b9a3-022594b98fb5
-blueprint: evergreen
