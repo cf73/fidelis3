@@ -81,7 +81,12 @@ ol.breadcrumb {
     border: none;
     color: $earthred;
 }
-
+.carousel-inner {
+    height: 70vh;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+}
 
 .carousel-item {
     height: 60vw;
