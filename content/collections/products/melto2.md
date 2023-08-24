@@ -1,9 +1,38 @@
+---
+id: 4f30d1c7-8f94-4867-82e7-a32e49b25500
+blueprint: product
 manufacturer: 0d4e2b4e-4f8a-43a6-8bf0-41b3c3860de4
 product_hero_image: lab12-melto2-side-frozen-silver.png
 available_for_demo: true
 quote: 'The Lab12 Melto2 phono preamplifier is incredibly easy to own and use, and its music-making abilities border on the effortless.'
 quote_attribution: 'Part Time Audiophile'
-description: '<p>Melto2 is a true full tube and remotely controlled phono-stage with a high-quality OLED display, where all important functions are clearly visible and easily selectable in real time. You don’t even need to get up from your listening chair.<br>Years of experimenting and creating high-end audio devices has allowed us to create what we believe to be the most potent and emotionally engaging phono preamplifier, where no subtle detail is being hidden behind the noise.<br>This full blooded, meticulously crafted, highly adjustable phono-stage offers fine settings for impedance, capacitance, gain and even three EQ curves… and there’s more.<br>Melto2 represents a vinyl enthusiasts’ dream come true with an exceptional sound quality and Lab12’s legendary down to earth pricing.<br>As with all Lab12 products, Melto2 comes with two color choices of glass blasting anodizing finish.&nbsp;&nbsp;</p>'
+description:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Melto2 is a true full tube and remotely controlled phono-stage with a high-quality OLED display, where all important functions are clearly visible and easily selectable in real time. You don’t even need to get up from your listening chair.'
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'Years of experimenting and creating high-end audio devices has allowed us to create what we believe to be the most potent and emotionally engaging phono preamplifier, where no subtle detail is being hidden behind the noise.'
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'This full blooded, meticulously crafted, highly adjustable phono-stage offers fine settings for impedance, capacitance, gain and even three EQ curves… and there’s more.'
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'Melto2 represents a vinyl enthusiasts’ dream come true with an exceptional sound quality and Lab12’s legendary down to earth pricing.'
+      -
+        type: hard_break
+      -
+        type: text
+        text: "As with all Lab12 products, Melto2 comes with two color choices of glass blasting anodizing finish.\_\_"
 price: 4490
 show_price: true
 available_to_buy_online: true
@@ -14,18 +43,152 @@ pairs_well_with:
 also_consider:
   - 12ab58da-d4de-4d49-8e72-3a330afc74d0
   - 62fc87a2-2ecb-40a8-b810-da38d24c7531
-monthly_featuree: false
-specs: '<p>• MM/MC<br>• Full Tube Design<br>• Lundahl Step-up transformers<br>• Full adjustable settings : Cartridge type, Gain, Impedance, Capacitance, Curve, Mono/Stereo Output<br>• Remote control<br>• Toroidal power transformer<br>• No feedback design<br>• SRSG® implementation<br>• Fine symmetry® implementation<br>• 1-minute warm up time<br>• 5mm Aluminum face panel<br>• Five Years Guarantee&nbsp;&nbsp;</p><p>• Power: 230VAC 50Hz (115VAC 60Hz)<br>• Power consumption: 100 VA max<br>• Gain MM: 38dB<br>• Gain MC: 58/64dB<br>• Input impedance: adjustable (25 ohm – 47Kohm)<br>• Input capacitance: adjustable (0-300pF)<br>• Available curve: RIAA, DECCA, Columbia<br>• Tube complement: 2x E88CC dual triode, 2x 6n2p-EV dual triode<br>• Inputs: 3x line stereo (RCA connectors)<br>• Outputs: 2x line stereo (1x RCA connectors, 1x XLR connectors)<br>• Available Colours: Matt Black, Frozen Silver<br>• Dimensions (WxHxD): 43x11x29 cm<br>• Weight: 8 Kg&nbsp;&nbsp;</p>'
-has_files: false
+specs:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '• MM/MC'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Full Tube Design'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Lundahl Step-up transformers'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Full adjustable settings : Cartridge type, Gain, Impedance, Capacitance, Curve, Mono/Stereo Output'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Remote control'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Toroidal power transformer'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• No feedback design'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• SRSG® implementation'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Fine symmetry® implementation'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• 1-minute warm up time'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• 5mm Aluminum face panel'
+      -
+        type: hard_break
+      -
+        type: text
+        text: "• Five Years Guarantee\_\_"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '• Power: 230VAC 50Hz (115VAC 60Hz)'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Power consumption: 100 VA max'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Gain MM: 38dB'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Gain MC: 58/64dB'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Input impedance: adjustable (25 ohm – 47Kohm)'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Input capacitance: adjustable (0-300pF)'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Available curve: RIAA, DECCA, Columbia'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Tube complement: 2x E88CC dual triode, 2x 6n2p-EV dual triode'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Inputs: 3x line stereo (RCA connectors)'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Outputs: 2x line stereo (1x RCA connectors, 1x XLR connectors)'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Available Colours: Matt Black, Frozen Silver'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '• Dimensions (WxHxD): 43x11x29 cm'
+      -
+        type: hard_break
+      -
+        type: text
+        text: "• Weight: 8 Kg\_\_"
 reivews_set:
   -
     type: Review
-    excerpt: '<p>The Lab12 Melto2 phono preamplifier is incredibly easy to own and use, and its music-making abilities border on the effortless.&nbsp;&nbsp;</p>'
+    excerpt:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "The Lab12 Melto2 phono preamplifier is incredibly easy to own and use, and its music-making abilities border on the effortless.\_\_"
     attribution: 'Part Time Audiophile'
     link: 'https://parttimeaudiophile.com/2019/10/06/lab12-melto2-phono-preamplifier-review/'
     date_of_review: '2019-10-06'
+    enabled: true
 title: melto2
-id: 4f30d1c7-8f94-4867-82e7-a32e49b25500
 product-categories: phono-pre-amps
 system_category: source
-blueprint: product
+local_only: false
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1692904005
+---
