@@ -166,9 +166,9 @@ reivews_set:
     enabled: true
 title: '508'
 product-categories: phono-pre-amps
-system_category: source
+system_category: phono-preamplifiers
 local_only: false
 shipping: 80
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1681303182
+updated_at: 1693422786
 ---
