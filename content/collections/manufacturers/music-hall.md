@@ -20,5 +20,7 @@ description:
         type: text
         text: 'Through our partnerships with these respected brands, Music Hall is able to offer a diverse range of audio products, from turntables and phono preamps to headphone amplifiers and record cleaning solutions. With a commitment to exceptional quality and performance, all of our distributed brands share our passion for delivering the best possible audio experience to our customers.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1693504904
+updated_at: 1693505287
+product-categories:
+  - accessories
 ---
