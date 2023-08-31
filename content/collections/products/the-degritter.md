@@ -168,10 +168,10 @@ reivews_set:
     link: 'https://parttimeaudiophile.com/2020/07/05/degritter-ultrasonic-record-cleaning-machine-review/'
     date_of_review: '2020-07-05'
     enabled: true
-title: 'The Degritter'
+title: 'The Degritter MkII'
 product-categories: accessories
 system_category: accessories
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1652461808
+updated_at: 1693505246
 ---
