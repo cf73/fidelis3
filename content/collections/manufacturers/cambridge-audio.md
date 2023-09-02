@@ -17,7 +17,7 @@ product-categories:
   - integrated-amplifiers
   - cd-players
   - server-streaming
-  - phono-pre-amps
+  - phonostage
   - multi-function
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
 updated_at: 1662067986
