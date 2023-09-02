@@ -1,3 +1,6 @@
+---
+id: ebd49a1c-23f9-4922-b30e-b11f76da86ca
+blueprint: product
 manufacturer: 7ba65b16-79c3-47fb-9d6a-995354450369
 product_hero_image: sutherland-littleloco-view2-768x512.jpg
 available_for_demo: true
@@ -18,7 +21,6 @@ reivews_set:
     link: 'https://hometheaterhifi.com/reviews/vinyl/turntable-accessories/sutherland-engineering-little-loco-phono-preamp-review/'
     date_of_review: '2020-07-07'
 title: 'Little Loco'
-id: ebd49a1c-23f9-4922-b30e-b11f76da86ca
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
-blueprint: product
+---
