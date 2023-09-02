@@ -65,7 +65,7 @@ local_only: false
 shipping: 100
 pairs_well_with:
   - 59aa1256-28f0-4c7b-87e6-c5750e2ec8cc
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
 specs:
   -
