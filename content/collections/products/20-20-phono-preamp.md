@@ -1,3 +1,6 @@
+---
+id: 747e1f5e-4df7-4cf1-887b-fe45d9833ce7
+blueprint: product
 manufacturer: 7ba65b16-79c3-47fb-9d6a-995354450369
 product_hero_image: sutherland-2020-hero-1200x500.jpg
 available_for_demo: true
@@ -18,7 +21,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/sutherland-engineering-2020-phono-preamplifier'
     date_of_review: '2020-07-07'
 title: 20/20
-id: 747e1f5e-4df7-4cf1-887b-fe45d9833ce7
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
-blueprint: product
+---
