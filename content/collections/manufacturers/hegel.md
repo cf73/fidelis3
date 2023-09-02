@@ -8,7 +8,7 @@ website: 'https://www.hegel.com/en/'
 product-categories:
   - cd-players
   - integrated-amplifiers
-  - phono-pre-amps
+  - phonostage
   - power-amplifiers
   - pre-amps
 hero_image: H390Front.jpg
