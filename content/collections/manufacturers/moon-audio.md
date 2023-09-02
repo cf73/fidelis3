@@ -23,7 +23,7 @@ product-categories:
   - power-amplifiers
   - server-streaming
   - multi-function
-  - phono-pre-amps
+  - phonostage
   - pre-amps
   - dacs
   - speakers
