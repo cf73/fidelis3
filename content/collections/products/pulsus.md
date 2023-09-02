@@ -200,7 +200,7 @@ reivews_set:
     date_of_review: '2019-07-11'
     enabled: true
 title: Pulsus
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
