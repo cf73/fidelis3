@@ -7,7 +7,7 @@ description: '<p>British made-by-hand miracles.</p>'
 title: LFD
 product-categories:
   - integrated-amplifiers
-  - phono-pre-amps
+  - phonostage
   - interconnects
   - power-cables
   - speaker-cables
