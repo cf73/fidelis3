@@ -7,7 +7,7 @@ tagline: 'SOUND PERFORMANCE – MADE IN GERMANY'
 website: 'https://spl.audio/en/professional-fidelity-en/'
 product-categories:
   - headphone-amplifiers
-  - phono-pre-amps
+  - phonostage
   - power-amplifiers
   - pre-amps
   - dacs
