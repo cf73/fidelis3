@@ -32,7 +32,7 @@ show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 40
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: phono-preamplifiers
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
 updated_at: 1693423787
