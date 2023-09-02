@@ -1,3 +1,6 @@
+---
+id: 62fc87a2-2ecb-40a8-b810-da38d24c7531
+blueprint: product
 manufacturer: 7ba65b16-79c3-47fb-9d6a-995354450369
 product_hero_image: sutherland-insighthero-1024x438.jpg
 available_for_demo: true
@@ -8,7 +11,6 @@ available_to_buy_online: false
 monthly_featuree: false
 has_files: false
 title: Insight
-id: 62fc87a2-2ecb-40a8-b810-da38d24c7531
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
-blueprint: product
+---
