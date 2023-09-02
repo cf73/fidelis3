@@ -7,7 +7,7 @@ tagline: 'Creating the future of analog music'
 website: 'https://ds-audio-w.biz/'
 product-categories:
   - phono-cartridges
-  - phono-pre-amps
+  - phonostage
 hero_image: DS003Cartridge-750x750.jpg
 description:
   -
