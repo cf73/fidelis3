@@ -165,7 +165,7 @@ reivews_set:
     date_of_review: '2020-07-24'
     enabled: true
 title: '508'
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: phono-preamplifiers
 local_only: false
 shipping: 80
