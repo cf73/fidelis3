@@ -1,3 +1,6 @@
+---
+id: bc1ffb00-3fc2-4883-be6e-a026ffb93edf
+blueprint: product
 manufacturer: f56bfec0-f52d-44cf-b10d-5b75fedf4f50
 product_hero_image: lfd-le-.phono_.jpg
 available_for_demo: true
@@ -18,7 +21,6 @@ reivews_set:
     link: 'https://www.stereophile.com/content/lfd-phonostage-le-phono-preamplifier'
     date_of_review: '2011-06-17'
 title: 'Phono Stage LE'
-id: bc1ffb00-3fc2-4883-be6e-a026ffb93edf
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
-blueprint: product
+---
