@@ -9,7 +9,7 @@ product-categories:
   - cd-players
   - dacs
   - integrated-amplifiers
-  - phono-pre-amps
+  - phonostage
   - power-amplifiers
   - pre-amps
 hero_image: DSC02812.jpg
