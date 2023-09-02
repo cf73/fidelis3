@@ -69,7 +69,7 @@ description:
         text: 'Welcome to the 21st Century of vinyl replay.'
 title: AVIDHIFI
 product-categories:
-  - phono-pre-amps
+  - phonostage
   - turntables
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
 updated_at: 1683818764
