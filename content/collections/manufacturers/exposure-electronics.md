@@ -12,7 +12,7 @@ product-categories:
   - cd-players
   - integrated-amplifiers
   - headphone-amplifiers
-  - phono-pre-amps
+  - phonostage
   - power-amplifiers
   - pre-amps
 ---
