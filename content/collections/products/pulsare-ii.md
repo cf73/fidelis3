@@ -209,7 +209,7 @@ specs:
         type: text
         text: 'CONTROL UNIT - 3.8KG (8.4LB) - PSU - 6.4KG (14LB)'
 title: 'Pulsare II'
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
