@@ -19,7 +19,7 @@ show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 50
-product-categories: phono-pre-amps
+product-categories: phonostage
 system_category: amplification
 specs:
   -
