@@ -4,8 +4,34 @@ sections:
     display: Main
     fields:
       -
-        handle: testimonial
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: blurb
         field:
           type: textarea
-          display: Testimonial
-taxonomies: false
+          display: Blurb
+          instructions_position: above
+          listable: hidden
+          antlers: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
