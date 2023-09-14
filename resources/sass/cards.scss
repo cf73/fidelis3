@@ -165,3 +165,47 @@
     margin-left: 30px;
     margin-right: 30px;
 }
+
+.card-testimonial {
+    border-radius: 9px;
+    background-color: $lightgold;
+    width: 100%;
+    position: relative;
+    padding: 30px;
+    height: 100%;
+}
+.swiper {
+    padding-bottom: 30px;
+}
+.swiper-slide {
+    & p {
+        max-width: 90%;
+    }
+}
+// .swiper-slide .news-item {
+//     padding-bottom: 60px;
+// }
+.swiper-pagination-bullet-active {
+    background-color: $brandgold;
+}
+.swiper-button-next {
+    right: 0;
+    top: 30px;
+    left: auto;
+    color: $brandgold;
+    &:after {
+        font-size: 24px;
+    }
+}
+.swiper-button-prev {
+    right: 30px;
+    top: 30px;
+    left: auto;
+    color: $brandgold;
+    &:after {
+        font-size: 24px;
+    }
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px;
+}

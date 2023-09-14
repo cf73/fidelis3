@@ -1,0 +1,64 @@
+<div class="container" id="content-area">
+    <!-- <img id="hero" src="assets/img/store.png"> -->
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <h1 class="vertical-spacer">{{title}}</h1>
+            <p class="vertical-spacer_medium" style="max-width: 700px; margin-left: auto; margin-right: auto;">{{blurb}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="swiper productSwiper spacer" style="padding-top: 78px; margin-top: -78px;">
+            <div class="swiper-wrapper">                                                
+                {{collection:testimonials}}
+                    {{if no_results}}
+                        <p class="light">There are no testimonials currently.</p>                             
+                    {{else}}
+                        <div class="swiper-slide">
+                                <div class="card-testimonial">{{testimonial}}</div>
+                        </div>
+                    {{/if}}
+                {{/collection:testimonials}}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+    var swiper = new Swiper(".productSwiper", {
+      grab: true,
+      navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        540: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+    },
+    });
+  </script>
