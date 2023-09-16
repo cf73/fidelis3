@@ -1,7 +1,7 @@
 ---
 id: ccbe2ee8-656d-493e-87ef-efeaf1dd41e5
 blueprint: manufacturer
-logo: download-(1).png
+logo: download1.png
 tagline: 'PUSHING THE LIMITS OF PERFECTION'
 website: 'https://www.yg-acoustics.com/'
 hero_image: ygacoustic081219107-resize-e1580934135859-1613762407.jpg
@@ -36,5 +36,5 @@ title: 'YG Acoustics'
 product-categories:
   - speakers
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1694894493
+updated_at: 1694894632
 ---
