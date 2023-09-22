@@ -2,7 +2,7 @@
 id: b5571420-68a7-4d2e-9aa5-ac7093c8f4d2
 blueprint: manufacturer
 title: 'Acora Acoustics'
-logo: Acora-Logo.jpg
+logo: Acora-Logo-1695410296.jpg
 tagline: 'Hear The Truth'
 website: 'https://www.acoraacoustics.com/'
 product-categories:
@@ -47,5 +47,5 @@ description:
         type: text
         text: 'We’re perfectionists. At Acora, we use only the finest drivers, crossover components, wiring, binding posts, dampening materials, and screws. Each and every component is hand-picked and screened for quality, first through meticulous measurement, and then by thousands of hours of extensive listening. The integration between all parts must be seamless with musical synergy and transparency. We’re music lovers too. We know that when it comes to audio performance, nothing short of perfection will do.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1695410227
+updated_at: 1695410300
 ---
