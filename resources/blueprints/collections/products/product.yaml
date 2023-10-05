@@ -270,7 +270,6 @@ sections:
         handle: featured
         field:
           inline: false
-          default: 'false'
           display: Featured
           type: checkboxes
           icon: checkboxes
