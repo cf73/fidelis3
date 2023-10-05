@@ -252,6 +252,7 @@ product-categories: dacs
 system_category: source
 local_only: false
 shipping: 160
-updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1679419083
+updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
+updated_at: 1696526963
+featured_in_product_category: true
 ---
