@@ -205,6 +205,7 @@ specs:
               -
                 type: text
                 text: '5 year limited warranty'
-updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1692898231
+updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
+updated_at: 1696527951
+featured_in_product_category: true
 ---
