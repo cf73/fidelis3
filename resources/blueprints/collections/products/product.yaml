@@ -210,6 +210,16 @@ sections:
           display: 'Specs PDF file'
           show_when:
             has_files: '1'
+      -
+        handle: featured
+        field:
+          inline: false
+          default: 'false'
+          display: Featured
+          type: checkboxes
+          icon: checkboxes
+          listable: hidden
+          instructions_position: above
   reviews:
     display: Reviews
     fields:
