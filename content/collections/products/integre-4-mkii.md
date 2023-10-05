@@ -123,6 +123,7 @@ reivews_set:
     link: 'https://www.hifistatement.net/tests/item/3355-lab-12-integre4-mk2?start=0'
     type: Review
     enabled: true
-updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1692905122
+updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
+updated_at: 1696528619
+featured_in_product_category: true
 ---
