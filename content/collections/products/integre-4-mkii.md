@@ -124,6 +124,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1696528619
-featured_in_product_category: true
+updated_at: 1696528707
+featured_in_product_category: false
 ---
