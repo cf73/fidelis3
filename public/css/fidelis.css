@@ -716,6 +716,18 @@ nav a:hover {
   padding-bottom: 30px;
 }
 
+.featured-carda:hover {
+  color: inherit;
+}
+
+.featured-card {
+  min-height: 300px;
+  width: 100%;
+  border: solid thin #A19A86;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
 .cardImage {
   border-radius: 6px;
 }

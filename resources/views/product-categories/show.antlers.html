@@ -18,6 +18,32 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-sm-12">
+            {{collection:products product-categories:contains="{slug}" featured_in_product_category:is="true" limit="1"}}
+                {{if no_results}}
+                {{else}}
+                <a href="{{url}}">
+                    <div class="featured-card vertical-spacer_medium">
+                        <div class="row" style="height: 100%;">
+                            <div class="col-lg-5" style="display: flex; flex-direction: column; align-items: left; justify-content: center; height: 100%; padding: 30px 60px; z-index: 99;">
+                                <h4 class="title earth-black">Featured</h4>
+                                <h1 style="text-align: left;">{{title}}</h1>
+                                {{if quote}}
+                                <h2 class="goldtext">{{quote}}</h2>
+                                {{/if}}
+                                <h4 class="goldtext">{{quote_attribution}}</h4>
+                            </div>
+                            <div class="col-lg-7" style="background-image: url({{product_hero_image}}); background-size: contain; background-repeat: no-repeat; background-position: center;
+                            ">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {{/if}}
+            {{/collection:products}}
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             <div role="tablist" id="accordion" style="display: block;">
                 {{collection:manufacturers product-categories:contains="{slug}"}}

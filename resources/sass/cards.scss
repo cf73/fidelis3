@@ -139,6 +139,18 @@
     padding-right: 15px;
     padding-bottom: 30px;
 }
+.featured-card {
+    &a:hover {
+        color: inherit;
+    }
+}
+.featured-card {
+    min-height: 300px;
+    width: 100%;
+    border: solid thin $brandgold;
+    border-radius: 9px;
+    overflow: hidden;
+}
 
 
 
