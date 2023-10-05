@@ -267,11 +267,11 @@ sections:
           type: slug
           localizable: true
       -
-        handle: featured
+        handle: featured_in_product_category
         field:
-          inline: false
-          display: Featured
-          type: checkboxes
-          icon: checkboxes
+          default: false
+          display: 'Featured in product category'
+          type: toggle
+          icon: toggle
           listable: hidden
           instructions_position: above
