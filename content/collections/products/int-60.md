@@ -2,7 +2,7 @@
 id: cd61c74f-80d9-4298-b509-a623ccb6379a
 blueprint: product
 manufacturer: f33484db-072d-4ee3-8830-885841bd0144
-product_hero_image: int-60_31.png
+product_hero_image: 1216pass.promo_-1697146055.jpg
 available_for_demo: true
 description:
   -
@@ -20,5 +20,8 @@ system_category: amplification
 local_only: false
 featured_in_product_category: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1697145743
+updated_at: 1697146059
+quote: 'It did everything right—or, at least, what I imagine "right" to be. It transcended all notions of tubes vs solid-state. It was everything I expected from the House of Taoist Masters, aka Pass Laboratories, Inc., and much more.'
+quote_attribution: Stereophile
+shipping: 200
 ---
