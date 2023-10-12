@@ -5,8 +5,8 @@ title: 'Director MkII'
 manufacturer: acf161da-7e67-422e-8398-0e869e7d70d6
 product_hero_image: Director-MK2_front_black_2560__23164.jpg
 available_for_demo: false
-quote: 'The tonal balance was convincing and conveyed a gripping listening experience, characterized by many details in the voice and again and again surprising fine dynamics.'
-quote_attribution: 'HiFi Statement'
+quote: 'The SPL DIRECTOR MK2 is a sonic powerhouse that combines musicality with a modern/retro design; a state-of-the-art DAC with cool-looking VU meters. Though I can’t claim VOLTAiR technology is the secret sauce, it certainly did not hinder the music from sounding its very best.'
+quote_attribution: 'Secrets of Home Theater and Hi-Fidelity'
 description:
   -
     type: paragraph
@@ -40,5 +40,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1677703896
+updated_at: 1697148077
+featured_in_product_category: true
 ---
