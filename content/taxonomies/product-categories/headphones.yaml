@@ -6,12 +6,5 @@ blueprint: product_category
 feature_a_product: true
 product: 40113a77-84cd-4591-a1ae-f43c07aa4d62
 updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1697159680
-add_custom_featured_text: true
-featured_product_text:
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Custom text'
+updated_at: 1697159795
+add_custom_featured_text: false
