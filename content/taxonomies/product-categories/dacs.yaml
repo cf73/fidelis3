@@ -4,3 +4,8 @@ feature_on_homepage: true
 title: 'DAC''s'
 system_category: source
 blueprint: product_category
+feature_a_product: true
+product: 28bc46cc-646b-4b5e-b8c0-5a38e8d5e90b
+add_custom_featured_text: false
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1697206396
