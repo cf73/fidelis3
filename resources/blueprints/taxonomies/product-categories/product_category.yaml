@@ -68,6 +68,8 @@ sections:
           instructions: 'Choose the product to feature in this category'
           listable: hidden
           instructions_position: above
+          if:
+            feature_a_product: 'equals true'
       -
         handle: add_custom_featured_text
         field:
@@ -77,6 +79,8 @@ sections:
           icon: toggle
           listable: hidden
           instructions_position: above
+          if:
+            feature_a_product: 'equals true'
       -
         handle: featured_product_text
         field:
