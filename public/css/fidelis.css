@@ -791,7 +791,3 @@ nav a:hover {
 .swiper-button-prev:after {
   font-size: 24px;
 }
-
-.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: 0px;
-}

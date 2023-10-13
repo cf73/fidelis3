@@ -58,27 +58,22 @@
             {{/if}}
         </div>  
         <div class="col-md-7">
-            <div id="pre-owned-carousel">
-                <div class="carousel slide carousel-fade vertical-spacer" data-ride="carousel" id="carousel-1">
-                    <div class="carousel-inner" role="listbox">
-                        {{ images }}
-           
-                            <div class="carousel-item {{if first}} active {{/if}}" style="height:auto; border-radius: 6px; overflow: hidden;">
-                                <img width="100%" src="{{url}}" alt="{{title}}">
+            <div class="swiper productSwiper spacer" style="padding-top: 78px; margin-top: -78px;">
+                <div class="swiper-wrapper">                                                
+                    {{images}}
+                        {{if no_results}}
+                            <p class="light">There are no images of this item currently.</p>                             
+                        {{else}}
+                            <div class="swiper-slide">
+                                <img width="100%" src="{{url}}" style="border-radius: 6px;" alt="{{title}}">
                             </div>
-                            {{/images}}
-                    </div>
-                    
-                    <ol class="carousel-indicators">
-                        
-                        {{images}}
-                        <li data-target="#carousel-1" data-slide-to="{{increment from='0'}}" class="{{ if first }}active{{ /if }}"></li>
-                        {{/images}}
-                    </ol>
+                        {{/if}}
+                    {{/images}}
                 </div>
-                
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-            
         </div>   
     </div>
     <div class="row">
@@ -118,3 +113,40 @@
         </div>
     </div>
 </div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+   var swiper = new Swiper(".productSwiper", {
+     grab: true,
+     navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+       },
+     grabCursor: true,
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+     breakpoints: {
+       540: {
+         slidesPerView: 1,
+         spaceBetween: 30,
+       },
+       768: {
+         slidesPerView: 1,
+         spaceBetween: 30,
+       },
+       992: {
+         slidesPerView: 1,
+         spaceBetween: 30,
+       },
+       1200: {
+         slidesPerView: 1,
+         spaceBetween: 30,
+       },
+   },
+   });
+ </script>
