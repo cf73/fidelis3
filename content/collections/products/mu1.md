@@ -5,8 +5,8 @@ title: MU1
 manufacturer: 9cc8b9f9-436e-4f04-ba6c-378ae97dc82e
 product_hero_image: grimm_mu1_2023_small-1692896590.jpg
 available_for_demo: true
-quote: 'MU1 is Digital Nirvana'
-quote_attribution: 'SteveHuff Reviews'
+quote: 'It is supremely transparent, easily able to resolve the most dense passages, movements and songs, and it lifts prodigious amounts of detail, most especially via its AES/EBU (4x) output. It is also natural and richly musical in a way that makes it compelling and immersive and fluid as if an analog rendering.'
+quote_attribution: 'AudioKey Reviews'
 description:
   -
     type: paragraph
@@ -163,12 +163,15 @@ reivews_set:
         content:
           -
             type: text
-            text: 'MU1 is Digital Nirvana'
-    attribution: 'SteveHuff Reviews'
-    link: 'https://www.stevehuffphoto.com/2022/07/24/the-grimm-mu1-review-the-magic-audiophile-streamer/'
+            marks:
+              -
+                type: bold
+            text: 'It is supremely transparent, easily able to resolve the most dense passages, movements and songs, and it lifts prodigious amounts of detail, most especially via its AES/EBU (4x) output. It is also natural and richly musical in a way that makes it compelling and immersive and fluid as if an analog rendering. There is also a gravitas or weight, if you will, that brings forth palpability—fully fleshed out/real performers and performances. The Grimm Audio MU1’s combined strengths make it quite a formidable streamer.'
+    attribution: 'AudioKey Reviews'
+    link: 'https://www.audiokeyreviews.com/the-reviews/grimm-audio-mu1'
     type: Review
     enabled: true
-updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1696525443
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1697147488
 featured_in_product_category: true
 ---
