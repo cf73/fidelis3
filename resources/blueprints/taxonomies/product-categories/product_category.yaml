@@ -110,4 +110,5 @@ sections:
           instructions_position: above
           if:
             add_custom_featured_text: 'equals true'
+            feature_a_product: 'equals true'
 taxonomies: true
