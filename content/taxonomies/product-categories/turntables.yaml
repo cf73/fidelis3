@@ -5,4 +5,7 @@ title: Turntables
 system_category: source
 blueprint: product_category
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1649880055
+updated_at: 1697224622
+feature_a_product: true
+product: 0a78e5fc-24e2-4c22-a65f-17d836a1cd5b
+add_custom_featured_text: false
