@@ -68,4 +68,42 @@ sections:
           instructions: 'Choose the product to feature in this category'
           listable: hidden
           instructions_position: above
+      -
+        handle: add_custom_featured_text
+        field:
+          default: false
+          display: 'Add custom Featured Text?'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+      -
+        handle: featured_product_text
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: 'Featured product text'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          if:
+            add_custom_featured_text: 'equals true'
 taxonomies: true
