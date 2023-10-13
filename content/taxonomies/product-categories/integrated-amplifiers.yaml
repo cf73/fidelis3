@@ -4,5 +4,8 @@ callname: Amplifiers
 title: 'Integrated Amplifiers'
 system_category: amplification
 blueprint: product_category
-updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1681059855
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1697207900
+feature_a_product: true
+product: cd61c74f-80d9-4298-b509-a623ccb6379a
+add_custom_featured_text: false
