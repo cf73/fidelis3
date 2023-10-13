@@ -148,18 +148,6 @@ sections:
           validate: required
           taxonomies:
             - system_category
-      -
-        handle: monthly_featuree
-        field:
-          type: revealer
-          display: 'Monthly feature?'
-      -
-        handle: featured_description
-        field:
-          type: textarea
-          display: 'Monthly feature description'
-          show_when:
-            monthly_featuree: '1'
   specs:
     display: Specs
     fields:
