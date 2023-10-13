@@ -4,6 +4,13 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: category_description
         field:
           type: textarea
@@ -25,4 +32,40 @@ sections:
           display: 'System Category'
           taxonomies:
             - system_category
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          validate:
+            - required
+  featured_in_product_category:
+    display: 'Featured in Product Category'
+    fields:
+      -
+        handle: feature_a_product
+        field:
+          default: false
+          display: 'Feature a product?'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+      -
+        handle: product
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - products
+          display: Product
+          type: entries
+          icon: entries
+          instructions: 'Choose the product to feature in this category'
+          listable: hidden
+          instructions_position: above
 taxonomies: true
