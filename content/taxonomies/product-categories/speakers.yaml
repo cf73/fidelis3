@@ -4,3 +4,8 @@ feature_on_homepage: true
 title: Speakers
 system_category: speakers
 blueprint: product_category
+feature_a_product: true
+product: dd3273dc-a9d3-4fcf-9463-174850cb58b8
+add_custom_featured_text: false
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1697205902
