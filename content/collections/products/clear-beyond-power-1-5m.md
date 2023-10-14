@@ -3,7 +3,7 @@ id: 161911c4-fc46-4fdd-82f4-55c541b11ff7
 blueprint: product
 title: 'Clear Beyond Power 1.5M'
 manufacturer: b5cd6fa7-56d5-47e2-bc9c-dc6d35811c0f
-product_hero_image: CLEAR-POWER-w-E5-Connectors--Coil-Image-for-web-2.webp
+product_hero_image: Clear-beyond-power-for-web.webp
 available_for_demo: true
 quote: 'Putting in the Cardas removed the edge, and added more ambience – longer decay at the end of musical notes.'
 quote_attribution: 'Stereo Times'
@@ -106,5 +106,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1697303103
+updated_at: 1697303236
 ---
