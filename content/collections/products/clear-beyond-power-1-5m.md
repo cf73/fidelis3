@@ -13,7 +13,7 @@ description:
     content:
       -
         type: text
-        text: 'A reference level power cable that applies all the lessons learned over 25 years of developing high performance power cables; it was born from the ashes of the highly successful Golden Reference Power. Completely neutral tonal balance with additional filtering which increases dynamics. Large conductors make it suitable for those power hungry electronics and refined enough to power your more delicate source components.'
+        text: 'To create Clear Beyond Power XL, we took our very popular Clear Beyond Power, and scaled everything up. Bigger conductors, better shielding and improved noise filtering. We then added yet another level of noise filtration, extending the path to ground to three times the length of the cable itself through a simple and graceful geometry that could only come from the mind of George Cardas. This is our most sophisticated power cable ever, and is designed to provide the largest, most power hungry amplifiers with clean, high current, while also giving sensitive source components the stable, clear and noise free power they require for the absolute highest fidelity. Terminated with our all new premium Cardas E-5 connectors, featuring silver/rhodium plated copper contact surfaces, Clear Beyond Power XL is designed for the most demanding electronics.'
   -
     type: paragraph
     content:
@@ -28,10 +28,10 @@ description:
         marks:
           -
             type: bold
-        text: "Standard Terminations:\_"
+        text: 'Standard Terminations:'
       -
         type: text
-        text: 'Soldered and crimped Cardas power plugs with silver/rhodium plated solid copper contacts.'
+        text: "\_Soldered and crimped Cardas E-5 premium power plugs with silver/ rhodium plated solid copper contacts. Terminated by hand in Bandon, Oregon."
   -
     type: paragraph
     content:
@@ -49,16 +49,14 @@ description:
         text: "Design/Construction:\_"
       -
         type: text
-        text: 'Conductors: Grade 1, 99.9999% pure oxygen free copper, gauge sizes scaled to Golden Ratio proportions. Crossfield layer geometry, insulated in a PFA jacket. Geometry: Double shielded with tin plated copper and'
-  -
-    type: paragraph
-    content:
+        text: 'Conductors: Grade 1, 99.9999% pure oxygen free tin plated copper, gauge sizes scaled to Golden Ratio proportions. Cross-field layer geometry, insulated in a TPE jacket.'
+      -
+        type: hard_break
       -
         type: text
-        text: 'magnet wire. Twisted triad mixed with PE air tubes bound with PTFE tape wrap. Super flexible TPR jacket.'
-  -
-    type: paragraph
-    content:
+        text: 'Each conductor has multiple lay lengths and has it’s own shield.'
+      -
+        type: hard_break
       -
         type: text
         text: "\_"
@@ -70,21 +68,10 @@ description:
         marks:
           -
             type: bold
-        text: "Gauge:\_"
+        text: 'Geometry:'
       -
         type: text
-        text: '3x11.5 AWG'
-      -
-        type: hard_break
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: 'Outside Diameter:'
-      -
-        type: text
-        text: "\_0.610”/15.49mm"
+        text: "\_Entire cable is double shielded with tin plated copper and magnet wire. Twisted triad mixed with PVC air tubes bound with FEP tape wrap. Super flexible TPR outer jacket. Filtration: A torodial ground filter is built into the termination and works in unison with a ground leg extension system."
 price: 1300
 show_price: true
 available_to_buy_online: true
@@ -106,5 +93,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1697303236
+updated_at: 1697303494
 ---
