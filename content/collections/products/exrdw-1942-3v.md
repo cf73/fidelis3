@@ -1,7 +1,7 @@
 ---
 id: 3c76dff7-bf87-46b3-b64a-7454dada64f9
 blueprint: product
-title: EXRDW-1942-3V
+title: EXRD-1942-3V
 manufacturer: a11fed17-2ae8-4d83-b608-f1a5ba54e07d
 product_hero_image: Black-EXRDW-1942-3V-Front-MT.jpg
 available_for_demo: true
@@ -115,5 +115,5 @@ shipping: 600
 product-categories: racks
 system_category: accessories
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1698257866
+updated_at: 1698259749
 ---
