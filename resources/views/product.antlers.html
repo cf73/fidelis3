@@ -56,43 +56,20 @@
                             <p>Call for more info<br>603-880-4434</p>
                         {{/if}}
 
-                       
                         {{if available_to_buy_online}}
-                        <div class="paypal vertical-spacer">
-                            {{ if local_only }}
-                            <p>Available for local purchase only. No shipping charge is applied when you order.</p>
-                             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_xclick">
-                                <input type="hidden" name="business" value="info@fidelisav.com">
-                                <input type="hidden" name="lc" value="US">
-                                <input type="hidden" name="item_name" value="{{title}}">
-                                <input type="hidden" name="amount" value="{{price}}">
-                                <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="button_subtype" value="services">
-                                <input type="hidden" name="no_note" value="0">
-                                <input type="hidden" name="shipping" value="0">
-                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            {{ else }}
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_xclick">
-                                <input type="hidden" name="business" value="info@fidelisav.com">
-                                <input type="hidden" name="lc" value="US">
-                                <input type="hidden" name="item_name" value="{{title}}">
-                                <input type="hidden" name="amount" value="{{price}}">
-                                <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="button_subtype" value="services">
-                                <input type="hidden" name="no_note" value="0">
-                                <input type="hidden" name="shipping" value="{{shipping}}">
-                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            {{/if}}
-                        </div>
+                        <button class="snipcart-add-item"
+                            data-item-id="{{id}}"
+                            data-item-url="{{url}}"
+                            data-item-price="{{price}}"
+                            data-item-description="by {{manufacturer:title}}"
+                            data-item-image="{{product_hero_image}}"
+                            data-item-name="{{title}}">
+                            Buy Now
+                        </button>
+                        {{else}}
+                        <p>Not available for online purchase. But come in and check it out!</p>
                         {{/if}}
+                       
                     </div>
                 </div>
             </div>
@@ -214,16 +191,3 @@
     </div>
     {{ /if }}
 </div>
-{{if available_to_buy_online}}
-<button class="snipcart-add-item"
-    data-item-id="{{id}}"
-    data-item-url="{{url}}"
-    data-item-price="{{price}}"
-    data-item-description="by {{manufacturer:title}}"
-    data-item-image="{{product_hero_image}}"
-    data-item-name="{{title}}">
-    .
-</button>
-{{else}}
-<p>Not available for online purchase. But come in and check it out!</p>
-{{/if}}
