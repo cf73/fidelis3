@@ -6,7 +6,7 @@
                 <nav class="navbar navbar-light navbar-expand-lg">
                     <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav" style="align-items: center;">
                                 {{ nav from="/" include_home="false" is_hidden:isnt="true" scope="tag" }}
                                     <li {{ if is_current or is_parent }} class="active"{{ /if }}>
                                         <a href="{{ url }}">
@@ -16,6 +16,7 @@
                                         </a>
                                     </li>
                                 {{ /nav }}
+                                <i class="las la-shopping-cart snipcart-checkout" style="font-size: 24px; margin-left: 30px; cursor: pointer;"></i> 
                             </ul>
                         </div>
                     
