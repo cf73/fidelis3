@@ -1,12 +1,4 @@
 ---
-id: 5dbb9d91-056a-4dc4-b211-36450abafa02
-published: false
-blueprint: manufacturer
-logo: logo2.png
-tagline: 'Dynaudio sound and speakers'
-website: 'https://www.dynaudio.com'
-description: '<p><strong>We always strive to be authentic<br></strong>We want the sound of our loudspeakers to be as effortless and natural as the musical instrument would be playing in your room.</p>'
-title: Dynaudio
-product-categories:
-  - speakers
+id: e4911051-a957-465a-9064-d88b1a999f6a
+blueprint: default
 ---
