@@ -2,7 +2,7 @@
 id: 2592f450-8a06-4e0f-b5d2-e91a70c2a3d2
 blueprint: manufacturer
 title: Accuphase
-logo: acc_logo.png
+logo: Accuphase-laboratory-inc-vector-logo.png
 tagline: 'enrich life through technology'
 website: 'https://www.accuphase.com/index.html'
 product-categories:
@@ -32,5 +32,5 @@ description:
         type: text
         text: 'world-leading technology and fair marketing practices'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1702742924
+updated_at: 1702743015
 ---
