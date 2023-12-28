@@ -1,5 +1,6 @@
 ---
 id: 2d4462ce-e555-48e6-8858-18d3882e980b
+published: false
 blueprint: manufacturer
 logo: avid_hifi_logo_600x600_42f52743-1ea7-4b0d-9006-6fff31f5571c.png
 tagline: '"The Truth, nothing more, nothing less"'
