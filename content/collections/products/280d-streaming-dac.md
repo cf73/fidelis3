@@ -79,10 +79,8 @@ available_to_buy_online: true
 shipping: 80
 pairs_well_with:
   - 67b7418a-5621-4264-8f30-eb27f32d2a6c
-  - 29af6786-c07e-4b4a-95f0-bde52369b8c6
-  - af8fed97-b8ef-4256-bfff-10ae6563b313
 also_consider:
-  - e0228efe-38ed-4f25-970f-af9a31bcd820
+  - 30133d71-d164-4b8f-ae07-cfa1ca1d5227
 specs:
   -
     type: bullet_list
@@ -246,5 +244,6 @@ title: 280D
 product-categories: dacs
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644360428
+updated_at: 1703783431
+local_only: false
 ---
