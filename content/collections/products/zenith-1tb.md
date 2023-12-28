@@ -10,15 +10,12 @@ show_price: true
 available_to_buy_online: true
 shipping: 80
 pairs_well_with:
-  - e2111089-c644-4394-b030-a85fc0dcd27c
   - 28bc46cc-646b-4b5e-b8c0-5a38e8d5e90b
-  - 77ba446b-cef2-4b08-84a0-af4e1ef4d7b7
-also_consider:
-  - 29af6786-c07e-4b4a-95f0-bde52369b8c6
+  - 30133d71-d164-4b8f-ae07-cfa1ca1d5227
 product-categories: server-streaming
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644421132
+updated_at: 1703783003
 quote: 'The Zenith Mk3 delivers a potent and flexible spec with one of the best interfaces going and is compatible with Roon front ends. The price maybe high, but it delivers an outstanding performance that will inspire confidence even for those starting out in network audio, and so should be near the top of any shortlist.'
 quote_attribution: 'Hi-Fi Choice'
 description:
@@ -68,4 +65,5 @@ description:
       -
         type: text
         text: '⦿ Medical-Grade Mains Filter'
+local_only: false
 ---
