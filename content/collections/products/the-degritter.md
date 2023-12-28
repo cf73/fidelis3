@@ -66,7 +66,7 @@ description:
       -
         type: text
         text: ', which provides better cavitation energy and power distribution. Degritter is the only cleaning solution on the market working at 120kHz and having the Frequency Sweep feature.'
-price: 3250
+price: 3280
 show_price: true
 available_to_buy_online: true
 shipping: 75
@@ -173,5 +173,5 @@ product-categories: accessories
 system_category: accessories
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1693505246
+updated_at: 1703803683
 ---
