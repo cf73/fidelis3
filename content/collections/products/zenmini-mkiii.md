@@ -13,18 +13,18 @@ description:
       -
         type: text
         text: "Our gateway server with all the full benefits of innuOS, now with improved connectivity and an upgraded path for even greater flexibility. Ideal for simple integration into multi-room systems or for those making the first step to a dedicated audio server.\_\_"
-price: 1399
+price: 1649
 show_price: true
 available_to_buy_online: true
 shipping: 40
 also_consider:
   - c73bb071-a4e4-4b86-b72d-cf2309c11e7a
-  - 29af6786-c07e-4b4a-95f0-bde52369b8c6
 title: 'ZENmini MkIII 1TB'
 product-categories: server-streaming
 system_category: source
 pairs_well_with:
   - acbca60a-e96f-415b-b61d-f17553503e8a
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1644420600
+updated_at: 1708704035
+local_only: false
 ---

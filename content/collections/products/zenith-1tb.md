@@ -5,7 +5,7 @@ title: 'ZENith MkIII 1TB'
 manufacturer: 236454e8-3435-4850-9539-4399e0916f07
 product_hero_image: Innuos-ZENith-Mk3-Black-Perspective.jpg
 available_for_demo: true
-price: 4699
+price: 6299
 show_price: true
 available_to_buy_online: true
 shipping: 80
@@ -15,7 +15,7 @@ pairs_well_with:
 product-categories: server-streaming
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1703783003
+updated_at: 1708704071
 quote: 'The Zenith Mk3 delivers a potent and flexible spec with one of the best interfaces going and is compatible with Roon front ends. The price maybe high, but it delivers an outstanding performance that will inspire confidence even for those starting out in network audio, and so should be near the top of any shortlist.'
 quote_attribution: 'Hi-Fi Choice'
 description:
