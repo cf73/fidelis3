@@ -41,7 +41,7 @@ description:
       -
         type: text
         text: 'Pricing is for cherry finish - other finish options available for an additional upcharge.'
-price: 22500
+price: 18990
 show_price: true
 available_to_buy_online: false
 shipping: 0
@@ -235,5 +235,5 @@ system_category: speakers
 local_only: false
 featured_in_product_category: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1696546023
+updated_at: 1715104114
 ---
