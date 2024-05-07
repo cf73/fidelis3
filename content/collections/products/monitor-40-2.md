@@ -44,7 +44,7 @@ description:
 price: 18990
 show_price: true
 available_to_buy_online: false
-shipping: 0
+shipping: 300
 pairs_well_with:
   - 72d5e848-86b9-4b26-9b65-311b35ae5033
   - 7dca9ae6-be2c-44ca-ab82-75be4504edd5
@@ -235,5 +235,5 @@ system_category: speakers
 local_only: false
 featured_in_product_category: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1715104114
+updated_at: 1715104830
 ---
