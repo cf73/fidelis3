@@ -1,5 +1,6 @@
 ---
 id: 3e372244-ab10-4eb1-b0c5-4b201872e363
+published: false
 blueprint: manufacturer
 title: 'DS Audio'
 logo: download.png
