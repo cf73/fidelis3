@@ -52,8 +52,21 @@
                     <div class="col-md-6 col-lg-4">
                         <h3 class="brandgold">Contact Us</h3><br>
                         <p>phone: {{phone_number}}</p>
-                        <p>fax: {{fax_number}}</p>
-                        <p>email: {{email}}</p>
+                        <p>email: 
+                            <script type="text/javascript">
+                                // Define the parts of the email address
+                                var user = 'marc';
+                                var domain = 'fidelisav';
+                                var element = '.com';
+                            
+                                // Combine the parts to form the email address
+                                var email = user + '@' + domain + element;
+                            
+                                // Write the email address to the page
+                                document.write('<a style="color: #dddddd; text-decoration: underline !important;" href="mailto:' + email + '">' + email + '</a>');
+                            </script>
+                            
+                        </p>
                     </div>
                 </div>
             </footer>
