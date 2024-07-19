@@ -13,13 +13,13 @@ description:
       -
         type: text
         text: "Homage Tradition collection is a new tribute to the mastery of Italian violin-making; the now classic lute shape, the hallmark of Sonus Faber production, has been revisited and taken to new heights by embodying both the classic lines of the Homage collection and those of the Lilium cabinet, thus giving new volumes to the speakers of this collection.\_\_"
-price: 32500
+price: 36000
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 pairs_well_with:
   - 30fa5e60-93eb-4e4f-a9df-ae5eea7ec840
-  - 6522a8d1-0a86-461c-9e9b-d26d2071d758
   - 9f2ad4bf-d1c2-4125-a661-9e24eabb7dc0
+  - 85b80b1b-c6aa-457b-b38c-34943fc784f4
 specs:
   -
     type: heading
@@ -171,10 +171,15 @@ reivews_set:
     link: 'http://www.hifiplus.com/articles/sonus-faber-amati-homage-tradition-floorstanding-loudspeaker/'
     date_of_review: '2018-10-31'
     enabled: true
-title: 'Amati Tradition'
+title: 'Amati G5'
 product-categories: speakers
 system_category: speakers
-local_only: true
+local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405216
+updated_at: 1721400865
+shipping: 600
+also_consider:
+  - b03dfc2f-7124-494c-811c-2ae90003b3c5
+  - 26a6edd0-f71b-4f8f-98fb-588b9268c4ad
+  - 05c1df05-292e-414b-9728-b168e4c11e01
 ---
