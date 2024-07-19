@@ -21,17 +21,15 @@ description:
       -
         type: text
         text: 'The natural evolution of today’s Sonus faber, is enclosed in this new creation. Minima Amator II is the restatement of a fundamental product first introduced in 1992 when the company was establishing key principles that would go on to guide future productions: accurate design and high-quality materials, combined to obtain a sound reproduction as natural as possible.'
-price: 4500
+price: 5000
 show_price: true
-available_to_buy_online: false
-shipping: 60
+available_to_buy_online: true
+shipping: 120
 pairs_well_with:
   - f68da2f0-4c64-4a85-b435-5d5ca4a14768
   - 535bc488-1918-4fc1-984c-22a73c530548
   - 40b975f0-95bc-48c6-90cd-8120220a2b1b
-  - ef0c429f-c073-49ce-9a35-6eea338f5af3
-also_consider:
-  - f270191a-6267-460c-b015-d37e1222c929
+  - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
 specs:
   -
     type: heading
@@ -182,7 +180,7 @@ reivews_set:
 title: 'Minima Amator II'
 product-categories: speakers
 system_category: speakers
-local_only: true
+local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405638
+updated_at: 1721401289
 ---
