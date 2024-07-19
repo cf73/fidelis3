@@ -157,7 +157,7 @@ description:
         text: '67.6 Ibs. ea. – net weight'
 price: 11000
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 specs:
   -
     type: bullet_list
@@ -300,7 +300,15 @@ reivews_set:
 title: 'Olympica Nova II'
 product-categories: speakers
 system_category: speakers
-local_only: true
+local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405565
+updated_at: 1721401951
+shipping: 400
+pairs_well_with:
+  - 919721d8-f7b0-422c-9991-4bff538c0c97
+  - 90abe46b-c828-4671-b388-7f3b6fa98119
+  - 9f7f41a3-b287-4c08-a45f-0cd398b69154
+  - cd61c74f-80d9-4298-b509-a623ccb6379a
+also_consider:
+  - b6fce1ee-b1e1-419a-93fe-94854fb53129
 ---
