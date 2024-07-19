@@ -1,26 +1,203 @@
+---
+id: 53d28a5f-62dd-4a3a-b2dd-e26a27116a3a
+blueprint: product
 manufacturer: 5dbba480-954d-4ffe-9bac-7cf8d2a8359f
 product_hero_image: 202101_sonus_front_back_600h.png
 available_for_demo: true
 quote: 'The Heritage Collection Maxima Amator is a pure distillation of what Sonus Faber is all about: beautiful objects that re-create beautiful music.'
 quote_attribution: Soundstage!
-description: '<p>&nbsp;As the third member of the Heritage family, we pay homage to our Italian roots<br>and to our artisans as well as the people who are responsible for developing Sonus Faber products.<br>Completely Made in Italy, Maxima Amator is a project started many years ago and abandoned because considered impossible. Today, we achieve that dream: a two-way floor stander concept applied to a solid wood cabinet.&nbsp;&nbsp;</p>'
-price: 15000
+description:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "\_As the third member of the Heritage family, we pay homage to our Italian roots"
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'and to our artisans as well as the people who are responsible for developing Sonus Faber products.'
+      -
+        type: hard_break
+      -
+        type: text
+        text: "Completely Made in Italy, Maxima Amator is a project started many years ago and abandoned because considered impossible. Today, we achieve that dream: a two-way floor stander concept applied to a solid wood cabinet.\_\_"
+price: 16000
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 also_consider:
-  - 78e941b4-eced-402c-a7f5-a28f4fffdf1d
+  - f19d1caa-4600-447e-8ea8-c368ebf0bc08
+  - 901c8b37-6094-4a32-a898-2f36b231941a
+  - b6fce1ee-b1e1-419a-93fe-94854fb53129
+  - 90737908-cf3d-4668-8dab-c7ec40dc3ee8
 monthly_featuree: false
-specs: '<h4>SYSTEM</h4><p>2-way floorstanding vented loudspeaker system</p><h4>LOUDSPEAKERS</h4><p>Tw: H28 XTR-04 DAD™, Ø 28 mm / 1,1 in<br>Mw: MW18XTR-04, Ø 180 mm / 7 in</p><h4>CROSSOVER</h4><p>2.100 Hz</p><h4>FREQUENCY RESPONSE</h4><p>35 Hz – 35.000 Hz</p><h4>SENSITIVITY</h4><p>88 dB SPL (2,83V/1 m)</p><h4>NOMINAL IMPEDANCE</h4><p>4 ohm</p><h4>SUGGESTED AMPLIFIER POWER OUTPUT</h4><p>25 - 125W , without clipping</p><h4>SPEAKERS DIMENSIONS (HXWXD) &amp; WEIGHT</h4><p>1120 x 300 x 350 mm<br>44.1 x 11.8 x 13.8 in<br>38 Kg each – net weight<br>83.7 lbs. each – net weight</p>'
-has_files: false
+specs:
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: SYSTEM
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '2-way floorstanding vented loudspeaker system'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: LOUDSPEAKERS
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Tw: H28 XTR-04 DAD™, Ø 28 mm / 1,1 in'
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'Mw: MW18XTR-04, Ø 180 mm / 7 in'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: CROSSOVER
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '2.100 Hz'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: 'FREQUENCY RESPONSE'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '35 Hz – 35.000 Hz'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: SENSITIVITY
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '88 dB SPL (2,83V/1 m)'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: 'NOMINAL IMPEDANCE'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 ohm'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '25 - 125W , without clipping'
+  -
+    type: heading
+    attrs:
+      level: '4'
+    content:
+      -
+        type: text
+        text: 'SPEAKERS DIMENSIONS (HXWXD) & WEIGHT'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1120 x 300 x 350 mm'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '44.1 x 11.8 x 13.8 in'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '38 Kg each – net weight'
+      -
+        type: hard_break
+      -
+        type: text
+        text: '83.7 lbs. each – net weight'
 reivews_set:
   -
     type: Review
-    excerpt: '<p>Sonus Faber’s target audience for its Heritage Collection, and for the Maxima Amator in particular, is&nbsp;<em>not</em>&nbsp;audiophiles who are cross-shopping designs from Focal, Magico, and/or Wilson Audio Specialties. This is an artisanal loudspeaker. The marriage of so many materials—solid walnut, leather, brass, marble—into such an evocative form gives the Sonus Faber a presence and a gravitas that are difficult to describe. It’s also a very good loudspeaker, with admirable output down to 35Hz, and a commendably linear, uncolored mid band.&nbsp;&nbsp;</p>'
+    excerpt:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Sonus Faber’s target audience for its Heritage Collection, and for the Maxima Amator in particular, is\_"
+          -
+            type: text
+            text: not
+            marks:
+              -
+                type: italic
+          -
+            type: text
+            text: "\_audiophiles who are cross-shopping designs from Focal, Magico, and/or Wilson Audio Specialties. This is an artisanal loudspeaker. The marriage of so many materials—solid walnut, leather, brass, marble—into such an evocative form gives the Sonus Faber a presence and a gravitas that are difficult to describe. It’s also a very good loudspeaker, with admirable output down to 35Hz, and a commendably linear, uncolored mid band.\_\_"
     attribution: Soundstage!
     link: 'https://www.soundstageultra.com/index.php/equipment-menu/1012#most-read-equipment-reviews'
     date_of_review: '2021-01-15'
+    enabled: true
 title: 'Maxima Amator'
-id: 53d28a5f-62dd-4a3a-b2dd-e26a27116a3a
 product-categories: speakers
 system_category: speakers
-blueprint: product
+local_only: false
+shipping: 400
+pairs_well_with:
+  - 9f7f41a3-b287-4c08-a45f-0cd398b69154
+  - 9f3dcabc-850f-47b4-a78d-d3ace109aaab
+  - 377cceb9-0e0f-4b42-9ff6-bfaf3698cfec
+  - cd61c74f-80d9-4298-b509-a623ccb6379a
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1721401675
+---
