@@ -171,7 +171,7 @@ description:
         type: hard_break
 price: 18000
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 specs:
   -
     type: paragraph
@@ -255,7 +255,16 @@ reivews_set:
 title: 'Olympica Nova V'
 product-categories: speakers
 system_category: speakers
-local_only: true
+local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405497
+updated_at: 1721402066
+shipping: 600
+pairs_well_with:
+  - b1fe255b-cbbb-4eb9-960d-0eacea7f534c
+  - 9f7f41a3-b287-4c08-a45f-0cd398b69154
+  - 377cceb9-0e0f-4b42-9ff6-bfaf3698cfec
+  - 7cb8bb03-31bf-4c78-8b33-67e1d25178b1
+also_consider:
+  - c85427bb-bfa0-4ced-aa21-0bcfc906c6a3
+  - 5e8f0ba3-8ec2-46f5-becd-2b05f20cfacb
 ---
