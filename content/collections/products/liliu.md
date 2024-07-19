@@ -1,5 +1,6 @@
 ---
 id: aaeadb56-3c17-4899-98b9-4fcb112ae8cc
+published: false
 blueprint: product
 title: Lilium
 manufacturer: 5dbba480-954d-4ffe-9bac-7cf8d2a8359f
