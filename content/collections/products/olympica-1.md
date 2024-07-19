@@ -322,7 +322,17 @@ reivews_set:
 title: 'Olympica Nova I'
 product-categories: speakers
 system_category: speakers
-local_only: true
+local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405595
+updated_at: 1721401847
+shipping: 200
+pairs_well_with:
+  - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
+  - 7689d894-abfb-4245-a441-2f519491b067
+  - 9f3dcabc-850f-47b4-a78d-d3ace109aaab
+  - 919721d8-f7b0-422c-9991-4bff538c0c97
+also_consider:
+  - ccbc3e0e-8f7d-49db-a80b-cd68a4fca055
+  - efeac1cd-aca9-4934-a714-e431dccf0434
+  - 08a91fce-c116-4b29-883d-a8f6dd8b486f
 ---
