@@ -25,5 +25,6 @@ shipping: 120
 product-categories: turntables
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1722441849
+updated_at: 1722441898
+product_hero_image: tourbi-schraeg1-2048x.jpg
 ---
