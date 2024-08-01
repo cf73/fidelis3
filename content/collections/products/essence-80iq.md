@@ -35,7 +35,13 @@ description:
       -
         type: text
         text: 'The VAC iQ circuit protected by US Patent 8,749,310'
-price: 0
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '*Pricing is per-each'
+price: 9900
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -226,6 +232,7 @@ specs:
         type: text
         text: '40 lbs. (32 kg.) eac'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1722440671
+updated_at: 1722545861
 product_hero_image: E80iQ.jpg
+shipping: 150
 ---
