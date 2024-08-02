@@ -1,5 +1,6 @@
 ---
 id: a418adc4-4bf6-4a36-9309-36a0a2c6a216
+published: false
 blueprint: product
 manufacturer: 433e2fdc-5676-4bd0-9406-0e76de182fcd
 product_hero_image: harbeth_c7es-3_cherry_front.jpg
