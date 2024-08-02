@@ -1,5 +1,6 @@
 ---
 id: b588f2a0-b84e-466e-8b2e-c1d37e1c36c0
+published: false
 blueprint: product
 manufacturer: 433e2fdc-5676-4bd0-9406-0e76de182fcd
 product_hero_image: harbeth-p3esr-xd-olive-ash-2-1608359733.jpeg
