@@ -2,7 +2,7 @@
 id: 62fd17fe-8195-4e1c-b7c1-1c1486773d69
 blueprint: product
 manufacturer: 842b6e7b-c048-43d6-b29e-a4b5924cbb31
-product_hero_image: degritter-1623441797.jpg
+product_hero_image: degritter_mark_ii_black_front_left.jpg
 available_for_demo: true
 quote: 'Ultrasonic cleaning works. What’s more, the Degritter makes ultrasonically cleaning LPs about as convenient as LP cleaning can get.'
 quote_attribution: 'Part Time Audiophile'
@@ -173,5 +173,5 @@ product-categories: accessories
 system_category: accessories
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1703803683
+updated_at: 1722606067
 ---
