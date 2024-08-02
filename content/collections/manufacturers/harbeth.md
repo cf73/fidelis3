@@ -1,5 +1,6 @@
 ---
 id: 433e2fdc-5676-4bd0-9406-0e76de182fcd
+published: false
 blueprint: manufacturer
 logo: harbeth-logo-min.png
 tagline: 'The legendary British monitor speaker, tuned to perfection.'
