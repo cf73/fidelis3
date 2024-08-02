@@ -3,7 +3,7 @@ id: f39af717-9de2-4615-bdee-34cc5ac27f93
 blueprint: product
 title: 'LS3/5A Gold Badge'
 manufacturer: 05c3d31e-0196-4dbd-8ba0-6c1aea93d084
-product_hero_image: 16949_Falcon-Acoustics-BBC-LS3-5a-Burr-Walnut-kosmasaudiovideo-kosmashifi.jpg
+product_hero_image: FGp45uYI.jpeg
 available_for_demo: true
 description:
   -
@@ -254,5 +254,5 @@ specs:
         type: text
         text: '305mm H x 190mm W x 165mm D. Weight 5.35 kgs each'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1722622758
+updated_at: 1722629139
 ---
