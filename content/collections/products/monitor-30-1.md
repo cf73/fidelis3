@@ -1,5 +1,6 @@
 ---
 id: 36eeeff0-27bf-4eec-955f-f5d74ecab882
+published: false
 blueprint: product
 manufacturer: 433e2fdc-5676-4bd0-9406-0e76de182fcd
 product_hero_image: gminpjnq24a4bbb5va97.jpg
