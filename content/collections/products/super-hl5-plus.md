@@ -1,5 +1,6 @@
 ---
 id: 1994aca0-4de7-4277-873d-4737f90f7fb1
+published: false
 blueprint: product
 manufacturer: 433e2fdc-5676-4bd0-9406-0e76de182fcd
 product_hero_image: harbeth-super-hl5-plus-1.jpg
