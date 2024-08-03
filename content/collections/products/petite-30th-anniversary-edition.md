@@ -1,5 +1,6 @@
 ---
 id: 13b88f58-1be8-4fde-bbb7-c38f6ff4453f
+published: false
 blueprint: product
 title: 'Petite - 30th Anniversary Edition'
 manufacturer: a05d9976-92ed-4719-bfbb-77069248987e
