@@ -23,8 +23,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
-        "statamic/migrator": "dev-master",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "statamic/migrator": "dev-master"
     },
     "config": {
         "optimize-autoloader": true,
@@ -52,7 +52,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "pre-update-cmd": [
