@@ -78,3 +78,4 @@ editor:
     - 'move main assets'
     - 'rename main assets'
     - 'delete main assets'
+    - 'access default site'
