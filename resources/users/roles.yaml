@@ -2,6 +2,7 @@ admin:
   title: Admin
   permissions:
     - super
+    - 'access default site'
 editor:
   title: Editor
   permissions:
