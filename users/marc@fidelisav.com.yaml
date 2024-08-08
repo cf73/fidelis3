@@ -4,4 +4,4 @@ roles:
   - editor
 username: marc@fidelisav.com
 id: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-password: Fidelis1963!
+password_hash: $2y$10$J.gnW2ET2sT92hZkLP.DSu4lVMXouOCF3L91CpG9WvQfu8AU8BMzS
