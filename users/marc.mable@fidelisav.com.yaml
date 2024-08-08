@@ -2,5 +2,7 @@ first_name: Marc
 last_name: Mable
 roles:
   - editor
+username: marc@fidelisav.com
+super: false
 id: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
 password_hash: $2y$10$yNjf7jVySq1IJCtheTRn0e6Ovt1rfXkRyou/HlVs/uZn4gkD319TC
