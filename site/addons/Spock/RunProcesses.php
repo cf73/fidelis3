@@ -6,14 +6,12 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
-class RunProcesses implements ShouldQueue, SelfHandling
+class RunProcesses implements SelfHandling, ShouldQueue
 {
     protected $commands;
 
     /**
      * Create a new job instance.
-     *
-     * @param array $commands
      */
     public function __construct(array $commands)
     {
@@ -32,8 +30,6 @@ class RunProcesses implements ShouldQueue, SelfHandling
 
     /**
      * Run individual command.
-     *
-     * @param Process $command
      */
     public function run(Process $command)
     {
@@ -49,8 +45,7 @@ class RunProcesses implements ShouldQueue, SelfHandling
     /**
      * Log failed command.
      *
-     * @param Process $command
-     * @param mixed $e
+     * @param  mixed  $e
      */
     protected function logFailedCommand(Process $command, $e)
     {
@@ -63,7 +58,7 @@ class RunProcesses implements ShouldQueue, SelfHandling
         app('log')->error(vsprintf("Spock command exited unsuccessfully:\nCommand: %s\nOutput: %s\nError: %s", [
             $command->command(),
             $output,
-            $error
+            $error,
         ]));
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
 namespace Statamic\SiteHelpers;
-use Statamic\API\Entry;
 
+use Statamic\API\Entry;
 use Statamic\Extend\Controller as AbstractController;
 
 class FeedController extends AbstractController
@@ -14,7 +14,7 @@ class FeedController extends AbstractController
             'title' => 'My Awesome Site',
             'home_page_url' => 'localhost',
             'feed_url' => 'localhost/feed.json',
-            'items' => $this->getItems()
+            'items' => $this->getItems(),
         ];
     }
 

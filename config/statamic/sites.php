@@ -16,10 +16,10 @@ return [
     'sites' => [
 
         'default' => [
-    'name' => 'English',
-    'locale' => 'en_US',
-    'url' => '/',
-],
+            'name' => 'English',
+            'locale' => 'en_US',
+            'url' => '/',
+        ],
 
     ],
 ];

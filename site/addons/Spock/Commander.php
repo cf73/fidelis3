@@ -2,17 +2,21 @@
 
 namespace Statamic\Addons\Spock;
 
-use Statamic\Contracts\Data\Users\User;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use Statamic\Contracts\Data\Users\User;
 
 class Commander
 {
     use DispatchesJobs;
 
     protected $user;
+
     protected $event;
+
     protected $config = [];
+
     protected $environment;
+
     protected $commands = [];
 
     /**
@@ -32,7 +36,7 @@ class Commander
     /**
      * Set the environment.
      *
-     * @param string $environment
+     * @param  string  $environment
      * @return self
      */
     public function environment($environment)
@@ -45,7 +49,7 @@ class Commander
     /**
      * Get or set the event.
      *
-     * @param string $event
+     * @param  string  $event
      * @return self
      */
     public function event($event = null)
@@ -62,7 +66,7 @@ class Commander
     /**
      * Set the user that triggered the event.
      *
-     * @param User $user
+     * @param  User  $user
      * @return self
      */
     public function user($user)
@@ -75,7 +79,7 @@ class Commander
     /**
      * Set the Spock config.
      *
-     * @param array $config
+     * @param  array  $config
      * @return self
      */
     public function config($config)
@@ -112,13 +116,13 @@ class Commander
      */
     protected function isEventAllowed()
     {
-        return !in_array(get_class($this->event), array_get($this->config, 'ignore_events', []));
+        return ! in_array(get_class($this->event), array_get($this->config, 'ignore_events', []));
     }
 
     /**
      * Set the commands to be run.
      *
-     * @param array $commands
+     * @param  array  $commands
      * @return self
      */
     public function setCommands($commands)
