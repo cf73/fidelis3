@@ -21,8 +21,8 @@
         "barryvdh/laravel-debugbar": "^3.8",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.3",
-        "phpunit/phpunit": "^9.5.10",
+        "nunomaduro/collision": "^7.0",
+        "phpunit/phpunit": "^10.1",
         "statamic/migrator": "dev-master",
         "spatie/laravel-ignition": "^2.0"
     },
