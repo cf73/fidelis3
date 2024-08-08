@@ -14,7 +14,7 @@
         "laravel/framework": "^9.52",
         "laravel/tinker": "^2.7",
         "sortarad/lol": "^1.0",
-        "statamic/cms": "^3.3",
+        "statamic/cms": "^4.0", 
         "league/flysystem-aws-s3-v3": "^3.0"
     },
     "require-dev": {
