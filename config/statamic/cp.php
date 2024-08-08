@@ -38,11 +38,11 @@ return [
     */
 
     'widgets' => [
-        
-[
-    'type' => 'lol',
-    'width' => 50,
-],
+
+        [
+            'type' => 'lol',
+            'width' => 50,
+        ],
     ],
 
     /*

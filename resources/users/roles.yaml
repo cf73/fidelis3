@@ -2,6 +2,7 @@ admin:
   title: Admin
   permissions:
     - super
+    - 'access default site'
 editor:
   title: Editor
   permissions:
@@ -77,3 +78,4 @@ editor:
     - 'move main assets'
     - 'rename main assets'
     - 'delete main assets'
+    - 'access default site'

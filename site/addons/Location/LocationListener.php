@@ -4,14 +4,15 @@ namespace Statamic\Addons\Location;
 
 use Statamic\Extend\Listener;
 
-class LocationListener extends Listener {
+class LocationListener extends Listener
+{
     /**
      * The events to be listened for, and the methods to call.
      *
      * @var array
      */
     public $events = [
-    	'cp.add_to_head' => 'addToHead'
+        'cp.add_to_head' => 'addToHead',
     ];
 
     public function addToHead()

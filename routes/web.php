@@ -17,5 +17,4 @@ use Illuminate\Support\Facades\Route;
 //    'title' => 'Example'
 // ]);
 
-
 Route::statamic('feed.json', 'FeedController@json');
