@@ -4,10 +4,15 @@
             <h4>Listed: {{date}}</h4>
             <h3 class="vertical-spacer_small">{{title}}</h3>
             <p style="margin-top: 0; margin-bottom: 0;"><strike>Original Retail Price: ${{new_retail_price format_number="2|.|,"}}</strike></p>
+            {{if hide_your_price}}
+            <p>Call for pricing: 603-880-4434</p>
+            {{else}}
             <p style="margin-top: 0;" class="vertical-spacer">Your Price: <strong>${{your_price format_number="2|.|,"}}</strong></p>
+            {{/if}}
         </div>
         <div class="col-md-5" style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
-            {{if your_price}}
+            {{if hide_your_price}}
+            {{else}}
             <div class="paypal vertical-spacer">
                 {{ if local_only }}
                 <div class="paypal vertical-spacer">
