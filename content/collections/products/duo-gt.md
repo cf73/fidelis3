@@ -3,7 +3,7 @@ id: aa71dbf9-1b35-4c2b-bc59-693e89ca31a9
 blueprint: product
 title: 'Duo GT'
 manufacturer: 59d8dad2-911d-4284-8c08-92777c832883
-product_hero_image: avantgarde_acoustic_duo_gt_high_gloss_andromeda_01.webp
+product_hero_image: duo-gt-red-giant-1-1.jpg
 available_for_demo: true
 description:
   -
@@ -116,5 +116,5 @@ specs:
         type: text
         text: 'Weight: 108.5 kg'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1702503536
+updated_at: 1731597840
 ---
