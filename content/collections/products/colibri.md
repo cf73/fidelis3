@@ -3,7 +3,7 @@ id: 4c541eca-aeb0-4744-9844-a07348efdddf
 blueprint: product
 title: Colibri
 manufacturer: 59d8dad2-911d-4284-8c08-92777c832883
-product_hero_image: 20230615201308_2023-06-15_avantgardeacousticcolibric2_04_(1822x1309).jpg
+product_hero_image: avantgarde_acoustic_colibri_c2_03.jpg
 available_for_demo: true
 description:
   -
@@ -135,5 +135,5 @@ specs:
         type: text
         text: '■ Centering spider made of poly-cotton structure mesh with dynamic-C profile '
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1731599530
+updated_at: 1731599649
 ---
