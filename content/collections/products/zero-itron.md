@@ -11,13 +11,72 @@ description:
     content:
       -
         type: text
-        text: 'The new ZERO iTRON makes the unrivalled experience of Avantgarde Acoustic horn loudspeakers even more exciting. More integrated, more compact and better with a revolutionary design, minimalist styling, effortless installation and fully integrated iTRON current amplification technology.'
+        text: 'The '
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'new ZERO iTRON'
+      -
+        type: text
+        text: ' makes the unrivalled experience of Avantgarde Acoustic horn loudspeakers even more exciting. More integrated, more compact and better. With a revolutionary design, minimalist styling, effortless installation and fully integrated iTRON current amplification technology.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'Available in high-quality soft-touch black or white finish.'
+        text: 'The ZERO iTRON is a fully active 3-way loudspeaker with 2 x 10 watt iTron current amplifiers and 1 x 400 watt Class D subwoofer amplifier. The new edition of the ZERO series combines the minimalist design that was awarded with the German Design Award in Gold, the spherical horn technology and the innovative iTron current amplifier technology in perfect symbiosis.'
+  -
+    type: heading
+    attrs:
+      level: 2
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Features
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "\_•\_High-quality soft-touch finish in black or white."
+      -
+        type: hardBreak
+      -
+        type: text
+        text: "\_•\_Integrated signal-controlled automatic switch-on and automatic switch-off/standby after 20 minutes."
+      -
+        type: hardBreak
+      -
+        type: text
+        text: "\_•\_Clear and minimalist in its design, compact in size yet full of self-confidence, the ZERO iTRON integrates seamlessly into its owner’s living space. Its recessed spherical horn is a prime example of no-frills functionalism."
+  -
+    type: heading
+    attrs:
+      level: 3
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Digital Crossover'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'The bass power amplifier is equipped with an advanced digital sound processor. With a precision and bit accuracy that cannot be achieved with analogue technology, the digital crossover eliminates all passive filter elements in the signal path. The subwoofer volume is set using two buttons on the DSP display.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Extensive additional settings (e.g. high and low pass filters, equalizers, etc.) can be programmed. The user interface has been completely redesigned and is now very easy and intuitive for the customer to use. All parameters can be easily adapted to the room acoustics or listening habits.'
 price: 26000
 show_price: true
 available_to_buy_online: true
@@ -212,5 +271,5 @@ specs:
         type: text
         text: 'Weight: 40.5 kg'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1731598510
+updated_at: 1731598625
 ---
