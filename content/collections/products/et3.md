@@ -150,5 +150,6 @@ specs:
         type: text
         text: "-\_\_\_\_\_\_\_ Remote Control included"
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1731597352
+updated_at: 1731597431
+product_hero_image: ffa44280b50ec9071a762588685ce373534.jpg
 ---
