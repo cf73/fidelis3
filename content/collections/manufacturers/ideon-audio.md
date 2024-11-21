@@ -1,5 +1,6 @@
 ---
 id: 15a6d4b3-a051-4883-811c-75d66c3a2cd5
+published: false
 blueprint: manufacturer
 title: 'Ideon Audio'
 logo: logo1-2-e1550000185122.jpg
