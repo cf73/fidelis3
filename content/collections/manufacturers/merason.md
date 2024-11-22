@@ -1,7 +1,7 @@
 ---
 id: 575687fd-e7e6-4bad-8457-cbd607a7bda9
 blueprint: manufacturer
-logo: merason-logo-(12).jpg
+logo: merason-logo-(13).jpg
 tagline: 'dedicated to music'
 website: 'https://merason.ch/en/dac1.html'
 hero_image: merason_frerot_front.png
@@ -26,5 +26,5 @@ title: Merason
 product-categories:
   - dacs
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1732313193
+updated_at: 1732313456
 ---
