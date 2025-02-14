@@ -4,7 +4,7 @@ blueprint: product
 title: 'Performer s1200'
 manufacturer: acf161da-7e67-422e-8398-0e869e7d70d6
 product_hero_image: 20247_source_1659380098.jpg
-available_for_demo: true
+available_for_demo: false
 quote: 'On top of all that sonic goodness, the SPL Performer s1200 stereo power amplifier is a beautiful and compact power amp that makes a great visual statement'
 quote_attribution: 'Part Time Audiophile'
 description:
@@ -20,7 +20,7 @@ description:
       -
         type: text
         text: 'Thanks to the VOLTAiR technology the performance of the s1200 is detail-rich, vivid, honest and plain simply beautiful.'
-price: 5999
+price: 6499
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -41,6 +41,7 @@ specs:
         text: '2 x 520 W (4 Ω) [2 x 550 W (2 Ω); 2 x 300 W (8 Ω)'
 reivews_set:
   -
+    id: VgvGSbLi
     excerpt:
       -
         type: paragraph
@@ -53,5 +54,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1677703962
+updated_at: 1739550597
 ---
