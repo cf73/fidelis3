@@ -10,7 +10,7 @@ description:
     type: paragraph
     content:
       -
-        type: hard_break
+        type: hardBreak
   -
     type: paragraph
     content:
@@ -96,7 +96,7 @@ description:
     content:
       -
         type: text
-        text: 'After selection on technical aspects, refined selection on measurement, the final decision on absolutely all the audio components that the PRS 1.5 contains has been taken after long listening tests in the newly built JMF Audio''s studio.'
+        text: "After selection on technical aspects, refined selection on measurement, the final decision on absolutely all the audio components that the PRS 1.5 contains has been taken after long listening tests in the newly built JMF Audio's studio."
   -
     type: paragraph
     content:
@@ -144,12 +144,12 @@ description:
     content:
       -
         type: text
-        text: 'The JMF Audio proprietary PGP pure gold finish of the printed circuit board is incompatible with the automated processes. The hundreds of components populating both sides of the boards and in the CSV volume section are hand mounted and soldered one by one by our specialized technicians with JMF Audio''s bespoke solder, using a magnifying glass. A work that recalls jewels manufacturing.'
-price: 36000
+        text: "The JMF Audio proprietary PGP pure gold finish of the printed circuit board is incompatible with the automated processes. The hundreds of components populating both sides of the boards and in the CSV volume section are hand mounted and soldered one by one by our specialized technicians with JMF Audio's bespoke solder, using a magnifying glass. A work that recalls jewels manufacturing."
+price: 39000
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 200
+shipping: 300
 pairs_well_with:
   - 426c630e-06ff-4a47-8e45-f91f5ba19395
 product-categories: pre-amps
@@ -255,12 +255,12 @@ specs:
         type: text
         text: '*Out3 can be set to follow the volume control'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'or set as direct (DI) for a tape loop '
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'or to drive a headphone amplifier'
@@ -271,7 +271,7 @@ specs:
         type: text
         text: '[di] display on selection, '
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'recalled by a dot light on normal use'
@@ -335,7 +335,7 @@ specs:
         type: text
         text: 'Maximum input level'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'at low volume'
@@ -388,7 +388,7 @@ specs:
         type: text
         text: 'Maximum input level'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'at max volume'
@@ -411,7 +411,7 @@ specs:
         type: text
         text: "1Hz..150kHz\_\_ (intentionally limited for RF immunity)"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "20Hz ..20kHz \_ (+0.0 / –0.0dB)"
@@ -428,7 +428,7 @@ specs:
         type: text
         text: '130dB typ. (+22dBu 1kHz narrow band)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "120dBA typ.\_\_ (+22dBu), version F"
@@ -439,7 +439,7 @@ specs:
         type: text
         text: 'Signal to noise ratio (SNR)'
       -
-        type: hard_break
+        type: hardBreak
   -
     type: paragraph
     content:
@@ -471,7 +471,7 @@ specs:
         type: text
         text: '12dB (XLR bal in) +18dB (RCA in), version F'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "0dB (XLR bal in) \_\_+6dB (RCA in), prior to version F"
@@ -587,7 +587,7 @@ specs:
         type: text
         text: 'Burn-in duration'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'at the manufacture'
@@ -610,5 +610,5 @@ specs:
         type: text
         text: 'Weight: 12kg'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1693327827
+updated_at: 1740497472
 ---
