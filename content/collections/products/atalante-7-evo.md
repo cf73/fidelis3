@@ -3,7 +3,7 @@ id: 63f4771c-3d0b-419e-b492-95853bfd75ca
 blueprint: product
 title: 'Atalante 7 Evo'
 manufacturer: 109ca9c7-24bb-4bcc-ad6a-a632714c898d
-product_hero_image: a7-evo_square-_web_design.webp
+product_hero_image: 14441_revival_audio_atalante7_angle10_walnut_low.webp
 available_for_demo: true
 description:
   -
@@ -926,5 +926,5 @@ specs:
                 type: text
                 text: 'Without Stand: 54.6 kg (126.55 lbs.)'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1743264676
+updated_at: 1743275740
 ---
