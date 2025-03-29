@@ -13,7 +13,7 @@ description:
         type: text
         text: 'With MOON, you don’t just listen to music, you live it. Feel it. From the first note, the experience transcends. Transforms. There is a newfound level of intimacy between you and the artist. That’s the MOON promise: a privileged access to the intention and the purity of sound. The fingertip on the guitar string, the sharp inhale between two notes, the amplitude and impact of silence. You are front row center to every sound; every sentiment. MOON takes you to the epicenter and truth of sound – to its very soul.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'The same intensity is echoed in each exacting detail of the MOON experience. Perfection is sought, demanded; relentlessly enforced. The MOON trademark obsession-to-detail ensures that your first astoundingly authentic sound experience remains equally powerful with every listen. Every year. Every generation.'
@@ -26,8 +26,7 @@ product-categories:
   - phonostage
   - pre-amps
   - dacs
-  - speakers
   - cd-players
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1664481616
+updated_at: 1743276027
 ---
