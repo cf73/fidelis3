@@ -2,7 +2,7 @@
 id: bf3353d3-47b6-4186-bb3c-b1dcf3514051
 blueprint: product
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
-product_hero_image: delta-nr-v2-ashundnrv220a125.jpg
+product_hero_image: theta_nr_detail_1_1.webp
 available_for_demo: true
 description:
   -
@@ -10,106 +10,67 @@ description:
     content:
       -
         type: text
-        text: 'Please visit the Shunyata Web site for more information on other fine Shunyata Power cables: Delta v2 XC'
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "Shunyata Research’s new Reference NR Line power cords were developed using the same materials science and technologies that make the\_"
-      -
-        type: text
-        text: 'Omega QR'
-        marks:
-          -
-            type: link
-            attrs:
-              href: 'https://shunyata.com/products/power-cables/omega-line-power-cables/omega-qr/'
-      -
-        type: text
-        text: "\_the market’s ultimate cost-no-object power cord.\_ The Reference Line power cables are designed to be used with the worlds finest audio components."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "There are three levels of performance in the Reference Line starting with the Delta v2 NR and\_"
-      -
-        type: text
-        text: 'Delta v2 XC'
-        marks:
-          -
-            type: link
-            attrs:
-              href: 'https://shunyata.com/products/power-cables/reference-line-power-cables/delta-v2-xc/'
-      -
-        type: text
-        text: "\_models.\_ The\_"
-      -
-        type: text
-        text: 'Alpha v2'
-        marks:
-          -
-            type: link
-            attrs:
-              href: 'https://shunyata.com/products/power-cables/reference-line-power-cables/alpha-v2-nr/'
-      -
-        type: text
-        text: "\_is a level up from the Delta v2 with the\_"
-      -
-        type: text
-        text: 'Sigma v2'
-        marks:
-          -
-            type: link
-            attrs:
-              href: 'https://shunyata.com/products/power-cables/reference-line-power-cables/sigma-v2-nr/'
-      -
-        type: text
-        text: "\_taking the top spot in the line. All Reference models feature Shunyata Research’s exclusive VTX-Ag conductors that combine an ultra pure silver with a concentrically wound layer of OFE copper.\_ This provides the speed and transparency of silver with the richness, tonal color and power of pure copper."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Using proprietary conductors and parts developed for the Omega QR, the Reference NR Series delivers pace-setting performance in each product category. Noise reduction technology and Shunyata Research’s own CopperCONN™ connectors propel the Delta v2 NR cable to previously unattainable levels of performance.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: Application
         marks:
           -
             type: bold
-      -
-        type: text
-        text: ": The Delta v2 NR is an ideal power cable for source equipment like CD players, DACs, tuners, preamplifiers and amplifiers.\_ The\_"
-      -
-        type: text
-        text: 'Delta v2 XC'
-        marks:
-          -
-            type: link
-            attrs:
-              href: 'https://shunyata.com/products/power-cables/reference-line-power-cables/delta-v2-xc/'
-      -
-        type: text
-        text: "\_is the ideal cable to supply power to your Shunyata Research power conditioner."
+        text: 'RAISING THE BAR'
   -
     type: paragraph
     content:
       -
-        type: hard_break
-price: 1500
+        type: text
+        text: "Theta Series signal, digital, and power cables were created using scientific innovation that has established Shunyata Research as a key contributor to the world's top recording studios and heart-surgery labs. Each component, material, and conductor within the Theta Series is custom-designed to extend the boundaries of signal resolution, even when compared to cost-no-object products. Theta Series products further expand upon Shunyata Research's legacy of delivering uncompromising performance at prices that raise expectations for all products in their category."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'ADVANCING TECHNOLOGY'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Theta Series signal and digital cable products feature continuous-cast Ohno copper. Ohno copper is an ultra-pure conductor drawn using heated molds that cast the wire into a singular crystalline structure. The Ohno conductors used in the Theta Series are then extruded with a fluorocarbon dielectric and custom-shielding elements using Shunyata Research's exclusive PMZ (Precision Matched Impedance) process. This extrusion method tightens the tolerances of the conductor surface, dielectric and the precision placement of the shield. To achieve these finely drawn tolerances, the extrusion and braiding machines must be run at one-quarter normal speed during the manufacturing process."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Theta speaker cables and power cords feature VTX™ (hollow core) and VTX-Ag™ (pure silver center) conductors, respectively, both with an outer layer of ultra-pure OFE copper for enhanced performance. Finally, all Theta cables are conditioned for 4-days using Shunyata Research's advanced Kinetic Phase Inversion Process™ (KPIPv2™), which conditions conductor metals at a molecular level. Theta Series cables are terminated with Shunyata's custom-designed connectors and cold-soldered terminals. These custom-designed attributes elevate Theta Series performance far beyond expectation, regardless of cost."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'THE SOUND AND FURY'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Theta cables disappear, allowing the system to express sudden dynamic shifts in timing and frequency extension with effortlessness and nuance. A loom of Theta cables allows a complex system of electronics and speakers to speak with a single coherent voice.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Like their more affordable Gamma Series counterpart, Theta cables imbue the system with an unassailable sense of coherence, as if everything is in focus, without distortion or hard transients. There is an absence of perceived noise, allowing spectral and textural subtlety to come to the fore. Unlike common copper cables, Theta Series cables deliver explosive dynamics and pitch perfect frequency extension, even when compared to far more expensive cables. Theta's larger gauge VTX™ conductors add weight, dimensionality and an expansive, room-filling sound-stage."
+  -
+    type: paragraph
+    content:
+      -
+        type: hardBreak
+price: 998
 show_price: true
 available_to_buy_online: true
-shipping: 20
+shipping: 30
 specs:
   -
     type: heading
@@ -250,14 +211,14 @@ specs:
         type: text
         text: 'Continuity and polarity tests – by two technicians'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'HiPOT tests insulation breakdown @ 4,500 VAC'
-title: 'Delta v2 NR Power Cable, 1.75M'
+title: 'Theta NR Power Cable, 1.75M'
 product-categories: power-cables
 system_category: cables
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1671554029
+updated_at: 1743258501
 ---
