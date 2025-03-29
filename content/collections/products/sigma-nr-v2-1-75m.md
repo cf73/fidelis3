@@ -1,9 +1,9 @@
 ---
 id: 428c3b4b-90c7-4a4a-b550-80194ccece64
 blueprint: product
-title: 'Sigma NR V2, 1.75M'
+title: 'Sigma-X NR, 1.75M'
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
-product_hero_image: PC-US-SIG_NR-full-scaled.jpg
+product_hero_image: sigx-nr-main__00712.webp
 available_for_demo: true
 quote: 'With the Sigma NR v2, my traditional perspectives on what a stereo system can reproduce has shifted away from a language that describes gear to a language and sensibility that describes music. Remarkable, truly remarkable.'
 quote_attribution: 'Absolute Sound'
@@ -11,64 +11,29 @@ description:
   -
     type: heading
     attrs:
-      level: 2
+      level: 3
     content:
       -
         type: text
-        marks:
-          -
-            type: bold
-        text: 'The Vanguard of Power Cords: Shunyata Sigma v2 NR (15A) Provides Power Conditioning, Elevates System Fidelity, Requires No Burn-In Time, Features True Carbon-Fiber Headshells'
+        text: 'A RADICAL PROGRESSION'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'No power cable on the market touts the spare-no-expenses construction, cutting-edge abilities, and benchmark performance provided by the Shunyata Sigma v2 Noise-Reducing (NR) cord. Equipped with a built-in wide-bandwidth CCI noise-filtration system that reduces power-line and component-generated power-supply noise – as well as built-in, second-generation Zitron technology that measurably lowers dielectric distortion while preserving the integrity of the original audio signal – Sigma v2 NR doubles as a power conditioner for the amplifier, preamplifier, or source component to which it''s connected. This is not your father''s – or even your older brother or sister''s – power cable.'
+        text: 'The most radical progression in power cord design since Shunyata Research’s humble beginnings in 1998, has delivered a watershed level of performance with the introduction of the SIGMA-X power cables.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'First off, Sigma v2 touts several key sonic upgrades over its Product of the Year Award-winning predecessor. While you can read more about the key construction elements below, the use of VTX-Ag provides significant improvements in dynamics, accuracy, and low-level resolution while preserving the subtle tonal, textural, and timbral signatures that bring music to life. Sigma v2 NR also delivers more precise, time-correct presentations distinguished with an authoritative low end, pronounced contrasts, and transparent soundstages. What''s more, carbon-fiber headshells eliminate layers of grain all the while claiming a ridiculously silent background. Last but not least, the redesigned NR v2 broadband filters filter lower in frequency than the original NR filters and are tuned to filter out specific frequencies of noise common to all component power-supply emissions. You''ll hear increased three-dimensional imaging and greater access to extreme low-level details.'
+        text: 'Inspired by our well documented success in medical imaging and recording industries, Shunyata Research has continued to advance the science and technology of its most successful products. The SIGMA-X power cables have exceeded even the highest performance expectations.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'Indeed, the U.S.A.-made Sigma v2 NR''s meticulous design and vanishingly low resistance to peak current (DTCD) deliver unparalleled performance when used with even the most current-hungry amps. Shunyata''s Kinetic Phase Inversion Process (KPIP) is a groundbreaking conditioning method that not only eliminates the need for time-consuming burn-in on your end but also elevates the overall fidelity of your system. You will hear invaluable sonic benefits – blacker backgrounds, lifelike detail, inner depth, explosive dynamics, revealing textures – when listening to music with Sigma v2 NR in your setup. And now, you won''t have to wait hours and hours for it to happen.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'So, what''s exactly in Sigma v2 NR? Patented technology, exclusive metal treatments, and customized parts that outshine the construction involved with competitive products. It all starts with an ultra-pure OFE copper tube with a pure silver conductor at the center of the hollow core – all woven into massive, six-gauge VTX-Ag conductors linked to CopperCONN connectors. The latter contain true carbon-fiber headshells with anti-vibration qualities and pure copper contacts that claim higher conductivity principles than common plated brass and bronze contacts. Advanced fluorocarbon dielectrics and sonic welding that mitigates junction points complete a power cord that combines meaningful innovations, objective measurement, an artisan''s eye for detail, and discernible science in the name of provable, standard-setting performance.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'While Sigma v2 NR isn''t cheap, you could undoubtedly spend more. But why you would do so is beyond us. What you''ll get will pale in comparison. 100% Music Direct Guaranteed.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        marks:
-          -
-            type: italic
-        text: '"[T]he soundstage and imaging are so three-dimensional and holographic, it''s as if you are being surrounded and enveloped within the music.... With the Sigma NR v2, my traditional perspective on what a stereo system can reproduce has shifted away from a language that describes gear to a language and sensibility that describes music. Remarkable, truly remarkable."'
-      -
-        type: hard_break
-      -
-        type: text
-        text: "—Stephen Scharf,\_"
-      -
-        type: text
-        marks:
-          -
-            type: italic
-        text: 'The Absolute Sound'
+        text: 'The SIGMA-X is second only to Shunyata Research’s ultimate Omega power cord within the “Reference Series”. The Reference Series X cables represent the culmination of a 25-year commitment to produce the absolute finest performing power cables available.'
   -
     type: heading
     attrs:
@@ -76,102 +41,70 @@ description:
     content:
       -
         type: text
-        marks:
-          -
-            type: bold
-        text: 'Advanced Noise Reduction'
+        text: 'THREE DISTINCT MODELS TO CHOOSE FROM'
   -
     type: paragraph
-    content:
-      -
-        type: text
-        text: 'Noise is an insidious problem that originates from many sources, including audio components themselves. Shunyata Research power cords employ proprietary internal noise-reduction filters that intercept noise, preventing it from propagating to other components. NR filters are specifically engineered to be non-reactive and compatible with all power-supply designs, including high-power amplifiers. This multi-element, wide-bandwidth noise-reduction technology was developed by Shunyata Research''s medical division, Clear Image Scientific, to improve the performance of medical imaging systems in cardiology and neurosurgery.'
-  -
-    type: heading
-    attrs:
-      level: 3
     content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'CopperCONN Connectors'
-  -
-    type: paragraph
-    content:
+        text: 'SIGMA-X QR'
+      -
+        type: hardBreak
       -
         type: text
-        text: 'Shunyata Research has developed its own line of CopperCONN connectors that feature solid copper contacts and true carbon-fiber headshells that have anti-vibration qualities. These connectors are not just beautiful; they functionally reduce micro-distortions due to the carbon fiber''s unique energy-absorbing, vibration-reduction qualities.'
+        text: 'The SIGMA-X QR edition is the highest performing SIGMA-X model. It includes patented QR/BB technology descended from the ultimate OMEGA QR along with Gen3 NR noise reduction technology. It is particularly suited to use with high powered amplifiers but can be used for source and digital equipment when only the highest levels of performance are demanded.'
   -
-    type: heading
-    attrs:
-      level: 3
+    type: paragraph
     content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'DTCD Design'
-  -
-    type: paragraph
-    content:
+        text: 'SIGMA-X NR'
+      -
+        type: hardBreak
       -
         type: text
-        text: 'Dynamic Transient Current Delivery is critical to performance for high-performance entertainment systems. All elements in Reference NR Series power cords, including the wires, contacts, dielectrics, and junctions, are tested and optimized using Shunyata Research''s proprietary DTCD Analyzer. This optimization ensures outstanding low-frequency performance as well as dynamic contrasts akin to a live musical event. More than any other design parameter, Shunyata Research''s ability to provide measurable dynamic instantaneous current is unparalleled.'
+        text: 'The SIGMA-X NR delivers reference-grade performance and noise reduction on any and all electronics. Whether on amplifiers, sources or line-level components the SIGMA-X NR offers a massive component-upgrade level of performance.'
   -
-    type: heading
-    attrs:
-      level: 3
+    type: paragraph
     content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'VTX-AG Conductors'
-  -
-    type: paragraph
-    content:
+        text: 'SIGMA-X XC'
+      -
+        type: hardBreak
       -
         type: text
-        text: 'Reference NR Series cables feature an advancement in conductor technology that combines the transient speed and definition of pure silver with the warmth, power, and body of pure copper. VTX-Ag has a core conductor of pure silver with an outer concentric conductor of high-purity OFE copper. VTX-Ag provides significant improvements in dynamics, timing, precision, and low-level resolution while preserving the subtle tonal, textural, and timbral signatures that bring music to life.'
+        text: 'SIGMA-X XC was designed specifically for use as a wall-connection power cord for use with Shunyata Research power distributors. Due to the extensive levels of filtering in Shunyata Research designed power distributors, NR filters are not needed at the wall connection. For use with other manufacturers power conditioners, the NR models will likely provide a performance benefit.'
   -
-    type: heading
-    attrs:
-      level: 3
+    type: paragraph
     content:
       -
         type: text
         marks:
           -
             type: bold
-        text: 'KPIP Blackbird Process'
+        text: 'Bringing it Home'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Have you ever watched a film that was so engrossing and captivating; the performances so real that you forgot you were watching a movie? That would be an apt description of the SIGMA-X power cord’s impact on sound, recording and imaging. There is an immediacy to sound, an immersive rendering of recorded detail that makes it easy to focus on the music and to forget about the recording chain.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'Reference NR Series power cords are treated with Shunyata Research''s proprietary Kinetic Phase Inversion Process. Four days of continuous KPIP processing dramatically reduces burn-in time and significantly improves sonic performance, delivering a relaxed and life-like presentation.'
-  -
-    type: heading
-    attrs:
-      level: 3
-    content:
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: 'Class-Leading Performance In Each Product Category'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Reference NR Series power cords consistently provide superb performance across a broad spectrum of electronic brands and component types. They truly redefine the performance envelope for all types of components, including amplifiers, preamplifiers, phono stages, D/A converters, disc players, and tuners.'
-price: 3500
+        text: 'The dramatic performance SIGMA-X power cords impart is not subtle or amorphous, it is revelatory and impossible to dismiss. When the recording calls for it, SIGMA-X power cords unleash a perfectly timed storm of three-dimensional weight and dynamic intensity – without a hint of compression or artifice. Perhaps the signature attribute of the SIGMA-X performance is its rendering of an almost gravitational silence within voice, instruments and images on a recording. There is a truth and precision to sound that is unmistakably free of distortion, leaving the listener captivated by an intense connection to favorite music.'
+price: 4000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -192,7 +125,7 @@ specs:
         type: text
         text: "\_06 VTX-Ag"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -203,7 +136,7 @@ specs:
         type: text
         text: "\_CopperCONN"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -214,7 +147,7 @@ specs:
         type: text
         text: "\_Carbon-fiber"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -225,7 +158,7 @@ specs:
         type: text
         text: "\_>12dB @ 1MHz"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -236,7 +169,7 @@ specs:
         type: text
         text: "\_C19 20A, C15 15A"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -248,6 +181,7 @@ specs:
         text: "\_1.75m"
 reivews_set:
   -
+    id: k1B6TQG4
     excerpt:
       -
         type: paragraph
@@ -260,5 +194,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1698936068
+updated_at: 1743262278
 ---
