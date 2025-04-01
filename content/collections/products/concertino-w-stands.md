@@ -1,7 +1,7 @@
 ---
 id: f6aa2cf6-537f-4627-b477-08e516be153c
 blueprint: product
-title: 'Concertino w/Stands'
+title: 'Concertino G4 w/Stands'
 manufacturer: 5dbba480-954d-4ffe-9bac-7cf8d2a8359f
 product_hero_image: SONUS_CONCERTINO_PAIR_1.jpeg
 available_for_demo: true
@@ -31,16 +31,17 @@ description:
         type: text
         text: 'In its simplicity, it aims to elevate the acoustic minimalism of our origins.'
       -
-        type: hard_break
-price: 1650
+        type: hardBreak
+price: 6500
 show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 300
 pairs_well_with:
-  - 919721d8-f7b0-422c-9991-4bff538c0c97
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
   - 7689d894-abfb-4245-a441-2f519491b067
+  - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
+  - 0eb41aeb-7186-4f7d-9f23-ccfaa81ca032
 also_consider:
   - ccbc3e0e-8f7d-49db-a80b-cd68a4fca055
   - c99ab1d5-b886-4710-9f7d-ea5220ec6e54
@@ -52,7 +53,7 @@ specs:
     type: paragraph
     content:
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'System: 2.0 way Vented Cork enclosure design Loudspeakers'
@@ -129,5 +130,5 @@ specs:
         type: text
         text: 'Cabinet Construction: Cork Enclosure wrapped by leather and Solid Wood side panels'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1722545688
+updated_at: 1743542705
 ---
