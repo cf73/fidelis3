@@ -26,16 +26,16 @@ description:
       -
         type: text
         text: 'You will be impressed by ATALANTE 3 with its compact size but exceptional BIG sound!'
-price: 3190
+price: 3390
 show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 150
 pairs_well_with:
-  - 919721d8-f7b0-422c-9991-4bff538c0c97
   - 7689d894-abfb-4245-a441-2f519491b067
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
-  - 9f3dcabc-850f-47b4-a78d-d3ace109aaab
+  - 2e30dc04-5b51-4f1f-91f6-2776f792b10a
+  - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
 also_consider:
   - a418adc4-4bf6-4a36-9309-36a0a2c6a216
   - efeac1cd-aca9-4934-a714-e431dccf0434
@@ -55,10 +55,10 @@ specs:
         type: text
         text: 'Type2-way bookshelf loudspeakerDrivers'
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -67,7 +67,7 @@ specs:
                 type: text
                 text: "1 1/8” (28mm) soft-dome tweeter equipped with Revival Audio ARID (Anti Reflection Inner Dome) patent technology with a large back chamber with low resonance frequency of 520Hz\_"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -140,6 +140,7 @@ specs:
         text: 'Net Weight11 kg. (24.25 lbs.)'
 reivews_set:
   -
+    id: Fe3EpmR1
     excerpt:
       -
         type: paragraph
@@ -152,5 +153,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1716053850
+updated_at: 1743521315
 ---
