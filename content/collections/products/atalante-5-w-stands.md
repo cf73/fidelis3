@@ -26,17 +26,17 @@ description:
       -
         type: text
         text: 'ATALANTE 5 has everything you need: Sophisticated high frequencies, sweet mid-tone and impressive bass dynamics.'
-price: 5490
+price: 5890
 show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 200
 pairs_well_with:
-  - 919721d8-f7b0-422c-9991-4bff538c0c97
-  - 90abe46b-c828-4671-b388-7f3b6fa98119
+  - fee0b5e3-5ed3-405e-b6f4-e378278b232c
+  - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
 also_consider:
-  - 1994aca0-4de7-4277-873d-4737f90f7fb1
-  - efeac1cd-aca9-4934-a714-e431dccf0434
+  - 8742ed02-bced-48e8-9a98-7bcd253bba24
+  - ccbc3e0e-8f7d-49db-a80b-cd68a4fca055
 product-categories: speakers
 system_category: speakers
 specs:
@@ -53,10 +53,10 @@ specs:
         type: text
         text: 'Type3-way loudspeakerDrivers'
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -65,7 +65,7 @@ specs:
                 type: text
                 text: '1 1/8” (28mm) soft-dome tweeter equipped with Revival Audio ARID (Anti Reflection Inner Dome) patented technology with a large back chamber and low resonance frequency of 520Hz'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -74,7 +74,7 @@ specs:
                 type: text
                 text: '3” (75mm) soft-dome mid-range equipped with ARID+ patent technology'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -141,6 +141,7 @@ specs:
         text: 'Net Weight33 kg. (72.75 lbs.)'
 reivews_set:
   -
+    id: 1Eg8Jx5K
     excerpt:
       -
         type: paragraph
@@ -153,5 +154,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1716053018
+updated_at: 1743520882
 ---
