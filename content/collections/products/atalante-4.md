@@ -108,14 +108,14 @@ description:
       -
         type: text
         text: "More than just a premium speaker, the ATALANTE 4 is a visceral audio and visual experience that takes listening to its next, best level.\_ With its exceptional performance and unparalleled balance, this state-of-the-art floor standing speaker invites you to immerse yourself in a world where art and audio exist in equilibrium."
-price: 4295
+price: 4795
 show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 200
 pairs_well_with:
-  - 919721d8-f7b0-422c-9991-4bff538c0c97
-  - 90abe46b-c828-4671-b388-7f3b6fa98119
+  - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
+  - 2e30dc04-5b51-4f1f-91f6-2776f792b10a
 product-categories: speakers
 system_category: speakers
 specs:
@@ -132,10 +132,10 @@ specs:
         type: text
         text: 'Type3-way loudspeakerDrivers'
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -144,7 +144,7 @@ specs:
                 type: text
                 text: '1 1/8” (28mm) soft-dome tweeter equipped with Revival Audio ARID (Anti Reflection Inner Dome) patented technology with a large back chamber and low resonance frequency of 650Hz'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -153,7 +153,7 @@ specs:
                 type: text
                 text: '5 1/4” (13.5cm) BSC (Basalt Sandwich Construction) midrange driver'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -219,5 +219,5 @@ specs:
         type: text
         text: "Net Weight38 kg.\_(83.75\_lbs.)"
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1716053427
+updated_at: 1743521219
 ---
