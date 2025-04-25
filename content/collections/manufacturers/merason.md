@@ -1,5 +1,6 @@
 ---
 id: 575687fd-e7e6-4bad-8457-cbd607a7bda9
+published: false
 blueprint: manufacturer
 logo: merason-logo-(13).jpg
 tagline: 'dedicated to music'
