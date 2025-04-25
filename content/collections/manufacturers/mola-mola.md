@@ -2,7 +2,7 @@
 id: f4645f57-c1fa-43a5-8c4c-69a7134a758c
 blueprint: manufacturer
 title: 'Mola Mola'
-logo: th.jpg
+logo: mola-mola-logo.png
 tagline: 'Truth is Beauty'
 website: 'https://www.mola-mola.nl/index.php'
 product-categories:
@@ -36,5 +36,5 @@ description:
         type: text
         text: 'The result is something never before heard of in high-end audio: amplifiers and converters whose output signal cannot be distinguished, by ear, from the input signal. So what does that sound like? In a few words: natural, nimble, rich and musically enthralling.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1745603539
+updated_at: 1745604206
 ---
