@@ -21,12 +21,10 @@ title: 'Simaudio Moon'
 product-categories:
   - integrated-amplifiers
   - power-amplifiers
-  - server-streaming
-  - multi-function
   - phonostage
   - pre-amps
   - dacs
   - cd-players
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1743276027
+updated_at: 1749061464
 ---
