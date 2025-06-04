@@ -26,7 +26,7 @@ price: 1980
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 50
+shipping: 75
 product-categories: pre-amps
 system_category: preamplifiers
 specs:
@@ -125,7 +125,7 @@ specs:
     content:
       -
         type: text
-        text: 'Support M.2 NVME 3.0 2280 protocol, up to 4TB (SSD isn''t included).'
+        text: "Support M.2 NVME 3.0 2280 protocol, up to 4TB (SSD isn't included)."
   -
     type: paragraph
     content:
@@ -319,32 +319,32 @@ specs:
         type: text
         text: 'Output level: 4.2V'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Frequency response: 20Hz~20KHz(±0. 25dB)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Dynamic range: > 128dB'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'SNR: >128dB'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'THD+N: <0.00009%(-120dB) @No-wt'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Crosstalk: >-121dB'
       -
-        type: hard_break
+        type: hardBreak
   -
     type: paragraph
     content:
@@ -358,32 +358,32 @@ specs:
         type: text
         text: 'Output level: 2.1V'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Frequency response: 20Hz~20KHz (±0. 25dB)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Dynamic range: > 125dB'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'SNR: >125dB'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'THD+N: <0.00010%(-119dB)@A-WT'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Crosstalk: >-121dB'
       -
-        type: hard_break
+        type: hardBreak
   -
     type: paragraph
     content:
@@ -473,6 +473,7 @@ specs:
         text: '1'
 reivews_set:
   -
+    id: rQCtebv4
     excerpt:
       -
         type: paragraph
@@ -484,5 +485,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1707518459
+updated_at: 1749066886
 ---
