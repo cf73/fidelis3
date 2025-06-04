@@ -1,7 +1,7 @@
 ---
 id: 47548bcf-5eb5-48a1-a703-65b3a84c5b0f
 blueprint: product
-title: DMP-A6
+title: 'DMP-A6 G2'
 manufacturer: c3bdaed2-8cf8-4152-b875-a9d46432ba6f
 product_hero_image: a5607a43ee67f662562dad58e70e8a4a-1707502765.jpg
 available_for_demo: true
@@ -14,7 +14,7 @@ description:
       -
         type: text
         text: 'With years of development, DMP-A6 has reformed traditional streamers by solving pain points across the industry, it implies the beginning of a new epoch. DMP-A6 is an all-in-one player, with quad-core processor and large memory, tailored for lossless music playback. Rich digital input and output ports, HDMI DSD multi-channel output, dual ESS903802M professional DAC, fully balanced differential circuit and professional audio tuning, all of them contribute to the superior performance of DAP-A6. Unprecedented experience is offered to music lovers with music streaming services, local music management, mobile APP and exclusive control system.'
-price: 899
+price: 859
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -287,6 +287,7 @@ specs:
         text: 'Exclusive mobile APP for Android/IOS mobile phones and tablets.'
 reivews_set:
   -
+    id: dr6anUqc
     excerpt:
       -
         type: paragraph
@@ -299,5 +300,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1707503091
+updated_at: 1749066849
 ---
