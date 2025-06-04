@@ -3,7 +3,7 @@ id: 8c7ec5c3-c0e2-4afa-bd02-5e52c0f75427
 blueprint: product
 title: 'Stream 3'
 manufacturer: 236454e8-3435-4850-9539-4399e0916f07
-product_hero_image: stream2.webp
+product_hero_image: stream3-music-streamer-server-white-background_1.webp
 available_for_demo: true
 description:
   -
@@ -160,5 +160,5 @@ specs:
         type: text
         text: '22'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749062721
+updated_at: 1749062826
 ---
