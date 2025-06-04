@@ -90,6 +90,75 @@ specs:
       -
         type: text
         text: '19v DC Input, external Switch-Mode Power Supply (Optional LPS1 upgrade available)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'General Specs'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Depth (in.)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '7.87'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Height (in.)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '3.15'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Width (in.)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '9.45'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Weight (lb.)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '10'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749061937
+updated_at: 1749062764
 ---
