@@ -16,11 +16,11 @@ description:
     type: paragraph
     content:
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'A seamless integration of the most Esoteric-like essences, the N-05XD has been thoroughly refined under the guiding principles of ultimate sound quality. Just a touch of its volume knob clearly reveals this quality in its most exquisite form, and promises the fullest and most satisfying enjoyment of Esoteric’s pure signature sound. No longer must superior sound quality be sacrificed in the pursuit of a simplified high-end audio system.'
-price: 11000
+price: 12000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -39,15 +39,15 @@ specs:
         type: text
         text: "Digital audio inputs\_XLR1Input Level5.0Vp-pInput Impedance110ΩInput signal formats\_Linear PCM32k to 192kHz, 16bit / 24bit (AES/EBU format)DSD2.8MHz (ES-LINK1, ES-LINK2, DoP format)RCA2Input Level5.0Vp-pInput Impedance75ΩInput signal formats\_Linear PCM32k to 192kHz, 16bit / 24bit (IEC60958 format)DSD2.8MHz (DoP format)Optical2Input Level–24.0 to –14.5dBm peakInput signal formats\_Linear PCM32k to 192kHz, 16bit / 24bit (IEC60958 format)DSD2.8MHz (DoP format)USB1 (USB B connector)Input signal formats\_Linear PCM44.1k to 384kHz, 16bit / 24bit / 32bitDSD2.8MHz, 5.6MHz, 11.2MHz, 22.5MHzETHERNET1 (1000BASE-T)Input signal formats\_Linear PCM44.1k to 384kHz, 16bit / 24bit / 32bit (stereo)"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "•\_Only integer format file supportedDSD2.8MHz, 5.6MHz, 11.2MHz, 22.5MHz (stereo)Supported file formats\_PCM LosslessFLAC, Apple Lossless (ALAC) , WAV, AIFF, MQADSD LosslessDSF, DSDIFF (DFF) , DoPCompressed audioMP3, AAC (m4a container)USB DRIVE2 (Front, Rear)Supported file systemFAT32, exFAT, NTFS, Single partition, USB2.0 or later recommendedMaximum power supply0.5AInput signal formats\_Linear PCM44.1k to 384kHz, 16bit / 24bit / 32bit (stereo)"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "•\_Only integer format file supported at 32bitDSD2.8MHz, 5.6MHz, 11.2MHz, 22.4MHz (stereo)Supported file formats\_PCM LosslessFLAC, Apple Lossless (ALAC) , WAV, AIFF, MQADSD LosslessDSF, DSDIFF (DFF) , DoPCompressed audioMP3, AAC (m4a container)Analog audio inputs\_XLR1 pair (L/R)Input Impedance50kΩMaximum Input Voltage8VrmsRCA1 pair (L/R)Input Impedance25kΩMaximum Input Voltage4VrmsAnalog audio outputs\_XLR/ESL-A1 pair (L/R)Output Impedance220ΩMaximum Output Level5.0Vrms (PCM Full-scale signal input, Analog output level setting: FIX)ESL-A PRE-OUT1 pair (L/R)RCA1 pair (L/R)Output Impedance60ΩMaximum Output Level2.5Vrms (PCM Full-scale signal input, Analog output level setting: FIX)Bluetooth® section\_Version4.0Supported profileA2DP, AVRCPSupported A2DP codecLDAC, LHDC, aptX™ HD audio, aptX™ audio, AAC, SBCHeadphone out section\_Balanced4-pin XLR × 1Output Power1500mW + 1500mW (at 32Ω load)Compatible Impedance16 to 600ΩUnbalanced¼\" (6.3mm) Standard Phone jack × 1Output Power750mW + 750mW (at 32Ω load)Compatible Impedance16 to 600ΩClock sync section\_Clock InputBNC × 1Input frequency10MHz (±10ppm)Input impedance50ΩInput level\_Rectangular waveTTL level or equivalentSine wave0.5 to 1.0VrmsExternal control section\_RS-232C× 1Trigger In⅛\" (3.5mm) Monaural mini jack × 1Input level\_Trigger Out⅛\" (3.5mm) Monaural mini jack × 1Output level\_General\_Power\_\_AC 120V, 60Hz\_AC 220 - 240V, 50HzPower consumption38WOverall dimensions\_(W×H×D)445 × 131 × 377mm / 17-⅝\" × 5-¼\" × 14-⅞\" (including protrusions)Weight13.8kg / 30.5 lb."
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1661283302
+updated_at: 1749156975
 ---
