@@ -1,7 +1,7 @@
 ---
 id: d6a350e7-4bbc-45df-9668-e0d7eef533aa
 blueprint: product
-title: K-01XD
+title: 'K-01XD SE'
 manufacturer: f23c292a-a329-4fde-95be-30ed02b75b9c
 product_hero_image: k-01xd_main.jpg
 available_for_demo: false
@@ -20,7 +20,7 @@ description:
       -
         type: text
         text: 'VRDS-ATLAS, a superlative transport mechanism. ESOTERIC’s own, in-house designed Master Sound Discrete DAC. Two innovative technologies, originally developed for our flagship Grandioso models, now combined into new “XD” edition K series model that delivers unrivaled performance.'
-price: 24000
+price: 25000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -41,7 +41,7 @@ specs:
         type: text
         text: "\_CD, SACD"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -52,7 +52,7 @@ specs:
         type: text
         text: "\_stereo balanced analog, stereo balanced single-ended"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -63,7 +63,7 @@ specs:
         type: text
         text: "\_Coax, Toslink, USB, word clock"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -74,7 +74,7 @@ specs:
         type: text
         text: 192/24
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -85,7 +85,7 @@ specs:
         type: text
         text: "\_17″ x 6 3/8″ x 13″"
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -97,6 +97,7 @@ specs:
         text: "\_68 3/8 lbs."
 reivews_set:
   -
+    id: xQFFkTIw
     excerpt:
       -
         type: paragraph
@@ -109,5 +110,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1664483754
+updated_at: 1749145697
 ---
