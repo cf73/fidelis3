@@ -4,7 +4,7 @@ blueprint: product
 manufacturer: f33484db-072d-4ee3-8830-885841bd0144
 product_hero_image: int25.jpg
 available_for_demo: true
-quote: 'It made my hi-fi less hi-fi and the musicians more there — with a lower level of editorializing than I''ve gotten from any previous amp-preamp combination I''ve reviewed. My new solid-state reference.'
+quote: "It made my hi-fi less hi-fi and the musicians more there — with a lower level of editorializing than I've gotten from any previous amp-preamp combination I've reviewed. My new solid-state reference."
 quote_attribution: 'Herb Reichert, Stereophile'
 description:
   -
@@ -17,18 +17,18 @@ description:
     type: paragraph
     content:
       -
-        type: hard_break
-price: 7600
+        type: hardBreak
+price: 8360
 show_price: true
 available_to_buy_online: true
-shipping: 100
+shipping: 120
 monthly_featuree: true
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -43,9 +43,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -60,9 +60,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -77,9 +77,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -94,9 +94,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -111,9 +111,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -128,9 +128,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -145,9 +145,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -162,9 +162,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -179,9 +179,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -196,9 +196,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -213,9 +213,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -230,9 +230,10 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: asvXo4Wx
     type: Review
     excerpt:
       -
@@ -250,5 +251,5 @@ product-categories: integrated-amplifiers
 system_category: amplification
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1705433746
+updated_at: 1749149579
 ---
