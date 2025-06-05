@@ -19,23 +19,20 @@ description:
       -
         type: text
         text: 'Degeneration, “the other form of feedback”, has been eliminated. The output stage consists of a single pair of 800 watt new generation output transistors operating push-pull Class A. The result is faster, lower distortion, lower noise, higher damping and larger Class A operating envelope into low impedance loudspeakers, all in a simple 3 stage circuit with total of three pair of push-pull gain transistors'
-price: 5150
+price: 5665
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
-  - b588f2a0-b84e-466e-8b2e-c1d37e1c36c0
-  - a418adc4-4bf6-4a36-9309-36a0a2c6a216
-  - efeac1cd-aca9-4934-a714-e431dccf0434
   - c316ba68-ef3d-4162-98f1-ed847c0b70b1
 also_consider:
   - 6760e13d-60f9-46b8-97f9-cde1010b83f1
 monthly_featuree: false
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -50,9 +47,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -67,9 +64,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -84,9 +81,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -101,9 +98,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -118,9 +115,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -135,9 +132,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -152,9 +149,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -169,9 +166,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -195,9 +192,9 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -212,9 +209,10 @@ specs:
                   -
                     type: bold
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: 01q2hy5t
     type: Review
     excerpt:
       -
@@ -222,7 +220,7 @@ reivews_set:
         content:
           -
             type: text
-            text: 'I''m awed by how lucidly it renders music. Pass Laboratories'' XA25 is reasonably priced, strong beyond its power rating, and positively revelatory.'
+            text: "I'm awed by how lucidly it renders music. Pass Laboratories' XA25 is reasonably priced, strong beyond its power rating, and positively revelatory."
     attribution: 'Herb Reichert, Stereophile'
     link: 'https://www.stereophile.com/content/pass-laboratories-xa25-power-amplifier'
     date_of_review: '2020-06-30'
@@ -231,7 +229,7 @@ title: XA25
 product-categories: power-amplifiers
 system_category: amplification
 local_only: false
-shipping: 80
+shipping: 120
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1706195434
+updated_at: 1749157160
 ---
