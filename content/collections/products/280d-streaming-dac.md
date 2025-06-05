@@ -8,10 +8,10 @@ quote: '"a well-rounded DAC that handles all musical genres with finesse"'
 quote_attribution: 'Uday Reddy, SoundStage HiFi'
 description:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -20,7 +20,7 @@ description:
                 type: text
                 text: 'Fully asynchronous DAC.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -29,7 +29,7 @@ description:
                 type: text
                 text: 'Supports native DSD64, DSD128 and DSD256 (USB only).'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -38,7 +38,7 @@ description:
                 type: text
                 text: 'Supports PCM up to 384kHz (32-bit on USB only).'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -47,7 +47,7 @@ description:
                 type: text
                 text: '7 digital inputs (AES/EBU x 1, S/PDIF x 2, TosLink x 2, USB x 1 and Qualcomm® aptXTM audio for Bluetooth® x 1) for use with virtually any digital source.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -56,7 +56,7 @@ description:
                 type: text
                 text: 'Front panel LED indicators for active input and input signal PCM sampling & DSD rates.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -65,7 +65,7 @@ description:
                 type: text
                 text: 'With 8th digital input through our MiND 2 streaming module (via WiFi or Ethernet).'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -73,20 +73,20 @@ description:
               -
                 type: text
                 text: 'Analog stage: fully balanced differential circuit for increased dynamic range and headroom, higher resolution, as well as improved signal-to-noise ratio.'
-price: 3900
+price: 4400
 show_price: true
 available_to_buy_online: true
-shipping: 80
+shipping: 100
 pairs_well_with:
   - 67b7418a-5621-4264-8f30-eb27f32d2a6c
 also_consider:
   - 30133d71-d164-4b8f-ae07-cfa1ca1d5227
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -95,7 +95,7 @@ specs:
                 type: text
                 text: 'Frequency response (full range)2 Hz - 100 kHz +0/-3 dB'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -104,7 +104,7 @@ specs:
                 type: text
                 text: 'THD @ 1kHz, 0dBFS (A-weighted)0.001 %'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -113,7 +113,7 @@ specs:
                 type: text
                 text: 'Intermodulation distortion0.002 %'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -122,7 +122,7 @@ specs:
                 type: text
                 text: 'Dynamic Range120 dB'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -131,7 +131,7 @@ specs:
                 type: text
                 text: 'Signal-to-noise Ratio118 dB @ full output'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -140,7 +140,7 @@ specs:
                 type: text
                 text: 'Channel Separation116 dB'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -149,7 +149,7 @@ specs:
                 type: text
                 text: 'Intrinsic Jitter1 picosecond RMS'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -158,7 +158,7 @@ specs:
                 type: text
                 text: 'Analog Output @ 0dBFS2.0 V'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -167,7 +167,7 @@ specs:
                 type: text
                 text: 'Analog output impedance100 Ω'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -176,7 +176,7 @@ specs:
                 type: text
                 text: 'PCM Bit-depth range16 - 32 bits'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -185,7 +185,7 @@ specs:
                 type: text
                 text: 'PCM sampling frequency rates44.1 - 384 kHz'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -194,7 +194,7 @@ specs:
                 type: text
                 text: 'DSD sample ratesDSD64, DSD128 & DSD256'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -203,7 +203,7 @@ specs:
                 type: text
                 text: 'Shipping weight16 lb / 7.5 kg'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -212,7 +212,7 @@ specs:
                 type: text
                 text: 'Dimensions (width x height x depth)16.9 x 3.4 x 13.1 in'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -222,6 +222,7 @@ specs:
                 text: '42.9 x 8.6 x 33.3 cm'
 reivews_set:
   -
+    id: ExBlZhUp
     type: Review
     excerpt:
       -
@@ -244,6 +245,6 @@ title: 280D
 product-categories: dacs
 system_category: source
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1703783431
+updated_at: 1749146342
 local_only: false
 ---
