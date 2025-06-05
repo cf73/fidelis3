@@ -14,15 +14,15 @@ description:
         type: text
         text: 'In this new DAC, which is based on the same core and philosophy as the successful and multi- awarded Lab12 Dac1 Special Edition, we pushed the limits even more in all stages, such as power supply stages, digital inputs crucial paths and receivers, jitter reduction, etc. in order to reach the closest approach to the original analog sound.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Dac1 reference uses eight multibit Philips DAC chips in a complex parallel configuration right after an efficient layout digital receiver stage, allied with two dual triodes tubes in output stage. Each and every part has been selected for its sonic value that brings identifiable and coherent benefits to the final sound you will hear. The result is one of a kind emotional and transparent sonic performance.'
       -
-        type: hard_break
+        type: hardBreak
       -
-        type: hard_break
-price: 3290
+        type: hardBreak
+price: 3390
 show_price: true
 available_to_buy_online: true
 shipping: 60
@@ -40,37 +40,37 @@ specs:
         type: text
         text: '• Input Sampling Rate up to 24bit/192 kHz'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Non Oversampling mode'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• 8x Multibit Philips DACs network'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• 2x Dual Triodes tubes I/V analog output stage'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• 6 Separate Regulated Power Supplies'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Analog retro Nissei VU meters'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• 6mm Aluminum face panel'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "• Five Years Guarantee\_\_"
@@ -81,57 +81,58 @@ specs:
         type: text
         text: '• Power: 210 – 240VAC 50Hz (110 – 120VAC 60Hz)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Power consumption: 70 VA max'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Inputs: 2x SPDIF (Coaxial RCA), 1x USB2, 1x spdif (Optical Toslink)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Outputs: 2x RCA, 2x XLR unbalanced (balanced version available)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Frequency response: 20Hz to 20 KHz + 0dB/-1dB'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• THD: lower than 0.15%'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Rated output level: 2.5Vrms'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Tube complement: 2x 6922 dual triode'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Available Colours: Matt Black, Frozen Silver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Dimensions (WxHxD): 43x11x29 cm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "• Weight: 7.5 Kg\_\_"
 reivews_set:
   -
+    id: sduA6g72
     type: Review
     excerpt:
       -
@@ -173,5 +174,5 @@ product-categories: dacs
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1692904036
+updated_at: 1749147603
 ---
