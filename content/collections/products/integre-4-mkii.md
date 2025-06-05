@@ -38,7 +38,7 @@ description:
       -
         type: text
         text: 'An optional tube cage for increased safety and different aesthetic approach of your amplifier is available to obtain.'
-price: 6490
+price: 6600
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -61,57 +61,58 @@ specs:
         type: text
         text: '• Power: 230VAC 50Hz (115VAC 60Hz)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Power consumption: 350 VA max'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Output power: 75 Watt per channel (KT170)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Frequency response: 15 Hz – 60 KHz (-1dB)'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Input impedance: 50K ohm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Recommended speakers: 4-8 ohm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Tubes complement: 4x 6n1p dual triodes, 4x KT170 power pentodes'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Inputs: (5) 5x unbalanced line stereo RCA connectors, 1x unbalanced line stereo XLR connectors'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Available Colours: Matt Black, Frozen Silver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Dimensions (WxHxD): 43x19x29 cm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '• Weight: 22Kg'
 reivews_set:
   -
+    id: Jr9knrSt
     excerpt:
       -
         type: paragraph
@@ -123,7 +124,7 @@ reivews_set:
     link: 'https://www.hifistatement.net/tests/item/3355-lab-12-integre4-mk2?start=0'
     type: Review
     enabled: true
-updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1696528707
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1749150119
 featured_in_product_category: false
 ---
