@@ -40,7 +40,7 @@ description:
       -
         type: text
         text: 'Shanling ET3 offers a range of standard digital outputs, but we also added more advanced I2S output and even USB output. Allowing for the transport of super High-Res files, above the limits of standard coaxial or optical outputs. ET3 can read these High-Res files from connected USB drives or it can be used alongside your local wireless network and DLNA streaming.'
-price: 795
+price: 895
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -150,6 +150,6 @@ specs:
         type: text
         text: "-\_\_\_\_\_\_\_ Remote Control included"
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1731597431
+updated_at: 1749143955
 product_hero_image: ffa44280b50ec9071a762588685ce373534.jpg
 ---
