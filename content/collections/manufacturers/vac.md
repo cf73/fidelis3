@@ -20,8 +20,7 @@ description:
 title: VAC
 product-categories:
   - power-amplifiers
-  - integrated-amplifiers
   - pre-amps
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1656016091
+updated_at: 1749150887
 ---
