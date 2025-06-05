@@ -17,16 +17,16 @@ description:
       -
         type: text
         text: 'Now finished in Lunar Grey to match the rest of the CX Series 2 range, the award-winning CXC delivers stunning audio quality from your CD collection.'
-price: 699
+price: 599
 show_price: true
 available_to_buy_online: true
-shipping: 30
+shipping: 40
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -35,9 +35,9 @@ specs:
                 type: text
                 text: 'DIGITAL AUDIO OUTPUTS: S/PDIF coaxial and TOSLINK optical'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -46,9 +46,9 @@ specs:
                 type: text
                 text: 'S/PDIF OUTPUT IMPEDANCE: <75 Ohms'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -57,9 +57,9 @@ specs:
                 type: text
                 text: 'MAX POWER CONSUMPTION: 25W'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -68,9 +68,9 @@ specs:
                 type: text
                 text: 'STANDBY POWER CONSUMPTION: <0.5W'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -79,9 +79,9 @@ specs:
                 type: text
                 text: 'GAPLESS PLAYBACK?: Yes'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -90,9 +90,9 @@ specs:
                 type: text
                 text: 'REMOTE CONTROL: Yes'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -101,9 +101,9 @@ specs:
                 type: text
                 text: 'DIMENSIONS (H X W X D): 85 x 430 x 315mm (3.1 x 16.9 x 12.4”)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -112,9 +112,9 @@ specs:
                 type: text
                 text: 'WEIGHT: 4.7kg (10.3lbs)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -123,9 +123,10 @@ specs:
                 type: text
                 text: 'BOX CONTENTS: CXC CD Transport, Power Cable, 3 x AAA Batteries, Remote Control, Control Bus Cable'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: 7NeYSLks
     type: Review
     excerpt:
       -
@@ -149,5 +150,5 @@ product-categories: cd-players
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1651612542
+updated_at: 1749143904
 ---
