@@ -4,7 +4,7 @@ blueprint: product
 manufacturer: c6c9a7b2-9411-4aef-9327-2da9347a5437
 product_hero_image: axc35_packshots_img_01.jpg
 available_for_demo: true
-quote: '''Build quality is superb and Cambridge Audio hasn’t cut any corners on the sound quality either. Highly recommended.'''
+quote: "'Build quality is superb and Cambridge Audio hasn’t cut any corners on the sound quality either. Highly recommended.'"
 quote_attribution: 'Forbes Magazine'
 description:
   -
@@ -13,18 +13,18 @@ description:
       -
         type: text
         text: "The AXC35 is a versatile, gapless playback CD player featuring a high quality digital to analogue converter (DAC), to convert the digital information stored on a CD into an analogue sound signal. As well as regular audio CDs, the AXC35 will play MP3 and WMA files from home recorded CD-R, CD-RW and CD-ROM discs. There’s also a dedicated digital output which allows you to record from a CD to a digital format or even connect to a standalone DAC when you’re ready to improve your sound even further.\_\_"
-price: 399
+price: 449
 show_price: true
 available_to_buy_online: true
-shipping: 30
+shipping: 40
 pairs_well_with:
   - 068393be-a680-4cb0-8ab9-bd8bafb6a579
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -33,9 +33,9 @@ specs:
                 type: text
                 text: 'THD @ 1KHZ -10DBFS: <0.01%'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -44,9 +44,9 @@ specs:
                 type: text
                 text: 'D/A CONVERTOR: Wolfson Microelectronics WM8524'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -55,9 +55,9 @@ specs:
                 type: text
                 text: 'GAPLESS PLAYBACK: Yes'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -66,9 +66,9 @@ specs:
                 type: text
                 text: 'FILTER: 2 -pole Butterworth filter'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -77,9 +77,9 @@ specs:
                 type: text
                 text: 'FREQUENCY RESPONSE (+/-0.4DB): 20Hz - 20kHz'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -88,9 +88,9 @@ specs:
                 type: text
                 text: 'THD @ 1KHZ 0DBFS: <0.006%'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -99,9 +99,9 @@ specs:
                 type: text
                 text: 'S/N RATIO, A WEIGHTED: >93dB'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -110,9 +110,9 @@ specs:
                 type: text
                 text: 'CROSSTALK @1KHZ: <-98dB'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -121,9 +121,9 @@ specs:
                 type: text
                 text: 'CROSSTALK @20KHZ: <-95dB'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -132,9 +132,9 @@ specs:
                 type: text
                 text: 'OUTPUT IMPEDANCE; <50 ohms'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -143,9 +143,9 @@ specs:
                 type: text
                 text: 'MAXIMUM POWER CONSUMPTION: 15W'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -154,9 +154,9 @@ specs:
                 type: text
                 text: 'STANDBY POWER CONSUMPTION: <0.5W'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -165,9 +165,9 @@ specs:
                 type: text
                 text: 'DIMENSIONS: 75 x 430 x 305mm (3.0 x 16.9 x 12.2”)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -176,9 +176,9 @@ specs:
                 type: text
                 text: 'WEIGHT: 4.3kg (9.5lbs)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -187,9 +187,9 @@ specs:
                 type: text
                 text: 'S/PDIF OUTPUT IMPEDANCE: <75 ohms'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -198,9 +198,10 @@ specs:
                 type: text
                 text: 'IN THE BOX: AXC35 CD Player, Power Cable, Remote Control, 2 x AAA Batteries'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: I4L8LQrT
     type: Review
     excerpt:
       -
@@ -213,9 +214,9 @@ reivews_set:
         type: paragraph
         content:
           -
-            type: hard_break
+            type: hardBreak
           -
-            type: hard_break
+            type: hardBreak
     attribution: 'What HiFi'
     link: 'https://www.whathifi.com/reviews/cambridge-audio-axc35'
     date_of_review: '2020-07-24'
@@ -225,5 +226,5 @@ product-categories: cd-players
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1649955296
+updated_at: 1749143778
 ---
