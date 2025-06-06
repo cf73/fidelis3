@@ -1,5 +1,6 @@
 ---
 id: 4a0237b6-c317-4afa-8b86-96fc7c168a44
+published: false
 blueprint: manufacturer
 title: Thorens
 logo: thorens-logo.png
