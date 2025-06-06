@@ -3,7 +3,7 @@ id: 3ac1efb5-c7ea-435c-8b6c-d9eaf15acfb3
 blueprint: manufacturer
 title: 'Audio Origami'
 logo: AO-Scaled.jpg
-tagline: 'World''s Best Tonearm'
+tagline: "World's Best Tonearm"
 website: 'http://www.audioorigami.co.uk/?doing_wp_cron=1655995286.3815639019012451171875'
 hero_image: Audiofiles-Blk-22.jpg
 description:
@@ -17,7 +17,7 @@ description:
             type: bold
         text: 'PU7 TONE ARM'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -25,7 +25,7 @@ description:
             type: bold
         text: 'Hi-Fi World'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         marks:
@@ -33,7 +33,7 @@ description:
             type: bold
         text: '1ST PLACE WINNER IN THE HI-FI WORLD 2007 AWARDS!!'
       -
-        type: hard_break
+        type: hardBreak
         marks:
           -
             type: bold
@@ -98,5 +98,7 @@ description:
         type: text
         text: 'I’m sure my old friends at Syrinx would be proud!'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1655995494
+updated_at: 1749229544
+product-categories:
+  - tone-arms
 ---
