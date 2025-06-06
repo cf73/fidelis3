@@ -10,7 +10,7 @@ description:
     content:
       -
         type: text
-        text: 'A classic design that offers a truly engaging performance at a real world price point. Combining first rate sound quality and an elegant design the Encore is a perfect fit. It delivers a lifelike performance with superb transparency. It’s inherent musicality and smooth tonal balance guarantees many years of listening pleasure. Fitted with a Origin Live Zephyr tonearm as standard, but upgraded arm options are available for extra expense. '
+        text: 'A classic design that offers a truly engaging performance at a real world price point. Combining first rate sound quality and an elegant design the Encore is a perfect fit. It delivers a lifelike performance with superb transparency. It’s inherent musicality and smooth tonal balance guarantees many years of listening pleasure. No tonearm is included, but multiple options are available. '
   -
     type: heading
     attrs:
@@ -292,7 +292,7 @@ product-categories: turntables
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749216577
+updated_at: 1749216750
 pairs_well_with:
   - 45fac57d-fb5c-4c73-9774-aa72e421c5a5
   - 4f30d1c7-8f94-4867-82e7-a32e49b25500
