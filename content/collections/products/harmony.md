@@ -12,12 +12,12 @@ description:
         type: text
         text: 'The main goal of the Harmony is to add to the strengths of the Encore, improving the existing characteristics, not changing them.'
       -
-        type: hard_break
+        type: hardBreak
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
-        text: "The Harmony produces an extremely low noise floor not always associated with analog playback. From this inky black background music emerges with detailed accurate highs and superb bass resolution. The midrange is rich and the timbre of instruments and voices are real and tangible. The midrange is magical and in complete balance with the upper and lower octaves. When you listen to the Harmony you will get that emotional connection to the music that only superior analog playback can provide.\_\_Pricing is with the Origin Live Encounter MK IV tonearm, but upgrade options are available. "
+        text: "The Harmony produces an extremely low noise floor not always associated with analog playback. From this inky black background music emerges with detailed accurate highs and superb bass resolution. The midrange is rich and the timbre of instruments and voices are real and tangible. The midrange is magical and in complete balance with the upper and lower octaves. When you listen to the Harmony you will get that emotional connection to the music that only superior analog playback can provide.\_\_Pricing is with no tonearm included - multiple options are available."
   -
     type: heading
     attrs:
@@ -27,10 +27,10 @@ description:
         type: text
         text: FEATURES
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -56,7 +56,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -82,7 +82,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -97,7 +97,7 @@ description:
                 type: text
                 text: "\_enables us to achieve the tight tolerances needed for a quiet and musical presentation"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -123,10 +123,10 @@ description:
                       title: null
                 text: 'Click here for details'
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -152,7 +152,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -178,7 +178,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -193,7 +193,7 @@ description:
                 type: text
                 text: "\_working in conjunction with the large sub platter ensures precise speed stability"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -219,10 +219,10 @@ description:
                       title: null
                 text: 'Click here for details'
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -237,7 +237,7 @@ description:
                 type: text
                 text: "\_provides quiet, stable and vibration free power to the sub platter. Our custom modifications completely eliminates any clogging in the motor."
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -252,7 +252,7 @@ description:
                 type: text
                 text: 'to drive the motor with the utmost precision, we created the Conductor outboard speed control. This features quartz lock to maintain a rotational accuracy of ±0.003%. Because many classic vinyl records predate such precision, the Conductor also provides separate rear-panel pitch adjustments for 33-1/3 and 45 rpm. A robust component in its own right, the speed control isolates the motor drive voltage from the noise, spikes and distortions in your household AC mains, generating a pure sine wave of uncommon stability.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -278,7 +278,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -293,7 +293,7 @@ description:
                 type: text
                 text: 'Semi Gloss Santos Rosewood and Dark Walnut'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -307,7 +307,7 @@ description:
               -
                 type: text
                 text: 'High Gloss Quilted Maple and Piano Black'
-price: 9995
+price: 8995
 show_price: true
 available_to_buy_online: true
 shipping: 200
@@ -327,11 +327,12 @@ specs:
 title: Harmony
 product-categories: turntables
 system_category: source
-quote: 'The Pure Fidelity Harmony brings a beautiful sonic signature to vinyl but with enough transparency to reveal the unique personality of each LP. Every record played on the Harmony, from jazz and rock to electronic and classical, is an event. I couldn''t not listen'
+quote: "The Pure Fidelity Harmony brings a beautiful sonic signature to vinyl but with enough transparency to reveal the unique personality of each LP. Every record played on the Harmony, from jazz and rock to electronic and classical, is an event. I couldn't not listen"
 quote_attribution: Stereophile
 local_only: false
 reivews_set:
   -
+    id: 7NdR2AHu
     excerpt:
       -
         type: paragraph
@@ -353,5 +354,10 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1682026754
+updated_at: 1749216683
+pairs_well_with:
+  - 45fac57d-fb5c-4c73-9774-aa72e421c5a5
+  - 4f30d1c7-8f94-4867-82e7-a32e49b25500
+also_consider:
+  - c413dac0-f44a-477b-b42c-84be1b74d4ea
 ---
