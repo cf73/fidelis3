@@ -5,6 +5,22 @@ system_category: multi-function
 blueprint: product_category
 feature_a_product: true
 product: af07f219-a883-4376-a321-e34d92a197db
-add_custom_featured_text: false
+add_custom_featured_text: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749234727
+updated_at: 1749240103
+featured_product_text:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'The Axxess Forte 1 is absolutely beautiful with vocals. The tone and spooky realistic way the voices come into the room is fantastic. I have heard some amazing speakers and amps that brought in the human voice in a magical way. With'
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: ' the Forte 1,'
+      -
+        type: text
+        text: ' the voices are so clear and crisp with a bit of body to them as well. It’s really a nice sound.'
