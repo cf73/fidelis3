@@ -53,16 +53,16 @@ pairs_well_with:
   - 288d3d9c-afb3-430f-b4cc-32413d914957
   - 85b80b1b-c6aa-457b-b38c-34943fc784f4
 also_consider:
-  - 72d5e848-86b9-4b26-9b65-311b35ae5033
   - 9aec0f30-038f-48cf-a6c2-0447e8080084
-product-categories: multi-function
+  - 33f11126-9326-429c-b50f-f83830be7973
+product-categories: dacs
 system_category: source
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -71,7 +71,7 @@ specs:
                 type: text
                 text: 'Roon Core and Roon End Point integrated'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -80,7 +80,7 @@ specs:
                 type: text
                 text: 'ultra low clock jitter'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -98,7 +98,7 @@ specs:
                 type: text
                 text: "\_DAC"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -107,7 +107,7 @@ specs:
                 type: text
                 text: 'all sample rates and formats supported'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -116,7 +116,7 @@ specs:
                 type: text
                 text: 'relay based analog volume control'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -125,7 +125,7 @@ specs:
                 type: text
                 text: 'digital AES, spdif and optical inputs'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -134,7 +134,7 @@ specs:
                 type: text
                 text: 'analog XLR and RCA inputs'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -143,7 +143,7 @@ specs:
                 type: text
                 text: 'analog XLR and RCA outputs'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -152,7 +152,7 @@ specs:
                 type: text
                 text: 'headphone output'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -161,7 +161,7 @@ specs:
                 type: text
                 text: 'web control of setup via any browser'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -170,7 +170,7 @@ specs:
                 type: text
                 text: 'infrared remote control'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -179,7 +179,7 @@ specs:
                 type: text
                 text: 'external USB and NAS storage, optional internal SSD'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -188,7 +188,7 @@ specs:
                 type: text
                 text: "Tidal and\_Qobuz support"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -197,7 +197,7 @@ specs:
                 type: text
                 text: '355 x 85 x 295mm (WxHxD)'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -205,7 +205,7 @@ specs:
               -
                 type: text
                 text: '5 year limited warranty'
-updated_by: 87641989-b935-429e-81a7-ccf64c5d34d6
-updated_at: 1696527951
+updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
+updated_at: 1749214618
 featured_in_product_category: true
 ---
