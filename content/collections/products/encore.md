@@ -20,10 +20,10 @@ description:
         type: text
         text: FEATURES
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -38,7 +38,7 @@ description:
                 type: text
                 text: "\_provides a resonance free base (plinth) for all the other supporting components"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -53,7 +53,7 @@ description:
                 type: text
                 text: "\_enables us to achieve the tight tolerances needed for a quiet and musical presentation"
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -79,7 +79,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -105,7 +105,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -120,10 +120,10 @@ description:
                 type: text
                 text: "\_working in conjunction with the large sub platter ensures precise speed stability"
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -149,7 +149,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -175,7 +175,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -190,10 +190,10 @@ description:
                 type: text
                 text: "\_provides quiet, stable and vibration free power to the sub platter. Our custom modifications completely eliminates any clogging in the motor."
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -208,7 +208,7 @@ description:
                 type: text
                 text: 'to drive the motor with the utmost precision, we created the Conductor outboard speed control. This features quartz lock to maintain a rotational accuracy of ±0.003%. Because many classic vinyl records predate such precision, the Conductor also provides separate rear-panel pitch adjustments for 33-1/3 and 45 rpm. A robust component in its own right, the speed control isolates the motor drive voltage from the noise, spikes and distortions in your household AC mains, generating a pure sine wave of uncommon stability.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -234,7 +234,7 @@ description:
                       title: null
                 text: 'Click here for details'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -249,7 +249,7 @@ description:
                 type: text
                 text: 'Semi Gloss Santos Rosewood and Dark Walnut'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -267,13 +267,13 @@ description:
     type: paragraph
     content:
       -
-        type: hard_break
+        type: hardBreak
       -
-        type: hard_break
-price: 7495
+        type: hardBreak
+price: 6495
 show_price: true
 available_to_buy_online: true
-shipping: 120
+shipping: 150
 specs:
   -
     type: paragraph
@@ -292,5 +292,11 @@ product-categories: turntables
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1682027260
+updated_at: 1749216577
+pairs_well_with:
+  - 45fac57d-fb5c-4c73-9774-aa72e421c5a5
+  - 4f30d1c7-8f94-4867-82e7-a32e49b25500
+also_consider:
+  - 843597d4-bad9-449a-93c3-7ec0cd16a5b5
+  - f5aada8c-65b4-41b7-aaa3-bdc219697a4c
 ---
