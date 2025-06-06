@@ -12,14 +12,14 @@ description:
     content:
       -
         type: text
-        text: "The new Planar\_1 is the most user friendly Rega turntable to date. Now with preset bias force\_on the brand new RB110 tonearm, the Planar\_1 is set up in seconds after unpacking. Simply\_slide the balance weight onto the rear of the tonearm as far as it will go, remove the stylus guard and start spinning your favorite vinyl.Every single aspect of the Planar 1\_has been meticulously\_designed to improve performance. For the first time\_the Planar 1 is now running a 24v, low noise, synchronous\_motor to reduce vibration transfer\_combined with our brand new RB110 tonearm\_fitted with Rega's\_bespoke ultra low friction play bearings. Only\_sharing the drive belt, sub platter and dust cover\_from\_the outgoing RP1, this is truly a new turntable from the ground up.If you are\_looking to get back into vinyl and want serious performance that will last you a\_lifetime, then look no\_further."
+        text: "The new Planar\_1 is the most user friendly Rega turntable to date. Now with preset bias force\_on the brand new RB110 tonearm, the Planar\_1 is set up in seconds after unpacking. Simply\_slide the balance weight onto the rear of the tonearm as far as it will go, remove the stylus guard and start spinning your favorite vinyl. Every single aspect of the Planar 1\_has been meticulously\_designed to improve performance. For the first time\_the Planar 1 is now running a 24v, low noise, synchronous\_motor to reduce vibration transfer\_combined with our brand new RB110 tonearm\_fitted with Rega's\_bespoke ultra low friction play bearings. Only\_sharing the drive belt, sub platter and dust cover\_from\_the outgoing RP1, this is truly a new turntable from the ground up. If you are\_looking to get back into vinyl and want serious performance that will last you a\_lifetime, then look no\_further. The Planar 1 comes complete with a Carbon MM cartridge. "
   -
     type: heading
     attrs:
       level: '2'
     content:
       -
-        type: hard_break
+        type: hardBreak
 price: 595
 show_price: true
 available_to_buy_online: true
@@ -49,7 +49,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "Brand new RB110 tonearm built with the new Rega designed, bespoke, ultra low friction bearings\_(Patent Pending). New bias assembly\_and integrated arm clip. Includes automatic bias adjustment negating the need for the user to set bias, making this the most ‘Plug & Play’\_turntable we have ever manufactured. New ergonomically, re-designed and stiffer headshell for improved usability and appearance."
@@ -63,7 +63,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Rega Carbon cartridge supplied fitted as standard.'
@@ -77,7 +77,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'The first entry level Rega turntable to use a 24v, synchronous AC motor with a new motor PCB and aluminium pulley offering low noise and better speed stability.'
@@ -91,7 +91,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "Brand new Thermoset, gloss laminated plinth with vastly improved appearance and new ergonomically positioned on/off switch located on the underside.\_Two stunning plinth finishes available, gloss black and gloss white."
@@ -105,7 +105,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Re-designed brass main bearing, offering improved fit and removing stress on the bearing itself whilst minimising the transfer of potential energy. (Patent pending)'
@@ -119,7 +119,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Brand new, 23mm, higher mass, phenolic platter with improved flywheel effect for improved speed stability.'
@@ -133,7 +133,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'New improved feet to increase stability and reduce vibration transfer.'
@@ -147,7 +147,7 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'New motor cover tray with integrated cooling.'
@@ -161,12 +161,13 @@ specs:
           -
             type: bold
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'New 111g ‘Plug and Play’ balance weight.'
 reivews_set:
   -
+    id: N7P6Soyt
     type: Review
     excerpt:
       -
@@ -184,5 +185,5 @@ product-categories: turntables
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1679419188
+updated_at: 1749215170
 ---
