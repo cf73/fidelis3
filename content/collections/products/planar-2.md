@@ -12,22 +12,23 @@ description:
     content:
       -
         type: text
-        text: "The new Planar 2 was developed over the past two years\_alongside the recently released Planar 3.\_Featuring the\_brand new\_RB220 tonearm which is\_packed with groundbreaking new features.A new 24v, low noise motor, acrylic laminated plinth, newly designed central bearing and so much more. Every feature of this innovative new turntable is designed to extract the maximum amount of information and detail from your vinyl collection."
+        text: "The new Planar 2 was developed over the past two years\_alongside the recently released Planar 3.\_Featuring the\_brand new\_RB220 tonearm which is\_packed with groundbreaking new features a new 24v, low noise motor, acrylic laminated plinth, newly designed central bearing and so much more. Every feature of this innovative new turntable is designed to extract the maximum amount of information and detail from your vinyl collection. The Planar 2 comes complete with the new ND3 MM cartridge. "
   -
     type: paragraph
     content:
       -
-        type: hard_break
-price: 775
+        type: hardBreak
+price: 795
 show_price: true
 available_to_buy_online: true
-shipping: 40
+shipping: 60
 pairs_well_with:
-  - abc10149-fc03-4025-9359-1878bfe96ee4
   - 584ccd3e-d420-47fe-894b-f773bbe992ef
-  - 40fab940-8a47-45be-a156-347ca7f037c3
+  - 73b1d110-0d42-414e-9178-9b8cb16b204c
+  - 449e853e-3049-4400-b26f-eb31002a8e50
 also_consider:
   - 2bd9ea9c-e5b2-42ab-ac7c-58bc4a73a068
+  - 889e31fb-b0a7-47fa-b14a-ef028366c947
 specs:
   -
     type: paragraph
@@ -108,10 +109,10 @@ specs:
           -
             type: bold
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -120,7 +121,7 @@ specs:
                 type: text
                 text: 'Re-designed feet - New improved foot assembly to increase stability and reduce vibration transfer.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -129,7 +130,7 @@ specs:
                 type: text
                 text: "Carbon cartridge - supplied as standard on all Planar 2’s for simple plug and play\_convenience."
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -138,7 +139,7 @@ specs:
                 type: text
                 text: 'Motor cover tray - with integrated cooling.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -147,7 +148,7 @@ specs:
                 type: text
                 text: 'Optional lid / plinth protectors - supplied to prevent marks on the plinth and keep it looking its best.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -156,7 +157,7 @@ specs:
                 type: text
                 text: 'Instructions - Easy to use multi-lingual quick start guide for easy set up.'
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -166,6 +167,7 @@ specs:
                 text: 'Packaging - New improved packaging.'
 reivews_set:
   -
+    id: tgGK1emz
     type: Review
     excerpt:
       -
@@ -195,5 +197,5 @@ product-categories: turntables
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1679419218
+updated_at: 1749215068
 ---
