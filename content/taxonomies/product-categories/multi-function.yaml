@@ -7,7 +7,7 @@ feature_a_product: true
 product: 2e30dc04-5b51-4f1f-91f6-2776f792b10a
 add_custom_featured_text: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749240467
+updated_at: 1749240872
 featured_product_text:
   -
     type: paragraph
@@ -24,3 +24,9 @@ featured_product_text:
       -
         type: text
         text: ' the voices are so clear and crisp with a bit of body to them as well. It’s really a nice sound.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Steve Huff, HiFi Huff'
