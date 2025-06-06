@@ -55,7 +55,7 @@ pairs_well_with:
 also_consider:
   - 9aec0f30-038f-48cf-a6c2-0447e8080084
   - 33f11126-9326-429c-b50f-f83830be7973
-product-categories: dacs
+product-categories: server-streaming
 system_category: source
 specs:
   -
@@ -206,6 +206,6 @@ specs:
                 type: text
                 text: '5 year limited warranty'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749214618
+updated_at: 1749214716
 featured_in_product_category: true
 ---
