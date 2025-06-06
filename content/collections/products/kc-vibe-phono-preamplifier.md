@@ -25,15 +25,15 @@ description:
       -
         type: text
         text: "There is also, generally, a grounding wire coming from the turntable. It connects to the ground screw on the back of the\_KC VIBE."
-price: 895
+price: 900
 show_price: true
 available_to_buy_online: true
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -42,9 +42,9 @@ specs:
                 type: text
                 text: 'Gain Settings: 40, 45, 50, 55 or 60dB'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -53,9 +53,9 @@ specs:
                 type: text
                 text: 'Size: 11” wide 9” deep 2” high'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -64,9 +64,9 @@ specs:
                 type: text
                 text: 'Loading: 100, 200, 475, 1k or 47k Ohms'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -75,9 +75,9 @@ specs:
                 type: text
                 text: "Weight: Net 6lbs\_"
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -86,9 +86,10 @@ specs:
                 type: text
                 text: 'Power Requirements: 86 to 260 volts AC, 2 Watts Universal, no adjustment required'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: ot4kLJg6
     type: Review
     excerpt:
       -
@@ -142,5 +143,5 @@ product-categories: phonostage
 system_category: source
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1693423620
+updated_at: 1749230404
 ---
