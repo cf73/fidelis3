@@ -15,3 +15,5 @@ preferences:
         - product-categories
         - system_category
   theme: light
+  nav:
+    settings: '@hide'
