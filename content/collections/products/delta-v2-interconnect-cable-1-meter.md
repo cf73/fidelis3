@@ -2,7 +2,7 @@
 id: 07c801ac-62a0-4bf8-b4ba-888ffc21d31e
 blueprint: product
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
-product_hero_image: ic-dlt_v2-rca-full-02-1200x800.jpg
+product_hero_image: shunyata-research-theta-xlr-interlink-pluggen.jpg
 available_for_demo: true
 description:
   -
@@ -202,5 +202,5 @@ product-categories: interconnects
 system_category: cables
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1751468101
+updated_at: 1751468191
 ---
