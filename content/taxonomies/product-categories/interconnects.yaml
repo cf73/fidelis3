@@ -1,11 +1,18 @@
 category_description: 'The audio equivalent of high performance tires, cables are where the audio rubber meets the road. Let us help you fine-tune your system with superior products from Accusound, Tellurium Q, Shunyata, Cardas, Chord, LFD, and other special application offerings.'
-category_hero_image: delta-v1-xlr.jpg
+category_hero_image: oip.jpg
 feature_on_homepage: true
 title: Interconnects
 system_category: cables
 blueprint: product_category
 feature_a_product: true
-product: 39954c2a-cfc8-4318-badb-0865a7c52f38
-add_custom_featured_text: false
+product: cd6aadf7-e158-480f-9693-84ec6e9586e0
+add_custom_featured_text: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1697208218
+updated_at: 1751484104
+featured_product_text:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'The Wireworld Platinum Series of Digital and Analog interconnects set a new standard in transparency. I have never heard cables that sound like nothing, it is shockingly hard to describe the absence of something. When you remove the sound of cables from your system you are left with an incredible amount of detail, space, and transparency.'
