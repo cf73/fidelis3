@@ -10,351 +10,197 @@ description:
     content:
       -
         type: text
-        text: "Delta v2 Interconnects are also available for Balanced XLR applications \_"
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "The insulation that protects wire can create a ghost-like signal that subtly blurs the source audio signal. The scientific term for this is:\_"
-      -
-        type: text
-        text: 'dielectric absorption and re-radiation'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: ".\_"
-      -
-        type: text
-        text: ΞTRON
         marks:
           -
             type: bold
-          -
-            type: italic
+        text: 'RAISING THE BAR'
+  -
+    type: paragraph
+    content:
       -
         type: text
-        text: ®
+        text: "Theta Series signal, digital, and power cables were created using scientific innovation that has established Shunyata Research as a key contributor to the world's top recording studios and heart-surgery labs. Each component, material, and conductor within the Theta Series is custom-designed to extend the boundaries of signal resolution, even when compared to cost-no-object products. Theta Series products further expand upon Shunyata Research's legacy of delivering uncompromising performance at prices that raise expectations for all products in their category."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
         marks:
           -
             type: bold
-          -
-            type: italic
-          -
-            type: superscript
-      -
-        type: text
-        text: "\_is a technology developed by Shunyata Research that prevents this type of signal cable micro-distortion.\_\_It\_requires a special type of conductor that has two signal paths. An\_"
-      -
-        type: text
-        text: 'electric-field compensation circuit'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_creates a contra-signal that prevents the insulation from developing a charge.\_\_"
-      -
-        type: text
-        text: ΞTRON
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: ®
-        marks:
-          -
-            type: italic
-          -
-            type: bold
-          -
-            type: superscript
-      -
-        type: text
-        text: "\_"
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: '™cables preserve the integrity of the source signal even when using very long cable runs are required.'
-  -
-    type: heading
-    attrs:
-      level: '5'
-    content:
-      -
-        type: text
-        text: 'Multiple international patents:'
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'US 8,912,436 // WO WO2012045033A1 // EP 262261B1 // CN103201800B // CH ZL201180047344.2'
+        text: 'ADVANCING TECHNOLOGY'
   -
     type: paragraph
     content:
       -
         type: text
-        text: ‌‌ArNi
+        text: "Theta Series signal and digital cable products feature continuous-cast Ohno copper. Ohno copper is an ultra-pure conductor drawn using heated molds that cast the wire into a singular crystalline structure. The Ohno conductors used in the Theta Series are then extruded with a fluorocarbon dielectric and custom-shielding elements using Shunyata Research's exclusive PMZ (Precision Matched Impedance) process. This extrusion method tightens the tolerances of the conductor surface, dielectric and the precision placement of the shield. To achieve these finely drawn tolerances, the extrusion and braiding machines must be run at one-quarter normal speed during the manufacturing process."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Theta speaker cables and power cords feature VTX™ (hollow core) and VTX-Ag™ (pure silver center) conductors, respectively, both with an outer layer of ultra-pure OFE copper for enhanced performance. Finally, all Theta cables are conditioned for 4-days using Shunyata Research's advanced Kinetic Phase Inversion Process™ (KPIPv2™), which conditions conductor metals at a molecular level. Theta Series cables are terminated with Shunyata's custom-designed connectors and cold-soldered terminals. These custom-designed attributes elevate Theta Series performance far beyond expectation, regardless of cost."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
         marks:
           -
             type: bold
-      -
-        type: text
-        text: "®\_"
-        marks:
-          -
-            type: superscript
-      -
-        type: text
-        text: 'wire was designed by Shunyata Research to be the finest quality wire available. It begins with the highest purity of copper and silver metals available, including Ohno ('
-      -
-        type: text
-        text: 'single crystal'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "), PCOCC silver and OFE C0101 conductors.\_Fluorocarbon dielectrics, usually only found in aerospace applications that have exceptional electrical characteristics including extremely low dielectric absorption, high dielectric strength and superb heat resistance.\_\_When used in digital wiring it significantly reduces transient energy storage and release which affects phase noise performance."
+        text: 'THE SOUND AND FURY'
   -
     type: paragraph
     content:
       -
         type: text
-        text: '— And finally every cable undergoes our proprietary KPIP™ process'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: .
+        text: 'Theta cables disappear, allowing the system to express sudden dynamic shifts in timing and frequency extension with effortlessness and nuance. A loom of Theta cables allows a complex system of electronics and speakers to speak with a single coherent voice.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: VTX™
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_— Shunyata Research’s exclusive VTX™ conductors are formed into a virtual tube with the core of the conductor being hollow. This ensures that all the current flows through the outer periphery of the conductor which minimizes skin effects and random eddy currents.\_ VTX™ conductors are made with single crystal Ohno, certified OFE or silver wire."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "—\_"
-      -
-        type: text
-        text: 'Superior by design'
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: ‌
-      -
-        type: text
-        text: Ohno
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_wire, also called ‌PCOCC was invented in 1986 by professor Atsumi ‌Ohno of the Chiba Institute of Technology in Japan. Copper wire is created by an extrusion process that pulls a rod of cold copper through a small orifice which creates multiple crystalline boundaries. By contrast, ‌‌Ohno wire is made by a process using heated molds that cast a wire to form a single crystalline structure. ‌‌Ohno wire is well known for its exceptionally pure, grain-free sonic qualities."
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-price: 1500
+        text: "Like their more affordable Gamma Series counterpart, Theta cables imbue the system with an unassailable sense of coherence, as if everything is in focus, without distortion or hard transients. There is an absence of perceived noise, allowing spectral and textural subtlety to come to the fore. Unlike common copper cables, Theta Series cables deliver explosive dynamics and pitch perfect frequency extension, even when compared to far more expensive cables. Theta's larger gauge VTX™ conductors add weight, dimensionality and an expansive, room-filling sound-stage."
+price: 1198
 show_price: true
 available_to_buy_online: true
 shipping: 25
 specs:
   -
-    type: heading
-    attrs:
-      level: '3'
-    content:
-      -
-        type: hard_break
-      -
-        type: text
-        text: Specifications
-  -
-    type: heading
-    attrs:
-      level: '3'
-    content:
-      -
-        type: text
-        text: 'DELTA v2 RCA'
-  -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'Cable Type'
-        marks:
-          -
-            type: bold
       -
         type: text
-        text: ":\_"
-      -
-        type: text
-        text: ΞTRON
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "®\_"
-        marks:
-          -
-            type: italic
-          -
-            type: bold
-          -
-            type: superscript
-      -
-        type: text
-        text: coaxial
+        text: ': Twin axial geometry'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: Conductors
-        marks:
-          -
-            type: bold
       -
         type: text
-        text: ":\_"
-      -
-        type: text
-        text: "ArNi\_"
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: ®
-        marks:
-          -
-            type: superscript
-      -
-        type: text
-        text: "\_VTX / OFE / Ohno"
+        text: ': OCC (Ohno Continuous Cast) copper'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
+        text: 'Shield:'
+      -
+        type: text
+        text: ' 100% coverage foil shield'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
         text: Dielectric
-        marks:
-          -
-            type: bold
       -
         type: text
-        text: ': fluorocarbon'
+        text: ': Fluorocarbon'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'Connectors:'
-        marks:
-          -
-            type: bold
       -
         type: text
-        text: "\_SR-RCA-v"
+        text: ' Gold plated brass contacts, nickel matte finish'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'TAP Modules'
         marks:
           -
             type: bold
+        text: 'Gauge:'
       -
         type: text
-        text: ': NA'
+        text: ' 16'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'KPIP Processing:'
         marks:
           -
             type: bold
+        text: 'Color:'
       -
         type: text
-        text: "\_4-days"
+        text: ' Black flex'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
+        text: 'KPIP v2 Processing:'
+      -
+        type: text
+        text: ' 4-days'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
         text: 'Standard Length:'
-        marks:
-          -
-            type: bold
       -
         type: text
-        text: "\_1.00 meters"
+        text: ' 1.00 meters'
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'Safety Assurance'
         marks:
           -
             type: bold
-  -
-    type: paragraph
-    content:
+        text: 'Safety Assurance:'
+      -
+        type: hardBreak
+        marks:
+          -
+            type: bold
       -
         type: text
         text: 'Continuity and polarity tests – by two technicians'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'HiPOT tests insulation breakdown @ 1,200 VAC'
-title: 'Delta v2 Interconnect Cable, 1 Meter, RCA'
+title: 'Theta, 1M,  XLR'
 product-categories: interconnects
 system_category: cables
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1671554225
+updated_at: 1751468101
 ---
