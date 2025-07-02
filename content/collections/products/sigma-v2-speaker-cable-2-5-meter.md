@@ -2,229 +2,69 @@
 id: c3b3621d-d4a7-4332-88ef-b0611db7e731
 blueprint: product
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
-product_hero_image: sp-sig-v2-full-1200x800-1605026704.jpg
+product_hero_image: ashunsigxspbw46s25__04959.jpg
 available_for_demo: true
 description:
   -
-    type: paragraph
+    type: heading
+    attrs:
+      level: 3
     content:
       -
         type: text
-        text: HARP
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_was discovered during Caelin Gabriel’s research into\_"
-      -
-        type: text
-        text: 'current drift'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_and audio frequency current resonances that occur in speaker cables. These resonances are roughly analogous to standing waves (modals) in room acoustics. The exclusive HARP module acts as a current-mode diffraction device that breaks up these resonances, improving the perceived resolution and coherency of the system."
+        text: 'PRECISION, POWER, AND ULTIMATE REFINEMENT'
   -
     type: paragraph
     content:
       -
         type: text
-        text: '— Improved resolution and clarity'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: .
+        text: "\_"
   -
     type: paragraph
     content:
       -
         type: text
-        text: ‌‌ArNi
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "®\_"
-        marks:
-          -
-            type: superscript
-      -
-        type: text
-        text: 'wire was designed by Shunyata Research to be the finest quality wire available. It begins with the highest purity of copper and silver metals available, including Ohno ('
-      -
-        type: text
-        text: 'single crystal'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "), PCOCC silver and OFE C0101 conductors.\_Fluorocarbon dielectrics, usually only found in aerospace applications that have exceptional electrical characteristics including extremely low dielectric absorption, high dielectric strength and superb heat resistance.\_\_When used in digital wiring it significantly reduces transient energy storage and release which affects phase noise performance."
+        text: 'Sigma-X Speaker Cables represent an extraordinary leap in performance, designed for those who demand superior audio refinement and technical excellence. Crafted with Shunyata Research’s most advanced technologies, Sigma-X speaker cables deliver a level of musical immersion and clarity that transforms any high-end system.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: '— And finally every cable undergoes our proprietary KPIP™ process'
+        text: 'At the core of the Sigma-X design is Shunyata Research’s TAPc ('
+      -
+        type: text
         marks:
           -
             type: italic
+        text: 'Transverse Axial Polarizer'
       -
         type: text
-        text: .
+        text: ') technology, which reduces subtle micro-phase distortions. This results in an exceptionally clear, open, and focused soundstage, allowing even the most delicate musical details to be expressed with unparalleled precision.'
   -
     type: paragraph
     content:
       -
         type: text
-        text: VTX-Ag
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_cables are uniquely constructed with both an inner, center conductor made of pure silver and an outer concentric ring conductor made of pure copper.\_\_It is made using the finest fluorocarbon insulation to minimize dielectric absorption and re-radiation which translates to an improvement in resolution and clarity.\_\_VTX-Ag delivers the speed and clarity of silver and the midrange warmth and three dimensional power in the lower octaves of copper without imparting any of the negatives associated with either metal."
+        text: "Sigma-X also features HARP technology which lowers cable induced noise by controlling phase distortions created by signal reflections and resonances.\_ By breaking up these resonances, HARP enhances both resolution and coherence, bringing a new level of definition and control to the system’s overall performance."
   -
     type: paragraph
     content:
       -
         type: text
-        text: '— The best qualities of silver and copper combined.'
+        text: 'Shunyata’s VTX-Ag conductors are made from both silver and copper conductors, in a coaxial geometry to combine the speed and clarity of silver with the warmth and weight of copper, delivering a full-bodied sound that balances impact and refinement across all frequencies. Finally, the KPIP v2 ('
+      -
+        type: text
         marks:
           -
             type: italic
-  -
-    type: paragraph
-    content:
+        text: 'Kinetic Phase Inversion Process'
       -
         type: text
-        text: "Shunyata Research uses only the highest purity of copper available for the production of its wire products.\_\_"
-      -
-        type: text
-        text: 'OFE Alloy 101'
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_or C10100 is the highest grade of copper with a\_"
-      -
-        type: text
-        text: minimum
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_99.99% purity and a conductivity rating of 101% IACS. OFE stands for\_"
-      -
-        type: text
-        text: 'oxygen-free electrolytic'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_and supersedes the term OFHC ("
-      -
-        type: text
-        text: 'oxygen-free high conductivity'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: ").\_\_C10100 is the\_"
-      -
-        type: text
-        text: only
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_grade of copper that comes with a written certification of purity."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "—\_"
-      -
-        type: text
-        text: 'Certified by ASTM F68 C10100'
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Simple crimping, soldering, brazing and screws are all inferior methods of joining two wires or terminals together. Sonic welding uses high-energy sonic waves to literally join two metals together at a molecular level and cold-welding uses high-energy pneumatic pressure to bond metals. Shunyata Research uses both methods to secure connections that do not degrade over time.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: —
-      -
-        type: text
-        text: "\_Superior contact and wire connections."
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Kinetic Phase Inversion Processing'
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        text: "\_was developed by Caelin Gabriel after years of research into the underlying causes of various effects such as burn-in, wire directionality and the effects of cryogenic treatment. He discovered that there was an underlying core principle that burn-in and cryogenics only\_"
-      -
-        type: text
-        text: partially
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "addressed. Once the governing principle was understood it became possible to create a processor that reduces the need for long burn-in periods and eliminates the effects of cryogenic treatment.\_Four-days of continuous KPIP™ processing dramatically reduces the sonic ups and downs associated with burn-in, delivering a relaxed and natural presentation."
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-        marks:
-          -
-            type: italic
-price: 10590
+        text: ') conditions the conductors, reducing break-in time and maximizing sonic performance.'
+price: 12500
 show_price: true
-available_to_buy_online: false
-shipping: 60
+available_to_buy_online: true
+shipping: 200
 specs:
   -
     type: heading
@@ -363,14 +203,14 @@ specs:
         type: text
         text: 'Continuity and polarity tests – by two technicians'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'HiPOT tests insulation breakdown @ 1,200 VAC'
-title: 'Sigma v2 Speaker Cable 2.5 Meter'
+title: "Sigma-X, 8', Spade or Banana"
 product-categories: speaker-cables
 system_category: cables
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1671554573
+updated_at: 1751487291
 ---
