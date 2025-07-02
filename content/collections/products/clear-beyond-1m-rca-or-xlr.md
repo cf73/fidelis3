@@ -19,5 +19,6 @@ shipping: 100
 product-categories: interconnects
 system_category: cables
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1751485977
+updated_at: 1751486068
+product_hero_image: eng_pl_cardas-clear-beyond-interconnect-rca-5246_3.jpg
 ---
