@@ -68,8 +68,8 @@ show_price: true
 available_to_buy_online: true
 local_only: false
 shipping: 80
-product-categories: interconnects
+product-categories: speaker-cables
 system_category: cables
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1751486876
+updated_at: 1751486982
 ---
