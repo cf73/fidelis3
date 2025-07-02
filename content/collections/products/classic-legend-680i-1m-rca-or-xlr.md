@@ -83,5 +83,6 @@ specs:
         type: text
         text: '2'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1751473879
+updated_at: 1751474309
+product_hero_image: siltech_680i_xlr.jpg
 ---
