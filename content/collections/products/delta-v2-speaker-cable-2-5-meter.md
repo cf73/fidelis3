@@ -2,149 +2,68 @@
 id: 7c300203-d880-438e-8440-1ad68653087b
 blueprint: product
 manufacturer: 5815c329-d4fc-4b36-b4ca-1eeaffa54f39
-product_hero_image: sp-delta-v2-full-1200x800.jpg
+product_hero_image: shunyata-research-gamma-bi-wire-768x559.jpg
 available_for_demo: true
 description:
   -
-    type: heading
-    attrs:
-      level: '3'
+    type: paragraph
     content:
       -
-        type: hard_break
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'THEY SIMPLY LET THE MUSIC FLOW'
   -
     type: paragraph
     content:
       -
         type: text
-        text: ‌‌ArNi
+        text: "Occasionally, products come along that represent a paradigm shift within a given category. Using 25 years worth of Shunyata Research's documented science, experience and innovation, Gamma Series cables are poised to upend price and performance axioms within the cable industry. Shunyata Research has made critical advancements in conductor science and applied them to Gamma Series cables, elevating performance far beyond expectation. Perhaps more than any other product in Shunyata Research's history, Gamma Series cables demand to be heard even when compared to cables two to three times the cost."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'DRIVEN BY SCIENCE'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Gamma signal and digital cables are made with the finest conductors available. Single-crystal, continuous cast Ohno copper is an ultra-pure conductor normally found in far more expensive cables. Ohno conductors are extruded using Shunyata Research's exclusive PMZ (Precision Matched Impedance) process. This extrusion method tightens the tolerances of the conductor surfaces, dielectric extrusions, and the precision of the braided shield. All are held to minute tolerances. The extrusion and braiding machines must be run at one-quarter speed during the manufacturing process. Finally, all Gamma cables are conditioned for 4 days using advanced Kinetic Phase Inversion Process (KPIP v2™)."
+  -
+    type: paragraph
+    content:
+      -
+        type: hardBreak
         marks:
           -
             type: bold
       -
         type: text
-        text: "®\_"
-        marks:
-          -
-            type: superscript
-      -
-        type: text
-        text: 'wire was designed by Shunyata Research to be the finest quality wire available. It begins with the highest purity of copper and silver metals available, including Ohno ('
-      -
-        type: text
-        text: 'single crystal'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "), PCOCC silver and OFE C0101 conductors.\_Fluorocarbon dielectrics, usually only found in aerospace applications that have exceptional electrical characteristics including extremely low dielectric absorption, high dielectric strength and superb heat resistance.\_\_When used in digital wiring it significantly reduces transient energy storage and release which affects phase noise performance."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: VTX-Ag
         marks:
           -
             type: bold
+        text: 'PURITY IN TONE. DYNAMIC BY NATURE.'
       -
-        type: text
-        text: "\_cables are uniquely constructed with both an inner, center conductor made of pure silver and an outer concentric ring conductor made of pure copper.\_\_It is made using the finest fluorocarbon insulation to minimize dielectric absorption and re-radiation which translates to an improvement in resolution and clarity.\_\_VTX-Ag delivers the speed and clarity of silver and the midrange warmth and three dimensional power in the lower octaves of copper without imparting any of the negatives associated with either metal."
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "— The best qualities of silver and copper combined.\_"
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "Shunyata Research uses only the highest purity of copper available for the production of its wire products.\_\_"
-      -
-        type: text
-        text: 'OFE Alloy 101'
+        type: hardBreak
         marks:
           -
             type: bold
-      -
-        type: text
-        text: "\_or C10100 is the highest grade of copper with a\_"
-      -
-        type: text
-        text: minimum
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_99.99% purity and a conductivity rating of 101% IACS. OFE stands for\_"
-      -
-        type: text
-        text: 'oxygen-free electrolytic'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_and supersedes the term OFHC ("
-      -
-        type: text
-        text: 'oxygen-free high conductivity'
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: ").\_\_C10100 is the\_"
-      -
-        type: text
-        text: only
-        marks:
-          -
-            type: italic
-      -
-        type: text
-        text: "\_grade of copper that comes with a written certification of purity."
   -
     type: paragraph
     content:
       -
         type: text
-        text: "—\_"
-      -
-        type: text
-        text: 'Certified by ASTM F68 C10100'
-        marks:
-          -
-            type: italic
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Simple crimping, soldering, brazing and screws are all inferior methods of joining two wires or terminals together. Sonic welding uses high-energy sonic waves to literally join two metals together at a molecular level and cold-welding uses high-energy pneumatic pressure to bond metals. Shunyata Research uses both methods to secure connections that do not degrade over time.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: —
-      -
-        type: text
-        text: "\_Superior contact and wire connections."
-        marks:
-          -
-            type: italic
-price: 3210
+        text: "If choosing a single word to encapsulate the sound of a Gamma Series cable system, it would be coherence. Every aspect of Gamma cable system performance simply flows with the ease and clarity of a single voice. Textural and tonal nuance is balanced perfectly against Gamma's explosive, dynamic nature. Gamma cable systems never sound forward, bright, aggressive or edgy. However, what truly separates Gamma cables from all others, regardless of cost, is their self-effacing alacrity, timing accuracy, dynamic punch and frequency extension. Most pure-copper cables, even expensive models, may sound warm, rich, and full bodied at the expense of accurate timing, dynamics and frequency extension. Gamma cables sound very natural, but are surprisingly agile, athletic and entirely unforced with regard to expressing frequency extension, timing, weight and authority in the low octaves. Gamma cables do all of this without calling attention to themselves, allowing the purity of the sound to take center stage."
+price: 998
 show_price: true
 available_to_buy_online: true
-shipping: 25
+shipping: 50
 specs:
   -
     type: heading
@@ -152,7 +71,7 @@ specs:
       level: '3'
     content:
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: Specifications
@@ -285,14 +204,14 @@ specs:
         type: text
         text: 'Continuity and polarity tests – by two technicians'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'HiPOT tests insulation breakdown @ 1,200 VAC'
-title: 'Delta v2 Speaker Cable, 2.5 Meter'
+title: "Gamma, 8', Spades or Bananas"
 product-categories: speaker-cables
 system_category: cables
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1671554182
+updated_at: 1751486317
 ---
