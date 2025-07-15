@@ -1,7 +1,7 @@
 ---
 id: 249dcb0d-282d-4d33-a01a-c814d79a372a
 blueprint: product
-title: MCR-3
+title: MRC-3
 manufacturer: b5571420-68a7-4d2e-9aa5-ac7093c8f4d2
 product_hero_image: 0311d8_c69b7aa65dbd4c1185d813fa0e55516dmv2-(1).webp
 available_for_demo: true
@@ -434,5 +434,5 @@ specs:
             type: bold
         text: 'depending on stone selected)'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752592164
+updated_at: 1752592449
 ---
