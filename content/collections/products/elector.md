@@ -12,7 +12,7 @@ description:
       -
         type: text
         text: 'The Elector is the perfect preamplifier for the lover of pure analog technology. With motorized, remote volume control, tape monitor path, retro-look-VU-meter and the all superior VOLTAiR technology the Elector brings analog sources to new life.'
-price: 2699
+price: 3300
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -20,10 +20,8 @@ shipping: 60
 pairs_well_with:
   - 46992e51-20d3-4659-a6db-f8dcec3f8486
   - daabb8e1-410a-478f-973f-430fae9c2d63
-also_consider:
-  - b5f96521-b815-4dd2-b130-e6a266431f77
 product-categories: pre-amps
-system_category: source
+system_category: preamplifiers
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1739550550
+updated_at: 1752865551
 ---
