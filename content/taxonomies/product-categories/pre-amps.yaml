@@ -4,7 +4,20 @@ title: Preamplifiers
 system_category: preamplifiers
 blueprint: product_category
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1697223786
+updated_at: 1752849253
 feature_a_product: true
-product: b5f96521-b815-4dd2-b130-e6a266431f77
-add_custom_featured_text: false
+product: c7f81261-17b1-4131-b466-9b0948fcd37f
+add_custom_featured_text: true
+featured_product_text:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "In a time where high-end audio prices are skyrocketing, bordering on the obscene, the XP-12 affords you a greater portion of the upper end experience for a mid-fi price. It's like getting to drive a Ferrari for the price of a Toyota."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Positive Feedback'
