@@ -14,11 +14,11 @@ description:
       -
         type: text
         text: 'This phono preamplifier for Moving Magnet (MM) and Moving Coil (MC) pickup systems is based on the legendary Douglas-Self-Design.'
-price: 1999
+price: 2300
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 40
+shipping: 60
 product-categories: phonostage
 system_category: source
 reivews_set:
@@ -36,5 +36,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1739550760
+updated_at: 1752865710
 ---
