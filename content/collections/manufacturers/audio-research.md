@@ -27,5 +27,5 @@ description:
         type: text
         text: 'Over its first half-century, Audio Research has grown from a small operation in the back of Bill’s shop to a modern, self-contained factory with dedicated R&D, testing, manufacturing, quality control, and listening facilities. Manufacturing is done by hand in-house, from the ground up, in our Minnesota facility. (Contact us for a tour if you are near Minneapolis, it’s fascinating to meet the people and see the process in action.)'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752613014
+updated_at: 1752850505
 ---
