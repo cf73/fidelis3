@@ -26,7 +26,7 @@ description:
       -
         type: text
         text: 'With a power amplification of 2 x 285 W (4 Ω) [2 x 185 W (8 Ω)] or 1 x 450 W (8 Ω, Bridge Mode), this amplifier easily controls any loudspeaker. Thanks to VOLTAiR technology, it is fast, precise and highly efficient with outstanding sound.'
-price: 3399
+price: 4000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -34,8 +34,6 @@ shipping: 80
 pairs_well_with:
   - 4e27e871-d106-486e-b721-4889aecaf756
   - 47577004-a326-488a-9ef1-9d4df0e517b1
-also_consider:
-  - 6760e13d-60f9-46b8-97f9-cde1010b83f1
 product-categories: power-amplifiers
 system_category: amplification
 reivews_set:
@@ -53,7 +51,7 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1739550640
+updated_at: 1752865614
 specs:
   -
     type: paragraph
