@@ -79,6 +79,6 @@ shipping: 100
 product-categories: pre-amps
 system_category: preamplifiers
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752846353
-product_hero_image: ls-black_dk_reflect.jpeg
+updated_at: 1752846671
+product_hero_image: audio-research-ls-2pre-amp.jpg
 ---
