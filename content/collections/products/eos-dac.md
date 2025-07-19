@@ -2,7 +2,7 @@
 id: cfe83ce1-ef71-493f-9fe6-2c1cf4dd5d5b
 blueprint: product
 title: 'eos DAC'
-manufacturer: 05c3d31e-0196-4dbd-8ba0-6c1aea93d084
+manufacturer: 96bb6745-26dc-4dfa-a891-87869d6fd27b
 product_hero_image: eos-dac-2048x448.png
 available_for_demo: true
 quote: 'What Ideon Audio’s eos products offer is a highly-tuned circuit design featuring proprietary technologies, superbly engineered power supplies and very good general build quality. The big one is the performance. I can’t think of any audiophile and music lover left wanting with this combo'
@@ -204,5 +204,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752937801
+updated_at: 1752937979
 ---
