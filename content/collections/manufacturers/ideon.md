@@ -1,7 +1,7 @@
 ---
 id: 96bb6745-26dc-4dfa-a891-87869d6fd27b
 blueprint: manufacturer
-title: Ideon
+title: 'Ideon Audio'
 logo: logo1-2-e1550000185122.jpg
 tagline: 'A New Experience'
 website: 'https://ideonaudio.com/'
@@ -239,5 +239,5 @@ description:
         type: text
         text: 'We simply want our products to be the best, in absolute terms and best in class.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752939954
+updated_at: 1752942115
 ---
