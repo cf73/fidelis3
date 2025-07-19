@@ -7,6 +7,7 @@ tagline: 'A New Experience'
 website: 'https://ideonaudio.com/'
 product-categories:
   - dacs
+  - server-streaming
 description:
   -
     type: paragraph
@@ -238,5 +239,5 @@ description:
         type: text
         text: 'We simply want our products to be the best, in absolute terms and best in class.'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752866216
+updated_at: 1752939954
 ---
