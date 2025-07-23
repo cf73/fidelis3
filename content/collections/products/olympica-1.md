@@ -13,20 +13,15 @@ description:
       level: '3'
     content:
       -
-        type: hard_break
-  -
-    type: paragraph
-    content:
-      -
         type: text
         text: 'Since 1983, many moments have marked the history of Sonus Faber; the launch of the Olympica Collection 6 years ago is one of them. One of the first lines presented as a complete family of products, but above all, the very first one to feature original drivers, entirely designed in Sonus Faber.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Olympica Nova is the second generation of the iconic family of 2013, improved in its form and substance, imbued with the timeless values that inspired us in creating the original line.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: "The result is a new Collection that embraces the most advanced technologies that already enhance our most prestigious creations.\_\_"
@@ -34,147 +29,24 @@ description:
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '2 way, full para-aperiodic vented box “Stealth Ultraflex”, stand-mount loudspeaker system.'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
   -
     type: paragraph
     content:
       -
-        type: text
-        text: 'Tweeter: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Mid/Woofer: MW15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '2.500 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '45 Hz – 35.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '87 dB SPL (2.83V/1 m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '35 W – 250 W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "14\" (42.4\" stand included) x 7.8\" (11.1\" stand included) x 15.5\"\_"
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '23.1 - net weight (37.6 lbs. stand included)'
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-price: 7500
+        type: hardBreak
+price: 9000
 show_price: true
 available_to_buy_online: false
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -183,9 +55,9 @@ specs:
                 type: text
                 text: 'SYSTEM : 2 way, full para-aperiodic vented box “Stealth Ultraflex”, stand mount loudspeaker system.'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -194,9 +66,9 @@ specs:
                 type: text
                 text: 'LOUDSPEAKERS : Tw: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -205,9 +77,9 @@ specs:
                 type: text
                 text: 'Mw: MW15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -216,9 +88,9 @@ specs:
                 type: text
                 text: 'CROSSOVER : 2.500 Hz'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -227,9 +99,9 @@ specs:
                 type: text
                 text: 'FREQUENCY RESPONSE : 45 Hz – 35.000 Hz'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -238,9 +110,9 @@ specs:
                 type: text
                 text: 'SENSITIVITY : 87 dB SPL (2.83V/1 m)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -249,9 +121,9 @@ specs:
                 type: text
                 text: 'NOMINAL IMPEDANCE : 4 ohm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -260,9 +132,9 @@ specs:
                 type: text
                 text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 35 W – 250 W, without clipping'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -271,9 +143,9 @@ specs:
                 type: text
                 text: 'DIMENSIONS (HXWXD) : 355 (1078 stand included) x 199,5 (282 stand included) x 395 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -282,9 +154,9 @@ specs:
                 type: text
                 text: '14 (42.4 stand included) x 7.8 (11.1 stand included) x 15.5 in'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -293,9 +165,9 @@ specs:
                 type: text
                 text: 'WEIGHT :10,5 kg - net weight (17,1 Kg stand included)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -304,9 +176,10 @@ specs:
                 type: text
                 text: '23.1 - net weight (37.6 lb stand included)'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: lybnIjQ7
     type: Review
     excerpt:
       -
@@ -324,7 +197,7 @@ product-categories: speakers
 system_category: speakers
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1721401847
+updated_at: 1753278162
 shipping: 200
 pairs_well_with:
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
