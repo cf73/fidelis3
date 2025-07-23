@@ -31,129 +31,256 @@ available_to_buy_online: true
 monthly_featuree: false
 specs:
   -
-    type: bulletList
+    type: paragraph
     content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SYSTEM : 3-way floorstanding loudspeaker system. Vented box design.'
-              -
-                type: hardBreak
+            type: bold
+        text: System
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-              -
-                type: hardBreak
+        type: text
+        text: '3,0 way'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Md: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'W: Ultra-free compression basket, aluminum cone for maximum speed. Ø 2x180mm cone drivers.'
-              -
-                type: hardBreak
+        type: text
+        text: 'Midrange sealed cork enclosure'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: "CROSSOVER : \_235Hz - 3.000Hz"
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: "FREQUENCY RESPONSE : \_38 Hz – 25.000 Hz"
-              -
-                type: hardBreak
+        type: text
+        text: 'Woofers down vented box'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SENSITIVITY : 90 dB SPL (2.83 V/1m)'
-              -
-                type: hardBreak
+            type: bold
+        text: Loudspeakers
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'NOMINAL IMPEDANCE : 4 ohm'
-              -
-                type: hardBreak
+        type: text
+        text: 'High-end quality drivers'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 50W – 300W, without clipping'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'DIMENSIONS (HXWXD) : 1072 x 258 x 409 mm 42 x 10 x 16 in'
-              -
-                type: hardBreak
+        type: text
+        text: 'Tweeter: 1,1" DAD™ Arrow Point extended frequency tweeter, Copper shorting ring'
       -
-        type: listItem
-        content:
+        type: hardBreak
+      -
+        type: text
+        text: 'Midrange: 1x 6,5" Camelia midrange, Copper shorting ring'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Woofer: 2 x 6,5" woofers, Aluminum demodulation ring'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'WEIGHT : 22,6 Kg ea – net weight 49,8 Ib ea – net weight'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Crossover Points'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '280 Hz - 2500 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Frequency response'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '35 Hz - 40.000 Hx'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Sensitivity
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '89 dB SPL (2.83 V/1m)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Nominal impedance'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 Ohm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Recommended power amplifier'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '50 W - 320 W'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Product dimensions (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1088 - 308 - 415 mm/ each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '42.8 - 12.13 - 16.34 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Dimensions with packaging (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1190 - 420 - 530 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '46.85 - 16.54 - 20.87 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Weight
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '33,40 kg / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '73.63 lb / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Packaging weight'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '75,2 kg / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '165.8 lb / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Cabinet
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Lute shape'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Wood
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Leather
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Concrete
+      -
+        type: hardBreak
+      -
+        type: hardBreak
 reivews_set:
   -
     id: EHXvzosc
@@ -185,5 +312,5 @@ also_consider:
   - 63f4771c-3d0b-419e-b492-95853bfd75ca
   - 8742ed02-bced-48e8-9a98-7bcd253bba24
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753280040
+updated_at: 1753280290
 ---
