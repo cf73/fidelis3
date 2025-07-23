@@ -6,25 +6,19 @@ product_hero_image: SONUS_SONETTO_G2_I_WALNUT_3QUARTERS-(1).jpeg
 available_for_demo: true
 description:
   -
+    type: heading
+    attrs:
+      level: 2
+    content:
+      -
+        type: text
+        text: 'IMMERSIVE SOUND TO FIT YOUR SPACE'
+  -
     type: paragraph
     content:
       -
         type: text
-        marks:
-          -
-            type: bold
-        text: 'Sonus Faber always found its inspiration in the highest Italian culture. This time we entrusted the history of our Literature for representing the new Sonetto Collection.'
-      -
-        type: hardBreak
-        marks:
-          -
-            type: bold
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: "The Sonetto (Sonnet) is the most ancient Italian Poetic structure. Originally it meant ``Sound, Melody`` and was traditionally used to accompany music performances. The first step in the Sonus Faber world brings the name of the foundations of Literature history in Italy and in the rest of the world.\_\_"
+        text: 'The smallest model in the Sonetto G2 Collection, the Sonetto I is a perfectly balanced bookshelf speaker. Designed for effortless set-up, its front-facing optimized reflex duct envelops the listener in an immersive sound experience. Whether used as a standalone or mounted on its dedicated stands, Sonetto I is the ideal sound solution for smaller spaces.'
   -
     type: heading
     attrs:
@@ -35,140 +29,296 @@ available_to_buy_online: true
 monthly_featuree: false
 specs:
   -
-    type: bulletList
+    type: paragraph
     content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SYSTEM : 2-way shelf loudspeaker system. Vented box design.'
-              -
-                type: hardBreak
+            type: bold
+        text: System
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-              -
-                type: hardBreak
+        type: text
+        text: '2,0 way'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Mw: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'CROSSOVER : 2.500Hz'
-              -
-                type: hardBreak
+        type: text
+        text: 'Midwoofer front vented box'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'FREQUENCY RESPONSE : 45 Hz – 25.000 Hz'
-              -
-                type: hardBreak
+            type: bold
+        text: Loudspeakers
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SENSITIVITY : 87 dB SPL (2.83 V/1m)'
-              -
-                type: hardBreak
+        type: text
+        text: 'High-end quality drivers'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'NOMINAL IMPEDANCE : 4 ohm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SUGGESTED AMPLIFIER POWER OUTPUT :30W – 150W, without clipping'
-              -
-                type: hardBreak
+        type: text
+        text: 'Tweeter: 1,1" DAD™ Arrow Point extended frequency tweeter, Copper shorting ring'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'DIMENSIONS (HXWXD) : 359 (1090 stand included) x 219 x 305 mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: '14 (43 stand included) x 9 x 12 in'
-              -
-                type: hardBreak
+        type: text
+        text: 'Midwoofer: 1x 5" Midwoofer, Aluminum demodulation ring'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'WEIGHT : 5,5 kg - net weight (stand not included)'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Crossover Points'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        text: '2100 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: '12,1 lb - net weight (stand not included)'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Frequency response'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '52 Hz - 40.000 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Sensitivity
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '86 dB SPL (2.83 V/1m)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Nominal impedance'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 Ohm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Recommended power amplifier'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '30 W - 150 W'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Product dimensions (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '377 - 200 - 304 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '14.8 - 7.87 - 11.97 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '687 - 355 - 406 mm (stand dimensions)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '27.1 - 13.2 - 16 in (stand dimensions)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Dimensions with packaging (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "500 - 555 - 405\_mm"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '19,69 - 21,85 - 15,94 in'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '831 - 437 - 615 mm (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '32.72 - 17.20 - 24.21 in (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Weight
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '8,4 kg / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '18.52 lbs. / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '6,50 kg (stand weight)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '14.33 lbs. (stand weight)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Packaging weight'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '20 kg /one carton includes 2 speakers'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '44.1 lbs. / one carton includes 2 speakers'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '12 kg (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '26.46 lb (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Cabinet
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Lute shape'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Wood
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Leather
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Concrete
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Aluminum - Concrete - Iron Steel (stand)'
 title: 'Sonetto I G2'
 product-categories: speakers
 system_category: speakers
@@ -178,7 +328,7 @@ pairs_well_with:
   - 0eb41aeb-7186-4f7d-9f23-ccfaa81ca032
   - 449e853e-3049-4400-b26f-eb31002a8e50
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753278944
+updated_at: 1753280611
 also_consider:
   - 74006da0-904b-4b36-8d2c-cc04779c929e
   - 87871d91-99e2-4c92-bfc3-c3f5914e5227
