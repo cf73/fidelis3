@@ -12,164 +12,53 @@ description:
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'The lack of flat and parallel walls improves enclosure performance and maintains the typical asymmetrical Lute shape of first generation Olympica.'
       -
-        type: hard_break
+        type: hardBreak
+        marks:
+          -
+            type: bold
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'The asymmetrical shape of the cabinet is an original design concept that allows versatile positioning of the speakers to tune the bass response in any room.'
       -
-        type: hard_break
+        type: hardBreak
+        marks:
+          -
+            type: bold
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'Inspired by nature, the lines follow the flow of a circular spiral motion, achieving a more organic cabinet structure.'
       -
-        type: hard_break
+        type: hardBreak
+        marks:
+          -
+            type: bold
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'No longer just a functional element added to handle airflow, the reflex duct is now fully integrated into the cabinet, further improving the speed and transparency of sound.'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
   -
     type: paragraph
     content:
       -
-        type: text
-        text: '3 way, full para-aperiodic vented box “Stealth Ultraflex”, floor-standing loudspeaker system.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Tweeter: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Midrange: M15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Woofer: 3 x W18XTR2-12, Ø 180 mm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '250 Hz - 2.500 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '32 Hz – 35.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '90 dB SPL (2.83V/1 m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '60 W – 400 W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '46.3" x 16.7" x 20.8"'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '97 Ibs. ea. – net weight'
-  -
-    type: paragraph
-    content:
-      -
-        type: hard_break
-price: 18000
+        type: hardBreak
+price: 22000
 show_price: true
 available_to_buy_online: true
 specs:
@@ -192,7 +81,7 @@ specs:
         type: text
         text: 'Md: M15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'W: 3 x W18XTR2-12, Ø 180 mm'
@@ -240,6 +129,7 @@ specs:
         text: 'WEIGHT : 44 Kg ea – net weight 97 Ib ea – net weight'
 reivews_set:
   -
+    id: NhhBwQh4
     type: Review
     excerpt:
       -
@@ -257,7 +147,7 @@ product-categories: speakers
 system_category: speakers
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1721402066
+updated_at: 1753278692
 shipping: 600
 pairs_well_with:
   - b1fe255b-cbbb-4eb9-960d-0eacea7f534c
@@ -265,6 +155,8 @@ pairs_well_with:
   - 377cceb9-0e0f-4b42-9ff6-bfaf3698cfec
   - 7cb8bb03-31bf-4c78-8b33-67e1d25178b1
 also_consider:
-  - c85427bb-bfa0-4ced-aa21-0bcfc906c6a3
   - 5e8f0ba3-8ec2-46f5-becd-2b05f20cfacb
+  - b1472f09-a4ba-44d7-9237-dc05d89e0331
+  - 1080e283-7439-4eeb-9b58-66166c8d450e
+  - 249dcb0d-282d-4d33-a01a-c814d79a372a
 ---
