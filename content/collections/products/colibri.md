@@ -1,7 +1,7 @@
 ---
 id: 4c541eca-aeb0-4744-9844-a07348efdddf
 blueprint: product
-title: Colibri
+title: 'Colibri w/Stands'
 manufacturer: 59d8dad2-911d-4284-8c08-92777c832883
 product_hero_image: avantgarde_acoustic_colibri_c2_03.jpg
 available_for_demo: true
@@ -12,7 +12,7 @@ description:
       -
         type: text
         text: "The Colibri C2 is a compact, two-way, ultra high performance loudspeaker system. It combines Avantgarde’s proven sound quality with extreme efficiency and an incredible maximum level (117 dB). The Colibri C2 is built to last: Timeless design, the finest materials, and a focus on superior, stable, precision analog technology that eschews short-lived digital components make the Colibri C2 a product that will perform for years. The Colibri C2's advanced analog transducer technology already exceeds the demands of future digital development. Its compact dimensions and multiple installation options make it easy to integrate even in the smallest rooms. It can be placed directly on the integrated rubber pads or installed using the clever stands and wall mounts. It can be aligned horizontally or vertically, while the integrated, toothed mounting rings allow precise tilt and height adjustments. Suitable for different living environments, the speaker is available in three contrasting color combinations. The system can be further customized via optional finishes for the horn trumpets and speaker grill."
-price: 8000
+price: 10800
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -135,5 +135,14 @@ specs:
         type: text
         text: '■ Centering spider made of poly-cotton structure mesh with dynamic-C profile '
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1731599649
+updated_at: 1753284248
+pairs_well_with:
+  - 0723ad88-12e5-4ac4-b835-f7e625d7446b
+  - 4e7cdb21-e7bf-4f53-8bc9-8e5e172ae9c4
+  - c7dc659a-6cc4-45d7-abe5-f91f1ee38998
+  - 31453bed-110b-4b64-83ca-fa2b424408e6
+also_consider:
+  - e2d08f6b-9dc3-4487-9159-8db030a1dc76
+  - 446577b8-2312-4017-9e6a-53f8a214c206
+  - 2af0ca30-59f7-4d90-b7e9-57f708e2c9fd
 ---
