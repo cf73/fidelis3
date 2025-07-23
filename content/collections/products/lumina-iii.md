@@ -13,10 +13,10 @@ description:
       -
         type: text
         text: 'The essential combination of the three models is a perfectly balanced solution for traditional stereo system enthusiasts as much as for those looking to experience a multichannel home theater system.'
-price: 2399
+price: 3000
 show_price: true
-available_to_buy_online: false
-shipping: 0
+available_to_buy_online: true
+shipping: 200
 specs:
   -
     type: heading
@@ -33,7 +33,7 @@ specs:
         type: text
         text: '3-way floorstanding loudspeaker system.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Vented box design'
@@ -52,12 +52,12 @@ specs:
         type: text
         text: 'Tw: Ø 29 mm high definition DAD™ driver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Md: Ø 150 mm paper cone driver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'W: Ø 2x150 mm paper cone drivers'
@@ -146,7 +146,7 @@ specs:
         type: text
         text: '989 x 228 x 277,7 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '38.9 x 9 x 10.9 in'
@@ -165,7 +165,7 @@ specs:
         type: text
         text: '15,9 Kg each'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '35.1 lb ea'
@@ -174,5 +174,13 @@ product-categories: speakers
 system_category: speakers
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405037
+updated_at: 1753281579
+pairs_well_with:
+  - 449e853e-3049-4400-b26f-eb31002a8e50
+  - 705207ef-c1b2-4581-a91d-d584b25fe66a
+  - fe8c10c9-1805-440e-837a-43c282614520
+also_consider:
+  - 74006da0-904b-4b36-8d2c-cc04779c929e
+  - a54d447b-b7b2-402f-b7cd-76718d62dcd5
+  - c99ab1d5-b886-4710-9f7d-ea5220ec6e54
 ---
