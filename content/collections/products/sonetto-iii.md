@@ -8,50 +8,19 @@ quote: 'Due to some terrific design and engineering, the Sonus faber Sonetto III
 quote_attribution: 'Bob Barrett, Home Theater Review'
 description:
   -
-    type: paragraph
+    type: heading
+    attrs:
+      level: 2
     content:
       -
         type: text
-        marks:
-          -
-            type: bold
-        text: 'ITALIAN TRADITIONAL CULTURE'
+        text: 'A SOUND THAT SURPRISES'
   -
     type: paragraph
     content:
       -
         type: text
-        marks:
-          -
-            type: bold
-        text: 'Sonus Faber always found its inspiration in the highest Italian culture. This time we entrusted the history of our Literature for representing the new Sonetto Collection.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: 'The Sonetto (Sonnet) is the most ancient Italian Poetic structure. Originally it meant “Sound, Melody“and was traditionally used to accompany music performances. The first step in the Sonus Faber world brings the name of the foundations of Literature history in Italy and in the rest of the world.'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: 'AN HARMONIOUS SHAPE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: 'Looks can be deceiving. Despite its slim dimensions, Sonetto III has the commanding presence of a much larger speaker, thanks to advanced technologies and design solutions. Sonetto III completes the floor standing loudspeakers range of the collection.'
+        text: "With its slender figure and exceptional power, Sonetto III combines design and innovation. A sophisticated 2.5-way system showcases the new flower-patterned suspension mid-woofer, meticulously designed by the Sonus faber DesignLab in Italy. This development process ensures that every aspect of the speaker's performance is carefully honed to deliver an unparalleled listening experience"
   -
     type: heading
     attrs:
@@ -78,129 +47,252 @@ also_consider:
 monthly_featuree: false
 specs:
   -
-    type: bulletList
+    type: paragraph
     content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SYSTEM : 3-way floorstanding loudspeaker system. Vented box design.'
-              -
-                type: hardBreak
+            type: bold
+        text: System
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-              -
-                type: hardBreak
+        type: text
+        text: '2,5 way'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Md: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'W: Ultra-free compression basket, aluminum cone for maximum speed. Ø 2x150mm cone drivers.'
-              -
-                type: hardBreak
+        type: text
+        text: 'Midwoofer rear vented box'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'CROSSOVER : 220Hz - 3.250Hz'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'FREQUENCY RESPONSE : 42 Hz – 25.000 Hz'
-              -
-                type: hardBreak
+        type: text
+        text: 'Woofer down vented box'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SENSITIVITY : 89 dB SPL (2.83 V/1m)'
-              -
-                type: hardBreak
+            type: bold
+        text: Loudspeakers
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'NOMINAL IMPEDANCE : 4 ohm'
-              -
-                type: hardBreak
+        type: text
+        text: 'High-end quality drivers'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 50W – 250W, without clipping'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'DIMENSIONS (HXWXD) : 1018 x 219 x 305 mm 40 x 9 x 12 in'
-              -
-                type: hardBreak
+        type: text
+        text: 'Tweeter: 1,1" DAD™ Arrow Point extended frequency tweeter, Copper shorting ring'
       -
-        type: listItem
-        content:
+        type: hardBreak
+      -
+        type: text
+        text: "Midwoofer: 1x 6,5\" Midwoofer,\_ Aluminum demodulation ring"
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Woofer: 1x 6,5" woofer, Aluminum demodulation ring'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'WEIGHT : 16 Kg ea – net weight 35,2 Ib ea – net weight'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Crossover Points'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '2700 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Frequency response'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '38 Hz - 40000 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Sensitivity
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '88 dB SPL (2.83 V/1m)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Nominal impedance'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 Ohm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Recommended power amplifier'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '50 W - 280 W'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Product dimensions (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1068 - 287 - 350 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '42.05 - 11.3 - 13.78 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Dimensions with packaging (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1170 - 385 - 460 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '46.06 - 15.16 - 18.11 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Weight
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '25,80 kg / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '56.88 lbs. /each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Packaging weight'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '58 kg / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '127.9 lbs. / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Cabinet
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Lute shape'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Wood
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Leather
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Concrete
 reivews_set:
   -
     id: Yr8pmBgA
@@ -222,5 +314,5 @@ system_category: speakers
 local_only: false
 shipping: 400
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753279328
+updated_at: 1753280186
 ---
