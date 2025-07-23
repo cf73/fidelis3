@@ -8,152 +8,31 @@ quote: 'The SONUS FABER SONETTO VIII SPEAKERS are not inexpensive, but I know of
 quote_attribution: 'Secrets of Home Theater and High fidelity'
 description:
   -
+    type: heading
+    attrs:
+      level: 3
+    content:
+      -
+        type: text
+        text: 'A REPRESENTATION OF OUR ROOTS'
+  -
     type: paragraph
     content:
       -
         type: text
-        text: 'Sonetto VIII is the most powerful 3-way speaker of the Sonetto collection with three 180mm woofers for the best reproduction of lower frequencies and high-end standards. We have designed a speaker that completely represents our roots. The entire collection is a true Sonus Faber that features all the iconic elements of the brand: natural sound, natural materials, the Lute shape, the excellent finishes typical of Italian craftsmanship, and manufacturing done completely in our factory in Vicenza.'
+        text: 'Sonetto VIII represents the organic legacy of the Suprema system into a 3-way floorstanding speaker. The iconic elements of Sonus faber converge in this exemplary piece. A design philosophy based on Natural Sound and natural materials as well as a visionary pursuit of sonic excellence are imbued in this high-end luxury speaker, hand-crafted in Italy.'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '3-way floorstanding loudspeaker system. Vented box design.'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Tweeter: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Midrange: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Woofer: Ultra-free compression basket, aluminum cone for maximum speed. Ø 3x180mm cone drivers.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '270Hz - 3.000Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '36 Hz – 25.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '90 dB SPL (2.83 V/1m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '50W – 300W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '47" x 11" x 17"'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '57.9 Ibs. ea. – net weight'
-price: 7995
+price: 9000
 show_price: true
 available_to_buy_online: true
 pairs_well_with:
-  - f68da2f0-4c64-4a85-b435-5d5ca4a14768
   - 7689d894-abfb-4245-a441-2f519491b067
   - fee0b5e3-5ed3-405e-b6f4-e378278b232c
   - 9f3dcabc-850f-47b4-a78d-d3ace109aaab
@@ -165,133 +44,259 @@ specs:
       level: '4'
     content:
       -
-        type: hard_break
+        type: text
+        marks:
+          -
+            type: bold
+        text: System
   -
-    type: bullet_list
+    type: paragraph
     content:
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SYSTEM : 3-way floorstanding loudspeaker system. Vented box design.'
-              -
-                type: hard_break
+        type: text
+        text: '3,0 way'
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-              -
-                type: hard_break
+        type: hardBreak
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Md: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-              -
-                type: hard_break
+        type: text
+        text: 'Midrange sealed cork enclosure'
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'W: Ultra-free compression basket, aluminum cone for maximum speed. Ø 3x180mm cone drivers.'
-              -
-                type: hard_break
+        type: hardBreak
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'CROSSOVER : 270Hz - 3.000Hz'
-              -
-                type: hard_break
+        type: text
+        text: 'Woofers down vented box'
+  -
+    type: paragraph
+    content:
       -
-        type: list_item
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'FREQUENCY RESPONSE : 36 Hz – 25.000 Hz'
-              -
-                type: hard_break
+            type: bold
+        text: Loudspeakers
+  -
+    type: paragraph
+    content:
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SENSITIVITY : 90 dB SPL (2.83 V/1m)'
-              -
-                type: hard_break
+        type: text
+        text: 'High-end quality drivers'
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'NOMINAL IMPEDANCE : 4 ohm'
-              -
-                type: hard_break
+        type: hardBreak
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 50W – 300W, without clipping'
-              -
-                type: hard_break
+        type: text
+        text: 'Tweeter: 1,1" DAD™ Arrow Point extended frequency tweeter, Copper shorting ring'
       -
-        type: list_item
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'DIMENSIONS (HXWXD) : 1188 x 283 x 427 mm 47 x 11 x 17 in'
-              -
-                type: hard_break
+        type: hardBreak
       -
-        type: list_item
-        content:
+        type: text
+        text: 'Midrange: 1x 6,5" Camelia midrange, Copper shorting ring'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Woofer: 2 x 8" woofers, Aluminum demodulation ring'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'WEIGHT : 26,3 Kg ea – net weight 57,9 Ib ea – net weight'
-              -
-                type: hard_break
+            type: bold
+        text: 'Crossover Points'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '350 Hz - 2500 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Frequency response'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '33 Hz - 40.000 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Sensitivity
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '90 dB SPL (2.83 V/1m)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Nominal impedance'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 Ohm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Recommended power amplifier'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '50 W - 400 W'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Product dimensions (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1190 - 334 - 480 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '46.8 - 13.15 - 18.9 in /each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Dimensions with packaging (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1290 - 445 - 585 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '50.79 - 17.52 - 23.03 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Weight
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '45 kg / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '99.21 lb /each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Packaging weight'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '100,4 kg / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '221.3 lb / two cartons with one speaker each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Cabinet
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Lute shape'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Wood
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Leather
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Concrete
+      -
+        type: hardBreak
+  -
+    type: paragraph
+    content:
+      -
+        type: hardBreak
 reivews_set:
   -
+    id: FNZa6rE5
     type: Review
     excerpt:
       -
@@ -301,9 +306,9 @@ reivews_set:
             type: text
             text: 'The Sonus faber Sonetto VIII speakers, despite being part of Sonus faber’s “economy line,” surprise you again and again. Their looks and performance are as good or better than any other speaker that I’ve heard.'
           -
-            type: hard_break
+            type: hardBreak
           -
-            type: hard_break
+            type: hardBreak
     attribution: 'Secrets of Home Theater and High Fidelity'
     link: 'https://hometheaterhifi.com/reviews/speaker/floor-standing/sonus-faber-sonetto-viii-speaker-review/'
     date_of_review: '2020-06-29'
@@ -312,7 +317,11 @@ title: 'Sonetto VIII G2'
 product-categories: speakers
 system_category: speakers
 local_only: false
-shipping: 400
+shipping: 500
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1721399534
+updated_at: 1753279851
+also_consider:
+  - 63f4771c-3d0b-419e-b492-95853bfd75ca
+  - 1c52521f-7d60-4828-bcbd-fb995f2be3b1
+  - e2d08f6b-9dc3-4487-9159-8db030a1dc76
 ---
