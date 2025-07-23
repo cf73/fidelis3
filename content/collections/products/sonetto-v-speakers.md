@@ -8,147 +8,23 @@ quote: 'The Sonetto V is the best of all worlds, as it does seem to  combine wha
 quote_attribution: 'Alan Sircom, HiFi plus'
 description:
   -
+    type: heading
+    attrs:
+      level: 3
+    content:
+      -
+        type: text
+        text: 'The voice of Sonus faber'
+  -
     type: paragraph
     content:
       -
         type: text
-        text: 'A 3-way floor-standing speaker able to characterize even the largest rooms, with a rich and lively sound.'
+        text: 'The midrange design of the Sonetto V builds upon the Sonus faber Suprema midrange technology. It incorporates the distinct untainted Camelia diaphragm, renowned for its clarity and precision. Additionally, the inclusion of a carefully engineered aluminum phase plug ensures optimal dispersion and coherence. The result is an immersive and lifelike listening experience emblematic of the Natural Sound known as “The Voice of Sonus faber.”'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '3-way floor-standing loudspeaker system. Vented box design.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Tweeter: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-      -
-        type: hardBreak
-      -
-        type: text
-        text: 'Midrange: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
-      -
-        type: hardBreak
-      -
-        type: text
-        text: 'Woofer: Ultra-free compression basket, aluminum cone for maximum speed. Ø 2x180mm cone drivers.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '235Hz - 3.000Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '38 Hz – 25.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '90 dB SPL (2.83 V/1m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '50W – 300W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '42" x 10" x 16"'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '49.8 Ibs. ea. – net weight'
 price: 7000
 show_price: true
 available_to_buy_online: true
@@ -309,5 +185,5 @@ also_consider:
   - 63f4771c-3d0b-419e-b492-95853bfd75ca
   - 8742ed02-bced-48e8-9a98-7bcd253bba24
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753279455
+updated_at: 1753280040
 ---
