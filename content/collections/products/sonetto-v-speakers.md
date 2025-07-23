@@ -42,12 +42,12 @@ description:
         type: text
         text: 'Tweeter: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Midrange: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Woofer: Ultra-free compression basket, aluminum cone for maximum speed. Ø 2x180mm cone drivers.'
@@ -149,16 +149,16 @@ description:
       -
         type: text
         text: '49.8 Ibs. ea. – net weight'
-price: 6495
+price: 7000
 show_price: true
 available_to_buy_online: true
 monthly_featuree: false
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -167,9 +167,9 @@ specs:
                 type: text
                 text: 'SYSTEM : 3-way floorstanding loudspeaker system. Vented box design.'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -178,9 +178,9 @@ specs:
                 type: text
                 text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -189,9 +189,9 @@ specs:
                 type: text
                 text: 'Md: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 150mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -200,9 +200,9 @@ specs:
                 type: text
                 text: 'W: Ultra-free compression basket, aluminum cone for maximum speed. Ø 2x180mm cone drivers.'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -211,9 +211,9 @@ specs:
                 type: text
                 text: "CROSSOVER : \_235Hz - 3.000Hz"
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -222,9 +222,9 @@ specs:
                 type: text
                 text: "FREQUENCY RESPONSE : \_38 Hz – 25.000 Hz"
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -233,9 +233,9 @@ specs:
                 type: text
                 text: 'SENSITIVITY : 90 dB SPL (2.83 V/1m)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -244,9 +244,9 @@ specs:
                 type: text
                 text: 'NOMINAL IMPEDANCE : 4 ohm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -255,9 +255,9 @@ specs:
                 type: text
                 text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 50W – 300W, without clipping'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -266,9 +266,9 @@ specs:
                 type: text
                 text: 'DIMENSIONS (HXWXD) : 1072 x 258 x 409 mm 42 x 10 x 16 in'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -277,9 +277,10 @@ specs:
                 type: text
                 text: 'WEIGHT : 22,6 Kg ea – net weight 49,8 Ib ea – net weight'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: EHXvzosc
     type: Review
     excerpt:
       -
@@ -296,7 +297,7 @@ title: 'Sonetto V G2'
 product-categories: speakers
 system_category: speakers
 local_only: false
-shipping: 300
+shipping: 400
 pairs_well_with:
   - 0cfba275-f5a2-4932-8c50-c81304dd4d5a
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
@@ -304,6 +305,9 @@ pairs_well_with:
   - 7689d894-abfb-4245-a441-2f519491b067
 also_consider:
   - 1c52521f-7d60-4828-bcbd-fb995f2be3b1
+  - 08a91fce-c116-4b29-883d-a8f6dd8b486f
+  - 63f4771c-3d0b-419e-b492-95853bfd75ca
+  - 8742ed02-bced-48e8-9a98-7bcd253bba24
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1721399409
+updated_at: 1753279455
 ---
