@@ -32,11 +32,11 @@ description:
         text: 'In its simplicity, it aims to elevate the acoustic minimalism of our origins.'
       -
         type: hardBreak
-price: 6500
+price: 6200
 show_price: true
 available_to_buy_online: true
 local_only: false
-shipping: 300
+shipping: 400
 pairs_well_with:
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
   - 7689d894-abfb-4245-a441-2f519491b067
@@ -130,5 +130,5 @@ specs:
         type: text
         text: 'Cabinet Construction: Cork Enclosure wrapped by leather and Solid Wood side panels'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1743542705
+updated_at: 1753282117
 ---
