@@ -11,7 +11,7 @@ description:
     content:
       -
         type: text
-        text: 'Introducing the Sonus Faber Serafino Tradition, a floor-standing speaker that combines the timeless elegance of Italian design with the pinnacle of acoustic performance. Part of the prestigious Homage Tradition series, the Serafino Tradition exemplifies Sonus Faber''s dedication to fusing superior sound quality with breathtaking design.'
+        text: "Introducing the Sonus Faber Serafino Tradition, a floor-standing speaker that combines the timeless elegance of Italian design with the pinnacle of acoustic performance. Part of the prestigious Homage Tradition series, the Serafino Tradition exemplifies Sonus Faber's dedication to fusing superior sound quality with breathtaking design."
   -
     type: paragraph
     content:
@@ -24,7 +24,7 @@ description:
       -
         type: text
         text: 'Constructed with premium materials like real wood and Italian leather, the Serafino Tradition is not only an auditory marvel but a visual masterpiece. The luxurious and elegant design embodies the craftsmanship and style iconic to Italian tradition.'
-price: 26000
+price: 31000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -37,6 +37,8 @@ pairs_well_with:
 also_consider:
   - 5e8f0ba3-8ec2-46f5-becd-2b05f20cfacb
   - 90737908-cf3d-4668-8dab-c7ec40dc3ee8
+  - 44274ffc-931d-4f36-873b-45b4fec15fca
+  - 26a6edd0-f71b-4f8f-98fb-588b9268c4ad
 product-categories: speakers
 system_category: speakers
 specs:
@@ -71,12 +73,12 @@ specs:
         type: text
         text: 'Tw: H28 XTR-04 DAD Arrow Point, Ø 28 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Md: M15 XTR-04 Neodymium Magnet System, Ø 150 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'W: 2 x W18XTR-08, Ø 180 mm'
@@ -171,7 +173,7 @@ specs:
         type: text
         text: '1091 x 396 x 485 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '43 x 15,6 x 19 in'
@@ -191,10 +193,10 @@ specs:
         type: text
         text: '52 Kg ea – net weight'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '115 lb ea – net weight'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1708787908
+updated_at: 1753280924
 ---
