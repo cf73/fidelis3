@@ -1,7 +1,7 @@
 ---
 id: f6aa2cf6-537f-4627-b477-08e516be153c
 blueprint: product
-title: 'Concertino G4 w/Stands'
+title: 'Concertino w/Stands'
 manufacturer: 5dbba480-954d-4ffe-9bac-7cf8d2a8359f
 product_hero_image: SONUS_CONCERTINO_PAIR_1.jpeg
 available_for_demo: true
@@ -32,7 +32,7 @@ description:
         text: 'In its simplicity, it aims to elevate the acoustic minimalism of our origins.'
       -
         type: hardBreak
-price: 6200
+price: 6700
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -130,5 +130,5 @@ specs:
         type: text
         text: 'Cabinet Construction: Cork Enclosure wrapped by leather and Solid Wood side panels'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753282117
+updated_at: 1753282257
 ---
