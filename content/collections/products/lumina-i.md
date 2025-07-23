@@ -14,13 +14,13 @@ description:
         type: text
         text: 'Lumina collection comprises the core values of Sonus faber and its iconic materials, such as real multilayer wood, leather and the natural composition of drivers.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Simplicity remains central to the collection’s identity with its easy set-up, accessible price point, and excellent sound performance, empowering everyone to enjoy a true Sonus faber experience completely made in Italy.'
-price: 999
+price: 1200
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 specs:
   -
     type: heading
@@ -37,7 +37,7 @@ specs:
         type: text
         text: '2-way shelf loudspeaker system.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Vented box design'
@@ -56,7 +56,7 @@ specs:
         type: text
         text: 'Tw: Ø 29 mm high definition DAD™ driver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Mw: Ø 120 mm paper cone driver'
@@ -145,7 +145,7 @@ specs:
         type: text
         text: '280 x 148 x 213 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '11 x 5.8 x 8.4 in'
@@ -164,7 +164,7 @@ specs:
         type: text
         text: '4.4 Kg each'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '9.7 lb each'
@@ -173,5 +173,11 @@ product-categories: speakers
 system_category: speakers
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405085
+updated_at: 1753281968
+shipping: 80
+pairs_well_with:
+  - 584ccd3e-d420-47fe-894b-f773bbe992ef
+  - 068393be-a680-4cb0-8ab9-bd8bafb6a579
+also_consider:
+  - 6e793e42-6e6d-4d88-b6e1-e7c82625d61a
 ---
