@@ -17,38 +17,38 @@ description:
         type: text
         text: 'It is the flagship three-way floor standing model in the collection.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Lumina V a slender speaker, with high power handling and fast'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'transient response, capable of producing a natural, generous'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'and emotional sound for an immersive listening experience.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'The Lumina V is rich with new electro-acoustic solutions.'
-price: 2995
+price: 4000
 show_price: true
-available_to_buy_online: false
-local_only: true
+available_to_buy_online: true
+local_only: false
 pairs_well_with:
-  - af07f219-a883-4376-a321-e34d92a197db
-  - 3d979e9b-2ca0-48ad-b7af-2582aded146f
   - 8ee63f99-41d7-47aa-b2ac-710aa532df3a
-  - 40fab940-8a47-45be-a156-347ca7f037c3
+  - 449e853e-3049-4400-b26f-eb31002a8e50
+  - 705207ef-c1b2-4581-a91d-d584b25fe66a
 also_consider:
   - e9cb8a57-092f-4758-bc32-bf97acecd71b
-  - f902251d-9ddc-4183-b2ca-558383c44bd7
-  - 6bf8730d-c349-4891-976b-e28e39990686
+  - 6e79af05-b3c2-43a5-bc81-7ca2384ebe21
+  - 5b6b3f59-f450-4335-9f69-b74fb88a4ad4
+  - c99ab1d5-b886-4710-9f7d-ea5220ec6e54
 product-categories: speakers
 system_category: speakers
 specs:
@@ -68,7 +68,7 @@ specs:
         type: text
         text: '3-way floorstanding loudspeaker system.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Vented box design.'
@@ -88,12 +88,12 @@ specs:
         type: text
         text: 'Tw: Ø 29mm high definition DAD™ driver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Md: Ø 150mm paper cone driver'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'W: Ø 2x165mm cone drivers. Sandwich diaphragm structure'
@@ -188,7 +188,7 @@ specs:
         type: text
         text: '1049 x 280 x 372,6 mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '4,13 x 11 x 14,7 in'
@@ -208,12 +208,13 @@ specs:
         type: text
         text: '22,5 Kg'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '49,6 lb'
 reivews_set:
   -
+    id: sLGj6uIc
     excerpt:
       -
         type: paragraph
@@ -226,5 +227,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405151
+updated_at: 1753281116
+shipping: 300
 ---
