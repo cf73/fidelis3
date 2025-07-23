@@ -12,160 +12,38 @@ description:
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'Since 1983, many moments have marked the history of Sonus faber; the launch of the Olympica Collection 6 years ago is one of them. One of the first lines presented as a complete family of products, but above all, the very first one to feature original drivers, entirely designed in Sonus faber.'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'Olympica Nova is the second generation of the iconic family of 2013, improved in its form and substance, imbued with the timeless values that inspired us in creating the original line.'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: "The result is a new Collection that embraces the most advanced technologies that already enhance our most prestigious creations.\_\_"
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '3 way, full para-aperiodic vented box “Stealth Ultraflex”, floor-standing loudspeaker system.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Tweeter: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Midrange: M15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Woofer: 2 x W18XTR2-08, Ø 180 mm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '250 Hz - 2.500 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '35 Hz – 35.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '90 dB SPL (2.83V/1 m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '50 W – 300 W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: "43.5\" x 14.8\" x 18.1\"\_"
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '77.1 Ibs. ea. – net weight'
-price: 15000
+price: 18000
 show_price: true
 available_to_buy_online: false
 reivews_set:
   -
+    id: t2FGZ8e8
     type: Review
     excerpt:
       -
@@ -183,5 +61,15 @@ product-categories: speakers
 system_category: speakers
 local_only: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405525
+updated_at: 1753278523
+shipping: 600
+pairs_well_with:
+  - 9f7f41a3-b287-4c08-a45f-0cd398b69154
+  - b1fe255b-cbbb-4eb9-960d-0eacea7f534c
+  - cd61c74f-80d9-4298-b509-a623ccb6379a
+  - 31ab7e70-fb37-405a-9764-7294dfefb856
+also_consider:
+  - 249dcb0d-282d-4d33-a01a-c814d79a372a
+  - 5e8f0ba3-8ec2-46f5-becd-2b05f20cfacb
+  - b1472f09-a4ba-44d7-9237-dc05d89e0331
 ---
