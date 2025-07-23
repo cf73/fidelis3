@@ -15,36 +15,35 @@ description:
         type: text
         text: 'The Lumina collection by Sonus faber presents an exciting change,'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'new to the typical Sonus faber product design portfolio but still able to embody'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'the history and values of the brand. “Simplicity” is central to the collection’s identity that aims'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'to reach a wide audience and to deliver a luxury music experience in all Sonus faber homes,'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'which is facilitated through our longstanding tradition of refined materials and careful craftsmanship.'
-price: 1299
+price: 1600
 show_price: true
-available_to_buy_online: false
+available_to_buy_online: true
 local_only: false
 pairs_well_with:
-  - af07f219-a883-4376-a321-e34d92a197db
-  - abc10149-fc03-4025-9359-1878bfe96ee4
   - 584ccd3e-d420-47fe-894b-f773bbe992ef
-  - ce3d5671-3a2b-47e7-a004-3cae88810e43
+  - 73b1d110-0d42-414e-9178-9b8cb16b204c
+  - fe8c10c9-1805-440e-837a-43c282614520
 also_consider:
-  - 912c2285-33da-467c-ac0f-0540acd2b730
+  - 6e793e42-6e6d-4d88-b6e1-e7c82625d61a
 product-categories: speakers
 system_category: speakers
 specs:
@@ -64,7 +63,7 @@ specs:
         type: text
         text: '2-way shelf loudspeaker system.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Vented box design.'
@@ -84,7 +83,7 @@ specs:
         type: text
         text: 'Tw: Ø 29mm high definition DAD™ driver.'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'Mw: Ø 150mm paper cone driver.'
@@ -179,7 +178,7 @@ specs:
         type: text
         text: '304 x 180 x 263mm'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '12 x 7,1 x 10,3 in'
@@ -199,12 +198,13 @@ specs:
         type: text
         text: '5,8 Kg'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: '12,8 lb'
 reivews_set:
   -
+    id: BYvZ0avH
     excerpt:
       -
         type: paragraph
@@ -217,5 +217,6 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1667405120
+updated_at: 1753281719
+shipping: 100
 ---
