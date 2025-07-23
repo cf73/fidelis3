@@ -15,7 +15,25 @@ description:
         marks:
           -
             type: bold
-        text: 'In comparison to Sonetto I, this is a bigger 2-way shelf loudspeaker system. Its high performance features a larger mid-woofer, which is capable of ensuring more wider downwards frequency response and a greater emotional impact. Besides its dimensions, Sonetto II still has the capability to disappear in the environment, with an elegant and graceful style.'
+        text: 'Sonetto II'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'ELEGANT AND ELUSIVE'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'The Sonetto II bookshelf speakers are infused with the rich heritage of Italian craftsmanship and tradition. Offering not only exceptional sound quality, Sonetto II speakers also resonate with a profound appreciation for artistry and culture.'
   -
     type: heading
     attrs:
@@ -30,140 +48,298 @@ available_to_buy_online: true
 monthly_featuree: false
 specs:
   -
-    type: bulletList
+    type: paragraph
     content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: "SYSTEM : \_2-way shelf loudspeaker system. Vented box design."
-              -
-                type: hardBreak
+            type: bold
+        text: System
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'LOUDSPEAKERS : Tw: High Definition DAD™ driver. DKM dome diaphragm, Ø 29mm'
-              -
-                type: hardBreak
+        type: text
+        text: '2,0 way'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Mw: Custom diaphragm made with cellulose pulp and other natural fibers, Ø 165mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'CROSSOVER : 2650Hz'
-              -
-                type: hardBreak
+        type: text
+        text: 'Midwoofer front vented box'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'FREQUENCY RESPONSE : 42 Hz – 25.000 Hz'
-              -
-                type: hardBreak
+            type: bold
+        text: Loudspeakers
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SENSITIVITY : 87 dB SPL (2.83 V/1m)'
-              -
-                type: hardBreak
+        type: text
+        text: 'High-end quality drivers'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'NOMINAL IMPEDANCE : 4 ohm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 40W – 200W, without clipping'
-              -
-                type: hardBreak
+        type: text
+        text: 'Tweeter: 1,1" DAD™ Arrow Point extended frequency tweeter, Copper shorting ring'
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'DIMENSIONS (HXWXD) : 370 (1101 stand included) x 250 x 334 mm'
-              -
-                type: hardBreak
+        type: hardBreak
       -
-        type: listItem
-        content:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: '15 (44 stand included) x 10 x 13 in'
-              -
-                type: hardBreak
+        type: text
+        text: "Midwoofer: 1x 6,5\" Midwoofer,\_ Aluminum demodulation ring"
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'WEIGHT : 6,8 kg - net weight (stand not included)'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Crossover Points'
+  -
+    type: paragraph
+    content:
       -
-        type: listItem
-        content:
+        type: text
+        text: '3100 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
           -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: '14,9 - net weight (stand not included)'
-              -
-                type: hardBreak
+            type: bold
+        text: 'Frequency response'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '42 Hz - 40.000 Hz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Sensitivity
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '87 dB SPL (2.83 V/1m)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Nominal impedance'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4 Ohm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Recommended power amplifier'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '30 W - 200 W'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Product dimensions (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '414 - 227 - 355 mm / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '16.3 - 8.94 - 13.98 in / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '687 - 355 - 406 mm (stand dimensions)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '27.1 - 13.2 - 16 in (stand dimensions)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Dimensions with packaging (HxWxD)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '525 - 605 - 455 mm'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '20.67 - 23.82 - 17.91 in'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '831 - 437 - 615 mm (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '32.72 - 17.20 - 24.21 in (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Weight
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '10,40 kg / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '22.93 lbs. / each'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '6,50 kg (stand weight)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '14.33 lbs. (stand weight)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Packaging weight'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '23,4 kg / one carton includes 2 speakers'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '51.6 in / one carton includes 2 speakers'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '12 kg (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '26.46 lb (stand)'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: Cabinet
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Lute shape'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Wood
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Leather
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: Concrete
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Aluminum - Concrete - Iron Steel (stand)'
+      -
+        type: hardBreak
 reivews_set:
   -
     id: WHEgOooo
@@ -197,7 +373,7 @@ pairs_well_with:
   - 0eb41aeb-7186-4f7d-9f23-ccfaa81ca032
   - 449e853e-3049-4400-b26f-eb31002a8e50
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1753279123
+updated_at: 1753280463
 also_consider:
   - c99ab1d5-b886-4710-9f7d-ea5220ec6e54
   - 87871d91-99e2-4c92-bfc3-c3f5914e5227
