@@ -12,158 +12,32 @@ description:
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'The wood undergoes a long aging phase before reaching the final stability and being used for the cabinet construction of our high-end loudspeaker as it happens for the musical instruments creation.'
   -
     type: paragraph
     content:
       -
         type: text
+        marks:
+          -
+            type: bold
         text: 'The search for the highest sophistication in acoustics, the artistic and aesthetic investigation linked to classicism, the look towards the modern knowledge: these are the main factors that link Olympica with the grandiose work of Andrea Palladio, which has been the inspiration in its creation and evolution.'
   -
     type: heading
     attrs:
       level: '4'
-    content:
-      -
-        type: text
-        text: SYSTEM
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '3 way, full para-aperiodic vented box “Stealth Ultraflex”, floor-standing loudspeaker system.'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: LOUDSPEAKERS
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: 'Tweeter: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Midrange: M15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
-      -
-        type: hard_break
-      -
-        type: text
-        text: 'Woofer: W18XTR2-04, Ø 180 mm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: CROSSOVER
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '250 Hz - 2.500 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'FREQUENCY RESPONSE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '40 Hz – 35.000 Hz'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: SENSITIVITY
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '88 dB SPL (2.83V/1 m)'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'NOMINAL IMPEDANCE'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '4 ohm'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'SUGGESTED AMPLIFIER POWER OUTPUT'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '50 W – 250 W, without clipping'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: 'DIMENSIONS (HXWXD)'
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '40.8" x 14.2" x 16.6"'
-  -
-    type: heading
-    attrs:
-      level: '4'
-    content:
-      -
-        type: text
-        text: WEIGHT
-  -
-    type: paragraph
-    content:
-      -
-        type: text
-        text: '67.6 Ibs. ea. – net weight'
-price: 11000
+price: 13500
 show_price: true
 available_to_buy_online: true
 specs:
   -
-    type: bullet_list
+    type: bulletList
     content:
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -172,9 +46,9 @@ specs:
                 type: text
                 text: 'SYSTEM : 3 way, full para-aperiodic vented box “Stealth Ultraflex”, floorstanding loudspeaker system.'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -183,9 +57,9 @@ specs:
                 type: text
                 text: 'LOUDSPEAKERS : Tw: H28 XTR3, Neodymium “cup design” motor system with DAD™, Ø 28 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -194,9 +68,9 @@ specs:
                 type: text
                 text: 'Md: M15 XTR2-04, CCAW wire on a “eddy current free” voice coil, Ø 150 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -205,9 +79,9 @@ specs:
                 type: text
                 text: 'W: W18XTR2-04, Ø 180 mm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -216,9 +90,9 @@ specs:
                 type: text
                 text: 'CROSSOVER : 250 Hz - 2.500 Hz'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -227,9 +101,9 @@ specs:
                 type: text
                 text: 'FREQUENCY RESPONSE : 40 Hz – 35.000 Hz'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -238,9 +112,9 @@ specs:
                 type: text
                 text: 'SENSITIVITY : 88 dB SPL (2.83V/1 m)'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -249,9 +123,9 @@ specs:
                 type: text
                 text: 'NOMINAL IMPEDANCE : 4 ohm'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -260,9 +134,9 @@ specs:
                 type: text
                 text: 'SUGGESTED AMPLIFIER POWER OUTPUT : 50 W – 250 W, without clipping'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -271,9 +145,9 @@ specs:
                 type: text
                 text: 'DIMENSIONS (HXWXD) : 1036,5 x 359,7 x 422,5 mm 40.8 x 14.2 x 16.6 in'
               -
-                type: hard_break
+                type: hardBreak
       -
-        type: list_item
+        type: listItem
         content:
           -
             type: paragraph
@@ -282,9 +156,10 @@ specs:
                 type: text
                 text: 'WEIGHT : 30,7 Kg ea – net weight 67.6 Ib ea – net weight'
               -
-                type: hard_break
+                type: hardBreak
 reivews_set:
   -
+    id: Q0cV0dNU
     type: Review
     excerpt:
       -
@@ -302,11 +177,9 @@ product-categories: speakers
 system_category: speakers
 local_only: false
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1721401951
+updated_at: 1753278266
 shipping: 400
 pairs_well_with:
-  - 919721d8-f7b0-422c-9991-4bff538c0c97
-  - 90abe46b-c828-4671-b388-7f3b6fa98119
   - 9f7f41a3-b287-4c08-a45f-0cd398b69154
   - cd61c74f-80d9-4298-b509-a623ccb6379a
 also_consider:
