@@ -1,0 +1,15 @@
+-- Clear all tables in Supabase
+TRUNCATE TABLE products CASCADE;
+TRUNCATE TABLE manufacturers CASCADE;
+TRUNCATE TABLE news CASCADE;
+TRUNCATE TABLE pre_owned CASCADE;
+TRUNCATE TABLE testimonials CASCADE;
+TRUNCATE TABLE evergreen_carousel CASCADE;
+
+-- Reset sequences if any
+ALTER SEQUENCE IF EXISTS products_id_seq RESTART WITH 1;
+ALTER SEQUENCE IF EXISTS manufacturers_id_seq RESTART WITH 1;
+ALTER SEQUENCE IF EXISTS news_id_seq RESTART WITH 1;
+ALTER SEQUENCE IF EXISTS pre_owned_id_seq RESTART WITH 1;
+ALTER SEQUENCE IF EXISTS testimonials_id_seq RESTART WITH 1;
+ALTER SEQUENCE IF EXISTS evergreen_carousel_id_seq RESTART WITH 1; 
