@@ -1,221 +1,156 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
+import React from 'react';
 
-const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    interest: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
+export const Contact: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-white shadow-sm">
-        <div className="container-custom py-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary-900 mb-4">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch with our audio experts for personalized assistance
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Get in touch with us for any questions about our products or services.
             </p>
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl font-bold text-primary-900 mb-6">
-              Send us a Message
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Contact Information */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Area of Interest
-                </label>
-                <select
-                  name="interest"
-                  value={formData.interest}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-                >
-                  <option value="">Select an option</option>
-                  <option value="speakers">Speakers</option>
-                  <option value="amplifiers">Amplifiers</option>
-                  <option value="dacs">DACs</option>
-                  <option value="turntables">Turntables</option>
-                  <option value="cables">Cables</option>
-                  <option value="demo">Demo Appointment</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-                  placeholder="Tell us about your audio needs..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn-primary w-full"
-              >
-                Send Message
-              </button>
-            </form>
-          </motion.div>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Get in Touch</h2>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-6 w-6 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Address</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">123 Audio Street<br />High-End City, HC 12345</p>
+                    </div>
+                  </div>
 
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-2xl font-bold text-primary-900 mb-6">
-              Get in Touch
-            </h2>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <MapPinIcon className="h-6 w-6 text-accent-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-primary-900">Visit Our Showroom</h3>
-                  <p className="text-gray-600">
-                    123 Audio Lane<br />
-                    Cambridge, MA 02139
-                  </p>
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-6 w-6 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Phone</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-6 w-6 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Email</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">info@fidelis.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-6 w-6 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Hours</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <PhoneIcon className="h-6 w-6 text-accent-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-primary-900">Call Us</h3>
-                  <p className="text-gray-600">(617) 555-0123</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <EnvelopeIcon className="h-6 w-6 text-accent-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-primary-900">Email Us</h3>
-                  <p className="text-gray-600">info@fidelisav.com</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ClockIcon className="h-6 w-6 text-accent-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-primary-900">Business Hours</h3>
-                  <p className="text-gray-600">
-                    Tuesday - Saturday: 10:00 AM - 6:00 PM<br />
-                    Sunday: 12:00 PM - 5:00 PM<br />
-                    Monday: Closed
-                  </p>
-                </div>
+
+              {/* Contact Form */}
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
+                
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your name"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="What can we help you with?"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Tell us more about your inquiry..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    Send Message
+                  </button>
+                </form>
               </div>
             </div>
+          </div>
 
-            {/* Services */}
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold text-primary-900 mb-4">
-                Our Services
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-accent-600 rounded-full"></div>
-                  <span className="text-gray-700">In-home demonstrations</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-accent-600 rounded-full"></div>
-                  <span className="text-gray-700">System design consultation</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-accent-600 rounded-full"></div>
-                  <span className="text-gray-700">Professional installation</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-accent-600 rounded-full"></div>
-                  <span className="text-gray-700">Ongoing support</span>
-                </div>
-              </div>
+          {/* Map or Additional Info */}
+          <div className="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Visit Our Showroom</h2>
+            <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-64 flex items-center justify-center">
+              <p className="text-gray-500 dark:text-gray-400">Interactive map would go here</p>
             </div>
-          </motion.div>
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              We welcome visitors to our showroom where you can experience our products firsthand. 
+              Please call ahead to schedule an appointment for a personalized demonstration.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Contact; 
+}; 

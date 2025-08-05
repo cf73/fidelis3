@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const NewsDetail: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="bg-white shadow-sm">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="container-custom py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -12,10 +12,10 @@ const NewsDetail: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary-900 mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-primary-900 dark:text-primary-400 mb-4">
               News Article
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Detailed news and industry updates
             </p>
           </motion.div>
@@ -30,10 +30,10 @@ const NewsDetail: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="text-6xl mb-4">📰</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Coming Soon
             </h2>
-            <p className="text-gray-600 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto">
               Detailed news article pages are currently under development. 
               Check back soon for comprehensive news and industry updates.
             </p>
@@ -44,4 +44,4 @@ const NewsDetail: React.FC = () => {
   );
 };
 
-export default NewsDetail; 
+export { NewsDetail }; 

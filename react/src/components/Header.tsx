@@ -1,107 +1,181 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import { SignIn } from './SignIn';
+import { ThemeToggle } from './ThemeToggle';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
+  const { user, signOut } = useAuth();
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
-    { name: 'Manufacturers', href: '/manufacturers' },
-    { name: 'News', href: '/news' },
-    { name: 'Pre-Owned', href: '/pre-owned' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  const isActive = (path: string) => location.pathname === path;
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container-custom">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary-900"
-            >
-              Fidelis AV
-            </motion.div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isActive(item.href)
-                    ? 'text-accent-600'
-                    : 'text-gray-700 hover:text-accent-600'
-                }`}
-              >
-                {item.name}
-                {isActive(item.href) && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-accent-100 rounded-lg"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
+    <>
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white">
+                Fidelis
               </Link>
-            ))}
-          </nav>
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-accent-600 transition-colors duration-200"
-            >
-              {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              <Link
+                to="/"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Home
+              </Link>
+              <Link
+                to="/products"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Products
+              </Link>
+              <Link
+                to="/manufacturers"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Manufacturers
+              </Link>
+              <Link
+                to="/news"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                News
+              </Link>
+              <Link
+                to="/pre-owned"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Pre-Owned
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Contact
+              </Link>
+            </nav>
+
+            {/* Auth and Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Theme Toggle */}
+              <ThemeToggle />
+              
+              {/* Auth Button */}
+              {user ? (
+                <div className="flex items-center space-x-3">
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    Welcome, {user.email}
+                  </span>
+                  <button
+                    onClick={handleSignOut}
+                    className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                  >
+                    Sign Out
+                  </button>
+                </div>
               ) : (
-                <Bars3Icon className="h-6 w-6" />
+                <button
+                  onClick={() => setIsSignInOpen(true)}
+                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Sign In
+                </button>
               )}
-            </button>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              >
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg
+                  className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
+              <Link
+                to="/"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/products"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Products
+              </Link>
+              <Link
+                to="/manufacturers"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Manufacturers
+              </Link>
+              <Link
+                to="/news"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                News
+              </Link>
+              <Link
+                to="/pre-owned"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pre-Owned
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         </div>
+      </header>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200"
-          >
-            <nav className="py-4 space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-accent-600 bg-accent-50'
-                      : 'text-gray-700 hover:text-accent-600 hover:bg-gray-50'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </div>
-    </header>
+      {/* Sign In Modal */}
+      <SignIn isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
+    </>
   );
-};
-
-export default Header; 
+}; 

@@ -5,7 +5,7 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="bg-gray-900 dark:bg-gray-800 text-white">
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-800 mt-8 pt-8">
+        <div className="border-t border-gray-700 dark:border-gray-600 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2024 Fidelis AV. All rights reserved.
@@ -126,4 +126,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export { Footer }; 

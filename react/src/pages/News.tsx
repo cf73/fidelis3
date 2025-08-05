@@ -24,10 +24,10 @@ const News: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4 text-gray-600 dark:text-gray-300">Loading...</p>
         </div>
       </div>
     );
@@ -38,13 +38,13 @@ const News: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-gray-50 dark:bg-gray-900"
     >
       {/* Header */}
-      <section className="bg-white shadow-sm">
+      <section className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="container-custom py-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">News</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">News</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Placeholder content
           </p>
         </div>
@@ -60,32 +60,32 @@ const News: React.FC = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 whileHover={{ y: -5 }}
-                className="card overflow-hidden"
+                className="card overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
-                                  {article.featured_image && (
-                    <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                      <img
-                        src={getImageUrl(article.featured_image)}
-                        alt={article.title}
-                        className="w-full h-48 object-cover"
-                      />
-                    </div>
-                  )}
+                {article.featured_image && (
+                  <div className="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
+                    <img
+                      src={getImageUrl(article.featured_image)}
+                      alt={article.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                )}
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-2">{article.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{article.title}</h3>
                   {article.date && (
-                    <p className="text-sm text-gray-500 mb-4">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                       {new Date(article.date).toLocaleDateString()}
                     </p>
                   )}
                   {article.excerpt && (
-                    <p className="text-gray-600 mb-4 line-clamp-3">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                       {article.excerpt}
                     </p>
                   )}
                   <Link
                     to={`/news/${article.id}`}
-                    className="btn-primary w-full text-center"
+                    className="btn-primary w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
                   >
                     Read More
                   </Link>
@@ -95,7 +95,7 @@ const News: React.FC = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500">Placeholder content</p>
+            <p className="text-gray-500 dark:text-gray-400">Placeholder content</p>
           </div>
         )}
       </section>
@@ -103,4 +103,4 @@ const News: React.FC = () => {
   );
 };
 
-export default News; 
+export { News }; 

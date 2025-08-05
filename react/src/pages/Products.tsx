@@ -1,217 +1,340 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { 
-  getProductsWithCategories, 
-  getManufacturers,
-  getImageUrl,
-  type Product,
-  type Manufacturer
-} from '../lib/supabase';
+import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import { getProductsWithCategories, getProductCategories, getManufacturers } from '../lib/supabase';
+import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
+import { ProductForm } from '../components/ProductForm';
 
-const Products: React.FC = () => {
+export const Products: React.FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<ProductCategory[]>([]);
   const [manufacturers, setManufacturers] = useState<Manufacturer[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedManufacturer, setSelectedManufacturer] = useState<string>('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>(searchParams.get('category') || '');
+  const [selectedManufacturer, setSelectedManufacturer] = useState<string>(searchParams.get('manufacturer') || '');
+  const [sortBy, setSortBy] = useState<string>(searchParams.get('sort') || 'newest');
+  const [isProductFormOpen, setIsProductFormOpen] = useState(false);
+  const { user } = useAuth();
 
+  // Load data
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = async () => {
       try {
-        const [productsData, manufacturersData] = await Promise.all([
+        const [productsData, categoriesData, manufacturersData] = await Promise.all([
           getProductsWithCategories(),
-          getManufacturers()
+          getProductCategories(),
+          getManufacturers(),
         ]);
 
         setProducts(productsData);
+        setCategories(categoriesData);
         setManufacturers(manufacturersData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error loading data:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
+    loadData();
   }, []);
 
-  // Get unique categories from products
-  const categories = Array.from(new Set(
-    products.flatMap(product => product.categories?.map(cat => cat.name) || [])
-  )).sort();
+  // Watch for URL parameter changes
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get('category') || '';
+    const manufacturerFromUrl = searchParams.get('manufacturer') || '';
+    const sortFromUrl = searchParams.get('sort') || 'newest';
 
-  // Filter products based on selected filters
-  const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === 'all' || 
-      (product.categories && product.categories.some(cat => cat.name === selectedCategory));
-    
-    const matchesManufacturer = selectedManufacturer === 'all' || 
-      (product.manufacturer && product.manufacturer === selectedManufacturer);
-    
-    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (product.description && product.description.toLowerCase().includes(searchTerm.toLowerCase()));
+    setSelectedCategory(categoryFromUrl);
+    setSelectedManufacturer(manufacturerFromUrl);
+    setSortBy(sortFromUrl);
+  }, [searchParams]);
 
-    return matchesCategory && matchesManufacturer && matchesSearch;
+  // Handle filter changes
+  const handleFilterChange = (type: 'category' | 'manufacturer' | 'sort', value: string) => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    
+    if (type === 'category') {
+      if (value) {
+        newSearchParams.set('category', value);
+      } else {
+        newSearchParams.delete('category');
+      }
+      setSelectedCategory(value);
+    } else if (type === 'manufacturer') {
+      if (value) {
+        newSearchParams.set('manufacturer', value);
+      } else {
+        newSearchParams.delete('manufacturer');
+      }
+      setSelectedManufacturer(value);
+    } else if (type === 'sort') {
+      newSearchParams.set('sort', value);
+      setSortBy(value);
+    }
+    
+    setSearchParams(newSearchParams);
+  };
+
+
+
+  const handleProductFormSuccess = async () => {
+    setIsProductFormOpen(false);
+    // Reload products after adding a new one
+    try {
+      const [productsData, categoriesData, manufacturersData] = await Promise.all([
+        getProductsWithCategories(),
+        getProductCategories(),
+        getManufacturers(),
+      ]);
+      setProducts(productsData);
+      setCategories(categoriesData);
+      setManufacturers(manufacturersData);
+    } catch (error) {
+      console.error('Error reloading data:', error);
+    }
+  };
+
+  // Filter and sort products
+  let filteredProducts = products.filter(product => {
+    const categoryMatch = !selectedCategory || product.categories?.id === selectedCategory;
+    const manufacturerMatch = !selectedManufacturer || product.manufacturer?.id === selectedManufacturer;
+    return categoryMatch && manufacturerMatch;
+  });
+
+  // Sort products
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    switch (sortBy) {
+      case 'newest':
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      case 'oldest':
+        return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+      case 'name-asc':
+        return a.title.localeCompare(b.title);
+      case 'name-desc':
+        return b.title.localeCompare(a.title);
+      case 'price-low':
+        return (a.price || 0) - (b.price || 0);
+      case 'price-high':
+        return (b.price || 0) - (a.price || 0);
+      default:
+        return 0;
+    }
   });
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading products...</p>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-4"
-          >
-            Our Products
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600 text-center max-w-3xl mx-auto"
-          >
-            Discover our extensive collection of high-end audio equipment from the world's finest manufacturers
-          </motion.p>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+                {selectedCategory
+                  ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
+                  : 'Products'
+                }
+              </h1>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">
+                {selectedCategory
+                  ? `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`
+                  : 'Discover our collection of high-quality audio equipment'
+                }
+              </p>
+              {selectedCategory && (
+                <div className="flex items-center space-x-4 mt-2">
+                  <Link
+                    to="/products/list"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    View All Products
+                  </Link>
+                </div>
+              )}
+            </div>
+            {user && (
+              <button
+                onClick={() => setIsProductFormOpen(true)}
+                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Add Product
+              </button>
+            )}
+          </div>
         </div>
-      </section>
 
-      {/* Filters */}
-      <section className="bg-white border-b">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search */}
-            <div className="w-full lg:w-96">
-              <input
-                type="text"
-                placeholder="Search products..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+        {/* Filters and Sort */}
+        <div className="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+          <div className={`grid gap-4 ${selectedCategory ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
+            {!selectedCategory && (
+              <div>
+                <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Filter by Category
+                </label>
+                <select
+                  id="category-filter"
+                  value={selectedCategory}
+                  onChange={(e) => handleFilterChange('category', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">All Categories</option>
+                  {categories.map(category => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            <div>
+              <label htmlFor="manufacturer-filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Filter by Manufacturer
+              </label>
+              <select
+                id="manufacturer-filter"
+                value={selectedManufacturer}
+                onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="">All Manufacturers</option>
+                {(() => {
+                  // Filter manufacturers to only show those with products in the current category
+                  const relevantManufacturers = selectedCategory
+                    ? manufacturers.filter(manufacturer =>
+                        products.some(product =>
+                          product.manufacturer?.id === manufacturer.id &&
+                          product.categories?.id === selectedCategory
+                        )
+                      )
+                    : manufacturers;
+
+                  return relevantManufacturers.map(manufacturer => (
+                    <option key={manufacturer.id} value={manufacturer.id}>
+                      {manufacturer.name}
+                    </option>
+                  ));
+                })()}
+              </select>
             </div>
 
-            {/* Filters */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* Category Filter */}
+            <div>
+              <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Sort by
+              </label>
               <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                id="sort-by"
+                value={sortBy}
+                onChange={(e) => handleFilterChange('sort', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="all">All Categories</option>
-                {categories.map(category => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
-
-              {/* Manufacturer Filter */}
-              <select
-                value={selectedManufacturer}
-                onChange={(e) => setSelectedManufacturer(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="all">All Manufacturers</option>
-                {manufacturers.map(manufacturer => (
-                  <option key={manufacturer.id} value={manufacturer.title}>
-                    {manufacturer.title}
-                  </option>
-                ))}
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="price-low">Price Low to High</option>
+                <option value="price-high">Price High to Low</option>
               </select>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Products Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          {filteredProducts.length > 0 ? (
-            <>
-              <div className="mb-8">
-                <p className="text-gray-600">
-                  Showing {filteredProducts.length} of {products.length} products
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {filteredProducts.map((product, index) => (
-                  <motion.div
-                    key={product.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                  >
-                    <Link to={`/products/${product.slug}`}>
-                      <div className="aspect-w-16 aspect-h-9">
-                        <img 
-                          src={getImageUrl(product.product_hero_image)} 
-                          alt={product.title}
-                          className="w-full h-48 object-cover"
-                        />
+        {/* Products Grid */}
+        {sortedProducts.length === 0 ? (
+          <div className="text-center py-12">
+            <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No products found</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              {selectedCategory || selectedManufacturer
+                ? 'Try adjusting your filters to see more products.'
+                : 'No products are available at the moment.'
+              }
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {sortedProducts.map((product) => (
+              <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-gray-700">
+                <Link to={`/products/${product.slug}`}>
+                  <div className="aspect-w-1 aspect-h-1 w-full">
+                    {product.product_hero_image ? (
+                      <img
+                        src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${product.product_hero_image}`}
+                        alt={product.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                        <svg className="h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
                       </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold mb-2 line-clamp-2">{product.title}</h3>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{product.title}</h3>
+                    {product.brief_description && (
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{product.brief_description}</p>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        {product.categories && (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            {product.categories.name}
+                          </span>
+                        )}
                         {product.manufacturer && (
-                          <p className="text-sm text-gray-600 mb-2">{product.manufacturer}</p>
-                        )}
-                        {product.price && (
-                          <p className="text-lg font-bold text-blue-600 mb-2">${product.price.toLocaleString()}</p>
-                        )}
-                        {/* Removed description to simplify product cards */}
-                        {product.categories && product.categories.length > 0 && (
-                          <div className="mt-3 flex flex-wrap gap-1">
-                            {product.categories.slice(0, 2).map(category => (
-                              <span 
-                                key={category.id}
-                                className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
-                              >
-                                {category.name}
-                              </span>
-                            ))}
-                          </div>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                            {product.manufacturer.name}
+                          </span>
                         )}
                       </div>
-                    </Link>
-                  </motion.div>
-                ))}
+                      {product.featured && (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    {product.price && (
+                      <div className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
+                        ${product.price.toLocaleString()}
+                      </div>
+                    )}
+                  </div>
+                </Link>
               </div>
-            </>
-          ) : (
-            <div className="text-center py-16">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">No products found</h3>
-              <p className="text-gray-600 mb-6">
-                Try adjusting your search criteria or filters
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setSelectedCategory('all');
-                  setSelectedManufacturer('all');
-                }}
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Clear Filters
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
+            ))}
+          </div>
+        )}
+
+        {/* Product Form Modal */}
+        <ProductForm
+          isOpen={isProductFormOpen}
+          onClose={() => setIsProductFormOpen(false)}
+          onSuccess={handleProductFormSuccess}
+        />
+      </div>
     </div>
   );
-};
-
-export default Products; 
+}; 
