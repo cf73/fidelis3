@@ -29,13 +29,28 @@ export interface Product {
   brief_description?: string;
   product_hero_image?: string;
   product_gallery?: string[];
+  specs?: string;
+  quote?: string;
+  quote_attribution?: string;
+  reviews_set?: Review[];
   price?: number;
+  available_for_demo?: boolean;
+  available_to_buy_online?: boolean;
+  show_price?: boolean;
+  local_only?: boolean;
   featured?: boolean;
   published?: boolean;
   created_at: string;
   updated_at: string;
   categories?: ProductCategory;
   manufacturer?: Manufacturer;
+}
+
+export interface Review {
+  excerpt?: string;
+  attribution?: string;
+  link?: string;
+  date_of_review?: string;
 }
 
 export interface ProductCategory {
@@ -60,7 +75,7 @@ export interface News {
   slug: string;
   content: string;
   brief_description?: string;
-  hero_image?: string;
+  image?: string;
   published?: boolean;
   created_at: string;
   updated_at: string;
@@ -247,6 +262,59 @@ export const getNews = async (): Promise<News[]> => {
   return data || [];
 };
 
+export const getNewsBySlug = async (slug: string): Promise<News | null> => {
+  // First try to find by slug
+  let { data, error } = await supabase
+    .from('news')
+    .select('*')
+    .eq('slug', slug)
+    .eq('published', true)
+    .single();
+
+  // If not found by slug, try by ID
+  if (error) {
+    console.log('Not found by slug, trying by ID:', slug);
+    const { data: dataById, error: errorById } = await supabase
+      .from('news')
+      .select('*')
+      .eq('id', slug)
+      .eq('published', true)
+      .single();
+    
+    if (errorById) {
+      console.log('Not found by ID, trying to find by generated slug from title');
+      // Try to find by matching the slug against generated slugs from titles
+      const { data: allNews, error: allNewsError } = await supabase
+        .from('news')
+        .select('*')
+        .eq('published', true);
+      
+      if (!allNewsError && allNews) {
+        const article = allNews.find(item => {
+          const generatedSlug = item.title
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .trim();
+          return generatedSlug === slug;
+        });
+        
+        if (article) {
+          return article;
+        }
+      }
+      
+      console.error('Error fetching news article by ID:', errorById);
+      return null;
+    }
+    
+    data = dataById;
+  }
+
+  return data;
+};
+
 export const getEvergreenCarousel = async (): Promise<EvergreenCarousel[]> => {
   const { data, error } = await supabase
     .from('evergreen_carousel')
@@ -266,10 +334,27 @@ export const getEvergreenCarousel = async (): Promise<EvergreenCarousel[]> => {
 export const getImageUrl = (imagePath: string): string => {
   if (!imagePath) return '';
   
-  // Clean the path to remove any leading slashes or 'main/' prefixes
-  const cleanPath = imagePath.replace(/^\/+/, '').replace(/^main\//, '');
+  // Handle different image path formats
+  let cleanPath = imagePath;
   
-  return supabase.storage.from('images').getPublicUrl(cleanPath).data.publicUrl;
+  // Remove leading slashes
+  cleanPath = cleanPath.replace(/^\/+/, '');
+  
+  // Remove 'main/' prefix if present
+  cleanPath = cleanPath.replace(/^main\//, '');
+  
+  // Remove 'assets/' prefix if present
+  cleanPath = cleanPath.replace(/^assets\//, '');
+  
+  // For news images, they might be stored with just the filename
+  // If the path contains slashes, it's a relative path, otherwise it's just a filename
+  if (cleanPath.includes('/')) {
+    // It's a relative path, use as is
+    return supabase.storage.from('images').getPublicUrl(cleanPath).data.publicUrl;
+  } else {
+    // It's just a filename, use it directly
+    return supabase.storage.from('images').getPublicUrl(cleanPath).data.publicUrl;
+  }
 };
 
 // CMS Functions for authenticated users
@@ -321,4 +406,39 @@ export const deleteImage = async (filename: string) => {
     .remove([filename]);
 
   return { error };
+};
+
+// Get related products based on manufacturer and category
+export const getRelatedProducts = async (productId: string, manufacturerId?: string, categoryId?: string): Promise<Product[]> => {
+  let query = supabase
+    .from('products')
+    .select(`
+      *,
+      categories:product_categories!products_category_id_fkey(id, name, slug),
+      manufacturer:manufacturers!products_manufacturer_id_fkey(id, name, slug)
+    `)
+    .neq('id', productId)
+    .eq('published', true)
+    .limit(6);
+
+  // Build OR condition for manufacturer or category matches
+  if (manufacturerId && categoryId) {
+    query = query.or(`manufacturer_id.eq.${manufacturerId},category_id.eq.${categoryId}`);
+  } else if (manufacturerId) {
+    query = query.eq('manufacturer_id', manufacturerId);
+  } else if (categoryId) {
+    query = query.eq('category_id', categoryId);
+  } else {
+    // Fallback to featured products if no relationships
+    query = query.eq('featured', true);
+  }
+
+  const { data, error } = await query;
+  
+  if (error) {
+    console.error('Error fetching related products:', error);
+    return [];
+  }
+  
+  return data || [];
 };

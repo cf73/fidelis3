@@ -25,10 +25,10 @@ const Manufacturers: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-300">Loading...</p>
+          <p className="mt-4 text-gray-600">Loading...</p>
         </div>
       </div>
     );
@@ -39,13 +39,13 @@ const Manufacturers: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50 dark:bg-gray-900"
+      className="min-h-screen bg-gray-50"
     >
       {/* Header */}
-      <section className="bg-white dark:bg-gray-800 shadow-sm">
+      <section className="bg-white shadow-sm">
         <div className="container-custom py-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Manufacturers</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Manufacturers</h1>
+          <p className="text-lg text-gray-600">
             Placeholder content
           </p>
         </div>
@@ -65,7 +65,7 @@ const Manufacturers: React.FC = () => {
               >
                 <Link
                   to={`/manufacturers/${manufacturer.slug || manufacturer.id}`}
-                  className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+                  className="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-gray-300"
                 >
                   {manufacturer.logo ? (
                     <div className="flex items-center justify-center h-24">
@@ -77,9 +77,9 @@ const Manufacturers: React.FC = () => {
                     </div>
                   ) : (
                     <div className="flex items-center justify-center h-24">
-                      <div className="text-gray-400 dark:text-gray-500 text-sm text-center">
-                        {manufacturer.name}
-                      </div>
+                                          <div className="text-gray-400 text-sm text-center">
+                      {manufacturer.name}
+                    </div>
                     </div>
                   )}
                 </Link>
@@ -88,7 +88,7 @@ const Manufacturers: React.FC = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500 dark:text-gray-400">Placeholder content</p>
+            <p className="text-gray-500">Placeholder content</p>
           </div>
         )}
       </section>

@@ -93,7 +93,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -113,17 +113,17 @@ const Home: React.FC = () => {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="aspect-w-16 aspect-h-9">
-                  <img 
-                    src={getImageUrl(product.product_hero_image)} 
-                    alt={product.title}
-                    className="w-full h-48 object-cover"
-                  />
+                                     <img 
+                     src={product.product_hero_image ? getImageUrl(product.product_hero_image) : ''} 
+                     alt={product.title}
+                     className="w-full h-48 object-cover"
+                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {product.summary || product.description}
-                  </p>
+                                     <p className="text-gray-600 mb-4 line-clamp-2">
+                     {product.brief_description}
+                   </p>
                   <Link 
                     to={`/products/${product.slug}`}
                     className="text-blue-600 hover:text-blue-800 font-semibold"
@@ -138,13 +138,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Manufacturers */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+            className="text-4xl font-bold text-center mb-12"
           >
             Our Manufacturers
           </motion.h2>
@@ -158,19 +158,19 @@ const Home: React.FC = () => {
                 className="text-center"
               >
                 <Link to={`/manufacturers/${manufacturer.slug}`}>
-                  <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                    {manufacturer.logo ? (
-                      <img 
-                        src={getImageUrl(manufacturer.logo)} 
-                        alt={manufacturer.title}
-                        className="w-full h-16 object-contain mb-2"
-                      />
-                    ) : (
-                      <div className="w-full h-16 bg-gray-200 dark:bg-gray-600 rounded flex items-center justify-center mb-2">
-                        <span className="text-gray-500 dark:text-gray-400 text-sm">{manufacturer.title}</span>
-                      </div>
-                    )}
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{manufacturer.title}</p>
+                                     <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+                     {manufacturer.logo ? (
+                       <img 
+                         src={getImageUrl(manufacturer.logo)} 
+                         alt={manufacturer.name}
+                         className="w-full h-16 object-contain mb-2"
+                       />
+                     ) : (
+                       <div className="w-full h-16 bg-gray-200 rounded flex items-center justify-center mb-2">
+                         <span className="text-gray-500 text-sm">{manufacturer.name}</span>
+                       </div>
+                     )}
+                     <p className="text-sm font-medium text-gray-700">{manufacturer.name}</p>
                   </div>
                 </Link>
               </motion.div>
@@ -180,13 +180,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Latest News */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+            className="text-4xl font-bold text-center mb-12"
           >
             Latest News
           </motion.h2>
@@ -197,29 +197,21 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                {article.news_image && (
-                  <div className="aspect-w-16 aspect-h-9">
-                    <img 
-                      src={getImageUrl(article.news_image)} 
-                      alt={article.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{article.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                    {article.news_summary || article.brief_description}
-                  </p>
-                  <Link 
-                    to={`/news/${article.slug}`}
-                    className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-semibold"
-                  >
-                    Read More →
-                  </Link>
-                </div>
+                                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+               >
+
+                 <div className="p-6">
+                   <h3 className="text-xl font-semibold mb-2 text-gray-900">{article.title}</h3>
+                   <p className="text-gray-600 mb-4 line-clamp-3">
+                     {article.brief_description}
+                   </p>
+                   <Link 
+                     to={`/news/${article.slug}`}
+                     className="text-blue-600 hover:text-blue-800 font-semibold"
+                   >
+                     Read More →
+                   </Link>
+                 </div>
               </motion.div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { getProductsWithCategories, getProductCategories, getManufacturers } from '../lib/supabase';
+import { getProductsWithCategories, getProductCategories, getManufacturers, getImageUrl } from '../lib/supabase';
 import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
 import { ProductForm } from '../components/ProductForm';
 
@@ -79,8 +79,6 @@ export const Products: React.FC = () => {
     setSearchParams(newSearchParams);
   };
 
-
-
   const handleProductFormSuccess = async () => {
     setIsProductFormOpen(false);
     // Reload products after adding a new one
@@ -127,31 +125,29 @@ export const Products: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading products...</p>
-          </div>
+      <div className="min-h-screen bg-gray-50 py-12">
+        <div className="container-custom text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading products...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container-custom">
         {/* Header */}
         <div className="mb-8">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-3xl font-bold text-gray-900">
                 {selectedCategory
                   ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
                   : 'Products'
                 }
               </h1>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-gray-600">
                 {selectedCategory
                   ? `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`
                   : 'Discover our collection of high-quality audio equipment'
@@ -183,18 +179,18 @@ export const Products: React.FC = () => {
         </div>
 
         {/* Filters and Sort */}
-        <div className="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <div className="mb-8 bg-white p-6 rounded-lg shadow-sm">
           <div className={`grid gap-4 ${selectedCategory ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
             {!selectedCategory && (
               <div>
-                <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-1">
                   Filter by Category
                 </label>
                 <select
                   id="category-filter"
                   value={selectedCategory}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">All Categories</option>
                   {categories.map(category => (
@@ -207,14 +203,14 @@ export const Products: React.FC = () => {
             )}
 
             <div>
-              <label htmlFor="manufacturer-filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label htmlFor="manufacturer-filter" className="block text-sm font-medium text-gray-700 mb-1">
                 Filter by Manufacturer
               </label>
               <select
                 id="manufacturer-filter"
                 value={selectedManufacturer}
                 onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">All Manufacturers</option>
                 {(() => {
@@ -238,14 +234,14 @@ export const Products: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 mb-1">
                 Sort by
               </label>
               <select
                 id="sort-by"
                 value={sortBy}
                 onChange={(e) => handleFilterChange('sort', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>
@@ -261,11 +257,11 @@ export const Products: React.FC = () => {
         {/* Products Grid */}
         {sortedProducts.length === 0 ? (
           <div className="text-center py-12">
-            <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
             </svg>
-            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No products found</h3>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            <h3 className="mt-2 text-sm font-medium text-gray-900">No products found</h3>
+            <p className="mt-1 text-sm text-gray-500">
               {selectedCategory || selectedManufacturer
                 ? 'Try adjusting your filters to see more products.'
                 : 'No products are available at the moment.'
@@ -275,27 +271,27 @@ export const Products: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {sortedProducts.map((product) => (
-              <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-gray-700">
+              <div key={product.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
                 <Link to={`/products/${product.slug}`}>
                   <div className="aspect-w-1 aspect-h-1 w-full">
                     {product.product_hero_image ? (
                       <img
-                        src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${product.product_hero_image}`}
+                        src={getImageUrl(product.product_hero_image)}
                         alt={product.title}
                         className="w-full h-48 object-cover"
                       />
                     ) : (
-                      <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                        <svg className="h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                        <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                       </div>
                     )}
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{product.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
                     {product.brief_description && (
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{product.brief_description}</p>
+                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.brief_description}</p>
                     )}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
@@ -305,7 +301,7 @@ export const Products: React.FC = () => {
                           </span>
                         )}
                         {product.manufacturer && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                             {product.manufacturer.name}
                           </span>
                         )}
@@ -317,7 +313,7 @@ export const Products: React.FC = () => {
                       )}
                     </div>
                     {product.price && (
-                      <div className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
+                      <div className="mt-2 text-lg font-semibold text-gray-900">
                         ${product.price.toLocaleString()}
                       </div>
                     )}
