@@ -75,6 +75,8 @@ export interface News {
   slug: string;
   content: string;
   brief_description?: string;
+  summary?: string;
+  main_content?: string;
   image?: string;
   published?: boolean;
   created_at: string;

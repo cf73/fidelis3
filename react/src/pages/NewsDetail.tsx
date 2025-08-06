@@ -157,7 +157,26 @@ const NewsDetail: React.FC = () => {
 
             {/* Article Body */}
             <div className="p-8">
-              {article.content && (
+              {/* Summary - displayed prominently to draw readers in */}
+              {article.summary && (
+                <div className="mb-8">
+                  <div className="text-xl lg:text-2xl text-gray-800 leading-relaxed font-medium">
+                    {parseStatamicContent(article.summary)}
+                  </div>
+                </div>
+              )}
+
+              {/* Main Content */}
+              {article.main_content && (
+                <div className="prose prose-lg prose-gray max-w-none mb-8">
+                  <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                    {parseStatamicContent(article.main_content)}
+                  </div>
+                </div>
+              )}
+
+              {/* Fallback to content if main_content is not available */}
+              {!article.main_content && article.content && (
                 <div className="prose prose-lg prose-gray max-w-none">
                   <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
                     {parseStatamicContent(article.content)}
