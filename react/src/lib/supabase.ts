@@ -80,6 +80,7 @@ export interface News {
   created_at: string;
   updated_at: string;
   system_category?: string;
+  news_date?: string;
 }
 
 export interface PreOwned {
@@ -252,6 +253,7 @@ export const getNews = async (): Promise<News[]> => {
     .from('news')
     .select('*')
     .eq('published', true)
+    .order('news_date', { ascending: false })
     .order('created_at', { ascending: false });
 
   if (error) {
