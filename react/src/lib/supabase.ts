@@ -339,6 +339,13 @@ export const getImageUrl = (imagePath: string): string => {
   // Handle different image path formats
   let cleanPath = imagePath;
   
+  // If it's a full URL, extract just the filename
+  if (cleanPath.startsWith('http')) {
+    // Extract filename from URL
+    const urlParts = cleanPath.split('/');
+    cleanPath = urlParts[urlParts.length - 1];
+  }
+  
   // Remove leading slashes
   cleanPath = cleanPath.replace(/^\/+/, '');
   
