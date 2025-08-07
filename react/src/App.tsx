@@ -18,6 +18,7 @@ import PreOwnedDetail from './pages/PreOwnedDetail';
 import { Contact } from './pages/Contact';
 import { Moodboard } from './pages/Moodboard';
 import { Moodboard2 } from './pages/Moodboard2';
+import { ProductCardDemo } from './pages/ProductCardDemo';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/moodboard" element={<Moodboard />} />
               <Route path="/moodboard2" element={<Moodboard2 />} />
+              <Route path="/productcard-demo" element={<ProductCardDemo />} />
             </Routes>
           </main>
           <Footer />

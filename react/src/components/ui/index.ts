@@ -25,3 +25,6 @@ export {
   PriceLarge 
 } from './Typography';
 export type { TypographyProps } from './Typography';
+
+export { ProductCard } from '../ProductCard';
+export type { ProductCardProps } from '../ProductCard';
