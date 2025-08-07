@@ -16,6 +16,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { getProductsWithCategories, getProductCategories, getManufacturers, getImageUrl } from '../lib/supabase';
 import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
 import { ProductForm } from '../components/ProductForm';
+import { Card, H4, BodySmall, Price, Caption, Button } from '../components/ui';
 
 export const Products: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -180,12 +181,12 @@ export const Products: React.FC = () => {
               )}
             </div>
             {user && (
-              <button
+              <Button
                 onClick={() => setIsProductFormOpen(true)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                variant="primary"
               >
                 Add Product
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -202,7 +203,7 @@ export const Products: React.FC = () => {
                   id="category-filter"
                   value={selectedCategory}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 >
                   <option value="">All Categories</option>
                   {categories.map(category => (
@@ -218,12 +219,12 @@ export const Products: React.FC = () => {
               <label htmlFor="manufacturer-filter" className="block text-sm font-medium text-gray-700 mb-1">
                 Filter by Manufacturer
               </label>
-              <select
-                id="manufacturer-filter"
-                value={selectedManufacturer}
-                onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
+                              <select
+                  id="manufacturer-filter"
+                  value={selectedManufacturer}
+                  onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                >
                 <option value="">All Manufacturers</option>
                 {(() => {
                   // Filter manufacturers to only show those with products in the current category
@@ -253,7 +254,7 @@ export const Products: React.FC = () => {
                 id="sort-by"
                 value={sortBy}
                 onChange={(e) => handleFilterChange('sort', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>
@@ -283,9 +284,10 @@ export const Products: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {sortedProducts.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
-                <Link to={`/products/${product.slug}`}>
-                  <div className="aspect-w-1 aspect-h-1 w-full">
+              <Card key={product.id} hover className="overflow-hidden">
+                <Link to={`/products/${product.slug}`} className="block">
+                  {/* Product Image */}
+                  <div className="aspect-w-16 aspect-h-9 w-full">
                     {product.product_hero_image ? (
                       <img
                         src={getImageUrl(product.product_hero_image)}
@@ -300,15 +302,32 @@ export const Products: React.FC = () => {
                       </div>
                     )}
                   </div>
+                  
+                  {/* Product Content */}
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
+                    {/* Title */}
+                    <H4 className="mb-2 truncate">{product.title}</H4>
+                    
+                    {/* Description */}
                     {product.brief_description && (
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.brief_description}</p>
+                      <BodySmall className="mb-3 line-clamp-2">{product.brief_description}</BodySmall>
                     )}
-                    <div className="flex items-center justify-between">
+                    
+                    {/* Manufacturer */}
+                    {product.manufacturer && (
+                      <Caption className="text-gray-500 mb-2">{product.manufacturer.name}</Caption>
+                    )}
+                    
+                    {/* Price */}
+                    {product.price && (
+                      <Price className="mt-2">${product.price.toLocaleString()}</Price>
+                    )}
+                    
+                    {/* Badges */}
+                    <div className="flex items-center justify-between mt-3">
                       <div className="flex items-center space-x-2">
                         {product.categories && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
                             {product.categories.name}
                           </span>
                         )}
@@ -319,19 +338,14 @@ export const Products: React.FC = () => {
                         )}
                       </div>
                       {product.featured && (
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-100 text-accent-800">
                           Featured
                         </span>
                       )}
                     </div>
-                    {product.price && (
-                      <div className="mt-2 text-lg font-semibold text-gray-900">
-                        ${product.price.toLocaleString()}
-                      </div>
-                    )}
                   </div>
                 </Link>
-              </div>
+              </Card>
             ))}
           </div>
         )}
