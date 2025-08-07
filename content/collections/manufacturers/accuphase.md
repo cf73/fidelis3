@@ -8,6 +8,7 @@ website: 'https://www.accuphase.com/index.html'
 product-categories:
   - cd-players
   - integrated-amplifiers
+  - power-amplifiers
 hero_image: e-4000.jpg
 description:
   -
@@ -17,20 +18,20 @@ description:
         type: text
         text: 'The force that drives Accuphase forward is the enduring ambition of all members'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'of the company who work together to create exciting top-class products that live'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'up to our own lofty ideals, quality products that are realized through'
       -
-        type: hard_break
+        type: hardBreak
       -
         type: text
         text: 'world-leading technology and fair marketing practices'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1702743015
+updated_at: 1754575515
 ---
