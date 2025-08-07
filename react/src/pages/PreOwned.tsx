@@ -1,3 +1,15 @@
+/**
+ * @preserve-visual-language
+ * DO NOT MODIFY: Styling, layout, or visual presentation
+ * Only modify: Functionality, data handling, or performance
+ * 
+ * Visual Language:
+ * - Colors: Primary blue, accent gold, neutral grays
+ * - Typography: Inter font, established scale
+ * - Spacing: 4px base unit system
+ * - Layout: Responsive grid, consistent padding
+ */
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
