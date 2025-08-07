@@ -16,6 +16,8 @@ import { NewsDetail } from './pages/NewsDetail';
 import { PreOwned } from './pages/PreOwned';
 import PreOwnedDetail from './pages/PreOwnedDetail';
 import { Contact } from './pages/Contact';
+import { Moodboard } from './pages/Moodboard';
+import { Moodboard2 } from './pages/Moodboard2';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
               <Route path="/pre-owned" element={<PreOwned />} />
               <Route path="/pre-owned/:id" element={<PreOwnedDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/moodboard" element={<Moodboard />} />
+              <Route path="/moodboard2" element={<Moodboard2 />} />
             </Routes>
           </main>
           <Footer />
