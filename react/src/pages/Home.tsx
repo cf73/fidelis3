@@ -12,6 +12,7 @@ import {
   type News,
   type EvergreenCarousel
 } from '../lib/supabase';
+import { ProductCard, Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -46,8 +47,13 @@ const Home: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+      <div className="min-h-screen bg-[#fffcf9] flex items-center justify-center">
+        <Container>
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
+            <p className="mt-4 text-stone-600">Loading...</p>
+          </div>
+        </Container>
       </div>
     );
   }
@@ -56,98 +62,87 @@ const Home: React.FC = () => {
   const recentNews = news.slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-700 text-white">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl font-bold mb-6"
-          >
-            Fidelis Audio
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl mb-8 max-w-2xl mx-auto"
-          >
-            Experience the finest in high-end audio equipment and exceptional service
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Link 
-              to="/products" 
-              className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Explore Products
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <Section variant="hero" background="custom" customBackground="bg-gradient-to-r from-stone-900 to-stone-700">
+        <Container>
+          <div className="relative h-screen flex items-center justify-center text-white">
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="relative z-10 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <H1 className="text-white mb-6">Fidelis Audio</H1>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <BodyLarge className="text-white mb-8 max-w-2xl mx-auto">
+                  Experience the finest in high-end audio equipment and exceptional service
+                </BodyLarge>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Link to="/products">
+                  <Button variant="primary" size="lg">
+                    Explore Products
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h2 
+      <Section variant="default" background="white">
+        <Container>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-12"
           >
-            Featured Products
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <H2 className="text-center mb-12">Featured Products</H2>
+          </motion.div>
+          <Grid cols={3} gap="lg">
             {featuredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="aspect-w-16 aspect-h-9">
-                                     <img 
-                     src={product.product_hero_image ? getImageUrl(product.product_hero_image) : ''} 
-                     alt={product.title}
-                     className="w-full h-48 object-cover"
-                   />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
-                                     <p className="text-gray-600 mb-4 line-clamp-2">
-                     {product.brief_description}
-                   </p>
-                  <Link 
-                    to={`/products/${product.slug}`}
-                    className="text-blue-600 hover:text-blue-800 font-semibold"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
+                <Link to={`/products/${product.slug}`}>
+                  <ProductCard
+                    product={product}
+                    size="md"
+                    showBadges={true}
+                    showPrice={true}
+                  />
+                </Link>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Section>
 
       {/* Manufacturers */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.h2 
+      <Section variant="default" background="stone-50">
+        <Container>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-12"
           >
-            Our Manufacturers
-          </motion.h2>
+            <H2 className="text-center mb-12">Our Manufacturers</H2>
+          </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
             {manufacturers.slice(0, 12).map((manufacturer, index) => (
               <motion.div
@@ -158,106 +153,104 @@ const Home: React.FC = () => {
                 className="text-center"
               >
                 <Link to={`/manufacturers/${manufacturer.slug}`}>
-                                     <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                     {manufacturer.logo ? (
-                       <img 
-                         src={getImageUrl(manufacturer.logo)} 
-                         alt={manufacturer.name}
-                         className="w-full h-16 object-contain mb-2"
-                       />
-                     ) : (
-                       <div className="w-full h-16 bg-gray-200 rounded flex items-center justify-center mb-2">
-                         <span className="text-gray-500 text-sm">{manufacturer.name}</span>
-                       </div>
-                     )}
-                     <p className="text-sm font-medium text-gray-700">{manufacturer.name}</p>
+                  <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                    {manufacturer.logo ? (
+                      <img 
+                        src={getImageUrl(manufacturer.logo)} 
+                        alt={manufacturer.name}
+                        className="w-full h-16 object-contain mb-2"
+                      />
+                    ) : (
+                      <div className="w-full h-16 bg-stone-100 rounded flex items-center justify-center mb-2">
+                        <span className="text-stone-500 text-sm">{manufacturer.name}</span>
+                      </div>
+                    )}
+                    <p className="text-sm font-medium text-stone-700">{manufacturer.name}</p>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Latest News */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h2 
+      <Section variant="default" background="white">
+        <Container>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-12"
           >
-            Latest News
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <H2 className="text-center mb-12">Latest News</H2>
+          </motion.div>
+          <Grid cols={3} gap="lg">
             {recentNews.map((article, index) => (
               <motion.div
                 key={article.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-               >
-
-                 <div className="p-6">
-                   <h3 className="text-xl font-semibold mb-2 text-gray-900">{article.title}</h3>
-                   <p className="text-gray-600 mb-4 line-clamp-3">
-                     {article.brief_description}
-                   </p>
-                   <Link 
-                     to={`/news/${article.slug}`}
-                     className="text-blue-600 hover:text-blue-800 font-semibold"
-                   >
-                     Read More →
-                   </Link>
-                 </div>
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+              >
+                <div className="p-6">
+                  <H3 className="mb-2">{article.title}</H3>
+                  <Body className="mb-4 line-clamp-3 text-stone-600">
+                    {article.brief_description}
+                  </Body>
+                  <Link 
+                    to={`/news/${article.slug}`}
+                    className="text-stone-600 hover:text-stone-800 font-semibold"
+                  >
+                    Read More →
+                  </Link>
+                </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold mb-6"
-          >
-            Ready to Experience Premium Audio?
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl mb-8 max-w-2xl mx-auto"
-          >
-            Visit our showroom or browse our extensive collection of high-end audio equipment
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-x-4"
-          >
-            <Link 
-              to="/products" 
-              className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+      <Section variant="default" background="custom" customBackground="bg-stone-900">
+        <Container>
+          <Flex direction="col" align="center" className="text-center text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              Browse Products
-            </Link>
-            <Link 
-              to="/contact" 
-              className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
+              <H2 className="text-white mb-6">Ready to Experience Premium Audio?</H2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Contact Us
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+              <BodyLarge className="text-white mb-8 max-w-2xl">
+                Visit our showroom or browse our extensive collection of high-end audio equipment
+              </BodyLarge>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-x-4"
+            >
+              <Link to="/products">
+                <Button variant="primary" size="lg">
+                  Browse Products
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white hover:text-stone-900">
+                  Contact Us
+                </Button>
+              </Link>
+            </motion.div>
+          </Flex>
+        </Container>
+      </Section>
     </div>
   );
 };

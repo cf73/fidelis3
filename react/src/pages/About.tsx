@@ -1,60 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { Section, Grid, Container, Flex, H1, H2, H3, H4, Body, BodyLarge, Button } from '../components/ui';
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900 text-white">
-        <div className="container-custom py-20">
+      <Section variant="hero" background="custom" customBackground="bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700">
+        <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <H1 className="mb-6 text-white">
               About Fidelis AV
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            </H1>
+            <BodyLarge className="text-stone-300 max-w-3xl mx-auto">
               Your trusted partner in high-end audio equipment for over two decades
-            </p>
+            </BodyLarge>
           </motion.div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Story Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <Section variant="default" background="white">
+        <Container>
+          <Grid cols={2} gap="xl" className="items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary-900 dark:text-primary-400 mb-6">
+              <H2 className="mb-6 text-stone-900">
                 Our Story
-              </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+              </H2>
+              <BodyLarge className="text-stone-700 mb-6 leading-relaxed">
                 Founded in 2001, Fidelis AV has been at the forefront of high-end audio 
                 equipment distribution. We started with a simple mission: to bring the 
                 world's finest audio equipment to discerning listeners who demand nothing 
                 but the best.
-              </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+              </BodyLarge>
+              <BodyLarge className="text-stone-700 mb-6 leading-relaxed">
                 Over the years, we've built relationships with the most respected 
                 manufacturers in the industry, allowing us to offer an unparalleled 
                 selection of speakers, amplifiers, DACs, and accessories. Our team of 
                 audio experts is passionate about helping you find the perfect system 
                 for your listening space and musical preferences.
-              </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              </BodyLarge>
+              <BodyLarge className="text-stone-700 leading-relaxed">
                 We believe that great audio should be accessible to everyone who 
                 appreciates it. That's why we offer personalized consultations, 
                 in-home demonstrations, and ongoing support to ensure your audio 
                 journey is nothing short of extraordinary.
-              </p>
+              </BodyLarge>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -62,38 +63,38 @@ const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-accent-400 to-accent-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-stone-600 to-stone-700 rounded-2xl p-8 text-white">
                 <div className="text-center">
                   <div className="text-6xl mb-4">🎵</div>
-                  <h3 className="text-2xl font-bold mb-4">20+ Years of Excellence</h3>
-                  <p className="text-lg">
+                  <H3 className="mb-4 text-white">20+ Years of Excellence</H3>
+                  <BodyLarge className="text-stone-200">
                     Serving audio enthusiasts with the finest equipment and expertise
-                  </p>
+                  </BodyLarge>
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="container-custom">
+      <Section variant="default" background="stone-50">
+        <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-900 dark:text-primary-400 mb-4">
+            <H2 className="mb-4 text-stone-900">
               Our Values
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            </H2>
+            <BodyLarge className="text-stone-600 max-w-2xl mx-auto">
               The principles that guide everything we do
-            </p>
+            </BodyLarge>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Grid cols={3} gap="lg">
             {[
               {
                 icon: "🎯",
@@ -116,78 +117,78 @@ const About: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card p-8 text-center bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+                className="p-8 text-center bg-white rounded-xl shadow-sm"
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-400 mb-4">
+                <H3 className="mb-4 text-stone-900">
                   {value.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                </H3>
+                <Body className="text-stone-600">
                   {value.description}
-                </p>
+                </Body>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="container-custom">
+      <Section variant="default" background="white">
+        <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-900 dark:text-primary-400 mb-4">
+            <H2 className="mb-4 text-stone-900">
               Visit Us
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            </H2>
+            <BodyLarge className="text-stone-600 max-w-2xl mx-auto">
               Experience our showroom and discover the difference quality audio makes
-            </p>
+            </BodyLarge>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <Grid cols={2} gap="xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-400 mb-6">
+              <H3 className="mb-6 text-stone-900">
                 Showroom Information
-              </h3>
+              </H3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPinIcon className="h-6 w-6 text-accent-600 dark:text-accent-400 mt-1" />
+                  <MapPinIcon className="h-6 w-6 text-stone-600 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-primary-900 dark:text-primary-400">Address</h4>
-                    <p className="text-gray-600 dark:text-gray-300">123 Audio Lane<br />Cambridge, MA 02139</p>
+                    <H4 className="text-stone-900">Address</H4>
+                    <Body className="text-stone-600">123 Audio Lane<br />Cambridge, MA 02139</Body>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <PhoneIcon className="h-6 w-6 text-accent-600 dark:text-accent-400 mt-1" />
+                  <PhoneIcon className="h-6 w-6 text-stone-600 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-primary-900 dark:text-primary-400">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-300">(617) 555-0123</p>
+                    <H4 className="text-stone-900">Phone</H4>
+                    <Body className="text-stone-600">(617) 555-0123</Body>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <EnvelopeIcon className="h-6 w-6 text-accent-600 dark:text-accent-400 mt-1" />
+                  <EnvelopeIcon className="h-6 w-6 text-stone-600 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-primary-900 dark:text-primary-400">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-300">info@fidelisav.com</p>
+                    <H4 className="text-stone-900">Email</H4>
+                    <Body className="text-stone-600">info@fidelisav.com</Body>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <ClockIcon className="h-6 w-6 text-accent-600 dark:text-accent-400 mt-1" />
+                  <ClockIcon className="h-6 w-6 text-stone-600 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-primary-900 dark:text-primary-400">Hours</h4>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <H4 className="text-stone-900">Hours</H4>
+                    <Body className="text-stone-600">
                       Tuesday - Saturday: 10:00 AM - 6:00 PM<br />
                       Sunday: 12:00 PM - 5:00 PM<br />
                       Monday: Closed
-                    </p>
+                    </Body>
                   </div>
                 </div>
               </div>
@@ -198,47 +199,47 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-400 mb-6">
+              <H3 className="mb-6 text-stone-900">
                 Services
-              </h3>
+              </H3>
               <div className="space-y-4">
-                <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                  <h4 className="font-semibold text-primary-900 dark:text-primary-400 mb-2">
+                <div className="bg-stone-50 p-4 rounded-xl">
+                  <H4 className="text-stone-900 mb-2">
                     In-Home Demonstrations
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  </H4>
+                  <Body className="text-stone-600">
                     We bring the equipment to you for a personalized listening experience.
-                  </p>
+                  </Body>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                  <h4 className="font-semibold text-primary-900 dark:text-primary-400 mb-2">
+                <div className="bg-stone-50 p-4 rounded-xl">
+                  <H4 className="text-stone-900 mb-2">
                     System Design
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  </H4>
+                  <Body className="text-stone-600">
                     Expert consultation to design the perfect audio system for your space.
-                  </p>
+                  </Body>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                  <h4 className="font-semibold text-primary-900 dark:text-primary-400 mb-2">
+                <div className="bg-stone-50 p-4 rounded-xl">
+                  <H4 className="text-stone-900 mb-2">
                     Installation & Setup
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  </H4>
+                  <Body className="text-stone-600">
                     Professional installation and calibration services for optimal performance.
-                  </p>
+                  </Body>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                  <h4 className="font-semibold text-primary-900 dark:text-primary-400 mb-2">
+                <div className="bg-stone-50 p-4 rounded-xl">
+                  <H4 className="text-stone-900 mb-2">
                     Ongoing Support
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  </H4>
+                  <Body className="text-stone-600">
                     Continuous support and maintenance to keep your system performing at its best.
-                  </p>
+                  </Body>
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Section>
     </div>
   );
 };

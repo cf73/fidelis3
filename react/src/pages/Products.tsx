@@ -16,7 +16,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { getProductsWithCategories, getProductCategories, getManufacturers, getImageUrl } from '../lib/supabase';
 import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
 import { ProductForm } from '../components/ProductForm';
-import { Card, H4, BodySmall, Price, Caption, Button } from '../components/ui';
+import { ProductCard, Section, Grid, Container, Flex, H1, H2, H3, H4, Body, BodySmall, Caption, Button, Card, Price } from '../components/ui';
 
 export const Products: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -138,39 +138,41 @@ export const Products: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="container-custom text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading products...</p>
-        </div>
+      <div className="min-h-screen bg-[#fffcf9] py-12">
+        <Container>
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
+            <p className="mt-4 text-stone-600">Loading products...</p>
+          </div>
+        </Container>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center">
+    <div className="min-h-screen bg-[#fffcf9]">
+      {/* Hero Section */}
+      <Section variant="hero" background="white">
+        <Container>
+          <Flex justify="between" align="center">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <H1>
                 {selectedCategory
                   ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
                   : 'Products'
                 }
-              </h1>
-              <p className="mt-2 text-gray-600">
+              </H1>
+              <Body className="mt-2 text-stone-600">
                 {selectedCategory
                   ? `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`
                   : 'Discover our collection of high-quality audio equipment'
                 }
-              </p>
+              </Body>
               {selectedCategory && (
                 <div className="flex items-center space-x-4 mt-2">
                   <Link
                     to="/products/list"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium"
+                    className="inline-flex items-center text-stone-600 hover:text-stone-700 text-sm font-medium"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -188,12 +190,15 @@ export const Products: React.FC = () => {
                 Add Product
               </Button>
             )}
-          </div>
-        </div>
+          </Flex>
+        </Container>
+      </Section>
 
-        {/* Filters and Sort */}
-        <div className="mb-8 bg-white p-6 rounded-lg shadow-sm">
-          <div className={`grid gap-4 ${selectedCategory ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
+      {/* Filters Section */}
+      <Section variant="default" background="white">
+        <Container>
+          <div className="mb-8 bg-stone-50 rounded-xl border border-stone-200 p-6">
+            <div className={`grid gap-4 ${selectedCategory ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
             {!selectedCategory && (
               <div>
                 <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-1">
@@ -266,97 +271,48 @@ export const Products: React.FC = () => {
             </div>
           </div>
         </div>
+        </Container>
+      </Section>
 
-        {/* Products Grid */}
-        {sortedProducts.length === 0 ? (
-          <div className="text-center py-12">
-            <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
-            <h3 className="mt-2 text-sm font-medium text-gray-900">No products found</h3>
-            <p className="mt-1 text-sm text-gray-500">
-              {selectedCategory || selectedManufacturer
-                ? 'Try adjusting your filters to see more products.'
-                : 'No products are available at the moment.'
-              }
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {sortedProducts.map((product) => (
-              <Card key={product.id} hover className="overflow-hidden">
-                <Link to={`/products/${product.slug}`} className="block">
-                  {/* Product Image */}
-                  <div className="aspect-w-16 aspect-h-9 w-full">
-                    {product.product_hero_image ? (
-                      <img
-                        src={getImageUrl(product.product_hero_image)}
-                        alt={product.title}
-                        className="w-full h-48 object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                        <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Product Content */}
-                  <div className="p-4">
-                    {/* Title */}
-                    <H4 className="mb-2 truncate">{product.title}</H4>
-                    
-                    {/* Description */}
-                    {product.brief_description && (
-                      <BodySmall className="mb-3 line-clamp-2">{product.brief_description}</BodySmall>
-                    )}
-                    
-                    {/* Manufacturer */}
-                    {product.manufacturer && (
-                      <Caption className="text-gray-500 mb-2">{product.manufacturer.name}</Caption>
-                    )}
-                    
-                    {/* Price */}
-                    {product.price && (
-                      <Price className="mt-2">${product.price.toLocaleString()}</Price>
-                    )}
-                    
-                    {/* Badges */}
-                    <div className="flex items-center justify-between mt-3">
-                      <div className="flex items-center space-x-2">
-                        {product.categories && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
-                            {product.categories.name}
-                          </span>
-                        )}
-                        {product.manufacturer && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                            {product.manufacturer.name}
-                          </span>
-                        )}
-                      </div>
-                      {product.featured && (
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-100 text-accent-800">
-                          Featured
-                        </span>
-                      )}
-                    </div>
-                  </div>
+      {/* Products Grid Section */}
+      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+        <Container>
+          {sortedProducts.length === 0 ? (
+            <div className="text-center py-12">
+              <svg className="mx-auto h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <H3 className="mt-2">No products found</H3>
+              <Body className="mt-1 text-stone-500">
+                {selectedCategory || selectedManufacturer
+                  ? 'Try adjusting your filters to see more products.'
+                  : 'No products are available at the moment.'
+                }
+              </Body>
+            </div>
+          ) : (
+            <Grid cols={4} gap="lg">
+              {sortedProducts.map((product) => (
+                <Link key={product.id} to={`/products/${product.slug}`} className="block">
+                  <ProductCard
+                    product={product}
+                    size="md"
+                    showBadges={true}
+                    showPrice={true}
+                  />
                 </Link>
-              </Card>
-            ))}
-          </div>
-        )}
+              ))}
+            </Grid>
+          )}
+        </Container>
+      </Section>
 
-        {/* Product Form Modal */}
-        <ProductForm
-          isOpen={isProductFormOpen}
-          onClose={() => setIsProductFormOpen(false)}
-          onSuccess={handleProductFormSuccess}
-        />
-      </div>
+      {/* Product Form Modal */}
+      <ProductForm
+        isOpen={isProductFormOpen}
+        onClose={() => setIsProductFormOpen(false)}
+        onSuccess={handleProductFormSuccess}
+      />
     </div>
   );
 }; 
