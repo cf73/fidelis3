@@ -6,7 +6,7 @@ import { Product } from '../lib/supabase';
 import { ProductForm } from '../components/ProductForm';
 import { DeleteConfirmation } from '../components/DeleteConfirmation';
 import { ProductTabs } from '../components/ProductTabs';
-import { parseStatamicContent } from '../lib/utils';
+
 
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();

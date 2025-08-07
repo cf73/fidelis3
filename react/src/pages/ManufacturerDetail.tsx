@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getManufacturerBySlug, getProductsWithCategories, getProductCategories } from '../lib/supabase';
 import { Manufacturer, Product, ProductCategory } from '../lib/supabase';
-import { parseStatamicContent } from '../lib/utils';
+
 
 export const ManufacturerDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -129,7 +129,7 @@ export const ManufacturerDetail: React.FC = () => {
               <h1 className="text-3xl font-bold text-gray-900">{manufacturer.name}</h1>
               {manufacturer.description && (
                 <div className="mt-2 text-gray-600 max-w-4xl">
-                  <p>{parseStatamicContent(manufacturer.description)}</p>
+                  <p dangerouslySetInnerHTML={{ __html: manufacturer.description }}></p>
                 </div>
               )}
               {manufacturer.website && (

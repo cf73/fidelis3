@@ -92,6 +92,15 @@ export interface PreOwned {
   content: string;
   brief_description?: string;
   hero_image?: string;
+  images?: string[];
+  description?: string;
+  your_price?: number;
+  new_retail_price?: number;
+  hide_your_price?: boolean;
+  local_only?: boolean;
+  shipping?: number;
+  original_accessories?: string;
+  date_listed?: string;
   published?: boolean;
   created_at: string;
   updated_at: string;
@@ -314,6 +323,54 @@ export const getNewsBySlug = async (slug: string): Promise<News | null> => {
     }
     
     data = dataById;
+  }
+
+  return data;
+};
+
+// Pre-owned functions
+export const getPreOwned = async (): Promise<PreOwned[]> => {
+  const { data, error } = await supabase
+    .from('pre_owned')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching pre-owned items:', error);
+    return [];
+  }
+
+  return data || [];
+};
+
+export const getPreOwnedBySlug = async (slug: string): Promise<PreOwned | null> => {
+  const { data, error } = await supabase
+    .from('pre_owned')
+    .select('*')
+    .eq('slug', slug)
+    .eq('published', true)
+    .single();
+
+  if (error) {
+    console.error('Error fetching pre-owned item:', error);
+    return null;
+  }
+
+  return data;
+};
+
+export const getPreOwnedById = async (id: string): Promise<PreOwned | null> => {
+  const { data, error } = await supabase
+    .from('pre_owned')
+    .select('*')
+    .eq('id', id)
+    .eq('published', true)
+    .single();
+
+  if (error) {
+    console.error('Error fetching pre-owned item:', error);
+    return null;
   }
 
   return data;

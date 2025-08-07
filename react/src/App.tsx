@@ -14,6 +14,7 @@ import { ManufacturerDetail } from './pages/ManufacturerDetail';
 import { News } from './pages/News';
 import { NewsDetail } from './pages/NewsDetail';
 import { PreOwned } from './pages/PreOwned';
+import PreOwnedDetail from './pages/PreOwnedDetail';
 import { Contact } from './pages/Contact';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/news" element={<News />} />
               <Route path="/news/:slug" element={<NewsDetail />} />
               <Route path="/pre-owned" element={<PreOwned />} />
+              <Route path="/pre-owned/:id" element={<PreOwnedDetail />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { parseStatamicContent } from '../lib/utils';
+
 import { Product } from '../lib/supabase';
 
 interface ProductTabsProps {
@@ -45,7 +45,7 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
         {activeTab === 'description' && product.content && (
           <div className="prose prose-gray max-w-none">
             <div className="whitespace-pre-wrap text-gray-700">
-              {parseStatamicContent(product.content)}
+                              <div dangerouslySetInnerHTML={{ __html: product.content }} />
             </div>
           </div>
         )}
@@ -53,7 +53,7 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
         {activeTab === 'specs' && product.specs && (
           <div className="prose prose-gray max-w-none">
             <div className="whitespace-pre-wrap text-gray-700">
-              {parseStatamicContent(product.specs)}
+                              <div dangerouslySetInnerHTML={{ __html: product.specs }} />
             </div>
           </div>
         )}
@@ -65,7 +65,7 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
                 {review.excerpt && (
                   <div className="prose prose-gray max-w-none mb-3">
                     <div className="whitespace-pre-wrap text-gray-700 italic">
-                      "{parseStatamicContent(review.excerpt)}"
+                      <div dangerouslySetInnerHTML={{ __html: review.excerpt }} />
                     </div>
                   </div>
                 )}

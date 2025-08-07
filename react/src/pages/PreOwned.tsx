@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MagnifyingGlassIcon, TagIcon, TruckIcon, CubeIcon } from '@heroicons/react/24/outline';
-import { statamicApi, StatamicPreOwned } from '../lib/statamic';
+import { getPreOwned, getImageUrl, type PreOwned } from '../lib/supabase';
 
 const PreOwned: React.FC = () => {
-  const [preOwnedItems, setPreOwnedItems] = useState<StatamicPreOwned[]>([]);
-  const [filteredItems, setFilteredItems] = useState<StatamicPreOwned[]>([]);
+  const [preOwnedItems, setPreOwnedItems] = useState<PreOwned[]>([]);
+  const [filteredItems, setFilteredItems] = useState<PreOwned[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 100000]);
@@ -15,7 +15,7 @@ const PreOwned: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await statamicApi.getPreOwned();
+        const data = await getPreOwned();
         setPreOwnedItems(data);
         setFilteredItems(data);
       } catch (error) {
@@ -167,8 +167,8 @@ const PreOwned: React.FC = () => {
                   {item.images && item.images.length > 0 && (
                     <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                       <img
-                        src={statamicApi.getImageUrl(item.images[0])}
-                        alt={item.images[0].alt || item.title}
+                        src={getImageUrl(item.images[0])}
+                        alt={item.title}
                         className="w-full h-48 object-cover"
                       />
                     </div>

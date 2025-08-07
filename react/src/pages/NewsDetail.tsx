@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getNewsBySlug, getImageUrl } from '../lib/supabase';
 import { News } from '../lib/supabase';
-import { parseStatamicContent } from '../lib/utils';
+
 
 const NewsDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -161,7 +161,7 @@ const NewsDetail: React.FC = () => {
               {article.summary && (
                 <div className="mb-8">
                   <div className="text-xl lg:text-2xl text-gray-800 leading-relaxed font-medium">
-                    {parseStatamicContent(article.summary)}
+                    <div dangerouslySetInnerHTML={{ __html: article.summary }} />
                   </div>
                 </div>
               )}
@@ -170,7 +170,7 @@ const NewsDetail: React.FC = () => {
               {article.main_content && (
                 <div className="prose prose-lg prose-gray max-w-none mb-8">
                   <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                    {parseStatamicContent(article.main_content)}
+                    <div dangerouslySetInnerHTML={{ __html: article.main_content }} />
                   </div>
                 </div>
               )}
@@ -179,7 +179,7 @@ const NewsDetail: React.FC = () => {
               {!article.main_content && article.content && (
                 <div className="prose prose-lg prose-gray max-w-none">
                   <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                    {parseStatamicContent(article.content)}
+                    <div dangerouslySetInnerHTML={{ __html: article.content }} />
                   </div>
                 </div>
               )}

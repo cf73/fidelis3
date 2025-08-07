@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getManufacturers, getImageUrl, type Manufacturer } from '../lib/supabase';
-import { parseStatamicContent } from '../lib/utils';
+
 
 const Manufacturers: React.FC = () => {
   const [manufacturers, setManufacturers] = useState<Manufacturer[]>([]);
