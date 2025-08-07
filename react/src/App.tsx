@@ -19,6 +19,7 @@ import { Contact } from './pages/Contact';
 import { Moodboard } from './pages/Moodboard';
 import { Moodboard2 } from './pages/Moodboard2';
 import { ProductCardDemo } from './pages/ProductCardDemo';
+import { DesignSystemDemo } from './pages/DesignSystemDemo';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="/moodboard" element={<Moodboard />} />
               <Route path="/moodboard2" element={<Moodboard2 />} />
               <Route path="/productcard-demo" element={<ProductCardDemo />} />
+              <Route path="/design-system" element={<DesignSystemDemo />} />
             </Routes>
           </main>
           <Footer />

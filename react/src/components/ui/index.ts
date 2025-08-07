@@ -28,3 +28,6 @@ export type { TypographyProps } from './Typography';
 
 export { ProductCard } from '../ProductCard';
 export type { ProductCardProps } from '../ProductCard';
+
+export { Section, Grid, Container, Flex } from './Layout';
+export type { SectionProps, GridProps, ContainerProps, FlexProps } from './Layout';

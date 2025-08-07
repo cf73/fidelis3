@@ -73,56 +73,17 @@ export const ProductCardDemo: React.FC = () => {
         </div>
       </div>
 
-      {/* Default Variant */}
-      <div className="py-20">
+      {/* Product Cards */}
+      <div className="py-20 bg-[#fffcf9]">
         <div className="container-custom">
           <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-8">
-            Default Variant (Midcentury Modern)
+            Product Cards (Midcentury Modern)
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
-                variant="default"
-                size="md"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Elevated Variant */}
-      <div className="py-20 bg-stone-50">
-        <div className="container-custom">
-          <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-8">
-            Elevated Variant
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.slice(0, 3).map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                variant="elevated"
-                size="md"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Minimal Variant */}
-      <div className="py-20">
-        <div className="container-custom">
-          <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-8">
-            Minimal Variant
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.slice(0, 3).map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                variant="minimal"
                 size="md"
               />
             ))}
@@ -141,7 +102,6 @@ export const ProductCardDemo: React.FC = () => {
               <ProductCard
                 key={product.id}
                 product={product}
-                variant="default"
                 size={index === 0 ? 'sm' : index === 1 ? 'md' : 'lg'}
               />
             ))}
@@ -150,9 +110,9 @@ export const ProductCardDemo: React.FC = () => {
       </div>
 
       {/* Without Badges */}
-      <div className="py-20">
+      <div className="py-20 bg-[#fffcf9]">
         <div className="container-custom">
-          <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-8">
+          <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-2">
             Without Badges
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,7 +120,6 @@ export const ProductCardDemo: React.FC = () => {
               <ProductCard
                 key={product.id}
                 product={product}
-                variant="default"
                 size="md"
                 showBadges={false}
               />
