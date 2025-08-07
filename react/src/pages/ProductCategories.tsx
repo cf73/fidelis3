@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { getProductCategories, getProductsWithCategories } from '../lib/supabase';
 import { ProductCategory, Product } from '../lib/supabase';
-import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
+import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button, CategoryCard } from '../components/ui';
 
 interface CategoryWithHero extends ProductCategory {
   heroImage?: string;
@@ -86,56 +86,12 @@ export const ProductCategories: React.FC = () => {
               <Link
                 key={category.id}
                 to={`/products/list?category=${category.id}`}
-                className="group block bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
+                className="block"
               >
-                <div className="relative">
-                  {/* Hero Image */}
-                  {category.heroImage ? (
-                    <div className="aspect-w-16 aspect-h-9 w-full">
-                      <img
-                        src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${category.heroImage}`}
-                        alt={category.name}
-                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-full h-64 bg-gradient-to-br from-stone-500 to-stone-600 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {/* Content */}
-                  <div className="p-8">
-                    {/* Category Title and Count */}
-                    <div className="flex items-center justify-between mb-4">
-                      <H3 className="text-stone-900 group-hover:text-stone-600 transition-colors duration-300">
-                        {category.name}
-                      </H3>
-                      {category.productCount !== undefined && (
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-stone-100 text-stone-800">
-                          {category.productCount} {category.productCount === 1 ? 'product' : 'products'}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Category Description */}
-                    {category.description && (
-                      <BodyLarge className="text-stone-600 mb-6 leading-relaxed">
-                        {category.description}
-                      </BodyLarge>
-                    )}
-
-                    {/* Explore Button */}
-                    <div className="flex items-center text-stone-600 font-semibold text-lg group-hover:text-stone-700 transition-colors duration-300">
-                      <span>Explore {category.name}</span>
-                      <svg className="w-6 h-6 ml-3 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+                <CategoryCard 
+                  category={category} 
+                  variant="dark"
+                />
               </Link>
             ))}
           </Grid>

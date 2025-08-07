@@ -9,8 +9,8 @@
 export { Button } from './Button';
 export type { ButtonProps } from './Button';
 
-export { Card } from './Card';
-export type { CardProps } from './Card';
+export { Card, ProductCard, NewsCard, ManufacturerCard, CategoryCard, ValueCard } from './Card';
+export type { CardProps, ProductCardProps, NewsCardProps, ManufacturerCardProps, CategoryCardProps, ValueCardProps } from './Card';
 
 export { 
   H1, 
@@ -26,8 +26,7 @@ export {
 } from './Typography';
 export type { TypographyProps } from './Typography';
 
-export { ProductCard } from '../ProductCard';
-export type { ProductCardProps } from '../ProductCard';
+
 
 export { Section, Grid, Container, Flex } from './Layout';
 export type { SectionProps, GridProps, ContainerProps, FlexProps } from './Layout';

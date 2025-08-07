@@ -291,18 +291,18 @@ export const Products: React.FC = () => {
               </Body>
             </div>
           ) : (
-            <Grid cols={4} gap="lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sortedProducts.map((product) => (
-                <Link key={product.id} to={`/products/${product.slug}`} className="block">
+                <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
                   <ProductCard
                     product={product}
-                    size="md"
                     showBadges={true}
                     showPrice={true}
+                    className="h-full"
                   />
                 </Link>
               ))}
-            </Grid>
+            </div>
           )}
         </Container>
       </Section>

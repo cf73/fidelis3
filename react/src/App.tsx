@@ -21,6 +21,7 @@ import { Moodboard2 } from './pages/Moodboard2';
 import { ProductCardDemo } from './pages/ProductCardDemo';
 import { DesignSystemDemo } from './pages/DesignSystemDemo';
 import { ButtonDemo } from './pages/ButtonDemo';
+import { CardDemo } from './pages/CardDemo';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
               <Route path="/productcard-demo" element={<ProductCardDemo />} />
               <Route path="/design-system" element={<DesignSystemDemo />} />
               <Route path="/button-demo" element={<ButtonDemo />} />
+              <Route path="/card-demo" element={<CardDemo />} />
             </Routes>
           </main>
           <Footer />

@@ -9,7 +9,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProductsWithCategories } from '../lib/supabase';
 import { Product } from '../lib/supabase';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components/ui';
 
 export const ProductCardDemo: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
