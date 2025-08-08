@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getNews, getImageUrl, News as NewsType } from '../lib/supabase';
 import { slugify } from '../lib/utils';
-import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
+import { Section, Container, Flex, H1, BodyLarge } from '../components/ui';
 import { NewsCard } from '../components/ui';
 
 const News: React.FC = () => {
@@ -57,33 +57,40 @@ const News: React.FC = () => {
         </Container>
       </Section>
 
-      {/* News Grid */}
+      {/* News Articles - Horizontal Editorial Layout */}
       <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
         <Container>
-        {news.length > 0 ? (
-          <Grid cols={3} gap="lg">
-            {news.map((article) => (
-              <motion.div
-                key={article.id}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                whileHover={{ y: -5 }}
-              >
-                <Link to={`/news/${article.slug || slugify(article.title)}`}>
-                  <NewsCard article={article} />
-                </Link>
-              </motion.div>
-            ))}
-          </Grid>
-        ) : (
-          <div className="text-center py-12">
-            <div className="text-6xl mb-4">📰</div>
-            <H2 className="mb-4 text-stone-900">No News Articles</H2>
-            <Body className="text-stone-600 max-w-md mx-auto">
-              Check back soon for the latest news and updates from Fidelis AV.
-            </Body>
-          </div>
-        )}
+          {news.length > 0 ? (
+            <div className="space-y-8">
+              {news.map((article, index) => (
+                <motion.div
+                  key={article.id}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="block"
+                >
+                  <Link 
+                    to={`/news/${article.slug || slugify(article.title)}`}
+                    className="block h-full"
+                  >
+                    <NewsCard 
+                      article={article} 
+                      variant={index % 2 === 0 ? 'horizontal-left' : 'horizontal-right'}
+                    />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <div className="text-6xl mb-4">📰</div>
+              <h2 className="text-3xl font-bold text-stone-900 mb-4">No News Articles</h2>
+              <p className="text-stone-600 max-w-md mx-auto">
+                Check back soon for the latest news and updates from Fidelis AV.
+              </p>
+            </div>
+          )}
         </Container>
       </Section>
     </motion.div>
