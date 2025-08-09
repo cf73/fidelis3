@@ -152,22 +152,18 @@ export interface NewsCardProps {
     news_date?: string;
     slug?: string;
   };
-  variant?: 'horizontal-left' | 'horizontal-right';
   className?: string;
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({
   article,
-  variant = 'horizontal-left',
   className = ''
 }) => {
-  const isLeftText = variant === 'horizontal-left';
-  
   return (
     <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col md:flex-row h-full group ${className}`}>
       {/* Image */}
-      <div className={`relative overflow-hidden ${isLeftText ? 'md:order-2' : 'md:order-1'} w-full md:w-1/2`}>
-        <div className="w-full h-64 md:h-full">
+      <div className="relative overflow-hidden w-full md:w-1/2">
+        <div className="w-full h-48 md:h-full">
           {article.image ? (
             <img
               src={getImageUrl(article.image)}
@@ -185,11 +181,11 @@ export const NewsCard: React.FC<NewsCardProps> = ({
       </div>
       
       {/* Content */}
-      <div className={`px-6 pb-6 pt-8 flex flex-col justify-between ${isLeftText ? 'md:order-1' : 'md:order-2'} w-full md:w-1/2 min-h-64 md:min-h-0`}>
+      <div className="px-4 md:px-6 pb-4 md:pb-6 pt-6 md:pt-8 flex flex-col justify-between w-full md:w-1/2 min-h-48 md:min-h-0">
         <div>
           {/* Date */}
           {article.news_date && (
-            <div className="flex items-center text-sm text-gray-600 mb-3">
+            <div className="flex items-center text-sm text-gray-600 mb-2 md:mb-3">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -202,21 +198,21 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           )}
           
           {/* Title */}
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 line-clamp-2">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3 line-clamp-2">
             {article.title}
           </h3>
           
           {/* Description/Summary */}
           {(article.summary || article.brief_description) && (
-            <p className="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 mb-3 md:mb-4 text-sm leading-relaxed line-clamp-3">
               {article.summary || article.brief_description}
             </p>
           )}
         </div>
         
         {/* Read More */}
-        <div className="flex items-center text-gray-500 group-hover:text-gray-700 font-medium transition-colors duration-200 mt-4">
-          <span className="text-sm md:text-base">Read Full Article</span>
+        <div className="flex items-center text-gray-500 group-hover:text-gray-700 font-medium transition-colors duration-200 mt-3 md:mt-4">
+          <span className="text-sm">Read Full Article</span>
           <svg className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
@@ -658,6 +654,129 @@ export const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
               </button>
             ))}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Pre-owned equipment card component
+export interface PreOwnedCardProps {
+  item: {
+    id: string;
+    title: string;
+    description?: string;
+    images?: string[];
+    your_price?: number;
+    new_retail_price?: number;
+    hide_your_price?: boolean;
+    local_only?: boolean;
+    shipping?: number;
+    original_accessories?: string;
+  };
+  className?: string;
+}
+
+export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
+  item,
+  className = ''
+}) => {
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
+
+  const calculateSavings = (yourPrice: number, retailPrice: number) => {
+    const savings = retailPrice - yourPrice;
+    const percentage = (savings / retailPrice) * 100;
+    return { savings, percentage };
+  };
+
+  const savings = item.your_price && item.new_retail_price 
+    ? calculateSavings(item.your_price, item.new_retail_price)
+    : null;
+
+  return (
+    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full ${className}`}>
+      {/* Image */}
+      {item.images && item.images.length > 0 && (
+        <div className="border-b border-[#f4f0ed] border-solid" style={{ borderWidth: '1px' }}>
+          <div className="aspect-square bg-white">
+            <img
+              src={getImageUrl(item.images[0])}
+              alt={item.title}
+              className="w-full h-full object-contain mix-blend-multiply"
+            />
+          </div>
+        </div>
+      )}
+      
+      {/* Content */}
+      <div className="flex flex-col flex-grow px-6 pb-6 pt-8">
+        {/* Title */}
+        <h3 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">{item.title}</h3>
+        
+        {/* Pricing */}
+        <div className="mb-4">
+          {item.your_price && !item.hide_your_price && (
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl font-bold text-accent-600">
+                {formatPrice(item.your_price)}
+              </span>
+              {item.new_retail_price && (
+                <span className="text-sm text-gray-500 line-through">
+                  {formatPrice(item.new_retail_price)}
+                </span>
+              )}
+            </div>
+          )}
+          
+          {savings && (
+            <div className="flex items-center gap-2 text-sm">
+              <span className="text-green-600 font-medium">
+                Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* Description */}
+        {item.description && (
+          <div className="mb-4 flex-grow">
+            <div 
+              className="text-sm text-gray-600 line-clamp-3"
+              dangerouslySetInnerHTML={{ __html: item.description }}
+            />
+          </div>
+        )}
+
+        {/* Details */}
+        <div className="space-y-2 text-sm text-gray-600 mt-auto">
+          {item.original_accessories && (
+            <div className="flex items-center gap-2">
+              <span className="text-gray-600">📦 {item.original_accessories}</span>
+            </div>
+          )}
+          
+          {item.shipping !== null && (
+            <div className="flex items-center gap-2">
+              <span className="text-gray-600">
+                🚚 {item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping || 0)}`}
+              </span>
+            </div>
+          )}
+
+          {item.local_only && (
+            <div className="text-accent-600">
+              <span className="text-xs font-medium bg-accent-100 px-2 py-1 rounded">
+                Local pickup only
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>

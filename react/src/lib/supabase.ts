@@ -328,6 +328,405 @@ export const getNewsBySlug = async (slug: string): Promise<News | null> => {
   return data;
 };
 
+export const getAdjacentNews = async (currentArticleId: string): Promise<{ previous: News | null; next: News | null }> => {
+  // Get all published news articles ordered by date
+  const { data: allNews, error } = await supabase
+    .from('news')
+    .select('*')
+    .eq('published', true)
+    .order('news_date', { ascending: false })
+    .order('created_at', { ascending: false });
+
+  if (error || !allNews) {
+    console.error('Error fetching news for navigation:', error);
+    return { previous: null, next: null };
+  }
+
+  // Find the current article's index
+  const currentIndex = allNews.findIndex(article => article.id === currentArticleId);
+  
+  if (currentIndex === -1) {
+    return { previous: null, next: null };
+  }
+
+  // Get previous and next articles
+  const previous = currentIndex < allNews.length - 1 ? allNews[currentIndex + 1] : null;
+  const next = currentIndex > 0 ? allNews[currentIndex - 1] : null;
+
+  return { previous, next };
+};
+
+// Simple in-memory cache for performance
+let manufacturersCache: Manufacturer[] | null = null;
+let productsCache: Product[] | null = null;
+let cacheTimestamp = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+// Get all manufacturers for text analysis (with caching)
+export const getAllManufacturers = async (): Promise<Manufacturer[]> => {
+  const now = Date.now();
+  
+  // Return cached data if still valid
+  if (manufacturersCache && (now - cacheTimestamp) < CACHE_DURATION) {
+    return manufacturersCache;
+  }
+
+  const { data, error } = await supabase
+    .from('manufacturers')
+    .select('*')
+    .eq('published', true)
+    .order('name');
+
+  if (error) {
+    console.error('Error fetching manufacturers:', error);
+    return manufacturersCache || [];
+  }
+
+  // Update cache
+  manufacturersCache = data || [];
+  cacheTimestamp = now;
+  return manufacturersCache;
+};
+
+// Get all products for text analysis (with caching)
+export const getAllProducts = async (): Promise<Product[]> => {
+  const now = Date.now();
+  
+  // Return cached data if still valid
+  if (productsCache && (now - cacheTimestamp) < CACHE_DURATION) {
+    return productsCache;
+  }
+
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('published', true)
+    .order('title');
+
+  if (error) {
+    console.error('Error fetching products:', error);
+    return productsCache || [];
+  }
+
+  // Update cache
+  productsCache = data || [];
+  cacheTimestamp = now;
+  return productsCache;
+};
+
+// Helper function to check if a word is likely a real mention vs common word
+const isLikelyMention = (text: string, entityName: string, context: string): boolean => {
+  const lowerText = text.toLowerCase();
+  const lowerEntity = entityName.toLowerCase();
+  
+  // Skip if entity name is too generic (common words)
+  const commonWords = [
+    'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by',
+    'insight', 'vision', 'power', 'energy', 'force', 'strength', 'quality', 'value',
+    'premium', 'elite', 'master', 'pro', 'expert', 'advanced', 'superior', 'ultimate',
+    'reference', 'standard', 'classic', 'modern', 'traditional', 'contemporary',
+    'audio', 'sound', 'music', 'speaker', 'amplifier', 'receiver', 'turntable',
+    'cable', 'wire', 'connector', 'jack', 'plug', 'adapter', 'converter'
+  ];
+  
+  if (commonWords.includes(lowerEntity)) {
+    return false;
+  }
+  
+  // Check for proper capitalization patterns
+  const entityWords = entityName.split(' ');
+  const hasProperCapitalization = entityWords.some(word => 
+    word.length > 1 && word[0] === word[0].toUpperCase()
+  );
+  
+  if (!hasProperCapitalization && entityWords.length === 1) {
+    return false;
+  }
+  
+  // Check for contextual indicators that suggest it's a real mention
+  const contextualIndicators = [
+    'from', 'by', 'manufactured', 'produced', 'designed', 'created', 'developed',
+    'model', 'series', 'line', 'collection', 'brand', 'company', 'manufacturer',
+    'speaker', 'amplifier', 'receiver', 'turntable', 'cable', 'system', 'unit',
+    'review', 'test', 'evaluation', 'comparison', 'specification', 'feature'
+  ];
+  
+  const hasContextualIndicator = contextualIndicators.some(indicator => 
+    context.toLowerCase().includes(indicator.toLowerCase())
+  );
+  
+  // Check if the entity name appears in a technical/specific context
+  const technicalContext = /(model|series|line|system|unit|speaker|amplifier|receiver)/i;
+  const hasTechnicalContext = technicalContext.test(context);
+  
+  // Check for quotation marks or special formatting
+  const hasQuotes = /["'`]/.test(context);
+  
+  // Check for brand-like patterns (multiple words, proper nouns)
+  const isMultiWord = entityWords.length > 1;
+  const hasBrandPattern = /^[A-Z][a-z]+(\s+[A-Z][a-z]+)*$/.test(entityName);
+  
+  // Score the likelihood
+  let score = 0;
+  if (hasProperCapitalization) score += 2;
+  if (hasContextualIndicator) score += 3;
+  if (hasTechnicalContext) score += 2;
+  if (hasQuotes) score += 1;
+  if (isMultiWord) score += 2;
+  if (hasBrandPattern) score += 2;
+  
+  // Require a minimum score to consider it a real mention
+  return score >= 4;
+};
+
+// Helper function to get surrounding context
+const getContext = (text: string, matchIndex: number, matchLength: number, contextSize: number = 50): string => {
+  const start = Math.max(0, matchIndex - contextSize);
+  const end = Math.min(text.length, matchIndex + matchLength + contextSize);
+  return text.substring(start, end);
+};
+
+// Process article content for mentions and return linked content
+export const processArticleMentions = async (content: string): Promise<{
+  processedContent: string;
+  mentions: {
+    manufacturers: Array<{ name: string; slug: string; count: number }>;
+    products: Array<{ title: string; slug: string; count: number }>;
+  };
+}> => {
+  // Get all manufacturers and products for analysis
+  const [manufacturers, products] = await Promise.all([
+    getAllManufacturers(),
+    getAllProducts()
+  ]);
+
+  let processedContent = content;
+  const mentions = {
+    manufacturers: [] as Array<{ name: string; slug: string; count: number }>,
+    products: [] as Array<{ title: string; slug: string; count: number }>
+  };
+
+  // Process manufacturer mentions with contextual validation
+  manufacturers.forEach(manufacturer => {
+    const regex = new RegExp(`\\b${manufacturer.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    const matches = processedContent.match(regex);
+    
+    if (matches && matches.length > 0) {
+      // Validate each match with context
+      let validMatches = 0;
+      let lastIndex = 0;
+      
+      while (true) {
+        const match = regex.exec(processedContent);
+        if (!match) break;
+        
+        const context = getContext(processedContent, match.index, match[0].length);
+        
+        if (isLikelyMention(match[0], manufacturer.name, context)) {
+          validMatches++;
+          
+          // Only replace the first valid match to avoid spam
+          if (validMatches === 1) {
+            processedContent = processedContent.replace(
+              new RegExp(`\\b${manufacturer.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
+              `<a href="/manufacturers/${manufacturer.slug}" class="text-stone-600 hover:text-stone-800 underline decoration-stone-300 hover:decoration-stone-600 transition-colors">${manufacturer.name}</a>`
+            );
+          }
+        }
+      }
+      
+      if (validMatches > 0) {
+        mentions.manufacturers.push({
+          name: manufacturer.name,
+          slug: manufacturer.slug,
+          count: validMatches
+        });
+      }
+    }
+  });
+
+  // Process product mentions with contextual validation
+  products.forEach(product => {
+    const regex = new RegExp(`\\b${product.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    const matches = processedContent.match(regex);
+    
+    if (matches && matches.length > 0) {
+      // Validate each match with context
+      let validMatches = 0;
+      let lastIndex = 0;
+      
+      while (true) {
+        const match = regex.exec(processedContent);
+        if (!match) break;
+        
+        const context = getContext(processedContent, match.index, match[0].length);
+        
+        if (isLikelyMention(match[0], product.title, context)) {
+          validMatches++;
+          
+          // Only replace the first valid match to avoid spam
+          if (validMatches === 1) {
+            processedContent = processedContent.replace(
+              new RegExp(`\\b${product.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
+              `<a href="/products/${product.slug}" class="text-stone-600 hover:text-stone-800 underline decoration-stone-300 hover:decoration-stone-600 transition-colors">${product.title}</a>`
+            );
+          }
+        }
+      }
+      
+      if (validMatches > 0) {
+        mentions.products.push({
+          title: product.title,
+          slug: product.slug,
+          count: validMatches
+        });
+      }
+    }
+  });
+
+  return { processedContent, mentions };
+};
+
+// Optional AI-based validation for even more accurate mention detection
+// This requires an OpenAI API key or similar service
+export const validateMentionWithAI = async (
+  text: string, 
+  entityName: string, 
+  context: string
+): Promise<boolean> => {
+  // This is a placeholder for AI-based validation
+  // In a real implementation, you would:
+  // 1. Send the context and entity name to an AI service
+  // 2. Ask if the entity name refers to the actual product/manufacturer
+  // 3. Get a confidence score back
+  
+  // Example prompt for AI validation:
+  /*
+  const prompt = `Context: "${context}"
+  
+  Entity: "${entityName}"
+  
+  Question: Does the entity name "${entityName}" in this context refer to an actual audio equipment product or manufacturer, or is it just a common word being used in a different sense?
+  
+  Consider:
+  - Is it being used as a proper noun (brand/product name)?
+  - Is it in a technical/audio equipment context?
+  - Could it be confused with a common word?
+  
+  Answer with just "YES" or "NO" and a confidence score (0-100).`;
+  */
+  
+  // For now, return the result of our rule-based validation
+  return isLikelyMention(text, entityName, context);
+};
+
+// Enhanced mention processing with optional AI validation
+export const processArticleMentionsEnhanced = async (
+  content: string, 
+  useAIValidation: boolean = false
+): Promise<{
+  processedContent: string;
+  mentions: {
+    manufacturers: Array<{ name: string; slug: string; count: number; confidence: number }>;
+    products: Array<{ title: string; slug: string; count: number; confidence: number }>;
+  };
+}> => {
+  const [manufacturers, products] = await Promise.all([
+    getAllManufacturers(),
+    getAllProducts()
+  ]);
+
+  let processedContent = content;
+  const mentions = {
+    manufacturers: [] as Array<{ name: string; slug: string; count: number; confidence: number }>,
+    products: [] as Array<{ title: string; slug: string; count: number; confidence: number }>
+  };
+
+  // Process manufacturer mentions with enhanced validation
+  for (const manufacturer of manufacturers) {
+    const regex = new RegExp(`\\b${manufacturer.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    let validMatches = 0;
+    let totalConfidence = 0;
+    
+    while (true) {
+      const match = regex.exec(processedContent);
+      if (!match) break;
+      
+      const context = getContext(processedContent, match.index, match[0].length);
+      
+      // Use AI validation if enabled, otherwise use rule-based
+      const isValid = useAIValidation 
+        ? await validateMentionWithAI(match[0], manufacturer.name, context)
+        : isLikelyMention(match[0], manufacturer.name, context);
+      
+      if (isValid) {
+        validMatches++;
+        totalConfidence += 85; // Base confidence for rule-based validation
+        
+        // Only replace the first valid match
+        if (validMatches === 1) {
+          processedContent = processedContent.replace(
+            new RegExp(`\\b${manufacturer.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
+            `<a href="/manufacturers/${manufacturer.slug}" class="text-stone-600 hover:text-stone-800 underline decoration-stone-300 hover:decoration-stone-600 transition-colors">${manufacturer.name}</a>`
+          );
+        }
+      }
+    }
+    
+    if (validMatches > 0) {
+      mentions.manufacturers.push({
+        name: manufacturer.name,
+        slug: manufacturer.slug,
+        count: validMatches,
+        confidence: Math.round(totalConfidence / validMatches)
+      });
+    }
+  }
+
+  // Process product mentions with enhanced validation
+  for (const product of products) {
+    const regex = new RegExp(`\\b${product.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    let validMatches = 0;
+    let totalConfidence = 0;
+    
+    while (true) {
+      const match = regex.exec(processedContent);
+      if (!match) break;
+      
+      const context = getContext(processedContent, match.index, match[0].length);
+      
+      // Use AI validation if enabled, otherwise use rule-based
+      const isValid = useAIValidation 
+        ? await validateMentionWithAI(match[0], product.title, context)
+        : isLikelyMention(match[0], product.title, context);
+      
+      if (isValid) {
+        validMatches++;
+        totalConfidence += 85; // Base confidence for rule-based validation
+        
+        // Only replace the first valid match
+        if (validMatches === 1) {
+          processedContent = processedContent.replace(
+            new RegExp(`\\b${product.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
+            `<a href="/products/${product.slug}" class="text-stone-600 hover:text-stone-800 underline decoration-stone-300 hover:decoration-stone-600 transition-colors">${product.title}</a>`
+          );
+        }
+      }
+    }
+    
+    if (validMatches > 0) {
+      mentions.products.push({
+        title: product.title,
+        slug: product.slug,
+        count: validMatches,
+        confidence: Math.round(totalConfidence / validMatches)
+      });
+    }
+  }
+
+  return { processedContent, mentions };
+};
+
 // Pre-owned functions
 export const getPreOwned = async (): Promise<PreOwned[]> => {
   const { data, error } = await supabase

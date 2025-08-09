@@ -9,8 +9,8 @@
 export { Button } from './Button';
 export type { ButtonProps } from './Button';
 
-export { Card, ProductCard, NewsCard, ManufacturerCard, CategoryCard, ValueCard } from './Card';
-export type { CardProps, ProductCardProps, NewsCardProps, ManufacturerCardProps, CategoryCardProps, ValueCardProps } from './Card';
+export { Card, ProductCard, NewsCard, ManufacturerCard, CategoryCard, ValueCard, PreOwnedCard } from './Card';
+export type { CardProps, ProductCardProps, NewsCardProps, ManufacturerCardProps, CategoryCardProps, ValueCardProps, PreOwnedCardProps } from './Card';
 
 export { 
   H1, 

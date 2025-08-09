@@ -46,7 +46,7 @@ const News: React.FC = () => {
       className="min-h-screen bg-[#fffcf9]"
     >
       {/* Hero Section */}
-      <Section variant="hero" background="white">
+      <Section variant="compact" background="white">
         <Container>
           <Flex direction="col" align="center" className="text-center">
             <H1 className="mb-4">News & Updates</H1>
@@ -57,40 +57,19 @@ const News: React.FC = () => {
         </Container>
       </Section>
 
-      {/* News Articles - Horizontal Editorial Layout */}
-      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+      {/* News Grid */}
+      <Section variant="compact" background="custom" customBackground="bg-[#fffcf9]">
         <Container>
-          {news.length > 0 ? (
-            <div className="space-y-8">
-              {news.map((article, index) => (
-                <motion.div
-                  key={article.id}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="block"
-                >
-                  <Link 
-                    to={`/news/${article.slug || slugify(article.title)}`}
-                    className="block h-full"
-                  >
-                    <NewsCard 
-                      article={article} 
-                      variant={index % 2 === 0 ? 'horizontal-left' : 'horizontal-right'}
-                    />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">📰</div>
-              <h2 className="text-3xl font-bold text-stone-900 mb-4">No News Articles</h2>
-              <p className="text-stone-600 max-w-md mx-auto">
-                Check back soon for the latest news and updates from Fidelis AV.
-              </p>
-            </div>
-          )}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {news.map((article) => {
+              const articleSlug = article.slug || slugify(article.title);
+              return (
+                <Link key={article.id} to={`/news/${articleSlug}`} className="block h-full">
+                  <NewsCard article={article} className="h-full" />
+                </Link>
+              );
+            })}
+          </div>
         </Container>
       </Section>
     </motion.div>

@@ -1,7 +1,7 @@
 /**
  * @preserve-visual-language
- * DO NOT MODIFY: Styling, layout, or visual presentation
- * Only modify: Functionality, data handling, or performance
+ * DO NOT MODIFY: Functionality, data handling, or business logic
+ * Only modify: Visual styling, layout, and user experience
  * 
  * Visual Language:
  * - Colors: Primary blue, accent gold, neutral grays
@@ -15,6 +15,20 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MagnifyingGlassIcon, TagIcon, TruckIcon, CubeIcon } from '@heroicons/react/24/outline';
 import { getPreOwned, getImageUrl, type PreOwned } from '../lib/supabase';
+import { 
+  Section, 
+  Container, 
+  Grid, 
+  Flex, 
+  H1, 
+  H2, 
+  H3, 
+  Body, 
+  BodyLarge, 
+  Button,
+  PreOwnedCard,
+  ValueCard
+} from '../components/ui';
 
 const PreOwned: React.FC = () => {
   const [preOwnedItems, setPreOwnedItems] = useState<PreOwned[]>([]);
@@ -66,24 +80,9 @@ const PreOwned: React.FC = () => {
     setFilteredItems(filtered);
   }, [preOwnedItems, searchTerm, priceRange, showLocalOnly]);
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
-
-  const calculateSavings = (yourPrice: number, retailPrice: number) => {
-    const savings = retailPrice - yourPrice;
-    const percentage = (savings / retailPrice) * 100;
-    return { savings, percentage };
-  };
-
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#fffcf9]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading...</p>
@@ -97,22 +96,24 @@ const PreOwned: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-[#fffcf9]"
     >
       {/* Header */}
-      <section className="bg-white shadow-sm">
-        <div className="container-custom py-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Pre-Owned Equipment</h1>
-          <p className="text-lg text-gray-600">
-            Placeholder content
-          </p>
-        </div>
-      </section>
+      <Section>
+        <Container>
+          <Flex direction="col" align="start" className="max-w-4xl">
+            <H1>Pre-Owned Equipment</H1>
+            <BodyLarge className="mt-4">
+              Placeholder content
+            </BodyLarge>
+          </Flex>
+        </Container>
+      </Section>
 
       {/* Filters */}
-      <section className="bg-white border-b border-gray-200">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
+      <Section className="bg-white border-b border-gray-200">
+        <Container>
+          <Flex direction="col" gap="md" className="md:flex-row md:items-center">
             {/* Search */}
             <div className="relative flex-1">
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -121,18 +122,18 @@ const PreOwned: React.FC = () => {
                 placeholder="Search pre-owned equipment..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
               />
             </div>
 
             {/* Price Range */}
-            <div className="flex items-center space-x-2">
+            <Flex gap="sm" align="center">
               <input
                 type="number"
                 placeholder="Min"
                 value={priceRange[0]}
                 onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
-                className="w-24 px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                className="w-24 px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
               />
               <span className="text-gray-600">-</span>
               <input
@@ -140,12 +141,12 @@ const PreOwned: React.FC = () => {
                 placeholder="Max"
                 value={priceRange[1]}
                 onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-                className="w-24 px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+                className="w-24 px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
               />
-            </div>
+            </Flex>
 
             {/* Local Pickup Filter */}
-            <div className="flex items-center space-x-2">
+            <Flex gap="sm" align="center">
               <input
                 type="checkbox"
                 checked={showLocalOnly}
@@ -153,166 +154,65 @@ const PreOwned: React.FC = () => {
                 className="rounded border-gray-300 text-accent-600 focus:ring-accent-500"
               />
               <span className="text-sm text-gray-700">Local pickup only</span>
-            </div>
-          </div>
-        </div>
-      </section>
+            </Flex>
+          </Flex>
+        </Container>
+      </Section>
 
       {/* Results */}
-      <section className="container-custom py-12">
-        {filteredItems.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredItems.map((item) => {
-              const savings = item.your_price && item.new_retail_price 
-                ? calculateSavings(item.your_price, item.new_retail_price)
-                : null;
-
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  whileHover={{ y: -5 }}
-                  className="card overflow-hidden bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                >
-                  {/* Image */}
-                  {item.images && item.images.length > 0 && (
-                    <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                      <img
-                        src={getImageUrl(item.images[0])}
-                        alt={item.title}
-                        className="w-full h-48 object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h3 className="text-lg font-semibold mb-2 text-gray-900">{item.title}</h3>
-                      
-                      {/* Pricing */}
-                      <div className="mb-4">
-                        {item.your_price && !item.hide_your_price && (
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="text-2xl font-bold text-accent-600">
-                              {formatPrice(item.your_price)}
-                            </span>
-                            {item.new_retail_price && (
-                              <span className="text-sm text-gray-500 line-through">
-                                {formatPrice(item.new_retail_price)}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        
-                        {savings && (
-                          <div className="flex items-center gap-2 text-sm">
-                            <TagIcon className="h-4 w-4 text-green-600" />
-                            <span className="text-green-600 font-medium">
-                              Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
-                            </span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Description */}
-                      {item.description && (
-                        <div className="mb-4">
-                          <div 
-                            className="text-sm text-gray-600 line-clamp-3"
-                            dangerouslySetInnerHTML={{ __html: item.description }}
-                          />
-                        </div>
-                      )}
-
-                      {/* Details */}
-                      <div className="space-y-2 text-sm text-gray-600">
-                        {item.original_accessories && (
-                          <div className="flex items-center gap-2">
-                            <CubeIcon className="h-4 w-4" />
-                            <span>{item.original_accessories}</span>
-                          </div>
-                        )}
-                        
-                        {item.shipping !== null && (
-                          <div className="flex items-center gap-2">
-                            <TruckIcon className="h-4 w-4" />
-                            <span>
-                              {item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping || 0)}`}
-                            </span>
-                          </div>
-                        )}
-
-                        {item.local_only && (
-                          <div className="flex items-center gap-2 text-accent-600">
-                            <span className="text-xs font-medium bg-accent-100 px-2 py-1 rounded">
-                              Local pickup only
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="text-center">
-                      <Link
-                        to={`/pre-owned/${item.id}`}
-                        className="btn-primary w-full text-center"
-                      >
-                        View Details
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-gray-600">
-              Placeholder content
-            </p>
-          </div>
-        )}
-      </section>
+      <Section>
+        <Container>
+          {filteredItems.length > 0 ? (
+            <Grid cols={3} gap="lg">
+              {filteredItems.map((item) => (
+                <Link key={item.id} to={`/pre-owned/${item.id}`}>
+                  <PreOwnedCard item={item} />
+                </Link>
+              ))}
+            </Grid>
+          ) : (
+            <div className="text-center py-12">
+              <Body className="text-gray-600">
+                Placeholder content
+              </Body>
+            </div>
+          )}
+        </Container>
+      </Section>
 
       {/* Info Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+      <Section className="bg-gray-50">
+        <Container>
+          <Flex direction="col" align="center" className="max-w-4xl mx-auto">
+            <H2 className="text-center mb-8">
               Why Choose Pre-Owned?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TagIcon className="h-6 w-6 text-accent-600" />
-                </div>
-                <h3 className="font-semibold mb-2 text-gray-900">Exceptional Value</h3>
-                <p className="text-gray-600 text-sm">
-                  Significant savings on high-end audio equipment that maintains its performance and quality.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <CubeIcon className="h-6 w-6 text-accent-600" />
-                </div>
-                <h3 className="font-semibold mb-2 text-gray-900">Carefully Inspected</h3>
-                <p className="text-gray-600 text-sm">
-                  Each item is thoroughly tested and inspected to ensure it meets our quality standards.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TruckIcon className="h-6 w-6 text-accent-600" />
-                </div>
-                <h3 className="font-semibold mb-2 text-gray-900">Warranty Available</h3>
-                <p className="text-gray-600 text-sm">
-                  Many pre-owned items come with warranty coverage for your peace of mind.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </H2>
+            <Grid cols={3} gap="xl">
+              <ValueCard
+                value={{
+                  icon: "🏷️",
+                  title: "Exceptional Value",
+                  description: "Significant savings on high-end audio equipment that maintains its performance and quality."
+                }}
+              />
+              <ValueCard
+                value={{
+                  icon: "📦",
+                  title: "Carefully Inspected",
+                  description: "Each item is thoroughly tested and inspected to ensure it meets our quality standards."
+                }}
+              />
+              <ValueCard
+                value={{
+                  icon: "🚚",
+                  title: "Warranty Available",
+                  description: "Many pre-owned items come with warranty coverage for your peace of mind."
+                }}
+              />
+            </Grid>
+          </Flex>
+        </Container>
+      </Section>
     </motion.div>
   );
 };
