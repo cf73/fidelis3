@@ -82,10 +82,10 @@ const PreOwned: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#fffcf9]">
+      <div className="min-h-screen flex items-center justify-center bg-stone-50">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4 text-gray-600">Loading pre-owned equipment...</p>
         </div>
       </div>
     );
@@ -96,92 +96,104 @@ const PreOwned: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-[#fffcf9]"
+      className="min-h-screen bg-stone-50"
     >
-      {/* Header */}
-      <Section>
+      {/* Hero Section */}
+      <Section variant="compact" background="white">
         <Container>
-          <Flex direction="col" align="start" className="max-w-4xl">
-            <H1>Pre-Owned Equipment</H1>
-            <BodyLarge className="mt-4">
-              Placeholder content
+          <Flex direction="col" align="center" className="text-center max-w-4xl mx-auto">
+            <H1 className="mb-4">Pre-Owned Equipment</H1>
+            <BodyLarge className="text-gray-600">
+              Discover exceptional value on carefully inspected, high-end audio equipment with significant savings.
             </BodyLarge>
           </Flex>
         </Container>
       </Section>
 
-      {/* Filters */}
-      <Section className="bg-white border-b border-gray-200">
+      {/* Filters - Streamlined */}
+      <Section variant="compact" background="white" className="border-b border-gray-200">
         <Container>
-          <Flex direction="col" gap="md" className="md:flex-row md:items-center">
+          <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
             {/* Search */}
-            <div className="relative flex-1">
+            <div className="relative flex-1 max-w-md">
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search pre-owned equipment..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 bg-white"
               />
             </div>
 
-            {/* Price Range */}
-            <Flex gap="sm" align="center">
+            {/* Price Range - Compact */}
+            <div className="flex items-center gap-2">
               <input
                 type="number"
                 placeholder="Min"
                 value={priceRange[0]}
                 onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
-                className="w-24 px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 text-sm"
               />
-              <span className="text-gray-600">-</span>
+              <span className="text-gray-500 text-sm">-</span>
               <input
                 type="number"
                 placeholder="Max"
                 value={priceRange[1]}
                 onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-                className="w-24 px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 text-sm"
               />
-            </Flex>
+            </div>
 
             {/* Local Pickup Filter */}
-            <Flex gap="sm" align="center">
+            <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
                 checked={showLocalOnly}
                 onChange={(e) => setShowLocalOnly(e.target.checked)}
                 className="rounded border-gray-300 text-accent-600 focus:ring-accent-500"
               />
-              <span className="text-sm text-gray-700">Local pickup only</span>
-            </Flex>
-          </Flex>
+              <span className="text-sm text-gray-700 whitespace-nowrap">Local pickup only</span>
+            </label>
+          </div>
         </Container>
       </Section>
 
-      {/* Results */}
-      <Section>
+      {/* Results Grid */}
+      <Section variant="compact" background="stone-50">
         <Container>
           {filteredItems.length > 0 ? (
-            <Grid cols={3} gap="lg">
-              {filteredItems.map((item) => (
-                <Link key={item.id} to={`/pre-owned/${item.id}`}>
-                  <PreOwnedCard item={item} />
-                </Link>
-              ))}
-            </Grid>
+            <>
+              {/* Results Count */}
+              <div className="mb-6">
+                <p className="text-gray-600">
+                  Showing {filteredItems.length} pre-owned item{filteredItems.length !== 1 ? 's' : ''}
+                </p>
+              </div>
+              
+              {/* Grid */}
+              <Grid cols={4} gap="lg">
+                {filteredItems.map((item) => (
+                  <Link key={item.id} to={`/pre-owned/${item.id}`} className="block h-full">
+                    <PreOwnedCard item={item} className="h-full" />
+                  </Link>
+                ))}
+              </Grid>
+            </>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🔍</div>
+              <H3 className="mb-2">No items found</H3>
               <Body className="text-gray-600">
-                Placeholder content
+                Try adjusting your search criteria or check back later for new arrivals.
               </Body>
             </div>
           )}
         </Container>
       </Section>
 
-      {/* Info Section */}
-      <Section className="bg-gray-50">
+      {/* Value Proposition - Refined */}
+      <Section variant="compact" background="white">
         <Container>
           <Flex direction="col" align="center" className="max-w-4xl mx-auto">
             <H2 className="text-center mb-8">

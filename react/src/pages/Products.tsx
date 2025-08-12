@@ -18,7 +18,7 @@ import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
 import { ProductForm } from '../components/ProductForm';
 import { ProductCard, Section, Grid, Container, Flex, H1, H2, H3, H4, Body, BodySmall, Caption, Button, Card, Price } from '../components/ui';
 
-export const Products: React.FC = () => {
+const Products: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,8 +28,9 @@ export const Products: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string>(searchParams.get('category') || '');
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>(searchParams.get('manufacturer') || '');
-  const [sortBy, setSortBy] = useState<string>(searchParams.get('sort') || 'newest');
+  const [sortBy, setSortBy] = useState<string>(searchParams.get('sort') || 'price-low');
   const [isProductFormOpen, setIsProductFormOpen] = useState(false);
+  const [showAllManufacturers, setShowAllManufacturers] = useState(false);
   const { user } = useAuth();
 
   // Load data
@@ -59,7 +60,7 @@ export const Products: React.FC = () => {
   useEffect(() => {
     const categoryFromUrl = searchParams.get('category') || '';
     const manufacturerFromUrl = searchParams.get('manufacturer') || '';
-    const sortFromUrl = searchParams.get('sort') || 'newest';
+    const sortFromUrl = searchParams.get('sort') || 'price-low';
 
     setSelectedCategory(categoryFromUrl);
     setSelectedManufacturer(manufacturerFromUrl);
@@ -90,6 +91,23 @@ export const Products: React.FC = () => {
     }
     
     setSearchParams(newSearchParams);
+    
+    // Reset scroll position to top of products grid when filters change
+    if (type === 'manufacturer' || type === 'category') {
+      setTimeout(() => {
+        const productsGrid = document.querySelector('.products-grid');
+        if (productsGrid) {
+          const navHeight = 80; // Approximate navigation height
+          const elementTop = productsGrid.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementTop - navHeight - 20; // Extra 20px for breathing room
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100); // Small delay to ensure state updates have processed
+    }
   };
 
   const handleProductFormSuccess = async () => {
@@ -101,6 +119,7 @@ export const Products: React.FC = () => {
         getProductCategories(),
         getManufacturers(),
       ]);
+
       setProducts(productsData);
       setCategories(categoriesData);
       setManufacturers(manufacturersData);
@@ -110,200 +129,316 @@ export const Products: React.FC = () => {
   };
 
   // Filter and sort products
-  let filteredProducts = products.filter(product => {
-    const categoryMatch = !selectedCategory || product.categories?.id === selectedCategory;
-    const manufacturerMatch = !selectedManufacturer || product.manufacturer?.id === selectedManufacturer;
-    return categoryMatch && manufacturerMatch;
-  });
+  let filteredProducts = products;
+
+  if (selectedCategory) {
+    filteredProducts = filteredProducts.filter(product => 
+      product.categories?.id === selectedCategory
+    );
+  }
+
+  if (selectedManufacturer) {
+    filteredProducts = filteredProducts.filter(product => 
+      product.manufacturer?.id === selectedManufacturer
+    );
+  }
 
   // Sort products
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
-      case 'newest':
-        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-      case 'oldest':
-        return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
-      case 'name-asc':
-        return a.title.localeCompare(b.title);
-      case 'name-desc':
-        return b.title.localeCompare(a.title);
       case 'price-low':
         return (a.price || 0) - (b.price || 0);
       case 'price-high':
         return (b.price || 0) - (a.price || 0);
       default:
-        return 0;
+        return (a.price || 0) - (b.price || 0); // Default to price low to high
     }
   });
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] py-12">
-        <Container>
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-            <p className="mt-4 text-stone-600">Loading products...</p>
-          </div>
-        </Container>
+      <div className="min-h-screen flex items-center justify-center bg-stone-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading products...</p>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-[#fffcf9]">
-      {/* Hero Section */}
+            {/* Hero Section */}
       <Section variant="hero" background="white">
         <Container>
-          <Flex justify="between" align="center">
-            <div>
-              <H1>
-                {selectedCategory
-                  ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
-                  : 'Products'
-                }
-              </H1>
-              <Body className="mt-2 text-stone-600">
-                {selectedCategory
-                  ? `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`
-                  : 'Discover our collection of high-quality audio equipment'
-                }
-              </Body>
-              {selectedCategory && (
-                <div className="flex items-center space-x-4 mt-2">
-                  <Link
-                    to="/products/list"
-                    className="inline-flex items-center text-stone-600 hover:text-stone-700 text-sm font-medium"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                    View All Products
-                  </Link>
+                     <div className="max-w-4xl mx-auto text-center">
+             <H1 className="mb-4">
+               {selectedCategory
+                 ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
+                 : 'Products'
+               }
+             </H1>
+             
+             {selectedCategory ? (
+               <div className="mb-6">
+                 <div className="max-w-3xl mx-auto">
+                   <Body className="text-base leading-relaxed text-stone-700">
+                     {categories.find(c => c.id === selectedCategory)?.category_description || `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`}
+                   </Body>
+                 </div>
+                 
+                 <div className="flex items-center justify-center mt-4 space-x-6">
+                   <Link
+                     to="/products/list"
+                     className="inline-flex items-center text-stone-600 hover:text-stone-700 text-sm font-medium transition-colors"
+                   >
+                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                     </svg>
+                     View All Products
+                   </Link>
+                   
+                   {user && (
+                     <Button
+                       onClick={() => setIsProductFormOpen(true)}
+                       variant="primary"
+                       size="sm"
+                     >
+                       Add Product
+                     </Button>
+                   )}
+                 </div>
+               </div>
+             ) : (
+               <div className="mb-6">
+                 <Body className="text-base leading-relaxed text-stone-700 max-w-2xl mx-auto">
+                   Discover our collection of high-quality audio equipment
+                 </Body>
+                 
+                 {user && (
+                   <div className="mt-4">
+                     <Button
+                       onClick={() => setIsProductFormOpen(true)}
+                       variant="primary"
+                       size="sm"
+                     >
+                       Add Product
+                     </Button>
+                   </div>
+                 )}
+               </div>
+             )}
+           </div>
+        </Container>
+      </Section>
+
+      {/* Main Content with Sidebar */}
+      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+        <Container>
+          <div className="flex flex-col lg:flex-row gap-8">
+                         {/* Sidebar Filters */}
+             <div className="lg:w-80 lg:flex-shrink-0 pt-16">
+               <div className="lg:sticky lg:top-32">
+                 <h3 className="text-lg font-semibold text-stone-900 mb-6">Filters</h3>
+                 <div className="space-y-8">
+                   {!selectedCategory && (
+                     <div>
+                       <label className="block text-sm font-medium text-stone-700 mb-3">
+                         Filter by Category
+                       </label>
+                       <select
+                         value={selectedCategory}
+                         onChange={(e) => handleFilterChange('category', e.target.value)}
+                         className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-stone-900"
+                       >
+                         <option value="">All Categories</option>
+                         {categories.map(category => (
+                           <option key={category.id} value={category.id}>
+                             {category.name}
+                           </option>
+                         ))}
+                       </select>
+                     </div>
+                   )}
+
+                                       <div>
+                      <label className="block text-sm font-medium text-stone-700 mb-3">
+                        Filter by Manufacturer
+                      </label>
+                                             <div className="space-y-2">
+                         <label className="flex items-center space-x-3 cursor-pointer group">
+                           <div className="relative">
+                             <input
+                               type="radio"
+                               name="manufacturer"
+                               value=""
+                               checked={selectedManufacturer === ''}
+                               onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
+                               className="sr-only"
+                             />
+                             <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                               selectedManufacturer === '' 
+                                 ? 'border-primary-600 bg-primary-600' 
+                                 : 'border-stone-300 group-hover:border-stone-400'
+                             }`}>
+                               {selectedManufacturer === '' && (
+                                 <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                               )}
+                             </div>
+                           </div>
+                           <span className="text-stone-700 group-hover:text-stone-900 transition-colors">All Manufacturers</span>
+                         </label>
+                         
+                         {(() => {
+                           // Filter manufacturers to only show those with products in the current category
+                           const relevantManufacturers = selectedCategory
+                             ? manufacturers.filter(manufacturer =>
+                                 products.some(product =>
+                                   product.manufacturer?.id === manufacturer.id &&
+                                   product.categories?.id === selectedCategory
+                                 )
+                               )
+                             : manufacturers;
+
+                           // Show first 6 manufacturers by default, or all if expanded
+                           const displayedManufacturers = showAllManufacturers 
+                             ? relevantManufacturers 
+                             : relevantManufacturers.slice(0, 6);
+
+                           return (
+                             <>
+                               <div className={showAllManufacturers ? "max-h-64 overflow-y-auto pr-2 space-y-2" : "space-y-2"}>
+                                 {displayedManufacturers.map(manufacturer => (
+                                   <label key={manufacturer.id} className="flex items-center space-x-3 cursor-pointer group">
+                                     <div className="relative">
+                                       <input
+                                         type="radio"
+                                         name="manufacturer"
+                                         value={manufacturer.id}
+                                         checked={selectedManufacturer === manufacturer.id}
+                                         onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
+                                         className="sr-only"
+                                       />
+                                       <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                                         selectedManufacturer === manufacturer.id 
+                                           ? 'border-primary-600 bg-primary-600' 
+                                           : 'border-stone-300 group-hover:border-stone-400'
+                                       }`}>
+                                         {selectedManufacturer === manufacturer.id && (
+                                           <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                                         )}
+                                       </div>
+                                     </div>
+                                     <span className="text-stone-700 group-hover:text-stone-900 transition-colors">{manufacturer.name}</span>
+                                   </label>
+                                 ))}
+                               </div>
+                               
+                               {relevantManufacturers.length > 6 && (
+                                 <button
+                                   onClick={() => setShowAllManufacturers(!showAllManufacturers)}
+                                   className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors mt-2"
+                                 >
+                                   {showAllManufacturers 
+                                     ? `Show Less (${relevantManufacturers.length - 6} fewer)` 
+                                     : `Show More (${relevantManufacturers.length - 6} more)`
+                                   }
+                                 </button>
+                               )}
+                             </>
+                           );
+                         })()}
+                       </div>
+                    </div>
+
+                   <div>
+                     <label className="block text-sm font-medium text-stone-700 mb-3">
+                       Sort by
+                     </label>
+                     <div className="space-y-2">
+                       <label className="flex items-center space-x-3 cursor-pointer group">
+                         <div className="relative">
+                           <input
+                             type="radio"
+                             name="sort"
+                             value="price-low"
+                             checked={sortBy === 'price-low'}
+                             onChange={(e) => handleFilterChange('sort', e.target.value)}
+                             className="sr-only"
+                           />
+                           <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                             sortBy === 'price-low' 
+                               ? 'border-primary-600 bg-primary-600' 
+                               : 'border-stone-300 group-hover:border-stone-400'
+                           }`}>
+                             {sortBy === 'price-low' && (
+                               <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                             )}
+                           </div>
+                         </div>
+                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price Low to High</span>
+                       </label>
+                       
+                       <label className="flex items-center space-x-3 cursor-pointer group">
+                         <div className="relative">
+                           <input
+                             type="radio"
+                             name="sort"
+                             value="price-high"
+                             checked={sortBy === 'price-high'}
+                             onChange={(e) => handleFilterChange('sort', e.target.value)}
+                             className="sr-only"
+                           />
+                           <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                             sortBy === 'price-high' 
+                               ? 'border-primary-600 bg-primary-600' 
+                               : 'border-stone-300 group-hover:border-stone-400'
+                           }`}>
+                             {sortBy === 'price-high' && (
+                               <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                             )}
+                           </div>
+                         </div>
+                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price High to Low</span>
+                       </label>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+                         {/* Products Grid Section */}
+             <div className="flex-1 pt-8 pb-16 products-grid">
+              {sortedProducts.length === 0 ? (
+                <div className="text-center py-12">
+                  <svg className="mx-auto h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                  <H3 className="mt-2">No products found</H3>
+                  <Body className="mt-1 text-stone-500">
+                    {selectedCategory || selectedManufacturer
+                      ? 'Try adjusting your filters to see more products.'
+                      : 'No products are available at the moment.'
+                    }
+                  </Body>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {sortedProducts.map((product) => (
+                    <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
+                      <ProductCard
+                        product={product}
+                        showBadges={true}
+                        showPrice={true}
+                        showCategory={!selectedCategory}
+                        className="h-full"
+                      />
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
-            {user && (
-              <Button
-                onClick={() => setIsProductFormOpen(true)}
-                variant="primary"
-              >
-                Add Product
-              </Button>
-            )}
-          </Flex>
-        </Container>
-      </Section>
-
-      {/* Filters Section */}
-      <Section variant="default" background="white">
-        <Container>
-          <div className="mb-8 bg-stone-50 rounded-xl border border-stone-200 p-6">
-            <div className={`grid gap-4 ${selectedCategory ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
-            {!selectedCategory && (
-              <div>
-                <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-1">
-                  Filter by Category
-                </label>
-                <select
-                  id="category-filter"
-                  value={selectedCategory}
-                  onChange={(e) => handleFilterChange('category', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
-                  <option value="">All Categories</option>
-                  {categories.map(category => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            <div>
-              <label htmlFor="manufacturer-filter" className="block text-sm font-medium text-gray-700 mb-1">
-                Filter by Manufacturer
-              </label>
-                              <select
-                  id="manufacturer-filter"
-                  value={selectedManufacturer}
-                  onChange={(e) => handleFilterChange('manufacturer', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
-                <option value="">All Manufacturers</option>
-                {(() => {
-                  // Filter manufacturers to only show those with products in the current category
-                  const relevantManufacturers = selectedCategory
-                    ? manufacturers.filter(manufacturer =>
-                        products.some(product =>
-                          product.manufacturer?.id === manufacturer.id &&
-                          product.categories?.id === selectedCategory
-                        )
-                      )
-                    : manufacturers;
-
-                  return relevantManufacturers.map(manufacturer => (
-                    <option key={manufacturer.id} value={manufacturer.id}>
-                      {manufacturer.name}
-                    </option>
-                  ));
-                })()}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 mb-1">
-                Sort by
-              </label>
-              <select
-                id="sort-by"
-                value={sortBy}
-                onChange={(e) => handleFilterChange('sort', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-              >
-                <option value="newest">Newest First</option>
-                <option value="oldest">Oldest First</option>
-                <option value="name-asc">Name A-Z</option>
-                <option value="name-desc">Name Z-A</option>
-                <option value="price-low">Price Low to High</option>
-                <option value="price-high">Price High to Low</option>
-              </select>
-            </div>
           </div>
-        </div>
-        </Container>
-      </Section>
-
-      {/* Products Grid Section */}
-      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
-        <Container>
-          {sortedProducts.length === 0 ? (
-            <div className="text-center py-12">
-              <svg className="mx-auto h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              <H3 className="mt-2">No products found</H3>
-              <Body className="mt-1 text-stone-500">
-                {selectedCategory || selectedManufacturer
-                  ? 'Try adjusting your filters to see more products.'
-                  : 'No products are available at the moment.'
-                }
-              </Body>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sortedProducts.map((product) => (
-                <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
-                  <ProductCard
-                    product={product}
-                    showBadges={true}
-                    showPrice={true}
-                    className="h-full"
-                  />
-                </Link>
-              ))}
-            </div>
-          )}
         </Container>
       </Section>
 
@@ -313,6 +448,8 @@ export const Products: React.FC = () => {
         onClose={() => setIsProductFormOpen(false)}
         onSuccess={handleProductFormSuccess}
       />
-    </div>
-  );
-}; 
+         </div>
+   );
+ };
+
+export { Products };

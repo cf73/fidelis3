@@ -97,10 +97,10 @@ export const Container: React.FC<ContainerProps> = ({
   size = 'md'
 }) => {
   const sizes = {
-    sm: 'max-w-4xl mx-auto px-4 sm:px-6 lg:px-8',
-    md: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
-    lg: 'max-w-7xl mx-auto px-8 sm:px-12 lg:px-16',
-    xl: 'max-w-7xl mx-auto px-12 sm:px-16 lg:px-20',
+    sm: 'max-w-4xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8',
+    md: 'max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8',
+    lg: 'max-w-7xl xl:max-w-none mx-auto px-8 sm:px-12 lg:px-16',
+    xl: 'max-w-7xl xl:max-w-none mx-auto px-12 sm:px-16 lg:px-20',
     full: 'w-full px-4 sm:px-6 lg:px-8'
   };
 

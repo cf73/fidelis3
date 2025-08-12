@@ -22,12 +22,14 @@ import { ProductCardDemo } from './pages/ProductCardDemo';
 import { DesignSystemDemo } from './pages/DesignSystemDemo';
 import { ButtonDemo } from './pages/ButtonDemo';
 import { CardDemo } from './pages/CardDemo';
+import Admin from './pages/Admin';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <ScrollToTop />
+        {/* Temporarily disabled to debug scroll reset issue */}
+        {/* <ScrollToTop /> */}
         <div className="min-h-screen flex flex-col bg-white">
           <Header />
           <main className="flex-grow pt-28">
@@ -49,6 +51,7 @@ function App() {
               <Route path="/design-system" element={<DesignSystemDemo />} />
               <Route path="/button-demo" element={<ButtonDemo />} />
               <Route path="/card-demo" element={<CardDemo />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </main>
           <Footer />

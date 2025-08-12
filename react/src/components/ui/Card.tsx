@@ -36,7 +36,7 @@ export const Card: React.FC<CardProps> = ({
     default: 'bg-white',
     product: 'bg-[#f4f0ed] hover:bg-[#ede9e6]',
     news: 'bg-white hover:shadow-xl',
-    manufacturer: 'bg-white border border-stone-200 hover:border-stone-300',
+    manufacturer: 'bg-transparent shadow-none hover:shadow-none border-0',
     category: 'bg-white hover:shadow-xl transform hover:-translate-y-2 group',
     featured: 'bg-gradient-to-br from-stone-600 to-stone-700 text-white',
     value: 'bg-white text-center'
@@ -49,7 +49,7 @@ export const Card: React.FC<CardProps> = ({
   };
   
   const classes = [
-    baseClasses,
+    variant === 'manufacturer' ? 'rounded-xl transition-all duration-300 overflow-hidden cursor-pointer' : baseClasses,
     variants[variant],
     sizes[size],
     className
@@ -85,6 +85,7 @@ export interface ProductCardProps {
   };
   showBadges?: boolean;
   showPrice?: boolean;
+  showCategory?: boolean;
   className?: string;
 }
 
@@ -92,6 +93,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   showBadges = true,
   showPrice = true,
+  showCategory = true,
   className = ''
 }) => {
   return (
@@ -119,12 +121,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {product.manufacturer && (
           <p className="text-sm text-gray-600">{typeof product.manufacturer === 'string' ? product.manufacturer : product.manufacturer.name}</p>
         )}
-        {showPrice && product.price && (
-          <p className="text-xl font-bold text-gray-900">${product.price.toLocaleString()}</p>
-        )}
         <div className="mt-3 flex items-center justify-between">
+          {showPrice && product.price && (
+            <p className="text-xl font-bold text-gray-900">${product.price.toLocaleString()}</p>
+          )}
           <div className="flex flex-wrap gap-2">
-            {showBadges && product.categories && (
+            {showBadges && showCategory && product.categories && (
               <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-stone-200 text-stone-700">
                 {product.categories.name}
               </span>
@@ -135,7 +137,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               </span>
             )}
           </div>
-          <span className="text-xs text-gray-500 font-light">2 Variants</span>
         </div>
       </div>
     </div>
@@ -244,10 +245,10 @@ export const ManufacturerCard: React.FC<ManufacturerCardProps> = ({
           <img
             src={getImageUrl(manufacturer.logo)}
             alt={manufacturer.name}
-            className="h-20 mx-auto object-contain"
+            className="h-20 mx-auto object-contain mix-blend-multiply group-hover:mix-blend-multiply transition-opacity"
           />
         ) : (
-          <div className="h-20 w-20 mx-auto bg-stone-100 rounded-lg flex items-center justify-center">
+          <div className="h-20 w-20 mx-auto rounded-lg flex items-center justify-center">
             <svg className="h-10 w-10 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
@@ -265,98 +266,34 @@ export interface CategoryCardProps {
     description?: string;
     heroImage?: string;
     productCount?: number;
-    brandCount?: number;
-    featuredBrands?: string[];
-    tags?: string[];
   };
-  variant?: 'light' | 'dark';
   className?: string;
 }
 
-export const CategoryCard: React.FC<CategoryCardProps> = ({
-  category,
-  variant = 'light',
-  className = ''
-}) => {
-  const isDark = variant === 'dark';
-  
+// Mid-century card, aligned with ProductCard styling
+export const CategoryCard: React.FC<CategoryCardProps> = ({ category, className = '' }) => {
   return (
-    <div className={`relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer group ${className}`}>
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full ${className}`}>
+      {/* Image area */}
+      <div className="relative aspect-square border-b border-[#f4f0ed]">
         {category.heroImage ? (
           <img
-            src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${category.heroImage}`}
+            src={getImageUrl(category.heroImage)}
             alt={category.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-contain mix-blend-multiply"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-stone-600 to-stone-800" />
+          <div className="w-full h-full flex items-center justify-center text-stone-400">No image</div>
         )}
-        {/* Gradient Overlay */}
-        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-t from-stone-900/90 via-stone-900/50 to-transparent' : 'bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent'}`} />
       </div>
-      
-             {/* Content */}
-       <div className="relative h-80 flex flex-col justify-end p-8">
-         {/* Tags */}
-         {category.tags && category.tags.length > 0 && (
-           <div className="mb-4 flex flex-wrap gap-2">
-             {category.tags.map((tag, index) => (
-               <span key={index} className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${isDark ? 'bg-white/15 text-white/90 backdrop-blur-sm' : 'bg-white/20 text-white backdrop-blur-sm'}`}>
-                 {tag}
-               </span>
-             ))}
-           </div>
-         )}
-         
-         {/* Title */}
-         <h3 className={`text-5xl font-black tracking-tight mb-3 leading-tight ${isDark ? 'text-white' : 'text-white'}`}>
-           {category.name}
-         </h3>
-         
-         {/* Description */}
-         {category.description && (
-           <p className={`text-lg font-light mb-4 leading-relaxed ${isDark ? 'text-stone-200' : 'text-stone-100'}`}>
-             {category.description}
-           </p>
-         )}
-         
-         {/* Featured Brands */}
-         {category.featuredBrands && category.featuredBrands.length > 0 && (
-           <div className="mb-4">
-             <p className={`text-sm font-medium ${isDark ? 'text-stone-300' : 'text-stone-200'}`}>
-               Featuring {category.featuredBrands.slice(0, 3).join(', ')}
-               {category.featuredBrands.length > 3 && ' & more'}
-             </p>
-           </div>
-         )}
-         
-         {/* Stats Row */}
-         <div className="flex items-center gap-4 mb-6">
-           {category.productCount !== undefined && (
-             <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${isDark ? 'bg-white/20 text-white backdrop-blur-sm' : 'bg-white/25 text-white backdrop-blur-sm'}`}>
-               {category.productCount} {category.productCount === 1 ? 'Product' : 'Products'}
-             </span>
-           )}
-                       {category.brandCount && (
-              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${isDark ? 'bg-white/15 text-white/90 backdrop-blur-sm' : 'bg-white/20 text-white backdrop-blur-sm'}`}>
-                {category.brandCount} Brands
-              </span>
-            )}
-         </div>
-         
-         {/* Explore Link */}
-         <div className="flex items-center text-white/80 hover:text-white transition-colors duration-300 group/link">
-           <span className="text-sm font-medium tracking-wide uppercase">Explore Collection</span>
-           <svg className="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-           </svg>
-         </div>
-       </div>
-      
-      {/* Subtle Border */}
-      <div className={`absolute inset-0 rounded-3xl border ${isDark ? 'border-white/10' : 'border-white/20'}`} />
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-xl font-semibold text-stone-900 leading-snug line-clamp-2">{category.name}</h3>
+        <div className="mt-auto pt-4 flex items-center gap-2 text-xs text-stone-600">
+          <span className="inline-flex items-center px-2 py-1 rounded bg-stone-200/70">Placeholder content</span>
+          <span className="inline-flex items-center px-2 py-1 rounded bg-stone-200/70">Placeholder content</span>
+        </div>
+      </div>
     </div>
   );
 };
@@ -701,30 +638,38 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
     : null;
 
   return (
-    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full ${className}`}>
-      {/* Image */}
+    <div className={`bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full group ${className}`}>
+      {/* Image Section */}
       {item.images && item.images.length > 0 && (
-        <div className="border-b border-[#f4f0ed] border-solid" style={{ borderWidth: '1px' }}>
-          <div className="aspect-square bg-white">
-            <img
-              src={getImageUrl(item.images[0])}
-              alt={item.title}
-              className="w-full h-full object-contain mix-blend-multiply"
-            />
-          </div>
+        <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
+          <img
+            src={getImageUrl(item.images[0])}
+            alt={item.title}
+            className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* Local pickup badge */}
+          {item.local_only && (
+            <div className="absolute top-3 right-3">
+              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-800">
+                Local Pickup
+              </span>
+            </div>
+          )}
         </div>
       )}
       
-      {/* Content */}
-      <div className="flex flex-col flex-grow px-6 pb-6 pt-8">
+      {/* Content Section */}
+      <div className="flex flex-col flex-grow p-6">
         {/* Title */}
-        <h3 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">{item.title}</h3>
+        <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight line-clamp-2">
+          {item.title}
+        </h3>
         
-        {/* Pricing */}
+        {/* Pricing Section */}
         <div className="mb-4">
           {item.your_price && !item.hide_your_price && (
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl font-bold text-accent-600">
+            <div className="flex items-baseline gap-3 mb-2">
+              <span className="text-2xl font-bold text-gray-900">
                 {formatPrice(item.your_price)}
               </span>
               {item.new_retail_price && (
@@ -736,45 +681,35 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
           )}
           
           {savings && (
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-green-600 font-medium">
-                Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
-              </span>
+            <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-50 text-green-700 text-sm font-medium">
+              Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
             </div>
           )}
         </div>
 
-        {/* Description */}
+        {/* Description - Truncated */}
         {item.description && (
           <div className="mb-4 flex-grow">
             <div 
-              className="text-sm text-gray-600 line-clamp-3"
+              className="text-sm text-gray-600 line-clamp-2 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: item.description }}
             />
           </div>
         )}
 
-        {/* Details */}
-        <div className="space-y-2 text-sm text-gray-600 mt-auto">
+        {/* Key Details - Minimal */}
+        <div className="mt-auto space-y-2 text-sm text-gray-600">
           {item.original_accessories && (
-            <div className="flex items-center gap-2">
-              <span className="text-gray-600">📦 {item.original_accessories}</span>
+            <div className="flex items-center gap-2 text-gray-500">
+              <span className="text-gray-400">📦</span>
+              <span className="truncate">{item.original_accessories}</span>
             </div>
           )}
           
-          {item.shipping !== null && (
-            <div className="flex items-center gap-2">
-              <span className="text-gray-600">
-                🚚 {item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping || 0)}`}
-              </span>
-            </div>
-          )}
-
-          {item.local_only && (
-            <div className="text-accent-600">
-              <span className="text-xs font-medium bg-accent-100 px-2 py-1 rounded">
-                Local pickup only
-              </span>
+          {item.shipping !== null && item.shipping !== undefined && (
+            <div className="flex items-center gap-2 text-gray-500">
+              <span className="text-gray-400">🚚</span>
+              <span>{item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping)}`}</span>
             </div>
           )}
         </div>

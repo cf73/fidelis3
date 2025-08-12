@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
-import { getProductCategories, getProductsWithCategories } from '../lib/supabase';
+import { Link, useLocation } from 'react-router-dom';
+import { getProductCategories, getProductsWithCategories, getImageUrl } from '../lib/supabase';
 import { ProductCategory, Product } from '../lib/supabase';
-import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button, CategoryCard } from '../components/ui';
+import { Section, Container, Flex, H1, BodyLarge, CategoryCard } from '../components/ui';
 
 interface CategoryWithHero extends ProductCategory {
   heroImage?: string;
@@ -78,26 +78,30 @@ export const ProductCategories: React.FC = () => {
         </Container>
       </Section>
 
-      {/* Categories Grid */}
+      {/* Categories Grid - refined layout */}
       <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
         <Container>
-          <Grid cols={2} gap="xl">
+          {/* Intro row with short guidance */}
+          <div className="max-w-4xl mb-8">
+            <BodyLarge className="text-stone-700">
+              Explore categories to browse our collections. Each card previews the aesthetic of the products within.
+            </BodyLarge>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((category) => (
               <Link
                 key={category.id}
                 to={`/products/list?category=${category.id}`}
-                className="block"
+                className="block h-full"
               >
-                <CategoryCard 
-                  category={category} 
-                  variant="dark"
-                />
+                <CategoryCard category={category} className="h-full" />
               </Link>
             ))}
-          </Grid>
+          </div>
 
           {/* View All Products Link */}
-          <div className="mt-20 text-center">
+          <div className="mt-16 text-center">
             <Link
               to="/products/list"
               className="inline-flex items-center px-8 py-4 bg-stone-800 hover:bg-stone-700 text-white font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 shadow-sm hover:shadow-md"

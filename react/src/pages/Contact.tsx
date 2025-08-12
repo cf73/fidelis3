@@ -35,7 +35,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm font-medium text-stone-900">Address</p>
-                      <p className="text-sm text-stone-600">123 Audio Street<br />High-End City, HC 12345</p>
+                      <p className="text-sm text-stone-600">460 Amherst Street<br />Nashua, NH 03063</p>
                     </div>
                   </div>
 
@@ -81,7 +81,10 @@ export const Contact: React.FC = () => {
               <div>
                 <H2 className="mb-6">Send us a Message</H2>
                 
-                <form className="space-y-4">
+                 <form className="space-y-4" action="https://formsubmit.co/conrad.fulbrook@gmail.com" method="POST">
+                  <input type="hidden" name="_subject" value="Website Contact Form" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-1">
                       Name
@@ -134,7 +137,7 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
-                  <Button
+                   <Button
                     type="submit"
                     variant="primary"
                     size="lg"
@@ -154,8 +157,16 @@ export const Contact: React.FC = () => {
         <Container>
           <div className="max-w-4xl mx-auto">
             <H2 className="mb-6">Visit Our Showroom</H2>
-            <div className="bg-stone-200 rounded-xl h-64 flex items-center justify-center">
-              <p className="text-stone-500">Interactive map would go here</p>
+            <div className="rounded-xl overflow-hidden border border-stone-200 shadow-sm">
+              <iframe
+                title="Fidelis Location"
+                src="https://www.google.com/maps?q=460+Amherst+Street,+Nashua,+NH+03063&output=embed"
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <Body className="mt-4 text-stone-600">
               We welcome visitors to our showroom where you can experience our products firsthand. 

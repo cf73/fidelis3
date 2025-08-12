@@ -71,14 +71,14 @@ const Manufacturers: React.FC = () => {
                 >
                   <Link
                     to={`/manufacturers/${manufacturer.slug || manufacturer.id}`}
-                    className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-stone-200 hover:border-stone-300"
+                    className="block p-6 rounded-xl transition-all duration-300"
                   >
                     {manufacturer.logo ? (
                       <div className="flex items-center justify-center h-24">
                         <img
                           src={getImageUrl(manufacturer.logo)}
                           alt={manufacturer.name}
-                          className="max-h-16 max-w-full object-contain group-hover:opacity-80 transition-opacity duration-200"
+                          className="max-h-16 max-w-full object-contain mix-blend-multiply group-hover:mix-blend-multiply group-hover:opacity-80 transition-opacity duration-200"
                         />
                       </div>
                     ) : (

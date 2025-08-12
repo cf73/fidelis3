@@ -32,7 +32,7 @@ export interface Product {
   specs?: string;
   quote?: string;
   quote_attribution?: string;
-  reviews_set?: Review[];
+  reivews_set?: Review[];
   price?: number;
   available_for_demo?: boolean;
   available_to_buy_online?: boolean;
@@ -44,6 +44,8 @@ export interface Product {
   updated_at: string;
   categories?: ProductCategory;
   manufacturer?: Manufacturer;
+  pairs_well_with?: string[];
+  also_consider?: string[];
 }
 
 export interface Review {
@@ -58,6 +60,7 @@ export interface ProductCategory {
   name: string;
   slug: string;
   description?: string;
+  category_description?: string;
 }
 
 export interface Manufacturer {
@@ -123,6 +126,17 @@ export interface EvergreenCarousel {
   slug: string;
   content: string;
   hero_image?: string;
+  published?: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface HomeHeroImage {
+  id: string;
+  image: string; // path or filename in the `images` bucket
+  alt_text?: string;
+  credit?: string;
+  weight?: number; // optional weighting for selection
   published?: boolean;
   created_at: string;
   updated_at: string;
@@ -790,6 +804,62 @@ export const getEvergreenCarousel = async (): Promise<EvergreenCarousel[]> => {
   return data || [];
 };
 
+// Home hero images
+export const getHomeHeroImages = async (): Promise<HomeHeroImage[]> => {
+  const { data, error } = await supabase
+    .from('home_hero_images')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching home hero images:', error);
+    return [];
+  }
+
+  return data || [];
+};
+
+// Admin: list all (including unpublished)
+export const adminListHomeHeroImages = async (): Promise<HomeHeroImage[]> => {
+  const { data, error } = await supabase
+    .from('home_hero_images')
+    .select('*')
+    .order('created_at', { ascending: false });
+  if (error) {
+    console.error('Error listing home hero images (admin):', error);
+    return [];
+  }
+  return data || [];
+};
+
+export const createHomeHeroImage = async (item: Partial<HomeHeroImage>) => {
+  const { data, error } = await supabase
+    .from('home_hero_images')
+    .insert([item])
+    .select()
+    .single();
+  return { data, error };
+};
+
+export const updateHomeHeroImage = async (id: string, item: Partial<HomeHeroImage>) => {
+  const { data, error } = await supabase
+    .from('home_hero_images')
+    .update(item)
+    .eq('id', id)
+    .select()
+    .single();
+  return { data, error };
+};
+
+export const deleteHomeHeroImage = async (id: string) => {
+  const { error } = await supabase
+    .from('home_hero_images')
+    .delete()
+    .eq('id', id);
+  return { error };
+};
+
 // Image URL helper
 export const getImageUrl = (imagePath: string): string => {
   if (!imagePath) return '';
@@ -825,6 +895,24 @@ export const getImageUrl = (imagePath: string): string => {
 };
 
 // CMS Functions for authenticated users
+export const adminGetAllProducts = async (): Promise<Product[]> => {
+  const { data, error } = await supabase
+    .from('products')
+    .select(`
+      *,
+      categories:product_categories!products_category_id_fkey(id, name, slug),
+      manufacturer:manufacturers!products_manufacturer_id_fkey(id, name, slug)
+    `)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching all products:', error);
+    return [];
+  }
+
+  return data || [];
+};
+
 export const createProduct = async (productData: Partial<Product>) => {
   const { data, error } = await supabase
     .from('products')
@@ -875,7 +963,31 @@ export const deleteImage = async (filename: string) => {
   return { error };
 };
 
-// Get related products based on manufacturer and category
+// Get products by their IDs (for cross-referenced products)
+export const getProductsByIds = async (productIds: string[]): Promise<Product[]> => {
+  if (!productIds || productIds.length === 0) {
+    return [];
+  }
+
+  const { data, error } = await supabase
+    .from('products')
+    .select(`
+      *,
+      categories:product_categories!products_category_id_fkey(id, name, slug),
+      manufacturer:manufacturers!products_manufacturer_id_fkey(id, name, slug)
+    `)
+    .in('id', productIds)
+    .eq('published', true);
+
+  if (error) {
+    console.error('Error fetching products by IDs:', error);
+    return [];
+  }
+
+  return data || [];
+};
+
+// Get related products based on manufacturer and category (fallback)
 export const getRelatedProducts = async (productId: string, manufacturerId?: string, categoryId?: string): Promise<Product[]> => {
   let query = supabase
     .from('products')
