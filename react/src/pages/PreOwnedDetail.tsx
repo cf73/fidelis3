@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, ChevronLeftIcon, ChevronRightIcon, TagIcon, TruckIcon, CubeIcon, CalendarIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, TagIcon, TruckIcon, CubeIcon, CalendarIcon } from '@heroicons/react/24/outline';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { getPreOwnedById, getImageUrl, type PreOwned } from '../lib/supabase';
 
 const PreOwnedDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [item, setItem] = useState<PreOwned | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -46,18 +52,6 @@ const PreOwnedDetail: React.FC = () => {
   const parseImages = (imagesArray: any[]): any[] => {
     if (!imagesArray || !Array.isArray(imagesArray)) return [];
     return imagesArray;
-  };
-
-  const nextImage = () => {
-    if (!item) return;
-    const images = parseImages(item.images || []);
-    setCurrentImageIndex((prev) => (prev + 1) % Math.max(images.length, 1));
-  };
-
-  const prevImage = () => {
-    if (!item) return;
-    const images = parseImages(item.images || []);
-    setCurrentImageIndex((prev) => (prev - 1 + Math.max(images.length, 1)) % Math.max(images.length, 1));
   };
 
   if (loading) {
@@ -113,51 +107,62 @@ const PreOwnedDetail: React.FC = () => {
           <div>
             {images.length > 0 ? (
               <div className="relative">
-                                 <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden">
-                  <img
-                    src={getImageUrl(images[currentImageIndex])}
-                    alt={`${item.title} - Image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                {/* Swiper Carousel */}
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  navigation={{
+                    nextEl: '.custom-swiper-next',
+                    prevEl: '.custom-swiper-prev',
+                  }}
+                  pagination={{
+                    clickable: true,
+                    el: '.custom-swiper-pagination',
+                    bulletClass: 'custom-swiper-bullet',
+                    bulletActiveClass: 'custom-swiper-bullet-active',
+                  }}
+                  className="preowned-images-swiper"
+                >
+                  {images.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden">
+                        <img
+                          src={getImageUrl(image)}
+                          alt={`${item.title} - Image ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
                 
-                {/* Navigation Arrows */}
+                {/* Custom Navigation Buttons */}
                 {images.length > 1 && (
                   <>
-                                         <button
-                       onClick={prevImage}
-                       className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg"
-                     >
-                       <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
-                     </button>
-                     <button
-                       onClick={nextImage}
-                       className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg"
-                     >
-                       <ChevronRightIcon className="h-6 w-6 text-gray-700" />
-                     </button>
+                    <button className="custom-swiper-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
+                      <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd"/>
+                      </svg>
+                    </button>
+                    
+                    <button className="custom-swiper-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
+                      <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
+                      </svg>
+                    </button>
                   </>
                 )}
                 
-                {/* Image Indicators */}
+                {/* Custom Pagination */}
                 {images.length > 1 && (
-                  <div className="flex justify-center mt-4 space-x-2">
-                    {images.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                                                 className={`w-3 h-3 rounded-full ${
-                           index === currentImageIndex ? 'bg-accent-600' : 'bg-gray-300'
-                         }`}
-                      />
-                    ))}
-                  </div>
+                  <div className="custom-swiper-pagination flex justify-center items-center space-x-2 mt-4"></div>
                 )}
               </div>
             ) : (
-                             <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg flex items-center justify-center">
-                 <p className="text-gray-500">No images available</p>
-               </div>
+              <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg flex items-center justify-center">
+                <p className="text-gray-500">No images available</p>
+              </div>
             )}
           </div>
 

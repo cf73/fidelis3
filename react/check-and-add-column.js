@@ -47,3 +47,4 @@ async function checkAndAddColumn() {
 }
 
 checkAndAddColumn().catch(console.error);
+

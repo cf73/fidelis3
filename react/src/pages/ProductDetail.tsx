@@ -3,9 +3,12 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { getProductBySlug, deleteProduct, getProductsByIds, getImageUrl } from '../lib/supabase';
 import { Product } from '../lib/supabase';
-import { ProductForm } from '../components/ProductForm';
+import { ContextualCMS, CMSTrigger } from '../components/ContextualCMS';
+import { ImageUpload } from '../components/ImageUpload';
+import { RelationshipSelector } from '../components/RelationshipSelector';
 import { DeleteConfirmation } from '../components/DeleteConfirmation';
 import { ProductTabs } from '../components/ProductTabs';
+import { ProductEditForm } from '../components/ProductEditForm';
 
 
 export const ProductDetail: React.FC = () => {
@@ -17,7 +20,7 @@ export const ProductDetail: React.FC = () => {
   const [alsoConsiderProducts, setAlsoConsiderProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [relatedLoading, setRelatedLoading] = useState(false);
-  const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+  const [isCMSOpen, setIsCMSOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -223,12 +226,11 @@ export const ProductDetail: React.FC = () => {
           {/* Admin Actions */}
           {user && (
             <div className="absolute top-8 right-8 flex space-x-3">
-              <button
-                onClick={() => setIsEditFormOpen(true)}
-                className="bg-stone-800 text-white px-4 py-2 rounded-lg hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 transition-all duration-200 text-sm font-medium"
-              >
-                Edit Product
-              </button>
+              <CMSTrigger
+                onClick={() => setIsCMSOpen(true)}
+                label="Edit Product"
+                context="product"
+              />
               <button
                 onClick={() => setIsDeleteModalOpen(true)}
                 className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200 text-sm font-medium"
@@ -511,14 +513,21 @@ export const ProductDetail: React.FC = () => {
           </div>
         )}
 
-        {/* Edit Form Modal */}
-        {isEditFormOpen && product && (
-          <ProductForm
-            product={product}
-            onSave={handleEditSuccess}
-            onCancel={() => setIsEditFormOpen(false)}
-          />
-        )}
+        {/* Contextual CMS */}
+        <ContextualCMS
+          isOpen={isCMSOpen}
+          onClose={() => setIsCMSOpen(false)}
+          title={`Edit ${product?.title || 'Product'}`}
+          context="product"
+        >
+          {product && (
+            <ProductEditForm
+              product={product}
+              onSave={handleEditSuccess}
+              onCancel={() => setIsCMSOpen(false)}
+            />
+          )}
+        </ContextualCMS>
 
         {/* Delete Confirmation Modal */}
         <DeleteConfirmation

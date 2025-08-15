@@ -15,7 +15,7 @@ import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-do
 import { useAuth } from '../contexts/AuthContext';
 import { getProductsWithCategories, getProductCategories, getManufacturers, getImageUrl } from '../lib/supabase';
 import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
-import { ProductForm } from '../components/ProductForm';
+// Removed ProductForm import as this page no longer mounts it directly
 import { ProductCard, Section, Grid, Container, Flex, H1, H2, H3, H4, Body, BodySmall, Caption, Button, Card, Price } from '../components/ui';
 
 const Products: React.FC = () => {
@@ -29,7 +29,7 @@ const Products: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(searchParams.get('category') || '');
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>(searchParams.get('manufacturer') || '');
   const [sortBy, setSortBy] = useState<string>(searchParams.get('sort') || 'price-low');
-  const [isProductFormOpen, setIsProductFormOpen] = useState(false);
+  // Removed isProductFormOpen state since this page no longer opens the form
   const [showAllManufacturers, setShowAllManufacturers] = useState(false);
   const { user } = useAuth();
 
@@ -111,8 +111,7 @@ const Products: React.FC = () => {
   };
 
   const handleProductFormSuccess = async () => {
-    setIsProductFormOpen(false);
-    // Reload products after adding a new one
+    // No-op for now; retained for potential future use
     try {
       const [productsData, categoriesData, manufacturersData] = await Promise.all([
         getProductsWithCategories(),
@@ -139,37 +138,23 @@ const Products: React.FC = () => {
 
   if (selectedManufacturer) {
     filteredProducts = filteredProducts.filter(product => 
-      product.manufacturer?.id === selectedManufacturer
+      (typeof product.manufacturer === 'object' && product.manufacturer?.id === selectedManufacturer)
     );
   }
 
-  // Sort products
+  // Sorting
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    switch (sortBy) {
-      case 'price-low':
-        return (a.price || 0) - (b.price || 0);
-      case 'price-high':
-        return (b.price || 0) - (a.price || 0);
-      default:
-        return (a.price || 0) - (b.price || 0); // Default to price low to high
-    }
+    const priceA = a.price || 0;
+    const priceB = b.price || 0;
+
+    if (sortBy === 'price-high') return priceB - priceA;
+    return priceA - priceB; // default low to high
   });
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-stone-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading products...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-[#fffcf9]">
-            {/* Hero Section */}
-      <Section variant="hero" background="white">
+    <div>
+      {/* Filters */}
+      <Section variant="default" background="white">
         <Container>
                      <div className="max-w-4xl mx-auto text-center">
              <H1 className="mb-4">
@@ -200,7 +185,7 @@ const Products: React.FC = () => {
                    
                    {user && (
                      <Button
-                       onClick={() => setIsProductFormOpen(true)}
+                       onClick={() => navigate('/products/new')}
                        variant="primary"
                        size="sm"
                      >
@@ -218,7 +203,7 @@ const Products: React.FC = () => {
                  {user && (
                    <div className="mt-4">
                      <Button
-                       onClick={() => setIsProductFormOpen(true)}
+                       onClick={() => navigate('/products/new')}
                        variant="primary"
                        size="sm"
                      >
@@ -441,15 +426,8 @@ const Products: React.FC = () => {
           </div>
         </Container>
       </Section>
-
-      {/* Product Form Modal */}
-      <ProductForm
-        isOpen={isProductFormOpen}
-        onClose={() => setIsProductFormOpen(false)}
-        onSuccess={handleProductFormSuccess}
-      />
-         </div>
-   );
- };
+    </div>
+  );
+};
 
 export { Products };

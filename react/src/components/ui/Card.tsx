@@ -115,8 +115,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
       
-             {/* Product Content */}
-       <div className="px-6 pb-6 pt-8 flex flex-col flex-grow">
+      {/* Product Content */}
+      <div className="px-6 pb-6 pt-8 flex flex-col flex-grow">
         <h3 className="text-3xl font-bold text-gray-900 mb-2">{product.title}</h3>
         {product.manufacturer && (
           <p className="text-sm text-gray-600">{typeof product.manufacturer === 'string' ? product.manufacturer : product.manufacturer.name}</p>

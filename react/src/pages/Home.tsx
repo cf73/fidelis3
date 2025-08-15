@@ -148,32 +148,24 @@ const Home: React.FC = () => {
                 bulletActiveClass: 'custom-swiper-bullet-active',
               }}
               breakpoints={{
-                640: {
-                  slidesPerView: 1.5,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-                1280: {
-                  slidesPerView: 3,
-                },
+                640: { slidesPerView: 1.5 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 3 },
               }}
               className="featured-products-swiper"
             >
               {featuredProducts.map((product, index) => (
-                <SwiperSlide key={product.id} className="h-auto">
+                <SwiperSlide key={product.id} className="flex">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.08 }}
                     viewport={{ once: true }}
-                    className="h-full flex"
+                    className="flex w-full"
                   >
-                    <Link to={`/products/${product.slug}`} className="block h-full w-full">
-                      <ProductCard product={product} showBadges={true} showPrice={true} className="h-full flex flex-col" />
+                    <Link to={`/products/${product.slug}`} className="block w-full">
+                      <ProductCard product={product} showBadges={true} showPrice={true} className="h-full" />
                     </Link>
                   </motion.div>
                 </SwiperSlide>

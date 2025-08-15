@@ -92,8 +92,13 @@
     padding: 1rem 0;
   }
 
+  .featured-products-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
   .featured-products-swiper .swiper-slide {
     height: auto;
+    display: flex;
   }
 
   /* Hide default Swiper navigation and pagination */
@@ -183,8 +188,7 @@
   @media (min-width: 1024px) {
     .custom-swiper-prev:hover,
     .custom-swiper-next:hover {
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: translateY(-50%) scale(1.08);
     }
   }
 }

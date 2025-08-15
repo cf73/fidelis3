@@ -31,3 +31,4 @@ CREATE POLICY "Allow authenticated users to delete images" ON storage.objects
         bucket_id = 'images' AND 
         auth.uid() IS NOT NULL
     );
+

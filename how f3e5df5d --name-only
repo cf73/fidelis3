@@ -1,0 +1,7 @@
+[33mf3e5df5d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mvisual-design-system[m[33m, [m[1;31morigin/visual-design-system[m[33m)[m Enhance news cards with full descriptions and remove truncation
+[33m45b0e196[m feat: implement unified card system with height alignment and design refinements
+[33m5c5168e7[m Refactor News and ProductCategories pages to use new design system - Updated styling to stone color palette, improved typography with H1, H2, H3, Body, BodyLarge components, and enhanced layout with Section, Grid, Container components
+[33m8e41e962[m Fix news dates and complete news system implementation
+[33m0d38fcbf[m Fix image display issues and complete news system implementation
+[33mce512e7f[m Complete dark mode implementation with theme toggle and all pages styled
+[33m946ed6a0[m Complete Supabase migration with all images and React app

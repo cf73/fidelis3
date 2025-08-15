@@ -40,3 +40,4 @@ CREATE TRIGGER update_home_hero_images_updated_at
 -- INSERT INTO home_hero_images (image, alt_text, credit, weight) VALUES
 -- ('sample-hero-1.jpg', 'Sample hero image 1', 'Photo by Sample Photographer', 1),
 -- ('sample-hero-2.jpg', 'Sample hero image 2', 'Photo by Another Photographer', 1);
+

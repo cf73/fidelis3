@@ -26,3 +26,4 @@ CREATE POLICY "Enable delete for authenticated users only" ON product_categories
 -- Alternative: If you want to allow updates without authentication, use this instead:
 -- CREATE POLICY "Enable update for all users" ON product_categories
 --     FOR UPDATE USING (true);
+

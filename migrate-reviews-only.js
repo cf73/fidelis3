@@ -65,9 +65,9 @@ function convertReviews(reviewsSet) {
   }));
 }
 
-async function migrateReviewsProperly() {
+async function migrateReviewsOnly() {
   try {
-    console.log('🚀 Starting proper reviews migration from Statamic files...');
+    console.log('🚀 Starting reviews-only migration...');
     
     // Read all product files from Statamic
     const productsDir = path.join(__dirname, 'content', 'collections', 'products');
@@ -107,17 +107,7 @@ async function migrateReviewsProperly() {
           continue;
         }
         
-        // Check if any review has content
-        const hasContent = reviews.some(review => review.excerpt && review.excerpt.trim() !== '');
-        if (!hasContent) {
-          console.log(`⚠️  Skipping ${file}: Reviews have no content`);
-          skippedCount++;
-          continue;
-        }
-        
-        console.log(`✅ Migrating reviews for ${file} (${productData.id}) - ${reviews.length} reviews`);
-        
-        // Update the product in Supabase
+        // Update only the reviews field
         const { data, error } = await supabase
           .from('products')
           .update({ reivews_set: reviews })
@@ -127,7 +117,7 @@ async function migrateReviewsProperly() {
           console.error(`❌ Error updating ${file} (${productData.id}):`, error.message);
           errorCount++;
         } else {
-          console.log(`✅ Successfully migrated reviews for ${file}`);
+          console.log(`✅ Migrated reviews for ${file} (${productData.id}) - ${reviews.length} reviews`);
           migratedCount++;
         }
         
@@ -157,8 +147,7 @@ async function migrateReviewsProperly() {
       sampleProducts.forEach(product => {
         const isArray = Array.isArray(product.reivews_set);
         const count = isArray ? product.reivews_set.length : 0;
-        const hasContent = isArray && count > 0 && product.reivews_set.some(review => review.excerpt && review.excerpt.trim() !== '');
-        console.log(`   - ${product.title}: ${isArray ? '✅' : '❌'} Array with ${count} reviews, has content: ${hasContent ? '✅' : '❌'}`);
+        console.log(`   - ${product.title}: ${isArray ? '✅' : '❌'} Array with ${count} reviews`);
       });
     }
     
@@ -168,5 +157,5 @@ async function migrateReviewsProperly() {
 }
 
 // Run the migration
-migrateReviewsProperly();
+migrateReviewsOnly();
 
