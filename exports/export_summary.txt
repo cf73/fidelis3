@@ -1,0 +1,10 @@
+Statamic Content Export Summary
+Generated: 2025-08-02 04:20:06
+
+products: 356 items
+manufacturers: 58 items
+news: 41 items
+pre-owned: 54 items
+testimonials: 7 items
+pages: 9 items
+evergreen-carousel: 6 items

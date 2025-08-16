@@ -18,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 // ]);
 
 Route::statamic('feed.json', 'FeedController@json');
+
+// Serve assets from root assets directory
+Route::get('assets/{path}', function ($path) {
+    $filePath = base_path("assets/{$path}");
+    if (file_exists($filePath)) {
+        return response()->file($filePath);
+    }
+    abort(404);
+})->where('path', '.*');

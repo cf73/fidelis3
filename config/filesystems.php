@@ -14,8 +14,8 @@ return [
 
         'assets_main' => [
             'driver' => 'local',
-            'root' => public_path('assets/main'),
-            'url' => '/assets/main',
+            'root' => base_path('assets'),
+            'url' => '/assets',
             'visibility' => 'public',
         ],
     ],

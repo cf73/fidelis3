@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f8fafc;
+  --color-primary-100: #f1f5f9;
+  --color-primary-200: #e2e8f0;
+  --color-primary-300: #cbd5e1;
+  --color-primary-400: #94a3b8;
+  --color-primary-500: #64748b;
+  --color-primary-600: #475569;
+  --color-primary-700: #334155;
+  --color-primary-800: #1e293b;
+  --color-primary-900: #0f172a;
+  
+  --color-accent-50: #fef7ee;
+  --color-accent-100: #fdedd6;
+  --color-accent-200: #fbd7ac;
+  --color-accent-300: #f8bb77;
+  --color-accent-400: #f5953e;
+  --color-accent-500: #f2751a;
+  --color-accent-600: #e35a10;
+  --color-accent-700: #bc4310;
+  --color-accent-800: #953614;
+  --color-accent-900: #782e14;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .container-custom {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hide scrollbars utility */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  /* Enable native momentum scrolling on iOS */
+  .ios-momentum {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom Swiper Styles */
+  .featured-products-swiper {
+    padding: 1rem 0;
+  }
+
+  .featured-products-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .featured-products-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+  }
+
+  /* Hide default Swiper navigation and pagination */
+  .featured-products-swiper .swiper-button-prev,
+  .featured-products-swiper .swiper-button-next {
+    display: none !important;
+  }
+
+  .featured-products-swiper .swiper-pagination {
+    display: none !important;
+  }
+
+  /* Custom Navigation Buttons */
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    color: #6b7280;
+    backdrop-filter: blur(8px);
+  }
+
+  .custom-swiper-prev:hover,
+  .custom-swiper-next:hover {
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    color: #374151;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .custom-swiper-prev {
+    left: 16px;
+  }
+
+  .custom-swiper-next {
+    right: 16px;
+  }
+
+  /* Custom Pagination */
+  .custom-swiper-pagination {
+    margin-top: 2rem;
+  }
+
+  .custom-swiper-bullet {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+  }
+
+  .custom-swiper-bullet:hover {
+    background: #e5e7eb;
+    opacity: 0.8;
+  }
+
+  .custom-swiper-bullet-active {
+    background: #6b7280;
+    border-color: #6b7280;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  /* Navigation buttons are always visible */
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
+
+  /* Enhanced hover effects for desktop */
+  @media (min-width: 1024px) {
+    .custom-swiper-prev:hover,
+    .custom-swiper-next:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
+  }
+}

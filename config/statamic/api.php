@@ -15,15 +15,15 @@ return [
     |
     */
 
-    'enabled' => env('STATAMIC_API_ENABLED', false),
+    'enabled' => env('STATAMIC_API_ENABLED', true),
 
     'resources' => [
-        'collections' => false,
-        'navs' => false,
-        'taxonomies' => false,
-        'assets' => false,
-        'globals' => false,
-        'forms' => false,
+        'collections' => true,
+        'navs' => true,
+        'taxonomies' => true,
+        'assets' => true,
+        'globals' => true,
+        'forms' => true,
         'users' => false,
     ],
 
@@ -40,7 +40,7 @@ return [
     |
     */
 
-    'middleware' => env('STATAMIC_API_MIDDLEWARE', 'api'),
+    'middleware' => env('STATAMIC_API_MIDDLEWARE', 'web'),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,13 @@ return [
     */
 
     'excluded_keys' => [
-        //
+        'edit_url',
+        'api_url',
+        'last_modified',
+        'updated_at',
+        'updated_by',
+        'created_at',
+        'created_by',
     ],
 
 ];
