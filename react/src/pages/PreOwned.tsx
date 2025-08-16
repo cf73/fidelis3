@@ -35,8 +35,9 @@ const PreOwned: React.FC = () => {
   const [filteredItems, setFilteredItems] = useState<PreOwned[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 100000]);
   const [showLocalOnly, setShowLocalOnly] = useState(false);
+  const [showInitialSpinner, setShowInitialSpinner] = useState(true);
+  const [cardsVisible, setCardsVisible] = useState<boolean[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,10 +45,53 @@ const PreOwned: React.FC = () => {
         const data = await getPreOwned();
         setPreOwnedItems(data);
         setFilteredItems(data);
+        
+        // Preload all first images
+        const preloadPromises = data.map(item => {
+          return new Promise<void>((resolve) => {
+            if (item.images && item.images.length > 0) {
+              const img = new Image();
+              img.onload = () => resolve();
+              img.onerror = () => resolve(); // Resolve even on error
+              img.src = getImageUrl(item.images[0]);
+            } else {
+              resolve(); // No image to load
+            }
+          });
+        });
+        
+        // Wait for all images to preload (with timeout)
+        const preloadWithTimeout = Promise.race([
+          Promise.all(preloadPromises),
+          new Promise(resolve => setTimeout(resolve, 3000)) // 3 second timeout
+        ]);
+        
+        await preloadWithTimeout;
+        
+        // Initialize cards as hidden
+        setCardsVisible(new Array(data.length).fill(false));
+        
+        // Hide spinner and start sequential animation
+        setShowInitialSpinner(false);
+        
+        // Trigger sequential card animation
+        setTimeout(() => {
+          data.forEach((_, index) => {
+            setTimeout(() => {
+              setCardsVisible(prev => {
+                const newVisible = [...prev];
+                newVisible[index] = true;
+                return newVisible;
+              });
+            }, index * 80); // Fast 80ms intervals
+          });
+        }, 200); // Brief delay after spinner disappears
+        
       } catch (error) {
         console.error('Error loading pre-owned data:', error);
         setPreOwnedItems([]);
         setFilteredItems([]);
+        setShowInitialSpinner(false);
       } finally {
         setLoading(false);
       }
@@ -67,25 +111,36 @@ const PreOwned: React.FC = () => {
       );
     }
 
-    // Price range filter
-    filtered = filtered.filter(item =>
-      (!item.your_price || (item.your_price >= priceRange[0] && item.your_price <= priceRange[1]))
-    );
-
     // Local only filter
     if (showLocalOnly) {
       filtered = filtered.filter(item => item.local_only);
     }
 
     setFilteredItems(filtered);
-  }, [preOwnedItems, searchTerm, priceRange, showLocalOnly]);
+    
+    // Reset and animate cards when filters change
+    if (filtered.length !== filteredItems.length) {
+      setCardsVisible(new Array(filtered.length).fill(false));
+      setTimeout(() => {
+        filtered.forEach((_, index) => {
+          setTimeout(() => {
+            setCardsVisible(prev => {
+              const newVisible = [...prev];
+              newVisible[index] = true;
+              return newVisible;
+            });
+          }, index * 60); // Even faster for filter changes
+        });
+      }, 100);
+    }
+  }, [preOwnedItems, searchTerm, showLocalOnly, filteredItems.length]);
 
-  if (loading) {
+  if (loading || showInitialSpinner) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-stone-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#fffcf9]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading pre-owned equipment...</p>
+          <p className="mt-4 text-gray-600">Loading pre-owned collection...</p>
         </div>
       </div>
     );
@@ -96,7 +151,7 @@ const PreOwned: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-stone-50"
+      className="min-h-screen bg-[#fffcf9]"
     >
       {/* Hero Section */}
       <Section variant="compact" background="white">
@@ -110,75 +165,54 @@ const PreOwned: React.FC = () => {
         </Container>
       </Section>
 
-      {/* Filters - Streamlined */}
-      <Section variant="compact" background="white" className="border-b border-gray-200">
-        <Container>
-          <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search pre-owned equipment..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 bg-white"
-              />
-            </div>
 
-            {/* Price Range - Compact */}
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                placeholder="Min"
-                value={priceRange[0]}
-                onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
-                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 text-sm"
-              />
-              <span className="text-gray-500 text-sm">-</span>
-              <input
-                type="number"
-                placeholder="Max"
-                value={priceRange[1]}
-                onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 text-sm"
-              />
-            </div>
-
-            {/* Local Pickup Filter */}
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={showLocalOnly}
-                onChange={(e) => setShowLocalOnly(e.target.checked)}
-                className="rounded border-gray-300 text-accent-600 focus:ring-accent-500"
-              />
-              <span className="text-sm text-gray-700 whitespace-nowrap">Local pickup only</span>
-            </label>
-          </div>
-        </Container>
-      </Section>
 
       {/* Results Grid */}
-      <Section variant="compact" background="stone-50">
+      <Section variant="compact" background="custom" customBackground="bg-[#fffcf9]">
         <Container>
           {filteredItems.length > 0 ? (
             <>
-              {/* Results Count */}
-              <div className="mb-6">
+              {/* Search, Local Filter, and Results Count */}
+              <div className="mb-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="relative max-w-md">
+                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 bg-white"
+                    />
+                  </div>
+                  <label className="flex items-center gap-2 cursor-pointer whitespace-nowrap">
+                    <input
+                      type="checkbox"
+                      checked={showLocalOnly}
+                      onChange={(e) => setShowLocalOnly(e.target.checked)}
+                      className="rounded border-gray-300 text-accent-600 focus:ring-accent-500"
+                    />
+                    <span className="text-sm text-gray-700">Local pickup only</span>
+                  </label>
+                </div>
                 <p className="text-gray-600">
                   Showing {filteredItems.length} pre-owned item{filteredItems.length !== 1 ? 's' : ''}
                 </p>
               </div>
               
               {/* Grid */}
-              <Grid cols={4} gap="lg">
-                {filteredItems.map((item) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
+                {filteredItems.map((item, index) => (
                   <Link key={item.id} to={`/pre-owned/${item.id}`} className="block h-full">
-                    <PreOwnedCard item={item} className="h-full" />
+                    <PreOwnedCard 
+                      item={item} 
+                      className="h-full" 
+                      index={index}
+                      isVisible={cardsVisible[index] || false}
+                    />
                   </Link>
                 ))}
-              </Grid>
+              </div>
             </>
           ) : (
             <div className="text-center py-16">

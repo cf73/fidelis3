@@ -71,9 +71,6 @@ export const ProductCategories: React.FC = () => {
         <Container>
           <Flex direction="col" align="center" className="text-center">
             <H1 className="mb-6">Product Categories</H1>
-            <BodyLarge className="text-stone-600 max-w-4xl mx-auto leading-relaxed">
-              Explore our comprehensive collection of high-quality audio equipment, organized by category to help you find exactly what you're looking for.
-            </BodyLarge>
           </Flex>
         </Container>
       </Section>
@@ -81,14 +78,9 @@ export const ProductCategories: React.FC = () => {
       {/* Categories Grid - refined layout */}
       <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
         <Container>
-          {/* Intro row with short guidance */}
-          <div className="max-w-4xl mb-8">
-            <BodyLarge className="text-stone-700">
-              Explore categories to browse our collections. Each card previews the aesthetic of the products within.
-            </BodyLarge>
-          </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((category) => (
               <Link
                 key={category.id}

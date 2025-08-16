@@ -282,7 +282,7 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <H2 className="text-white mb-6">Ready to Experience Premium Audio?</H2>
+              <H2 className="text-white mb-6">Stay Informed</H2>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -290,25 +290,33 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <BodyLarge className="text-white mb-8 max-w-2xl">
-                Visit our showroom or browse our extensive collection of high-end audio equipment
+                Get updates when we receive new shipments from our manufacturers, host listening sessions in our Nashua showroom, or have insights worth sharing.
               </BodyLarge>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-x-4"
+              className="flex flex-col sm:flex-row items-center gap-4 max-w-md mx-auto"
             >
-              <Link to="/products">
-                <Button variant="primary" size="lg">
-                  Browse Products
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white hover:text-stone-900">
-                  Contact Us
-                </Button>
-              </Link>
+              <input
+                type="email"
+                placeholder="Your email"
+                className="flex-1 w-full px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 backdrop-blur-sm"
+              />
+              <Button variant="primary" size="lg" className="w-full sm:w-auto whitespace-nowrap">
+                Keep Me Posted
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-4"
+            >
+              <p className="text-white/70 text-sm">
+                We don't spam. Just the good stuff when it matters.
+              </p>
             </motion.div>
           </Flex>
         </Container>

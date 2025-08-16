@@ -93,32 +93,6 @@ const NewsDetail: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-[#fffcf9]"
     >
-      {/* Breadcrumb Navigation */}
-      <div className="bg-white shadow-sm border-b border-stone-200">
-        <div className="container-custom py-4">
-          <nav className="flex" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-4">
-              <li>
-                <Link
-                  to="/news"
-                  className="text-stone-500 hover:text-stone-700 transition-colors font-medium"
-                >
-                  NEWS
-                </Link>
-              </li>
-              <li>
-                <svg className="flex-shrink-0 h-5 w-5 text-stone-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </li>
-              <li>
-                <span className="text-stone-900 line-clamp-1 font-medium">{article.title}</span>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-
       {/* Hero Section - Full Width */}
       {article.image && (
         <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">

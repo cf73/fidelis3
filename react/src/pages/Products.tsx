@@ -31,7 +31,35 @@ const Products: React.FC = () => {
   const [sortBy, setSortBy] = useState<string>(searchParams.get('sort') || 'price-low');
   // Removed isProductFormOpen state since this page no longer opens the form
   const [showAllManufacturers, setShowAllManufacturers] = useState(false);
+  const [showAllCategories, setShowAllCategories] = useState(false);
+  const [maxVisibleItems, setMaxVisibleItems] = useState(6);
   const { user } = useAuth();
+
+  // Calculate dynamic truncation based on viewport height
+  useEffect(() => {
+    const calculateMaxItems = () => {
+      const viewportHeight = window.innerHeight;
+      const headerHeight = 80; // Approximate header height
+      const filterHeaderHeight = 120; // "Filters" title + spacing
+      const sortingHeight = 200; // Sorting controls + spacing
+      const buttonHeight = 40; // "Show More" button height
+      const padding = 100; // Extra padding for breathing room
+      
+      // Available height for filter lists
+      const availableHeight = viewportHeight - headerHeight - filterHeaderHeight - sortingHeight - buttonHeight - padding;
+      
+      // Each filter item is approximately 40px (32px + 8px spacing)
+      const itemHeight = 40;
+      const maxItems = Math.max(4, Math.floor(availableHeight / (itemHeight * 2))); // Divide by 2 since we have 2 filter sections
+      
+      setMaxVisibleItems(Math.min(maxItems, 12)); // Cap at 12 for very large screens
+    };
+
+    calculateMaxItems();
+    window.addEventListener('resize', calculateMaxItems);
+    
+    return () => window.removeEventListener('resize', calculateMaxItems);
+  }, []);
 
   // Load data
   useEffect(() => {
@@ -226,25 +254,87 @@ const Products: React.FC = () => {
                <div className="lg:sticky lg:top-32">
                  <h3 className="text-lg font-semibold text-stone-900 mb-6">Filters</h3>
                  <div className="space-y-8">
-                   {!selectedCategory && (
-                     <div>
-                       <label className="block text-sm font-medium text-stone-700 mb-3">
-                         Filter by Category
-                       </label>
-                       <select
-                         value={selectedCategory}
-                         onChange={(e) => handleFilterChange('category', e.target.value)}
-                         className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-stone-900"
-                       >
-                         <option value="">All Categories</option>
-                         {categories.map(category => (
-                           <option key={category.id} value={category.id}>
-                             {category.name}
-                           </option>
-                         ))}
-                       </select>
-                     </div>
-                   )}
+                                     {!selectedCategory && (
+                    <div>
+                      <label className="block text-sm font-medium text-stone-700 mb-3">
+                        Filter by Category
+                      </label>
+                      <div className="space-y-2">
+                        <label className="flex items-center space-x-3 cursor-pointer group">
+                          <div className="relative">
+                            <input
+                              type="radio"
+                              name="category"
+                              value=""
+                              checked={selectedCategory === ''}
+                              onChange={(e) => handleFilterChange('category', e.target.value)}
+                              className="sr-only"
+                            />
+                            <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                              selectedCategory === '' 
+                                ? 'border-primary-600 bg-primary-600' 
+                                : 'border-stone-300 group-hover:border-stone-400'
+                            }`}>
+                              {selectedCategory === '' && (
+                                <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                              )}
+                            </div>
+                          </div>
+                          <span className="text-stone-700 group-hover:text-stone-900 transition-colors">All Categories</span>
+                        </label>
+                        
+                        {(() => {
+                          // Show dynamic number of categories based on viewport height, or all if expanded
+                          const displayedCategories = showAllCategories 
+                            ? categories 
+                            : categories.slice(0, maxVisibleItems);
+
+                          return (
+                            <>
+                              <div className={showAllCategories ? "max-h-64 overflow-y-auto pr-2 space-y-2" : "space-y-2"}>
+                                {displayedCategories.map(category => (
+                                  <label key={category.id} className="flex items-center space-x-3 cursor-pointer group">
+                                    <div className="relative">
+                                      <input
+                                        type="radio"
+                                        name="category"
+                                        value={category.id}
+                                        checked={selectedCategory === category.id}
+                                        onChange={(e) => handleFilterChange('category', e.target.value)}
+                                        className="sr-only"
+                                      />
+                                      <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
+                                        selectedCategory === category.id 
+                                          ? 'border-primary-600 bg-primary-600' 
+                                          : 'border-stone-300 group-hover:border-stone-400'
+                                      }`}>
+                                        {selectedCategory === category.id && (
+                                          <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                                        )}
+                                      </div>
+                                    </div>
+                                    <span className="text-stone-700 group-hover:text-stone-900 transition-colors">{category.name}</span>
+                                  </label>
+                                ))}
+                              </div>
+                              
+                              {categories.length > maxVisibleItems && (
+                                <button
+                                  onClick={() => setShowAllCategories(!showAllCategories)}
+                                  className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors mt-2"
+                                >
+                                  {showAllCategories 
+                                    ? `Show Less (${categories.length - maxVisibleItems} fewer)` 
+                                    : `Show More (${categories.length - maxVisibleItems} more)`
+                                  }
+                                </button>
+                              )}
+                            </>
+                          );
+                        })()}
+                      </div>
+                    </div>
+                  )}
 
                                        <div>
                       <label className="block text-sm font-medium text-stone-700 mb-3">
@@ -285,10 +375,10 @@ const Products: React.FC = () => {
                                )
                              : manufacturers;
 
-                           // Show first 6 manufacturers by default, or all if expanded
+                           // Show dynamic number of manufacturers based on viewport height, or all if expanded
                            const displayedManufacturers = showAllManufacturers 
                              ? relevantManufacturers 
-                             : relevantManufacturers.slice(0, 6);
+                             : relevantManufacturers.slice(0, maxVisibleItems);
 
                            return (
                              <>
@@ -319,14 +409,14 @@ const Products: React.FC = () => {
                                  ))}
                                </div>
                                
-                               {relevantManufacturers.length > 6 && (
+                               {relevantManufacturers.length > maxVisibleItems && (
                                  <button
                                    onClick={() => setShowAllManufacturers(!showAllManufacturers)}
                                    className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors mt-2"
                                  >
                                    {showAllManufacturers 
-                                     ? `Show Less (${relevantManufacturers.length - 6} fewer)` 
-                                     : `Show More (${relevantManufacturers.length - 6} more)`
+                                     ? `Show Less (${relevantManufacturers.length - maxVisibleItems} fewer)` 
+                                     : `Show More (${relevantManufacturers.length - maxVisibleItems} more)`
                                    }
                                  </button>
                                )}
@@ -408,7 +498,7 @@ const Products: React.FC = () => {
                   </Body>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                   {sortedProducts.map((product) => (
                     <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
                       <ProductCard

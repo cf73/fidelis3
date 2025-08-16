@@ -9,6 +9,7 @@ import { RelationshipSelector } from '../components/RelationshipSelector';
 import { DeleteConfirmation } from '../components/DeleteConfirmation';
 import { ProductTabs, hasTabContent } from '../components/ProductTabs';
 import { ProductEditForm } from '../components/ProductEditForm';
+import { ProductCard } from '../components/ui/Card';
 
 
 export const ProductDetail: React.FC = () => {
@@ -126,26 +127,7 @@ export const ProductDetail: React.FC = () => {
       );
     }
     
-    if (product?.available_to_buy_online) {
-      return (
-        <div className="space-y-3">
-          <button className="w-full bg-yellow-500 text-white py-3 px-6 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 font-medium">
-            BUY NOW
-          </button>
-          {/* Payment Method Icons */}
-          <div className="flex justify-center space-x-2">
-            <span className="text-xs text-gray-500">We accept:</span>
-            <div className="flex space-x-1">
-              <span className="text-xs text-gray-400">Visa</span>
-              <span className="text-xs text-gray-400">•</span>
-              <span className="text-xs text-gray-400">Mastercard</span>
-              <span className="text-xs text-gray-400">•</span>
-              <span className="text-xs text-gray-400">PayPal</span>
-            </div>
-          </div>
-        </div>
-      );
-    }
+
     
     if (product?.local_only) {
       return (
@@ -192,44 +174,7 @@ export const ProductDetail: React.FC = () => {
       {/* Premium Hero Section */}
       <div className="relative bg-[#fffcf9] border-b border-stone-200">
         <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          {/* Breadcrumb Navigation */}
-          <nav className="flex mb-8" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-3 text-sm">
-              <li>
-                <Link
-                  to="/products"
-                  className="text-stone-500 hover:text-stone-700 transition-colors duration-200 font-medium"
-                >
-                  Products
-                </Link>
-              </li>
-              {product.categories && (
-                <>
-                  <li>
-                    <svg className="flex-shrink-0 h-4 w-4 text-stone-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </li>
-                  <li>
-                    <Link
-                      to={`/products?category=${product.categories.slug}`}
-                      className="text-stone-500 hover:text-stone-700 transition-colors duration-200 font-medium"
-                    >
-                      {product.categories.name}
-                    </Link>
-                  </li>
-                </>
-              )}
-              <li>
-                <svg className="flex-shrink-0 h-4 w-4 text-stone-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </li>
-              <li>
-                <span className="text-stone-900 font-medium">{product.title}</span>
-              </li>
-            </ol>
-          </nav>
+
 
           {/* Admin Actions */}
           {user && (
@@ -307,7 +252,7 @@ export const ProductDetail: React.FC = () => {
               <div className="flex flex-wrap gap-3">
                 {product.categories && (
                   <Link
-                    to={`/products?category=${product.categories.slug}`}
+                    to={`/products/list?category=${product.categories.id}`}
                     className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium hover:bg-stone-200 transition-colors duration-200"
                   >
                     {product.categories.name}
@@ -422,7 +367,7 @@ export const ProductDetail: React.FC = () => {
 
       {/* Pairs Well With Products */}
       {pairsWellWithProducts.length > 0 && (
-        <div className="bg-stone-50 py-24">
+        <div className="bg-white py-24">
           <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">
@@ -439,44 +384,21 @@ export const ProductDetail: React.FC = () => {
                 <p className="text-stone-600">Loading related products...</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
                 {pairsWellWithProducts.map((relatedProduct: Product) => (
-                  <Link
-                    key={relatedProduct.id}
-                    to={`/products/${relatedProduct.slug}`}
-                    className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="aspect-w-16 aspect-h-12">
-                      {relatedProduct.product_hero_image ? (
-                        <img
-                          src={getImageUrl(relatedProduct.product_hero_image)}
-                          alt={relatedProduct.title}
-                          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="w-full h-64 bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center">
-                          <svg className="h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-medium text-stone-900 mb-2 group-hover:text-stone-700 transition-colors duration-200">
-                        {relatedProduct.title}
-                      </h3>
-                      {relatedProduct.manufacturer && (
-                        <p className="text-sm text-stone-600 mb-3 font-medium">
-                          {relatedProduct.manufacturer.name}
-                        </p>
-                      )}
-                      {relatedProduct.brief_description && (
-                        <p className="text-sm text-stone-600 line-clamp-2 mb-3">{relatedProduct.brief_description}</p>
-                      )}
-                      {relatedProduct.show_price && relatedProduct.price && (
-                        <p className="text-lg font-medium text-stone-900">{formatPrice(relatedProduct.price)}</p>
-                      )}
-                    </div>
+                  <Link key={relatedProduct.id} to={`/products/${relatedProduct.slug}`} className="block h-full">
+                    <ProductCard
+                      product={{
+                        id: relatedProduct.id,
+                        title: relatedProduct.title,
+                        price: relatedProduct.price,
+                        manufacturer: relatedProduct.manufacturer,
+                        product_hero_image: relatedProduct.product_hero_image,
+                        categories: relatedProduct.categories,
+                        featured: relatedProduct.featured
+                      }}
+                      showCategory={false}
+                    />
                   </Link>
                 ))}
               </div>
@@ -487,7 +409,7 @@ export const ProductDetail: React.FC = () => {
 
       {/* Also Consider Products */}
       {alsoConsiderProducts.length > 0 && (
-        <div className="bg-stone-50 py-24">
+        <div className="bg-white py-24">
           <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">Also consider</h2>
@@ -495,44 +417,21 @@ export const ProductDetail: React.FC = () => {
                 More exceptional products that might interest you.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
               {alsoConsiderProducts.map((relatedProduct: Product) => (
-                <Link
-                  key={relatedProduct.id}
-                  to={`/products/${relatedProduct.slug}`}
-                  className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="aspect-w-16 aspect-h-12">
-                    {relatedProduct.product_hero_image ? (
-                      <img
-                        src={getImageUrl(relatedProduct.product_hero_image)}
-                        alt={relatedProduct.title}
-                        className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="w-full h-64 bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center">
-                        <svg className="h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-medium text-stone-900 mb-2 group-hover:text-stone-700 transition-colors duration-200">
-                      {relatedProduct.title}
-                    </h3>
-                    {relatedProduct.manufacturer && (
-                      <p className="text-sm text-stone-600 mb-3 font-medium">
-                        {relatedProduct.manufacturer.name}
-                      </p>
-                    )}
-                    {relatedProduct.brief_description && (
-                      <p className="text-sm text-stone-600 line-clamp-2 mb-3">{relatedProduct.brief_description}</p>
-                    )}
-                    {relatedProduct.show_price && relatedProduct.price && (
-                      <p className="text-lg font-medium text-stone-900">{formatPrice(relatedProduct.price)}</p>
-                    )}
-                  </div>
+                <Link key={relatedProduct.id} to={`/products/${relatedProduct.slug}`} className="block h-full">
+                  <ProductCard
+                    product={{
+                      id: relatedProduct.id,
+                      title: relatedProduct.title,
+                      price: relatedProduct.price,
+                      manufacturer: relatedProduct.manufacturer,
+                      product_hero_image: relatedProduct.product_hero_image,
+                      categories: relatedProduct.categories,
+                      featured: relatedProduct.featured
+                    }}
+                    showCategory={false}
+                  />
                 </Link>
               ))}
             </div>

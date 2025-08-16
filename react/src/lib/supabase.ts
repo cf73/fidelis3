@@ -747,7 +747,7 @@ export const getPreOwned = async (): Promise<PreOwned[]> => {
     .from('pre_owned')
     .select('*')
     .eq('published', true)
-    .order('created_at', { ascending: false });
+    .order('updated_at', { ascending: false });
 
   if (error) {
     console.error('Error fetching pre-owned items:', error);

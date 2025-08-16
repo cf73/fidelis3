@@ -10,6 +10,81 @@
 
 import React, { useState, useEffect } from 'react';
 import { getImageUrl } from '../../lib/supabase';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// Custom styles for mini carousel and polaroid effects
+const miniCarouselStyles = `
+  .preowned-swiper-bullet {
+    width: 6px;
+    height: 6px;
+    background: rgb(168 162 158);
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .preowned-swiper-bullet-active {
+    background: rgb(120 113 108);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  .polaroid-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+  .polaroid-card:hover {
+    transform: rotate(var(--hover-rotation)) !important;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleElement = document.createElement('style');
+  styleElement.textContent = miniCarouselStyles;
+  if (!document.head.querySelector('[data-preowned-carousel-styles]')) {
+    styleElement.setAttribute('data-preowned-carousel-styles', 'true');
+    document.head.appendChild(styleElement);
+  }
+}
+
+// Generate true Apple squircle path using superellipse formula
+const generateSquirclePath = (size: number = 100, cornerRadius: number = 24) => {
+  const points: string[] = [];
+  const steps = 360;
+  const a = size / 2; // semi-major axis
+  const b = size / 2; // semi-minor axis
+  const n = 4.8; // Squircle exponent (Apple uses ~4.8)
+  
+  for (let i = 0; i <= steps; i++) {
+    const angle = (2 * Math.PI * i) / steps;
+    const cosAngle = Math.cos(angle);
+    const sinAngle = Math.sin(angle);
+    
+    // Superellipse formula: |x/a|^n + |y/b|^n = 1
+    const x = a * Math.sign(cosAngle) * Math.pow(Math.abs(cosAngle), 2/n);
+    const y = b * Math.sign(sinAngle) * Math.pow(Math.abs(sinAngle), 2/n);
+    
+    const scaledX = x + size/2;
+    const scaledY = y + size/2;
+    
+    if (i === 0) {
+      points.push(`M ${scaledX} ${scaledY}`);
+    } else {
+      points.push(`L ${scaledX} ${scaledY}`);
+    }
+  }
+  points.push('Z');
+  return points.join(' ');
+};
 
 export interface CardProps {
   children: React.ReactNode;
@@ -30,11 +105,11 @@ export const Card: React.FC<CardProps> = ({
   href,
   as: Component = 'div'
 }) => {
-  const baseClasses = 'rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer';
+  const baseClasses = 'rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 ease-out overflow-hidden cursor-pointer';
   
   const variants = {
     default: 'bg-white',
-    product: 'bg-[#f4f0ed] hover:bg-[#ede9e6]',
+    product: 'bg-[#f4f0ed] hover:bg-[#e8e4e1]',
     news: 'bg-white hover:shadow-xl',
     manufacturer: 'bg-transparent shadow-none hover:shadow-none border-0',
     category: 'bg-white hover:shadow-xl transform hover:-translate-y-2 group',
@@ -49,7 +124,7 @@ export const Card: React.FC<CardProps> = ({
   };
   
   const classes = [
-    variant === 'manufacturer' ? 'rounded-xl transition-all duration-300 overflow-hidden cursor-pointer' : baseClasses,
+    variant === 'manufacturer' ? 'rounded-xl transition-all duration-200 ease-out overflow-hidden cursor-pointer' : baseClasses,
     variants[variant],
     sizes[size],
     className
@@ -97,17 +172,35 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col ${className}`}>
-      {/* Product Image */}
-      <div className="border-b border-[#f4f0ed] border-solid" style={{ borderWidth: '1px' }}>
+    <div className={`group cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.01] ${className}`}>
+      {/* Product Image - Square card with TRUE Apple squircle using superellipse mathematics */}
+      <div 
+        className="bg-[#f4f0ed] hover:bg-[#e8e4e1] transition-all duration-200 ease-out aspect-square mb-1 relative"
+        style={{
+          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`
+            <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+              <path d='${generateSquirclePath(100, 38)}' fill='white'/>
+            </svg>
+          `)}")`,
+          maskSize: '100% 100%',
+          maskRepeat: 'no-repeat',
+          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`
+            <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+              <path d='${generateSquirclePath(100, 38)}' fill='white'/>
+            </svg>
+          `)}")`,
+          WebkitMaskSize: '100% 100%',
+          WebkitMaskRepeat: 'no-repeat'
+        }}
+      >
         {product.product_hero_image ? (
           <img
             src={getImageUrl(product.product_hero_image)}
             alt={product.title}
-            className="w-full aspect-square object-contain mix-blend-multiply"
+            className="w-full h-full object-contain mix-blend-multiply p-4"
           />
         ) : (
-          <div className="w-full aspect-square flex items-center justify-center bg-gray-100">
+          <div className="w-full h-full flex items-center justify-center">
             <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -115,29 +208,36 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
       
-      {/* Product Content */}
-      <div className="px-6 pb-6 pt-8 flex flex-col flex-grow">
-        <h3 className="text-3xl font-bold text-gray-900 mb-2">{product.title}</h3>
+      {/* Product Content - Outside the card */}
+      <div className="space-y-0.5 pt-1 text-center">
+        {/* Product name - centered */}
+        <h3 className="text-base font-semibold text-stone-900 leading-tight">{product.title}</h3>
+        
+        {/* Manufacturer - centered */}
         {product.manufacturer && (
-          <p className="text-sm text-gray-600">{typeof product.manufacturer === 'string' ? product.manufacturer : product.manufacturer.name}</p>
+          <p className="text-xs text-stone-600">{typeof product.manufacturer === 'string' ? product.manufacturer : product.manufacturer.name}</p>
         )}
-        <div className="mt-3 flex items-center justify-between">
-          {showPrice && product.price && (
-            <p className="text-xl font-bold text-gray-900">${product.price.toLocaleString()}</p>
-          )}
-          <div className="flex flex-wrap gap-2">
-            {showBadges && showCategory && product.categories && (
-              <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-stone-200 text-stone-700">
+        
+        {/* Price - centered */}
+        {showPrice && product.price && (
+          <p className="text-sm font-semibold text-stone-900">${product.price.toLocaleString()}</p>
+        )}
+        
+        {/* Badges - centered */}
+        {showBadges && (showCategory && product.categories || product.featured) && (
+          <div className="flex flex-wrap gap-1 justify-center">
+            {showCategory && product.categories && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-stone-200 text-stone-700">
                 {product.categories.name}
               </span>
             )}
-            {showBadges && product.featured && (
-              <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-stone-800 text-stone-50">
+            {product.featured && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-stone-800 text-white">
                 Featured
               </span>
             )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
@@ -161,7 +261,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col md:flex-row h-full group ${className}`}>
+    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#e8e4e1] transition-all duration-300 ease-in-out cursor-pointer relative overflow-hidden flex flex-col md:flex-row h-full group ${className}`}>
       {/* Image */}
       <div className="relative overflow-hidden w-full md:w-1/2">
         <div className="w-full h-48 md:h-full">
@@ -169,7 +269,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             <img
               src={getImageUrl(article.image)}
               alt={article.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center">
@@ -273,26 +373,45 @@ export interface CategoryCardProps {
 // Mid-century card, aligned with ProductCard styling
 export const CategoryCard: React.FC<CategoryCardProps> = ({ category, className = '' }) => {
   return (
-    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#ede9e6] transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full ${className}`}>
-      {/* Image area */}
-      <div className="relative aspect-square border-b border-[#f4f0ed]">
+    <div className={`group cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.01] flex flex-col h-full ${className}`}>
+      {/* Category Image - Square card with Apple squircle */}
+      <div 
+        className="bg-[#f4f0ed] hover:bg-[#e8e4e1] transition-all duration-200 ease-out aspect-square mb-1 relative"
+        style={{
+          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`
+            <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+              <path d='${generateSquirclePath(100, 38)}' fill='white'/>
+            </svg>
+          `)}")`,
+          maskSize: '100% 100%',
+          maskRepeat: 'no-repeat',
+          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`
+            <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+              <path d='${generateSquirclePath(100, 38)}' fill='white'/>
+            </svg>
+          `)}")`,
+          WebkitMaskSize: '100% 100%',
+          WebkitMaskRepeat: 'no-repeat'
+        }}
+      >
         {category.heroImage ? (
           <img
             src={getImageUrl(category.heroImage)}
             alt={category.name}
-            className="w-full h-full object-contain mix-blend-multiply"
+            className="w-full h-full object-contain mix-blend-multiply p-4"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-stone-400">No image</div>
+          <div className="w-full h-full flex items-center justify-center text-stone-400">
+            <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
         )}
       </div>
-      {/* Content */}
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-xl font-semibold text-stone-900 leading-snug line-clamp-2">{category.name}</h3>
-        <div className="mt-auto pt-4 flex items-center gap-2 text-xs text-stone-600">
-          <span className="inline-flex items-center px-2 py-1 rounded bg-stone-200/70">Placeholder content</span>
-          <span className="inline-flex items-center px-2 py-1 rounded bg-stone-200/70">Placeholder content</span>
-        </div>
+      
+      {/* Category Content - Outside the card */}
+      <div className="flex flex-col flex-grow pt-1">
+        <h3 className="text-base font-semibold text-stone-900 leading-tight text-center">{category.name}</h3>
       </div>
     </div>
   );
@@ -579,7 +698,7 @@ export const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
                   // Navigate to category page
                   window.location.href = `/products?category=${category.id}`;
                 }}
-                className={`w-full p-4 text-left transition-all duration-300 border ${
+                className={`w-full p-4 text-left transition-all duration-200 ease-out border ${
                   index === activeCategory
                     ? 'border-white/30 bg-white/10 text-white'
                     : 'border-white/10 text-white/70 hover:border-white/20 hover:bg-white/5'
@@ -610,13 +729,18 @@ export interface PreOwnedCardProps {
     local_only?: boolean;
     shipping?: number;
     original_accessories?: string;
+    updated_at: string;
   };
   className?: string;
+  index?: number;
+  isVisible?: boolean;
 }
 
 export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
   item,
-  className = ''
+  className = '',
+  index = 0,
+  isVisible = true
 }) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -633,85 +757,204 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
     return { savings, percentage };
   };
 
+  const formatListingDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (diffInDays === 0) return 'Listed today';
+    if (diffInDays === 1) return 'Listed yesterday';
+    if (diffInDays < 7) return `Listed ${diffInDays} days ago`;
+    if (diffInDays < 30) return `Listed ${Math.floor(diffInDays / 7)} week${Math.floor(diffInDays / 7) > 1 ? 's' : ''} ago`;
+    
+    return date.toLocaleDateString('en-US', { 
+      month: 'short', 
+      day: 'numeric',
+      year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
+    });
+  };
+
   const savings = item.your_price && item.new_retail_price 
     ? calculateSavings(item.your_price, item.new_retail_price)
     : null;
 
+  // Generate a consistent subtle random rotation for each card based on its ID
+  const getCardRotation = (id: string) => {
+    // Use the ID to generate a consistent "random" rotation between -1 and 1 degrees
+    const hash = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const rotation = ((hash % 200) - 100) / 100; // Range: -1 to 1
+    return rotation;
+  };
+
+  const cardRotation = getCardRotation(item.id);
+  // Create a subtle hover rotation (add 0.8 degree shift)
+  const hoverRotation = cardRotation + (cardRotation > 0 ? 0.8 : -0.8);
+
+  // Calculate staggered animation delay (faster now)
+  const animationDelay = index * 80; // 80ms between each card
+
   return (
-    <div className={`bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full group ${className}`}>
-      {/* Image Section */}
+    <div 
+      className={`group cursor-pointer transition-all duration-400 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      } ${className}`}
+      style={{ 
+        transitionDelay: `${animationDelay}ms`
+      }}
+    >
+      {/* Image Section - White card with carousel */}
       {item.images && item.images.length > 0 && (
-        <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-          <img
-            src={getImageUrl(item.images[0])}
-            alt={item.title}
-            className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
-          />
-          {/* Local pickup badge */}
-          {item.local_only && (
-            <div className="absolute top-3 right-3">
-              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-800">
-                Local Pickup
-              </span>
+        <div 
+          className="polaroid-card bg-white rounded-2xl p-4 shadow-md mb-3 transition-transform duration-300 ease-out"
+          style={{ 
+            '--base-rotation': `${cardRotation}deg`,
+            '--hover-rotation': `${hoverRotation}deg`,
+            transform: `rotate(${cardRotation}deg)`
+          } as React.CSSProperties & { '--base-rotation': string; '--hover-rotation': string }}
+        >
+          {item.images.length === 1 ? (
+            /* Single image */
+            <div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-stone-50">
+                <img
+                  src={getImageUrl(item.images[0])}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  style={{ 
+                    imageRendering: 'high-quality',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)'
+                  }}
+                />
+                {/* Polaroid inward shadow */}
+                <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+                {/* Subtle overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Local pickup badge */}
+                {item.local_only && (
+                  <div className="absolute top-3 right-3">
+                    <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
+                      Local Pickup
+                    </span>
+                  </div>
+                )}
+              </div>
+              {/* Empty space for pagination alignment */}
+              <div className="h-[7.2px] mt-3"></div>
+              
+              {/* Polaroid bottom area with title */}
+              <div className="pt-3 pb-2">
+                <h3 className="text-sm font-medium text-stone-800 leading-tight text-center line-clamp-2 min-h-[2.5rem] tracking-wide">
+                  {item.title}
+                </h3>
+              </div>
+            </div>
+          ) : (
+            /* Multiple images - Mini Carousel */
+            <div className="relative">
+              <Swiper
+                modules={[Navigation, Pagination]}
+                spaceBetween={0}
+                slidesPerView={1}
+                navigation={{
+                  nextEl: `.preowned-swiper-next-${item.id}`,
+                  prevEl: `.preowned-swiper-prev-${item.id}`,
+                }}
+                pagination={{
+                  clickable: true,
+                  el: `.preowned-swiper-pagination-${item.id}`,
+                  bulletClass: 'preowned-swiper-bullet',
+                  bulletActiveClass: 'preowned-swiper-bullet-active',
+                }}
+                className="preowned-card-swiper"
+              >
+                {item.images.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative aspect-[4/3] bg-stone-50 rounded-xl overflow-hidden">
+                      <img
+                        src={getImageUrl(image)}
+                        alt={`${item.title} - Image ${index + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        style={{ 
+                          imageRendering: 'high-quality',
+                          backfaceVisibility: 'hidden',
+                          transform: 'translateZ(0)'
+                        }}
+                      />
+                      {/* Polaroid inward shadow */}
+                      <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              
+              {/* Mini Navigation Buttons */}
+              <button className={`preowned-swiper-prev-${item.id} absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100`}>
+                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd"/>
+                </svg>
+              </button>
+              
+              <button className={`preowned-swiper-next-${item.id} absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100`}>
+                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
+                </svg>
+              </button>
+              
+              {/* Mini Pagination */}
+              <div className={`preowned-swiper-pagination-${item.id} flex justify-center items-center space-x-1 mt-3`}></div>
+              
+              {/* Polaroid bottom area with title */}
+              <div className="pt-3 pb-2">
+                <h3 className="text-sm font-medium text-stone-800 leading-tight text-center line-clamp-2 min-h-[2.5rem] tracking-wide">
+                  {item.title}
+                </h3>
+              </div>
+              
+              {/* Local pickup badge */}
+              {item.local_only && (
+                <div className="absolute top-3 right-3 z-10">
+                  <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
+                    Local Pickup
+                  </span>
+                </div>
+              )}
             </div>
           )}
         </div>
       )}
       
-      {/* Content Section */}
-      <div className="flex flex-col flex-grow p-6">
-        {/* Title */}
-        <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight line-clamp-2">
-          {item.title}
-        </h3>
-        
+      {/* Content Section - Centered */}
+      <div className="space-y-2 text-center">
         {/* Pricing Section */}
-        <div className="mb-4">
-          {item.your_price && !item.hide_your_price && (
-            <div className="flex items-baseline gap-3 mb-2">
-              <span className="text-2xl font-bold text-gray-900">
+        {item.your_price && !item.hide_your_price && (
+          <div className="space-y-1">
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-lg font-bold text-stone-900">
                 {formatPrice(item.your_price)}
               </span>
               {item.new_retail_price && (
-                <span className="text-sm text-gray-500 line-through">
+                <span className="text-xs text-stone-500 line-through">
                   {formatPrice(item.new_retail_price)}
                 </span>
               )}
             </div>
-          )}
-          
-          {savings && (
-            <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-50 text-green-700 text-sm font-medium">
-              Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
-            </div>
-          )}
-        </div>
-
-        {/* Description - Truncated */}
-        {item.description && (
-          <div className="mb-4 flex-grow">
-            <div 
-              className="text-sm text-gray-600 line-clamp-2 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: item.description }}
-            />
+            
+            {/* Savings Badge */}
+            {savings && (
+              <div>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-100">
+                  Save {savings.percentage.toFixed(0)}% off
+                </span>
+              </div>
+            )}
           </div>
         )}
 
-        {/* Key Details - Minimal */}
-        <div className="mt-auto space-y-2 text-sm text-gray-600">
-          {item.original_accessories && (
-            <div className="flex items-center gap-2 text-gray-500">
-              <span className="text-gray-400">📦</span>
-              <span className="truncate">{item.original_accessories}</span>
-            </div>
-          )}
-          
-          {item.shipping !== null && item.shipping !== undefined && (
-            <div className="flex items-center gap-2 text-gray-500">
-              <span className="text-gray-400">🚚</span>
-              <span>{item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping)}`}</span>
-            </div>
-          )}
+        {/* Listing Date */}
+        <div className="text-xs text-stone-500 font-medium">
+          {formatListingDate(item.updated_at)}
         </div>
       </div>
     </div>

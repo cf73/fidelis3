@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import { Section, Container, Grid, Flex, H3, Body, BodySmall } from './ui';
 import { useAuth } from '../contexts/AuthContext';
 import { SignIn } from './SignIn';
 
@@ -17,101 +16,146 @@ const Footer: React.FC = () => {
       console.error('Sign out failed', err);
     }
   };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        duration: 0.6
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <footer>
-      <Section variant="compact" background="custom" customBackground="bg-stone-900">
-        <Container className="text-white">
-          <Grid cols={4} gap="lg">
-            {/* Brand / About */}
-            <div className="col-span-1 md:col-span-2">
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-                <H3 className="text-white mb-4">Fidelis Audio</H3>
-                <Body className="text-stone-300 max-w-md">Placeholder content</Body>
-                <div className="mt-6 space-y-3">
-                  <Flex align="center" gap="sm" className="text-stone-300">
-                    <MapPinIcon className="h-5 w-5 text-white/80" />
-                    <BodySmall className="text-stone-300">Placeholder content</BodySmall>
-                  </Flex>
-                  <Flex align="center" gap="sm" className="text-stone-300">
-                    <PhoneIcon className="h-5 w-5 text-white/80" />
-                    <BodySmall className="text-stone-300">Placeholder content</BodySmall>
-                  </Flex>
-                  <Flex align="center" gap="sm" className="text-stone-300">
-                    <EnvelopeIcon className="h-5 w-5 text-white/80" />
-                    <BodySmall className="text-stone-300">Placeholder content</BodySmall>
-                  </Flex>
+    <footer className="relative overflow-hidden">
+      {/* Sophisticated Background with Subtle Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      
+      {/* Minimalist Footer Content */}
+      <div className="relative">
+        <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 lg:grid-cols-3 gap-12"
+          >
+            {/* Brand Section - Minimalist */}
+            <motion.div variants={itemVariants}>
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-3xl font-light text-white tracking-wide">
+                    Fidelis Audio
+                  </h2>
                 </div>
-              </motion.div>
-            </div>
 
-            {/* Quick Links */}
-            <div>
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.05 }}>
-                <H3 className="text-white mb-4">Quick Links</H3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/products" className="text-stone-300 hover:text-white transition-colors">Products</Link>
-                  </li>
-                  <li>
-                    <Link to="/manufacturers" className="text-stone-300 hover:text-white transition-colors">Manufacturers</Link>
-                  </li>
-                  <li>
-                    <Link to="/news" className="text-stone-300 hover:text-white transition-colors">News</Link>
-                  </li>
-                  <li>
-                    <Link to="/pre-owned" className="text-stone-300 hover:text-white transition-colors">Pre-Owned</Link>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
+                <p className="text-stone-400 leading-relaxed max-w-sm">
+                  Connecting you to the soul of music through carefully curated listening experiences.
+                </p>
+              </div>
+            </motion.div>
 
-            {/* Support */}
-            <div>
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }}>
-                <H3 className="text-white mb-4">Support</H3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/about" className="text-stone-300 hover:text-white transition-colors">About Us</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact" className="text-stone-300 hover:text-white transition-colors">Contact</Link>
-                  </li>
-                  <li>
-                    <a href="#" className="text-stone-300 hover:text-white transition-colors">Demo Appointments</a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-stone-300 hover:text-white transition-colors">Service & Support</a>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
-          </Grid>
+            {/* Contact Information - Streamlined */}
+            <motion.div variants={itemVariants}>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-sm text-stone-300">
+                    460 Amherst Street<br />
+                    Nashua, NH 03063
+                  </p>
+                  
+                  <p className="text-sm text-stone-300">
+                    <a href="tel:+1-555-FIDELIS" className="hover:text-white transition-colors duration-300">
+                      +1 (555) FIDELIS
+                    </a>
+                  </p>
+                  
+                  <p className="text-sm text-stone-300">
+                    <a href="mailto:hello@fidelisaudio.com" className="hover:text-white transition-colors duration-300">
+                      hello@fidelisaudio.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </motion.div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-white/10 mt-10 pt-6">
-            <Flex justify="between" align="center" className="flex-col md:flex-row gap-4">
-              <BodySmall className="text-stone-400">© 2024 Fidelis Audio. All rights reserved.</BodySmall>
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-stone-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-                <a href="#" className="text-stone-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+            {/* Navigation - Condensed */}
+            <motion.div variants={itemVariants}>
+              <div className="space-y-4">
+                <nav className="space-y-2">
+                  {[
+                    { to: "/products", label: "Products" },
+                    { to: "/manufacturers", label: "Manufacturers" },
+                    { to: "/pre-owned", label: "Pre-Owned" },
+                    { to: "/news", label: "News" },
+                    { to: "/contact", label: "Contact" }
+                  ].map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="block text-sm text-stone-400 hover:text-white transition-colors duration-300"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Minimalist Bottom Bar */}
+        <div className="relative border-t border-white/10">
+          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-stone-400">© 2024 Fidelis Audio. All rights reserved.</p>
+              
+              <div className="flex items-center gap-6 text-sm">
                 {!user ? (
                   <button
                     onClick={() => setIsSignInOpen(true)}
-                    className="text-stone-400 hover:text-white transition-colors text-sm"
+                    className="text-stone-400 hover:text-white transition-colors duration-300"
                   >
                     Sign In
                   </button>
                 ) : (
                   <>
-                    <Link to="/admin" className="text-stone-400 hover:text-white transition-colors text-sm">Admin</Link>
-                    <button onClick={handleSignOut} className="text-stone-400 hover:text-white transition-colors text-sm">Sign Out</button>
+                    <Link 
+                      to="/admin" 
+                      className="text-stone-400 hover:text-white transition-colors duration-300"
+                    >
+                      Admin
+                    </Link>
+                    <button 
+                      onClick={handleSignOut} 
+                      className="text-stone-400 hover:text-white transition-colors duration-300"
+                    >
+                      Sign Out
+                    </button>
                   </>
                 )}
               </div>
-            </Flex>
+            </div>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </div>
+      
       <SignIn isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
     </footer>
   );
