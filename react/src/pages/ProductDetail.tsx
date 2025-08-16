@@ -7,7 +7,7 @@ import { ContextualCMS, CMSTrigger } from '../components/ContextualCMS';
 import { ImageUpload } from '../components/ImageUpload';
 import { RelationshipSelector } from '../components/RelationshipSelector';
 import { DeleteConfirmation } from '../components/DeleteConfirmation';
-import { ProductTabs } from '../components/ProductTabs';
+import { ProductTabs, hasTabContent } from '../components/ProductTabs';
 import { ProductEditForm } from '../components/ProductEditForm';
 
 
@@ -412,10 +412,12 @@ export const ProductDetail: React.FC = () => {
           </div>
         )}
 
-        {/* Tabbed Content */}
-        <div className="mb-32">
-          <ProductTabs product={product} />
-        </div>
+        {/* Tabbed Content - only show if there are tabs with content */}
+        {hasTabContent(product) && (
+          <div className="mb-32">
+            <ProductTabs product={product} />
+          </div>
+        )}
       </div>
 
       {/* Pairs Well With Products */}

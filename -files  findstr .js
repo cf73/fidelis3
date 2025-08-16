@@ -1,0 +1,10 @@
+[33m86d011d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mvisual-design-system[m[33m, [m[1;31morigin/visual-design-system[m[33m)[m feat: comprehensive review content migration and published status system
+[33m34fe2154[m Add unified contextual CMS system with slide-in drawer, image upload, and relationship management
+[33m21fdaba0[m feat: Complete CMS and product management overhaul
+[33mf42fc063[m feat: implement compact two-column news layout and fix navigation links
+[33mf3e5df5d[m Enhance news cards with full descriptions and remove truncation
+[33m45b0e196[m feat: implement unified card system with height alignment and design refinements
+[33m5c5168e7[m Refactor News and ProductCategories pages to use new design system - Updated styling to stone color palette, improved typography with H1, H2, H3, Body, BodyLarge components, and enhanced layout with Section, Grid, Container components
+[33mbbd61029[m Refactor pages to use new design system components - Products, Home, Manufacturers, Contact, About pages now use Section, Grid, Container, Flex, Typography, and Button components with refined midcentury modern styling
+[33m261ff3cf[m refactor: streamline ProductCard to single refined design, remove unnecessary variants
+[33m554e42ac[m feat: create ProductCard component with refined midcentury modern design - Extracted sophisticated card design from moodboard into reusable component - Added multiple variants (default, elevated, minimal) and sizes (sm, md, lg) - Created comprehensive demo page showcasing all variants with stress test products - Maintained visual-only changes, no functionality modifications

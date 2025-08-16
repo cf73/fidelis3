@@ -3,9 +3,18 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const supabaseUrl = 'https://myrdvcihcqphixvunvkv.supabase.co';
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
 // Try with service role key for higher permissions
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cmR2Y2loY3FwaGl4dnVudmt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDExMjY2OCwiZXhwIjoyMDY5Njg4NjY4fQ.Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8';
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY; // Service role key for admin operations
+
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error('❌ Missing required environment variables:');
+  console.error('   VITE_SUPABASE_URL:', supabaseUrl ? '✓' : '❌');
+  console.error('   SUPABASE_SERVICE_ROLE_KEY:', supabaseKey ? '✓' : '❌');
+  console.error('\nPlease check your .env file and ensure both variables are set.');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 

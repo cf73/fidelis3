@@ -33,6 +33,9 @@ yarn-error.log*
 **/upload-*.js
 **/debug-*.js
 **/populate-*.js
+**/import-*.js
+**/revert-*.js
+**/restore-*.js
 
 # Security documentation (keep this tracked)
 !SECURITY_GUIDELINES.md

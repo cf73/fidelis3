@@ -4,14 +4,13 @@ import dotenv from 'dotenv';
 // Load environment variables
 dotenv.config({ path: '.env' });
 
-const supabaseUrl = 'https://myrdvcihcqphixvunvkv.supabase.co';
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
 
-// Try different possible keys
+// Try environment keys only
 const possibleKeys = [
   process.env.SUPABASE_ANON_KEY,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cmR2Y2loY3FwaGl4dnVudm12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5NzE5NzAsImV4cCI6MjA1MTU0Nzk3MH0.Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8'
-];
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+].filter(Boolean); // Remove undefined values
 
 async function testKeys() {
   console.log('🔍 Testing Supabase keys...\n');
