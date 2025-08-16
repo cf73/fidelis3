@@ -1,172 +1,143 @@
+import { createClient } from '@supabase/supabase-js';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
-import { createClient } from '@supabase/supabase-js';
+import matter from 'gray-matter';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Supabase configuration
-const supabaseUrl = 'https://myrdvcihcqphixvunvkv.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cmR2Y2loY3FwaGl4dnVudmt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDExMjY2OCwiZXhwIjoyMDY5Njg4NjY4fQ.389AOuFRVkhxesYoEEUmWWuL5Mkl0yU1OQMWG_BhgMM';
+const supabaseUrl = 'https://lkgjhgfdyuiovbnmkjhg.supabase.co';
+const supabaseKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrZ2poZ2ZkeXVpb3Zibm1ramhnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxNjQ4MTcwMCwiZXhwIjoyMDMyMDU3NzAwfQ.2bgJWT6lGCNVoLmwdRDcf_mq2Vny2qkG6Ga2v46i8t4';
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Function to convert Statamic Bard content to HTML
-function convertBardToHtml(bardContent) {
-  if (!bardContent || !Array.isArray(bardContent)) {
-    return '';
-  }
-
-  let html = '';
-  
-  for (const block of bardContent) {
-    if (block.type === 'paragraph') {
-      html += '<p>';
-      if (block.content && Array.isArray(block.content)) {
-        for (const content of block.content) {
-          if (content.type === 'text') {
-            html += content.text || '';
-          } else if (content.type === 'hard_break') {
-            html += '<br>';
-          }
-        }
-      }
-      html += '</p>';
-    } else if (block.type === 'heading') {
-      const level = block.attrs?.level || 3;
-      html += `<h${level}>`;
-      if (block.content && Array.isArray(block.content)) {
-        for (const content of block.content) {
-          if (content.type === 'text') {
-            html += content.text || '';
-          }
-        }
-      }
-      html += `</h${level}>`;
-    }
-  }
-  
-  return html;
-}
-
-// Function to convert reviews to the expected format
-function convertReviews(reviewsSet) {
+function extractReviewContent(reviewsSet) {
   if (!reviewsSet || !Array.isArray(reviewsSet)) {
     return [];
   }
 
-  return reviewsSet.map(review => ({
-    excerpt: review.excerpt ? convertBardToHtml(review.excerpt) : null,
-    attribution: review.attribution || null,
-    link: review.link || null,
-    date_of_review: review.date_of_review || null
-  }));
-}
-
-async function migrateReviewsProperly() {
-  try {
-    console.log('🚀 Starting proper reviews migration from Statamic files...');
+  return reviewsSet.map(review => {
+    let extractedExcerpt = '';
     
-    // Read all product files from Statamic
-    const productsDir = path.join(__dirname, 'content', 'collections', 'products');
-    const productFiles = fs.readdirSync(productsDir).filter(file => file.endsWith('.md'));
-    
-    console.log(`📁 Found ${productFiles.length} product files`);
-    
-    let migratedCount = 0;
-    let skippedCount = 0;
-    let errorCount = 0;
-    
-    for (const file of productFiles) {
-      try {
-        const filePath = path.join(productsDir, file);
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        
-        // Parse the YAML front matter
-        const yamlMatch = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (!yamlMatch) {
-          skippedCount++;
-          continue;
+    // Extract text from nested Statamic structure
+    if (review.excerpt && Array.isArray(review.excerpt)) {
+      review.excerpt.forEach(item => {
+        if (item.type === 'paragraph' && item.content && Array.isArray(item.content)) {
+          item.content.forEach(textItem => {
+            if (textItem.type === 'text' && textItem.text) {
+              extractedExcerpt += textItem.text + ' ';
+            }
+          });
         }
-        
-        const yamlContent = yamlMatch[1];
-        const productData = yaml.load(yamlContent);
-        
-        if (!productData.id || !productData.reivews_set) {
-          skippedCount++;
-          continue;
-        }
-        
-        // Convert reviews to proper format
-        const reviews = convertReviews(productData.reivews_set);
-        
-        if (reviews.length === 0) {
-          skippedCount++;
-          continue;
-        }
-        
-        // Check if any review has content
-        const hasContent = reviews.some(review => review.excerpt && review.excerpt.trim() !== '');
-        if (!hasContent) {
-          console.log(`⚠️  Skipping ${file}: Reviews have no content`);
-          skippedCount++;
-          continue;
-        }
-        
-        console.log(`✅ Migrating reviews for ${file} (${productData.id}) - ${reviews.length} reviews`);
-        
-        // Update the product in Supabase
-        const { data, error } = await supabase
-          .from('products')
-          .update({ reivews_set: reviews })
-          .eq('id', productData.id);
-        
-        if (error) {
-          console.error(`❌ Error updating ${file} (${productData.id}):`, error.message);
-          errorCount++;
-        } else {
-          console.log(`✅ Successfully migrated reviews for ${file}`);
-          migratedCount++;
-        }
-        
-      } catch (error) {
-        console.error(`❌ Error processing ${file}:`, error.message);
-        errorCount++;
-      }
-    }
-    
-    console.log('\n📊 Migration Summary:');
-    console.log(`✅ Successfully migrated: ${migratedCount} products`);
-    console.log(`⚠️  Skipped: ${skippedCount} products`);
-    console.log(`❌ Errors: ${errorCount} products`);
-    
-    // Verify the migration
-    console.log('\n🔍 Verifying migration...');
-    const { data: sampleProducts, error: verifyError } = await supabase
-      .from('products')
-      .select('id, title, reivews_set')
-      .not('reivews_set', 'is', null)
-      .limit(5);
-    
-    if (verifyError) {
-      console.error('❌ Error verifying migration:', verifyError.message);
-    } else {
-      console.log('📋 Sample products after migration:');
-      sampleProducts.forEach(product => {
-        const isArray = Array.isArray(product.reivews_set);
-        const count = isArray ? product.reivews_set.length : 0;
-        const hasContent = isArray && count > 0 && product.reivews_set.some(review => review.excerpt && review.excerpt.trim() !== '');
-        console.log(`   - ${product.title}: ${isArray ? '✅' : '❌'} Array with ${count} reviews, has content: ${hasContent ? '✅' : '❌'}`);
       });
     }
-    
-  } catch (error) {
-    console.error('❌ Migration failed:', error);
-  }
+
+    return {
+      excerpt: extractedExcerpt.trim() || '',
+      attribution: review.attribution || '',
+      link: review.link || '',
+      date_of_review: review.date_of_review || null
+    };
+  });
 }
 
-// Run the migration
-migrateReviewsProperly();
+async function migrateReviews() {
+  const productsDir = path.resolve('content/collections/products');
+  const files = fs.readdirSync(productsDir).filter(file => file.endsWith('.md'));
 
+  console.log(`Found ${files.length} product files to process...`);
+
+  for (const file of files) {
+    try {
+      const filePath = path.join(productsDir, file);
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const { data: frontMatter } = matter(fileContent);
+      
+      const slug = path.basename(file, '.md');
+      
+      if (frontMatter.reivews_set) {
+        console.log(`\nProcessing reviews for ${slug}...`);
+        
+        // First, get the current product data from Supabase
+        const { data: currentProduct, error: fetchError } = await supabase
+          .from('products')
+          .select('reivews_set')
+          .eq('slug', slug)
+          .single();
+
+        if (fetchError) {
+          console.error(`Error fetching current data for ${slug}:`, fetchError);
+          continue;
+        }
+
+        // Parse existing reviews if any
+        let existingReviews = [];
+        if (currentProduct?.reivews_set) {
+          try {
+            existingReviews = JSON.parse(currentProduct.reivews_set);
+            if (!Array.isArray(existingReviews)) {
+              existingReviews = [];
+            }
+          } catch (e) {
+            console.log(`Current reviews_set for ${slug} is not valid JSON, will replace`);
+            existingReviews = [];
+          }
+        }
+
+        // Extract and clean the review content from Statamic
+        const newReviews = extractReviewContent(frontMatter.reivews_set);
+        
+        if (newReviews.length > 0) {
+          console.log(`Found ${newReviews.length} review(s) in Statamic for ${slug}`);
+          console.log(`Existing reviews in Supabase: ${existingReviews.length}`);
+          
+          // Check if we need to update
+          let needsUpdate = false;
+          
+          if (existingReviews.length === 0) {
+            console.log('No existing reviews, will add new ones');
+            needsUpdate = true;
+          } else {
+            // Check if existing reviews have proper excerpt content
+            const hasValidExcerpts = existingReviews.some(review => 
+              review.excerpt && typeof review.excerpt === 'string' && review.excerpt.length > 10
+            );
+            
+            if (!hasValidExcerpts) {
+              console.log('Existing reviews lack proper excerpt content, will update');
+              needsUpdate = true;
+            } else {
+              console.log('Existing reviews already have valid content, skipping');
+            }
+          }
+          
+          if (needsUpdate) {
+            console.log('Sample new review excerpt:', newReviews[0].excerpt?.substring(0, 100) + '...');
+            
+            // Update the product in Supabase with the properly extracted reviews
+            const { error } = await supabase
+              .from('products')
+              .update({ 
+                reivews_set: JSON.stringify(newReviews)
+              })
+              .eq('slug', slug);
+
+            if (error) {
+              console.error(`Error updating ${slug}:`, error);
+            } else {
+              console.log(`✅ Successfully updated reviews for ${slug}`);
+            }
+          }
+        } else {
+          console.log(`No valid reviews found in Statamic for ${slug}`);
+        }
+      } else {
+        // Don't log for products without reviews to reduce noise
+        // console.log(`No reviews_set found for ${slug}`);
+      }
+    } catch (error) {
+      console.error(`Error processing ${file}:`, error);
+    }
+  }
+
+  console.log('\nMigration complete!');
+}
+
+migrateReviews();

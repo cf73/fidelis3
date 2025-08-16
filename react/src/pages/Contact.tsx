@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
 
 export const Contact: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  useEffect(() => {
+    const product = searchParams.get('product');
+    const manufacturer = searchParams.get('manufacturer');
+    const demo = searchParams.get('demo');
+    
+    if (product && demo === 'store') {
+      const productWithManufacturer = manufacturer ? `${manufacturer} ${product}` : product;
+      setFormData({
+        name: '',
+        email: '',
+        subject: `Store Demo Request: ${productWithManufacturer}`,
+        message: `I would like to schedule a store demo for the ${productWithManufacturer}. Please let me know what times are available.`
+      });
+    }
+  }, [searchParams]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
@@ -93,6 +126,8 @@ export const Contact: React.FC = () => {
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                       placeholder="Your name"
                     />
@@ -106,6 +141,8 @@ export const Contact: React.FC = () => {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                       placeholder="your.email@example.com"
                     />
@@ -119,6 +156,8 @@ export const Contact: React.FC = () => {
                       type="text"
                       id="subject"
                       name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                       placeholder="What can we help you with?"
                     />
@@ -132,6 +171,8 @@ export const Contact: React.FC = () => {
                       id="message"
                       name="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                       placeholder="Tell us more about your inquiry..."
                     />

@@ -112,9 +112,17 @@ export const ProductDetail: React.FC = () => {
   const getCallToActionButton = () => {
     if (product?.available_for_demo) {
       return (
-        <button className="w-full bg-gray-100 text-gray-800 py-3 px-6 rounded-lg border border-gray-300 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 font-medium">
-          HOME DEMO AVAILABLE
-        </button>
+        <div className="space-y-3">
+          <button className="w-full bg-slate-100 text-slate-800 py-3 px-6 rounded-lg border border-slate-300 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 font-medium transition-all duration-200">
+            HOME DEMO AVAILABLE
+          </button>
+          <Link
+            to={`/contact?product=${encodeURIComponent(product.title)}&manufacturer=${encodeURIComponent(product.manufacturer?.name || '')}&demo=store`}
+            className="w-full bg-stone-800 text-white py-3 px-6 rounded-lg hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 font-medium transition-colors duration-200 block text-center"
+          >
+            BOOK STORE DEMO
+          </Link>
+        </div>
       );
     }
     
@@ -141,7 +149,7 @@ export const ProductDetail: React.FC = () => {
     
     if (product?.local_only) {
       return (
-        <button className="w-full bg-gray-600 text-white py-3 px-6 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 font-medium">
+        <button className="w-full bg-stone-600 text-white py-3 px-6 rounded-lg hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 font-medium">
           VIEW IN SHOWROOM
         </button>
       );
@@ -156,7 +164,7 @@ export const ProductDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-[#fffcf9] py-12">
         <div className="container-custom text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading product...</p>
@@ -167,7 +175,7 @@ export const ProductDetail: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-[#fffcf9] py-12">
         <div className="container-custom text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
           <p className="text-gray-600 mb-6">The product you're looking for doesn't exist.</p>
@@ -182,8 +190,8 @@ export const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#fffcf9]">
       {/* Premium Hero Section */}
-      <div className="relative bg-gradient-to-br from-stone-50 to-stone-100 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div className="relative bg-[#fffcf9] border-b border-stone-200">
+        <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           {/* Breadcrumb Navigation */}
           <nav className="flex mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-3 text-sm">
@@ -244,19 +252,18 @@ export const ProductDetail: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Product Images */}
             <div className="space-y-6">
-              {/* Main Image */}
+              {/* Main Image - Now sits directly on background */}
               <div className="relative group">
                 {product.product_hero_image ? (
                   <div 
-                    className="relative overflow-hidden rounded-2xl cursor-pointer bg-white shadow-lg" 
+                    className="relative cursor-pointer" 
                     onClick={() => openImageModal(product.product_hero_image!)}
                   >
                     <img
                       src={getImageUrl(product.product_hero_image)}
                       alt={product.title}
-                      className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto max-h-[600px] object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Click to enlarge
                     </div>
@@ -296,12 +303,25 @@ export const ProductDetail: React.FC = () => {
 
             {/* Product Information */}
             <div className="space-y-8">
-              {/* Category Badge */}
-              {product.categories && (
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium">
-                  {product.categories.name}
-                </div>
-              )}
+              {/* Category and Manufacturer Links */}
+              <div className="flex flex-wrap gap-3">
+                {product.categories && (
+                  <Link
+                    to={`/products?category=${product.categories.slug}`}
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium hover:bg-stone-200 transition-colors duration-200"
+                  >
+                    {product.categories.name}
+                  </Link>
+                )}
+                {product.manufacturer && (
+                  <Link
+                    to={`/manufacturers/${product.manufacturer.slug}`}
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium hover:bg-stone-200 transition-colors duration-200"
+                  >
+                    {product.manufacturer.name}
+                  </Link>
+                )}
+              </div>
 
               {/* Product Title */}
               <div>
@@ -310,7 +330,13 @@ export const ProductDetail: React.FC = () => {
                 </h1>
                 {product.manufacturer && (
                   <p className="text-xl text-stone-600 font-medium">
-                    by {product.manufacturer.name}
+                    by{' '}
+                    <Link
+                      to={`/manufacturers/${product.manufacturer.slug}`}
+                      className="hover:text-stone-800 transition-colors duration-200 underline decoration-stone-300 hover:decoration-stone-600"
+                    >
+                      {product.manufacturer.name}
+                    </Link>
                   </p>
                 )}
               </div>
@@ -356,29 +382,46 @@ export const ProductDetail: React.FC = () => {
       </div>
 
       {/* Content Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Quote/Testimonial Section */}
+      <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Quote/Testimonial Section - Timeline-style Layout */}
         {product.quote && (
-          <div className="bg-gradient-to-r from-stone-50 to-stone-100 rounded-3xl p-12 mb-16 text-center border border-stone-200">
-            <blockquote className="text-2xl lg:text-3xl text-stone-700 italic mb-6 leading-relaxed">
-              "{product.quote}"
-            </blockquote>
-            {product.quote_attribution && (
-              <cite className="text-lg text-stone-600 font-medium">
-                — {product.quote_attribution}
-              </cite>
-            )}
+          <div className="mb-32 flex flex-col items-center">
+            {/* Top vertical line - above quote */}
+            <div className="w-px h-32 bg-stone-300 mb-16"></div>
+            
+            <div className="max-w-4xl mx-auto px-8 text-center">
+              <blockquote>
+                {/* Main quote - clean and severe */}
+                <div className="text-3xl lg:text-4xl xl:text-5xl font-light text-stone-900 leading-[1.4] tracking-wide mb-12">
+                  {product.quote}
+                </div>
+              </blockquote>
+              
+              {/* Attribution - minimal and refined */}
+              {product.quote_attribution && (
+                <div className="mt-16">
+                  <div className="text-sm text-stone-500 font-light tracking-[0.3em] uppercase">
+                    — {product.quote_attribution}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Bottom vertical line - below quote */}
+            <div className="w-px h-32 bg-stone-300 mt-16"></div>
           </div>
         )}
 
         {/* Tabbed Content */}
-        <div className="mb-16">
+        <div className="mb-32">
           <ProductTabs product={product} />
         </div>
+      </div>
 
-        {/* Pairs Well With Products */}
-        {pairsWellWithProducts.length > 0 && (
-          <div className="mb-16">
+      {/* Pairs Well With Products */}
+      {pairsWellWithProducts.length > 0 && (
+        <div className="bg-stone-50 py-24">
+          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">
                 Good synergies with {product.manufacturer?.name}'s {product.title}
@@ -387,7 +430,7 @@ export const ProductDetail: React.FC = () => {
                 These products work beautifully together to create an exceptional audio experience.
               </p>
             </div>
-            
+          
             {relatedLoading ? (
               <div className="text-center py-16">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto mb-4"></div>
@@ -437,11 +480,13 @@ export const ProductDetail: React.FC = () => {
               </div>
             )}
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Also Consider Products */}
-        {alsoConsiderProducts.length > 0 && (
-          <div className="mb-16">
+      {/* Also Consider Products */}
+      {alsoConsiderProducts.length > 0 && (
+        <div className="bg-stone-50 py-24">
+          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">Also consider</h2>
               <p className="text-lg text-stone-600 max-w-2xl mx-auto">
@@ -490,55 +535,55 @@ export const ProductDetail: React.FC = () => {
               ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Image Modal */}
-        {isImageModalOpen && selectedImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeImageModal}>
-            <div className="relative max-w-4xl max-h-full p-4">
-              <img
-                src={getImageUrl(selectedImage)}
-                alt={product.title}
-                className="max-w-full max-h-full object-contain"
-              />
-              <button
-                onClick={closeImageModal}
-                className="absolute top-4 right-4 text-white hover:text-gray-300"
-              >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Contextual CMS */}
-        <ContextualCMS
-          isOpen={isCMSOpen}
-          onClose={() => setIsCMSOpen(false)}
-          title={`Edit ${product?.title || 'Product'}`}
-          context="product"
-        >
-          {product && (
-            <ProductEditForm
-              product={product}
-              onSave={handleEditSuccess}
-              onCancel={() => setIsCMSOpen(false)}
+      {/* Image Modal */}
+      {isImageModalOpen && selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeImageModal}>
+          <div className="relative max-w-4xl max-h-full p-4">
+            <img
+              src={getImageUrl(selectedImage)}
+              alt={product.title}
+              className="max-w-full max-h-full object-contain"
             />
-          )}
-        </ContextualCMS>
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-4 text-white hover:text-gray-300"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
 
-        {/* Delete Confirmation Modal */}
-        <DeleteConfirmation
-          isOpen={isDeleteModalOpen}
-          onClose={() => setIsDeleteModalOpen(false)}
-          onConfirm={handleDelete}
-          title="Delete Product"
-          message={`Are you sure you want to delete "${product.title}"? This action cannot be undone.`}
-          loading={deleteLoading}
-        />
-      </div>
+      {/* Contextual CMS */}
+      <ContextualCMS
+        isOpen={isCMSOpen}
+        onClose={() => setIsCMSOpen(false)}
+        title={`Edit ${product?.title || 'Product'}`}
+        context="product"
+      >
+        {product && (
+          <ProductEditForm
+            product={product}
+            onSave={handleEditSuccess}
+            onCancel={() => setIsCMSOpen(false)}
+          />
+        )}
+      </ContextualCMS>
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmation
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onConfirm={handleDelete}
+        title="Delete Product"
+        message={`Are you sure you want to delete "${product.title}"? This action cannot be undone.`}
+        loading={deleteLoading}
+      />
     </div>
   );
-}; 
+};
