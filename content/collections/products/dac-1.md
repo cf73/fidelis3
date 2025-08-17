@@ -182,7 +182,7 @@ specs:
       -
         type: text
         text: 'Weight: 8kg, 17.6 lbs (11 kg, 24.3 lbs with stainless steel front)'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

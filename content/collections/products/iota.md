@@ -144,7 +144,7 @@ specs:
           -
             type: italic
         text: 'Shipping weight per pair: 7Kg.'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

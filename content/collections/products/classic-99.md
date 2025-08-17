@@ -376,7 +376,7 @@ specs:
       -
         type: text
         text: 'Yes'
-reivews_set:
+reviews_set:
   -
     id: m7579ggp
     excerpt:

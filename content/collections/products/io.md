@@ -229,7 +229,7 @@ specs:
       -
         type: text
         text: '180 x 290 x 68'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

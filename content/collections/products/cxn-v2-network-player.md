@@ -132,7 +132,7 @@ specs:
     content:
       -
         type: hard_break
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

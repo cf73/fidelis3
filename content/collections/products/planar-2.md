@@ -165,7 +165,7 @@ specs:
               -
                 type: text
                 text: 'Packaging - New improved packaging.'
-reivews_set:
+reviews_set:
   -
     id: tgGK1emz
     type: Review

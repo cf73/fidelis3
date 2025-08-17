@@ -127,7 +127,7 @@ specs:
       -
         type: text
         text: 'WEIGHT : 44 Kg ea – net weight 97 Ib ea – net weight'
-reivews_set:
+reviews_set:
   -
     id: NhhBwQh4
     type: Review

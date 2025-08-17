@@ -160,7 +160,7 @@ specs:
       -
         type: text
         text: "\_54 lbs. (24.5 kg)"
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

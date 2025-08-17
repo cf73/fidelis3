@@ -109,7 +109,7 @@ specs:
       -
         type: text
         text: '0.6 kg'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

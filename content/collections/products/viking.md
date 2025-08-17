@@ -166,7 +166,7 @@ specs:
       -
         type: text
         text: ' 3,54" x 17" x 12" (HxWxD), 16,1 lbs'
-reivews_set:
+reviews_set:
   -
     id: mbjnd8sc
     excerpt:

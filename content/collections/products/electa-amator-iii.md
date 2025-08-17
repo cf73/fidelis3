@@ -273,7 +273,7 @@ specs:
               -
                 type: text
                 text: '24,7 lb ea – net weight'
-reivews_set:
+reviews_set:
   -
     id: rRsRFeKo
     type: Review

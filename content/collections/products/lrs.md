@@ -113,7 +113,7 @@ specs:
       -
         type: text
         text: ': 40 lbs./pair'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

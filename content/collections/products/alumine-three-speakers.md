@@ -19,7 +19,7 @@ also_consider:
 monthly_featuree: false
 specs: '<ul><li><strong>3-way vertical speaker with 4 high efficiency transducers</strong></li><li><strong>Frequency response</strong> : 32 to 35 kHz</li><li><strong>Power handling</strong> : 150 W RMS, 300 W peak</li><li><strong>Recommended amplifier from 10W to 200W</strong></li><li><strong>Sensivity</strong> : 93 dB, half space</li><li><strong>SPL max</strong> : 109 dB</li><li><strong>Nominal impedance </strong>: 8 Ohms (minimum 6 Ohms)</li><li><strong>Power handlin</strong>g : 150 W RMS, 300 W peak</li><li><strong>Dimensions</strong> : H 1050mm x W 250mm x D 330 mm</li></ul><ul><li><strong>Weight</strong> : approx. 70 kg (including adjustable feet)</li><li>2 x 8-inch woofers, 1 x 5 1⁄4-inch neodymium medium drivers, 1 x neodymium tweeter</li><li><strong>Warranty</strong> : 5 years</li></ul><p><br><br></p>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>The Three is a compact, exceptionally built, and easy to drive loudspeaker that fits into real rooms, with the heart of a large horn system and touches of electrostatic transparency thrown in for good measure. At, or near the top of finest compact loudspeakers available today, and one that joins the small club of products I’d recommend going out of your way to experience.</p>'

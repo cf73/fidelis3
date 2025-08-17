@@ -1151,7 +1151,7 @@ specs:
                       -
                         type: text
                         text: 'Programme of Continuous Development – Firmware-upgradable for further features and enhancements'
-reivews_set:
+reviews_set:
   -
     id: mbiednie
     excerpt:

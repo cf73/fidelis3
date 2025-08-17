@@ -340,7 +340,7 @@ specs:
         text: 'Aluminum - Concrete - Iron Steel (stand)'
       -
         type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: WHEgOooo
     type: Review

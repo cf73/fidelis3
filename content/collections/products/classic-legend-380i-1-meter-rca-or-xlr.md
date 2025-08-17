@@ -105,7 +105,7 @@ specs:
       -
         type: text
         text: 'Available with RCA / XLR / TAC-5 for phono connectors.'
-reivews_set:
+reviews_set:
   -
     id: D0Qb1s9A
     excerpt:

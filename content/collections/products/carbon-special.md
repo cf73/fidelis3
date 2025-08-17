@@ -19,7 +19,7 @@ price: 4399
 show_price: true
 available_to_buy_online: true
 shipping: 200
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

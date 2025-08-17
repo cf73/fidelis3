@@ -34,7 +34,7 @@ specs:
       -
         type: text
         text: 'Type Closed-back wireless headphones with active noise cancelling Bluetooth technology® 5.1 Multipoint Bluetooth range® >15m Bluetooth frequency range® 2402MHz - 2480Mhz Audio codecs SBC, AAC, aptX™ Adaptive, aptX™ Battery life 30 hours Bluetooth® Noise Cancelling 35 hours Jack mode 42 hours USB DAC Voice assistants Google Assistant, Amazon Alexa Other features Google Fast Pair Speaker drivers 15/8" (40mm) Aluminium-Magnesium ‘M’-shaped dome, made in France Frequency response 15Hz to 22kHz Harmonic distortion rate <0.2% @1kHz Microphones 8 Weight 0.77lb (350g) Carrying case supplied 97/16"x81/4"x23/4" (24x21x7cm) Control application Focal & Naim, iOS and Android compatible Connections Bluetooth® / Jack 3.5mm / USB-C®'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

@@ -157,7 +157,7 @@ specs:
                 text: 'WEIGHT : 30,7 Kg ea – net weight 67.6 Ib ea – net weight'
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: Q0cV0dNU
     type: Review

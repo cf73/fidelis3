@@ -294,7 +294,7 @@ specs:
     content:
       -
         type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: FNZa6rE5
     type: Review

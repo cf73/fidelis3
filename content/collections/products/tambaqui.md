@@ -39,7 +39,7 @@ also_consider:
   - 28bc46cc-646b-4b5e-b8c0-5a38e8d5e90b
 product-categories: dacs
 system_category: source
-reivews_set:
+reviews_set:
   -
     id: m9x4a0uu
     excerpt:

@@ -46,7 +46,7 @@ specs:
       -
         type: text
         text: 'The Merason Pow1 connects to the "Alt Power" DIN port on the back of the unit. This differs from the DC plug input on the back in that the Alt power port allows the Pow1 to send power directly to the individual power rails inside the Frerot from the individual supplies inside the Pow1. The design of the Pow1, plus the implementation with the Frerot give the Pow1 an advantage over any other 9 volt DC power supply that must use the 2.5mm DC plug.'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

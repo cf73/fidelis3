@@ -203,7 +203,7 @@ specs:
               -
                 type: text
                 text: '42.9 x 8.6 x 33.3 cm'
-reivews_set:
+reviews_set:
   -
     id: l3szKbeq
     type: Review

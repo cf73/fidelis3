@@ -130,7 +130,7 @@ specs:
       -
         type: text
         text: "• Weight: 7.5 Kg\_\_"
-reivews_set:
+reviews_set:
   -
     id: sduA6g72
     type: Review

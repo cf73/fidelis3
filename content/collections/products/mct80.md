@@ -761,7 +761,7 @@ specs:
               -
                 type: text
                 text: 'Shipping Weight33 lbs (15 kg)'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

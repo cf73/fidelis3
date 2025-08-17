@@ -36,7 +36,7 @@ pairs_well_with:
   - 47577004-a326-488a-9ef1-9d4df0e517b1
 product-categories: power-amplifiers
 system_category: amplification
-reivews_set:
+reviews_set:
   -
     id: RQtGDJv4
     excerpt:

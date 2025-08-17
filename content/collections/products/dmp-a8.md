@@ -471,7 +471,7 @@ specs:
       -
         type: text
         text: '1'
-reivews_set:
+reviews_set:
   -
     id: rQCtebv4
     excerpt:

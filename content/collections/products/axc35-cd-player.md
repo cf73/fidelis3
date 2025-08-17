@@ -199,7 +199,7 @@ specs:
                 text: 'IN THE BOX: AXC35 CD Player, Power Cable, Remote Control, 2 x AAA Batteries'
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: I4L8LQrT
     type: Review

@@ -177,7 +177,7 @@ specs:
                 text: '23.1 - net weight (37.6 lb stand included)'
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: lybnIjQ7
     type: Review

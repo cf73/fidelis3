@@ -161,7 +161,7 @@ specs:
                 text: 'Width:22 in (558.8 mm)Depth:18 in (457.2 mm)Height:7 in (177.8 mm)Weight:27 lbs (12.3 kg)'
               -
                 type: hard_break
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

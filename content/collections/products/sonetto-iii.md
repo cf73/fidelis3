@@ -293,7 +293,7 @@ specs:
       -
         type: text
         text: Concrete
-reivews_set:
+reviews_set:
   -
     id: Yr8pmBgA
     type: Review

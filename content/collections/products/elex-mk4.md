@@ -145,7 +145,7 @@ specs:
       -
         type: text
         text: 'Pre-amplifier Output 625mV'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

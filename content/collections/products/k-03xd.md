@@ -104,7 +104,7 @@ specs:
       -
         type: text
         text: "\_61.75 lbs."
-reivews_set:
+reviews_set:
   -
     id: xFKylAqW
     excerpt:

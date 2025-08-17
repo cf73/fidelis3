@@ -252,7 +252,7 @@ specs:
       -
         type: text
         text: '420mm (W) x 110mm (H) x 370mm (D). Depth includes volume knob and connectors. 11kg'
-reivews_set:
+reviews_set:
   -
     id: m9x440ef
     excerpt:

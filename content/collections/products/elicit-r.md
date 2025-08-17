@@ -151,7 +151,7 @@ specs:
                 text: "Thermal\_Cut-Out"
   -
     type: paragraph
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

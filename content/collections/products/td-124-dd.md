@@ -60,7 +60,7 @@ specs:
       -
         type: text
         text: '16.7" (425mm) W × 13.8" (350mm) H × 7.3" (185mm) D. Weight (not including power supply): 37.5lb (17kg).'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

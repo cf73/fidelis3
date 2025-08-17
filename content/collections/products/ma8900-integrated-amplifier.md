@@ -705,7 +705,7 @@ specs:
               -
                 type: text
                 text: 'Shipping Weight 93 lbs.'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

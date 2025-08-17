@@ -9,7 +9,7 @@ available_to_buy_online: false
 monthly_featuree: false
 specs: '<ul><li>Power Output per Channel :75W @ 4, 8 or 16 Ohms</li><li>Number of Channels :2</li><li>Total Harmonic Distortion 0.5% maximum harmonic distortion at any power level from 250 milliwatts to rated power, 20Hz to 20,000Hz<br>(≤ 0.25% harmonic distortion at 1kHz)</li><li>S/N below rated output :105dB</li><li>Dynamic Headroom :1.2dB</li><li>Damping Factor&gt;22</li><li>Rated Power Band20Hz to 20kHz</li><li>Frequency Response+0, -0.5dB from 20Hz to 20,000Hz<br>+0, -3.0dB from 10Hz to 100,000Hz</li></ul>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>The MC275 produced "stunning" soundstage depth and "spooky" intertransient silences, said FK. Meanwhile, the MC275''s superb signal/noise ratios led JA to conclude that "Good audio engineering is timeless."&nbsp;</p>'

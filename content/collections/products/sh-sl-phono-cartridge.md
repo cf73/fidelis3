@@ -133,7 +133,7 @@ specs:
       -
         type: text
         text: 'Warranty2 years'
-reivews_set:
+reviews_set:
   -
     id: 0HKIxmqX
     type: Review

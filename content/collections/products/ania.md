@@ -142,7 +142,7 @@ specs:
       -
         type: text
         text: 'Constructed from high specification 0.018mm fine wire'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

@@ -148,7 +148,7 @@ specs:
       -
         type: text
         text: "Impedance 100 Ω / Capacitance 1000 pF / Gain Setting\_High"
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

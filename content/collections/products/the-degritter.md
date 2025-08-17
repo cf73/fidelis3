@@ -154,7 +154,7 @@ specs:
       -
         type: text
         text: '50 dB - 70 dB'
-reivews_set:
+reviews_set:
   -
     id: jG7mgEyC
     type: Review

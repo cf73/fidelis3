@@ -189,7 +189,7 @@ specs:
       -
         type: text
         text: 'WEIGHT10kg (~22 lbs.)'
-reivews_set:
+reviews_set:
   -
     id: mdadvce1
     excerpt:

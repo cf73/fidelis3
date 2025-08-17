@@ -155,7 +155,7 @@ specs:
               -
                 type: text
                 text: '5 year limited warranty'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

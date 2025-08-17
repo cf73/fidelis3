@@ -230,7 +230,7 @@ specs:
                 text: 'Cartridge weight - 10,7 g'
               -
                 type: hard_break
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

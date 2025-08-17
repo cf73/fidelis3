@@ -15,7 +15,7 @@ pairs_well_with:
 monthly_featuree: false
 specs: '<ul><li>Power Output per Channel: 200 Watts into 8 Ohms<br>320 Watts into 4 Ohms</li><li>Number of Channels: 2</li><li>Speaker Impedance: 4 or 8 Ohms</li><li>Rated Power Band: 20Hz to 20kHz</li><li>Total Harmonic Distortion: 0.03%</li><li>Dynamic Headroom: 1.5dB</li><li>Frequency Response:&nbsp; +0,-0.5dB20Hz to 20kHz</li><li>Frequency Response: +0, -3dB10Hz to 100kHz</li><li>Sensitivity Phono (Moving Coil): N/A</li><li>Sensitivity Phono (Moving Magnet): 2.5mV</li><li>Sensitivity High Level (Balanced / Unbalanced): 0.5V/0.25V</li><li>Sensitivity (Power Amp input): N/A</li><li>Signal To Noise Ratio (Moving Coil): N/A</li><li>Signal To Noise Ratio (Moving Magnet): 82dB</li><li>Signal To Noise Ratio (High Level): 93dB</li><li>Signal To Noise Ratio (Power Amp input): N/A</li><li>Input Impedance (Balanced / Unbalanced): 20K/20K</li><li>Damping Factor8 Ohms: &gt;200<br>4 Ohms: &gt;100</li><li>Maximum Output (Balanced / Unbalanced): 8V Unbalanced</li></ul>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>The McIntosh MA352 amplifier impressed us with its overall performance and the way it brings music to life. The “warmth” of the tubes and its ability to make vocals and instruments materialize before the listener contribute to an emotion-filled listening session.</p><p><br></p>'

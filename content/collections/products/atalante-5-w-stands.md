@@ -139,7 +139,7 @@ specs:
       -
         type: text
         text: 'Net Weight33 kg. (72.75 lbs.)'
-reivews_set:
+reviews_set:
   -
     id: 1Eg8Jx5K
     excerpt:

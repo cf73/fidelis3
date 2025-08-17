@@ -109,7 +109,7 @@ local_only: false
 shipping: 30
 product-categories: power-cables
 system_category: cables
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

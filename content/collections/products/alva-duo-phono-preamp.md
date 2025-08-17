@@ -189,7 +189,7 @@ specs:
                 text: 'WEIGHT: 0.95kg (2.1lbs)'
               -
                 type: hard_break
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

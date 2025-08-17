@@ -13,7 +13,7 @@ pairs_well_with:
 monthly_featuree: false
 specs: '<ul><li>Power Output per Channel: 450 Watts @ 2, 4 or 8 Ohms</li><li>Number of Channels: 2</li><li>Total Harmonic Distortion: 0.005%</li><li>S/N below rated output: 122dB</li><li>Dynamic Headroom: 3.0dB</li><li>Damping Factor: &gt;40 Wideband</li><li>Rated Power Band: 20Hz to 20kHz</li><li>Frequency Response: +0, -0.25dB from 20Hz to 20,000Hz<br>+0, -3.0dB from 10Hz to 100,000Hz</li></ul>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>The senses of ease and literally quiet power created by the MC462 are palpable and most welcome. A first-round vote pick for induction in Class A of the next edition of our "Recommended Components." Highly recommended—insisted on, even.</p>'

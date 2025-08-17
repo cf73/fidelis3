@@ -131,7 +131,7 @@ specs:
       -
         type: text
         text: 'Weight: 55kg'
-reivews_set:
+reviews_set:
   -
     id: mdkdm695
     excerpt:

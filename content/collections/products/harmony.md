@@ -330,7 +330,7 @@ system_category: source
 quote: "The Pure Fidelity Harmony brings a beautiful sonic signature to vinyl but with enough transparency to reveal the unique personality of each LP. Every record played on the Harmony, from jazz and rock to electronic and classical, is an event. I couldn't not listen"
 quote_attribution: Stereophile
 local_only: false
-reivews_set:
+reviews_set:
   -
     id: 7NdR2AHu
     excerpt:

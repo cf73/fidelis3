@@ -133,7 +133,7 @@ specs:
       -
         type: text
         text: '24 V AC at 80 mA maximum'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

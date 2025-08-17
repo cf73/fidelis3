@@ -11,7 +11,7 @@ shipping: 20
 monthly_featuree: false
 specs: '<p>Stylus Nude Microline Tip</p><p>Cantilever Aluminum&nbsp;</p><p>Magnetic Circuitry Pure Iron/Cryo Treatment</p><p>Coil Wire High Purity Copper</p><p>Cartridge Housing POM (Delrin) / Brass</p><p>Output Level 0.4mv/1KHz</p><p>Output Balance &lt;1dB/1KHz</p><p>Trackability70 µm/2g</p><p>Channel Separation 30dB/1KHz</p><p>Frequency Response12-45,000Hz</p><p>Impedance7Ω/1KHz</p><p>Suggested Load Impedance &gt;100Ω</p><p>Magnet Alnico</p><p>Tracking Force 2 grams</p><p>Weight 9.5 grams</p><p>Height16.3 mm</p><p>Warranty2 years</p>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>Fast, timbrally neutral, non-mechanical-sounding, transparent and delivering levels of detail usually heard from more costly cartridges, the Hana ML is in every way an impressive sounding and performing cartridge</p>'
