@@ -11,7 +11,7 @@ shipping: 20
 monthly_featuree: false
 specs: '<p>Stylus Synthetic Elliptical&nbsp;</p><p>Cantilever Aluminum&nbsp;</p><p>Output Level 2mv/1kHz</p><p>Output Balance &lt;2dB/1KHz</p><p>Vertical Tracking Force 2g</p><p>Trackability 70 µm/2g</p><p>Channel Separation 25dB/1kHz</p><p>Frequency Response 15-25,000</p><p>HzImpedance130Ω/1kHz</p><p>Suggested Load Impedance 47KΩ</p><p>Cartridge Weight 5g</p><p>Body Color Moss Green</p><p>Warranty2 years</p>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>&nbsp;The Hana seemed completely compatible with every record I played.&nbsp;&nbsp; The lack of surface noise even made my older worn records sound great.&nbsp; The music comes through in a three dimensional presentation giving the “you are there” experience”.</p>'

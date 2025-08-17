@@ -471,7 +471,7 @@ specs:
       -
         type: text
         text: "11.02\_lbs"
-reivews_set:
+reviews_set:
   -
     id: mdUW1AMk
     excerpt:

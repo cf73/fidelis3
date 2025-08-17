@@ -203,7 +203,7 @@ specs:
       -
         type: text
         text: 'with integrated cooling.'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

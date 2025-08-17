@@ -41,7 +41,7 @@ description:
 price: 18000
 show_price: true
 available_to_buy_online: false
-reivews_set:
+reviews_set:
   -
     id: t2FGZ8e8
     type: Review

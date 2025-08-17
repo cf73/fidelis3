@@ -171,7 +171,7 @@ specs:
       -
         type: text
         text: "• Weight: 8 Kg\_\_"
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

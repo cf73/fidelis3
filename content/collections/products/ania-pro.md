@@ -128,7 +128,7 @@ specs:
       -
         type: text
         text: '6 g'
-reivews_set:
+reviews_set:
   -
     type: Review
     date_of_review: '2021-07-16'

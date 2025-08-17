@@ -179,6 +179,22 @@ const Products: React.FC = () => {
     return priceA - priceB; // default low to high
   });
 
+  // Show loading spinner if data is still loading
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#fffcf9]">
+        <div className="pt-28">
+          <div className="flex items-center justify-center min-h-[50vh]">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
+              <p className="mt-4 text-stone-600">Loading products...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       {/* Filters */}

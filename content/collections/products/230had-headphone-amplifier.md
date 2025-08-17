@@ -179,7 +179,7 @@ specs:
               -
                 type: text
                 text: '17.8 x 7.6 x 28.0 cm'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

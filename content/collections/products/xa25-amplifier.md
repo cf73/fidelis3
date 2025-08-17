@@ -210,7 +210,7 @@ specs:
                     type: bold
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: 01q2hy5t
     type: Review

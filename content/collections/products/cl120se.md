@@ -343,7 +343,7 @@ specs:
           -
             type: bold
         text: 'CL120 & 120SE: 75 lb. net'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

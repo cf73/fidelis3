@@ -94,7 +94,7 @@ specs:
       -
         type: text
         text: '3 kg'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

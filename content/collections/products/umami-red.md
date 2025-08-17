@@ -89,7 +89,7 @@ system_category: source
 quote: 'The word “umami” is said to be a fifth element of taste (beyond sweet, sour, salty, and bitter) that results from a perfect combination of the right ingredients—a form of savory deliciousness. The Umami Red is deliciously enjoyable. Color me impressed.'
 quote_attribution: 'Absolute Sound'
 local_only: false
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

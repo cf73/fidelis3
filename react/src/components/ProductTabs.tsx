@@ -334,70 +334,58 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="flex min-h-[400px]">
-        {/* Clean Vertical Tab Navigation */}
-        <div className="w-48 flex flex-col mr-16">
-          {tabs.map((tab, index) => {
+      {/* Mobile: Horizontal Tabs */}
+      <div className="md:hidden">
+        {/* Mobile Tab Navigation */}
+        <div className="flex overflow-x-auto mb-8 border-b border-stone-200 -mx-4 px-4">
+          {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             
             return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as 'description' | 'specs' | 'reviews')}
-                className={`py-6 text-left transition-all duration-300 relative group cursor-pointer ${
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as 'description' | 'specs' | 'reviews')}
+                className={`flex-shrink-0 flex items-center space-x-2 px-4 py-3 relative transition-all duration-300 ${
                   isActive 
                     ? 'text-stone-900' 
-                    : 'text-stone-600 hover:text-stone-800'
+                    : 'text-stone-600'
                 }`}
               >
-                {/* Just Icon and Label */}
-                <div className="flex items-center space-x-3">
-                  <div className={`transition-all duration-300 transform ${
-                    isActive 
-                      ? 'text-stone-700' 
-                      : 'text-stone-400 group-hover:text-stone-600 group-hover:scale-110'
-                  }`}>
-                    {tab.icon}
-                  </div>
-                  <span className={`text-base font-medium tracking-wide transition-all duration-300 ${
-                    isActive 
-                      ? 'text-stone-900' 
-                      : 'text-stone-600 group-hover:text-stone-800 group-hover:tracking-wider'
-                  }`}>
-                    {tab.label}
-                  </span>
+                <div className={`transition-all duration-300 ${
+                  isActive 
+                    ? 'text-stone-700' 
+                    : 'text-stone-400'
+                }`}>
+                  {tab.icon}
                 </div>
+                <span className={`text-sm font-medium whitespace-nowrap ${
+                  isActive 
+                    ? 'text-stone-900' 
+                    : 'text-stone-600'
+                }`}>
+              {tab.label}
+                </span>
                 
                 {/* Active State Underline */}
                 {isActive && (
-                  <div className="absolute bottom-2 left-0 right-0 h-px bg-stone-400 transition-all duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-stone-600" />
                 )}
-                
-                {/* Hover State Underline Preview */}
-                {!isActive && (
-                  <div className="absolute bottom-2 left-0 right-0 h-px bg-stone-300 transition-all duration-300 transform scale-x-0 group-hover:scale-x-75 origin-left" />
-                )}
-              </button>
+            </button>
             );
           })}
-        </div>
+      </div>
 
-        {/* Clean Vertical Divider */}
-        <div className="relative mr-16">
-          <div className="absolute inset-y-0 left-0 w-px bg-stone-300"></div>
-        </div>
-
-        {/* Content Area - Flat on page */}
-        <div className="flex-1">
+        {/* Mobile Content Area */}
+        <div className="pb-8">
           {activeTab === 'description' && (
             <div>
               <div className="prose prose-lg prose-stone max-w-none">
                 <div className="text-base leading-relaxed text-stone-700 space-y-6">
                   <div className="whitespace-pre-wrap">{cleanDescription}</div>
                 </div>
-              </div>
             </div>
-          )}
+          </div>
+        )}
 
           {activeTab === 'specs' && (
             <div>
@@ -405,37 +393,42 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
                 <div className="text-base leading-relaxed text-stone-700 space-y-4">
                   <div className="whitespace-pre-wrap">{cleanSpecs}</div>
                 </div>
-              </div>
             </div>
-          )}
+          </div>
+        )}
 
           {activeTab === 'reviews' && (
             <div>
               <div className="space-y-12">
                 {reviews.map((review: Review, index: number) => (
                   <div key={index} className="relative">
-                    {review.excerpt && (
-                      <blockquote className="text-lg font-light italic text-stone-800 mb-6 leading-relaxed">
-                        "{review.excerpt}"
-                      </blockquote>
-                    )}
-                    <div className="flex items-center space-x-6 text-stone-600">
+                {review.excerpt && (
+                                              <div className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-8 relative transform hover:shadow-md transition-shadow duration-300">
+                          {/* Subtle corner accent */}
+                          <div className="absolute top-0 left-0 w-1 h-16 bg-stone-300 rounded-l-2xl"></div>
+                          
+                          <blockquote className="text-lg font-normal text-stone-700 leading-relaxed mb-6">
+                            {review.excerpt}
+                          </blockquote>
+                          
+                          {/* Attribution inside the card */}
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-stone-600 pt-4 border-t border-stone-100">
                       {review.attribution && (
-                        <cite className="text-base font-medium not-italic text-stone-700">
+                        <cite className="text-base font-semibold not-italic text-stone-800 tracking-wide">
                           {review.attribution}
                         </cite>
                       )}
                       {review.date_of_review && (
-                        <>
-                          <div className="w-1 h-1 bg-stone-400 rounded-full"></div>
-                          <span className="text-stone-500 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-1 h-1 bg-stone-400 rounded-full hidden sm:block"></div>
+                          <span className="text-stone-500 text-sm font-medium tracking-wider uppercase">
                             {new Date(review.date_of_review).toLocaleDateString('en-US', {
                               year: 'numeric',
-                              month: 'long',
+                              month: 'short',
                               day: 'numeric'
                             })}
                           </span>
-                        </>
+                        </div>
                       )}
                       {review.link && (
                         <a
@@ -450,14 +443,223 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
                           </svg>
                         </a>
                       )}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Attribution outside card if no excerpt */}
+                      {!review.excerpt && (
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-stone-600">
+                          {review.attribution && (
+                            <cite className="text-base font-semibold not-italic text-stone-800 tracking-wide">
+                              {review.attribution}
+                            </cite>
+                          )}
+                          {review.date_of_review && (
+                            <div className="flex items-center space-x-2">
+                              <div className="w-1 h-1 bg-stone-400 rounded-full hidden sm:block"></div>
+                              <span className="text-stone-500 text-sm font-medium tracking-wider uppercase">
+                                {new Date(review.date_of_review).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short',
+                                  day: 'numeric'
+                                })}
+                              </span>
+                            </div>
+                          )}
+                          {review.link && (
+                            <a
+                              href={review.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center space-x-2 px-4 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors duration-200 text-sm font-light"
+                            >
+                              <span>Read Full Review</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+      {/* Desktop: Vertical Tabs (Preserve Original Design) */}
+      <div className="hidden md:block">
+        <div className="flex min-h-[400px]">
+          {/* Clean Vertical Tab Navigation */}
+          <div className="w-48 flex flex-col mr-16">
+            {tabs.map((tab, index) => {
+              const isActive = activeTab === tab.id;
+              
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as 'description' | 'specs' | 'reviews')}
+                  className={`py-6 text-left transition-all duration-300 relative group cursor-pointer ${
+                    isActive 
+                      ? 'text-stone-900' 
+                      : 'text-stone-600 hover:text-stone-800'
+                  }`}
+                >
+                  {/* Just Icon and Label */}
+                  <div className="flex items-center space-x-3">
+                    <div className={`transition-all duration-300 transform ${
+                      isActive 
+                        ? 'text-stone-700' 
+                        : 'text-stone-400 group-hover:text-stone-600 group-hover:scale-110'
+                    }`}>
+                      {tab.icon}
+                    </div>
+                    <span className={`text-base font-medium tracking-wide transition-all duration-300 ${
+                      isActive 
+                        ? 'text-stone-900' 
+                        : 'text-stone-600 group-hover:text-stone-800 group-hover:tracking-wider'
+                    }`}>
+                      {tab.label}
+                    </span>
+                  </div>
+                  
+                  {/* Active State Underline */}
+                  {isActive && (
+                    <div className="absolute bottom-2 left-0 right-0 h-px bg-stone-400 transition-all duration-300" />
+                  )}
+                  
+                  {/* Hover State Underline Preview */}
+                  {!isActive && (
+                    <div className="absolute bottom-2 left-0 right-0 h-px bg-stone-300 transition-all duration-300 transform scale-x-0 group-hover:scale-x-75 origin-left" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Clean Vertical Divider */}
+          <div className="relative mr-16">
+            <div className="absolute inset-y-0 left-0 w-px bg-stone-300"></div>
+          </div>
+
+          {/* Desktop Content Area - Flat on page */}
+          <div className="flex-1">
+            {activeTab === 'description' && (
+              <div>
+                <div className="prose prose-lg prose-stone max-w-none">
+                  <div className="text-base leading-relaxed text-stone-700 space-y-6">
+                    <div className="whitespace-pre-wrap">{cleanDescription}</div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'specs' && (
+              <div>
+                <div className="prose prose-lg prose-stone max-w-none">
+                  <div className="text-base leading-relaxed text-stone-700 space-y-4">
+                    <div className="whitespace-pre-wrap">{cleanSpecs}</div>
+                  </div>
                     </div>
                   </div>
-                ))}
+                )}
+
+            {activeTab === 'reviews' && (
+              <div>
+                <div className="space-y-12">
+                  {reviews.map((review: Review, index: number) => (
+                    <div key={index} className="relative">
+                      {review.excerpt && (
+                        <div className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-6 relative transform hover:shadow-md transition-shadow duration-300">
+                          {/* Subtle corner accent */}
+                          <div className="absolute top-0 left-0 w-1 h-16 bg-stone-300 rounded-l-2xl"></div>
+                          
+                          <blockquote className="text-lg font-normal text-stone-700 leading-relaxed mb-6">
+                            {review.excerpt}
+                          </blockquote>
+                          
+                          {/* Attribution inside the card */}
+                          <div className="flex items-center space-x-6 text-stone-600 pt-4 border-t border-stone-100">
+                {review.attribution && (
+                          <cite className="text-base font-semibold not-italic text-stone-800 tracking-wide">
+                            {review.attribution}
+                          </cite>
+                )}
+                {review.date_of_review && (
+                          <>
+                            <div className="w-1 h-1 bg-stone-400 rounded-full"></div>
+                            <span className="text-stone-500 text-sm font-medium tracking-wider uppercase">
+                              {new Date(review.date_of_review).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </span>
+                          </>
+                )}
+                {review.link && (
+                  <a
+                    href={review.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-2 px-4 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors duration-200 text-sm font-light"
+                  >
+                            <span>Read Full Review</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                  </a>
+                                        )}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Attribution outside card if no excerpt */}
+                      {!review.excerpt && (
+                        <div className="flex items-center space-x-6 text-stone-600">
+                          {review.attribution && (
+                            <cite className="text-base font-semibold not-italic text-stone-800 tracking-wide">
+                              {review.attribution}
+                            </cite>
+                          )}
+                          {review.date_of_review && (
+                            <>
+                              <div className="w-1 h-1 bg-stone-400 rounded-full"></div>
+                              <span className="text-stone-500 text-sm font-medium tracking-wider uppercase">
+                                {new Date(review.date_of_review).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short',
+                                  day: 'numeric'
+                                })}
+                              </span>
+                            </>
+                          )}
+                          {review.link && (
+                            <a
+                              href={review.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center space-x-2 px-4 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors duration-200 text-sm font-light"
+                            >
+                              <span>Read Full Review</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}; 

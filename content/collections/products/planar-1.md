@@ -165,7 +165,7 @@ specs:
       -
         type: text
         text: 'New 111g ‘Plug and Play’ balance weight.'
-reivews_set:
+reviews_set:
   -
     id: N7P6Soyt
     type: Review

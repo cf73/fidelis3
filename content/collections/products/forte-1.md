@@ -256,7 +256,7 @@ specs:
       -
         type: text
         text: 'Forté 1: 7.9 kg – 17.4 lbs. '
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

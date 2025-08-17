@@ -9,7 +9,7 @@ available_to_buy_online: false
 monthly_featuree: false
 specs: '<ul><li>Power Output per Channel600 Watts @ 2, 4 or 8 Ohms</li><li>Number of Channels1</li><li>Total Harmonic Distortion0.005%</li><li>S/N below rated outputBalanced: 124dB<br>Unbalanced: 120dB</li><li>Dynamic Headroom2.8dB</li><li>Damping Factor&gt;40 Wideband</li><li>Rated Power Band20Hz to 20kHz</li><li>Frequency Response+0, -0.25dB from 20Hz to 20,000Hz<br>+0, -3.0dB from 10Hz to 100,000Hz</li></ul>'
 has_files: false
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt: '<p>I was prepared to spend considerably more for a high output solidstate amp; that the MC611 won me over and left money in my pocket was a genuine surprise that I didn’t see coming. Well done and most definitely worth an audition. Highly recommend</p>'

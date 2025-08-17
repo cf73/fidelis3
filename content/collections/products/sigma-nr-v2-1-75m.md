@@ -179,7 +179,7 @@ specs:
       -
         type: text
         text: "\_1.75m"
-reivews_set:
+reviews_set:
   -
     id: k1B6TQG4
     excerpt:

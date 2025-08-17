@@ -87,7 +87,7 @@ specs:
       -
         type: text
         text: 'SUPPORTED FORMATS (INPUT DEPENDENT)44.1kHz to 384kHz PCM up to 32 bits , Native DSD (up to 8X DSD)DIGITAL INPUTS3x Advanced isolated input module slots (USB, XLR, RCA)XLR BALANCED OUTPUTS (high/mid/low/variable selectable by the user)9Vrms at 0dB (at high output)RCA OUTPUTS (adjustable as with XLR)4.5Vrms at 0dB (at high output)THD (A WEIGHTED 20HZ-20KHZ)< – 120dB on all outputsCHANNEL SEPARATION>130dB on all outputsSNR (A WEIGHTED 20HZ-20KHZ)>130dB on all outputsDYNAMIC RANGE20HZ TO 20KHZ 147 dB (FS) . 145 dB (AFS)DISPLAY4.3 inchDIMENSIONS (W X H X D)490 x 110 x 350 mm (19.2 x 4.3 x 13.8 in).WEIGHT24kg (~53 lbs)​'
-reivews_set:
+reviews_set:
   -
     id: md97evy2
     excerpt:

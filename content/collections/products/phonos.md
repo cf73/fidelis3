@@ -21,7 +21,7 @@ local_only: false
 shipping: 60
 product-categories: phonostage
 system_category: source
-reivews_set:
+reviews_set:
   -
     id: GPPURnVl
     excerpt:

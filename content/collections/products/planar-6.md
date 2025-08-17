@@ -190,7 +190,7 @@ specs:
               -
                 type: text
                 text: "Available with Ania MC cartridge factory fitted / Discount available\_when factory fitted."
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

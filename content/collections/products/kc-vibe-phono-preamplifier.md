@@ -87,7 +87,7 @@ specs:
                 text: 'Power Requirements: 86 to 260 volts AC, 2 Watts Universal, no adjustment required'
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: ot4kLJg6
     type: Review

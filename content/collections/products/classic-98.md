@@ -394,7 +394,7 @@ specs:
       -
         type: text
         text: 'Yes'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

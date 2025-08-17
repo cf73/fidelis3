@@ -181,7 +181,7 @@ specs:
       -
         type: text
         text: 'Total harmonic distortion 0.0007% (1kHz, SACD 0dB, DSDF: F2, XLR Output)'
-reivews_set:
+reviews_set:
   -
     id: mbjoejts
     excerpt:

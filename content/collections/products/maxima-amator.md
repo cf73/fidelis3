@@ -165,7 +165,7 @@ specs:
       -
         type: text
         text: '83.7 lbs. each – net weight'
-reivews_set:
+reviews_set:
   -
     id: 2C85WAjJ
     type: Review

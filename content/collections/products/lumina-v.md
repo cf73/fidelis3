@@ -212,7 +212,7 @@ specs:
       -
         type: text
         text: '49,6 lb'
-reivews_set:
+reviews_set:
   -
     id: sLGj6uIc
     excerpt:

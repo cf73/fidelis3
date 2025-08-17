@@ -279,7 +279,7 @@ specs:
               -
                 type: text
                 text: '(61 cm H x 59 cm D x 36 cm H)'
-reivews_set:
+reviews_set:
   -
     id: ApTMm2Ug
     type: Review

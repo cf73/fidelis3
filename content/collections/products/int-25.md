@@ -231,7 +231,7 @@ specs:
                     type: bold
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: asvXo4Wx
     type: Review

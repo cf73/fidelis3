@@ -39,7 +39,7 @@ specs:
       -
         type: text
         text: '2 x 520 W (4 Ω) [2 x 550 W (2 Ω); 2 x 300 W (8 Ω)'
-reivews_set:
+reviews_set:
   -
     id: VgvGSbLi
     excerpt:

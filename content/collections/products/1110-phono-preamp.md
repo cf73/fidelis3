@@ -218,7 +218,7 @@ specs:
               -
                 type: text
                 text: 'POWER REQUIREMENTS: 100, 120, 220-240 VAC, 50-60 Hz'
-reivews_set:
+reviews_set:
   -
     type: Review
     excerpt:

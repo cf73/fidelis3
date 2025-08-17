@@ -124,7 +124,7 @@ specs:
                 text: 'BOX CONTENTS: CXC CD Transport, Power Cable, 3 x AAA Batteries, Remote Control, Control Bus Cable'
               -
                 type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: 7NeYSLks
     type: Review

@@ -281,7 +281,7 @@ specs:
         type: hardBreak
       -
         type: hardBreak
-reivews_set:
+reviews_set:
   -
     id: EHXvzosc
     type: Review

@@ -110,7 +110,7 @@ specs:
       -
         type: text
         text: '• Weight: 22Kg'
-reivews_set:
+reviews_set:
   -
     id: Jr9knrSt
     excerpt:

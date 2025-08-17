@@ -224,7 +224,7 @@ specs:
       -
         type: text
         text: '3 Kg'
-reivews_set:
+reviews_set:
   -
     id: mbkttf50
     excerpt:

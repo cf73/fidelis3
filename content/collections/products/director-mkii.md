@@ -24,7 +24,7 @@ pairs_well_with:
   - daabb8e1-410a-478f-973f-430fae9c2d63
 product-categories: pre-amps
 system_category: preamplifiers
-reivews_set:
+reviews_set:
   -
     id: eQcESR7S
     excerpt:

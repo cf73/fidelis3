@@ -285,7 +285,7 @@ specs:
           -
             type: bold
         text: 'Exclusive mobile APP for Android/IOS mobile phones and tablets.'
-reivews_set:
+reviews_set:
   -
     id: dr6anUqc
     excerpt:

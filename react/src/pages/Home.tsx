@@ -97,16 +97,16 @@ const Home: React.FC = () => {
       {/* Latest News */}
       <Section variant="default" background="white">
         <Container>
-          <div className="flex justify-between items-center mb-12">
-            <H2>Latest News</H2>
-            <Link to="/news">
-              <Button variant="ghost" size="sm">
+          <div className="mb-12">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <H2>Latest News</H2>
+              <Link to="/news" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
                 View All
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </Button>
-            </Link>
+              </Link>
+            </div>
           </div>
           <Grid cols={2} gap="lg">
             {recentNews.map((article, index) => (
@@ -128,7 +128,17 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <H2 className="text-center mb-12">Featured Products</H2>
+            <div className="mb-12">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                <H2>Featured Products</H2>
+                <Link to="/products" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
+                  Explore Product Categories
+                  <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </motion.div>
           
           {/* Swiper Carousel */}
@@ -244,17 +254,17 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-between items-center mb-12"
+            className="mb-12"
           >
-            <H2>New in Pre-Owned</H2>
-            <Link to="/pre-owned">
-              <Button variant="ghost" size="sm">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+              <H2>New in Pre-Owned</H2>
+              <Link to="/pre-owned" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
                 View All
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </Button>
-            </Link>
+              </Link>
+            </div>
           </motion.div>
           <Grid cols={4} gap="lg">
             {recentPreOwned.map((item, index) => (

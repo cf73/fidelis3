@@ -124,7 +124,7 @@ specs:
       -
         type: text
         text: "\_86dB/2.83v"
-reivews_set:
+reviews_set:
   -
     excerpt:
       -

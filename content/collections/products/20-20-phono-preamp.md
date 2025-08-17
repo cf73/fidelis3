@@ -68,7 +68,7 @@ specs:
       -
         type: text
         text: 'Power Requirements: Power: 20 watts (10 watts per channel) Operating Voltage: 100 to 240 volts (universal, no adjustments)'
-reivews_set:
+reviews_set:
   -
     id: IJKHcDNa
     type: Review

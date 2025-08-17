@@ -166,7 +166,7 @@ specs:
               -
                 type: text
                 text: 'Weight: 6.5 Kg'
-reivews_set:
+reviews_set:
   -
     excerpt:
       -
