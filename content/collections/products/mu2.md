@@ -42,7 +42,7 @@ description:
       -
         type: text
         text: "\_Core server is on board so no external computer is needed to enjoy perfect streaming.\_"
-price: 17500
+price: 20600
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -50,8 +50,6 @@ shipping: 100
 pairs_well_with:
   - 0613892f-9ee2-4a17-91c9-4399734417ac
   - 30fa5e60-93eb-4e4f-a9df-ae5eea7ec840
-  - 288d3d9c-afb3-430f-b4cc-32413d914957
-  - 85b80b1b-c6aa-457b-b38c-34943fc784f4
 also_consider:
   - 9aec0f30-038f-48cf-a6c2-0447e8080084
   - 33f11126-9326-429c-b50f-f83830be7973
@@ -206,6 +204,6 @@ specs:
                 type: text
                 text: '5 year limited warranty'
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1749214716
+updated_at: 1755625684
 featured_in_product_category: true
 ---
