@@ -51,7 +51,7 @@ description:
       -
         type: text
         text: "\_technology in the highest sound quality."
-price: 2100
+price: 2175
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -486,5 +486,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1752865761
+updated_at: 1755718767
 ---
