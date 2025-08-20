@@ -20,7 +20,7 @@ description:
       -
         type: text
         text: 'Thanks to the VOLTAiR technology the performance of the s1200 is detail-rich, vivid, honest and plain simply beautiful.'
-price: 6499
+price: 8000
 show_price: true
 available_to_buy_online: true
 local_only: false
@@ -28,8 +28,6 @@ shipping: 120
 pairs_well_with:
   - 4e27e871-d106-486e-b721-4889aecaf756
   - 81dc1db6-3021-47d8-a6bd-3e3246817f1d
-also_consider:
-  - 3a1b5954-9525-46a9-922a-464fdc8f6b77
 product-categories: power-amplifiers
 system_category: amplification
 specs:
@@ -54,5 +52,5 @@ reivews_set:
     type: Review
     enabled: true
 updated_by: 87ca4130-78f3-4ed1-8b64-aa552d3d08a8
-updated_at: 1739550597
+updated_at: 1755718212
 ---
