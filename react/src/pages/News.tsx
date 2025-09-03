@@ -5,6 +5,7 @@ import { getNews, getImageUrl, News as NewsType } from '../lib/supabase';
 import { slugify } from '../lib/utils';
 import { Section, Container, Flex, H1, BodyLarge } from '../components/ui';
 import { NewsCard } from '../components/ui';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 const News: React.FC = () => {
   const [news, setNews] = useState<NewsType[]>([]);
@@ -27,11 +28,11 @@ const News: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] flex items-center justify-center">
+      <div className="min-h-screen bg-warm-white flex items-center justify-center">
         <Container>
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-            <p className="mt-4 text-stone-600">Loading news...</p>
+            <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
           </div>
         </Container>
       </div>
@@ -43,10 +44,10 @@ const News: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-[#fffcf9]"
+      className="min-h-screen bg-warm-white"
     >
       {/* Hero Section */}
-      <Section variant="compact" background="white">
+      <Section variant="compact" className="!pt-8 !pb-12">
         <Container>
           <Flex direction="col" align="center" className="text-center">
             <H1 className="mb-4">News & Updates</H1>
@@ -58,7 +59,7 @@ const News: React.FC = () => {
       </Section>
 
       {/* News Grid */}
-      <Section variant="compact" background="custom" customBackground="bg-[#fffcf9]">
+      <Section variant="compact" background="custom" customBackground="bg-warm-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {news.map((article) => {

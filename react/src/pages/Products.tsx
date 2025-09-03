@@ -17,6 +17,7 @@ import { getProductsWithCategories, getProductCategories, getManufacturers, getI
 import { Product, ProductCategory, Manufacturer } from '../lib/supabase';
 // Removed ProductForm import as this page no longer mounts it directly
 import { ProductCard, Section, Grid, Container, Flex, H1, H2, H3, H4, Body, BodySmall, Caption, Button, Card, Price } from '../components/ui';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 const Products: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -121,7 +122,7 @@ const Products: React.FC = () => {
     setSearchParams(newSearchParams);
     
     // Reset scroll position to top of products grid when filters change
-    if (type === 'manufacturer' || type === 'category') {
+    if (type === 'manufacturer' || type === 'category' || type === 'sort') {
       setTimeout(() => {
         const productsGrid = document.querySelector('.products-grid');
         if (productsGrid) {
@@ -182,12 +183,12 @@ const Products: React.FC = () => {
   // Show loading spinner if data is still loading
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9]">
+      <div className="min-h-screen bg-warm-white">
         <div className="pt-28">
           <div className="flex items-center justify-center min-h-[50vh]">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-              <p className="mt-4 text-stone-600">Loading products...</p>
+              <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
             </div>
           </div>
         </div>
@@ -198,7 +199,7 @@ const Products: React.FC = () => {
   return (
     <div>
       {/* Filters */}
-      <Section variant="default" background="white">
+      <Section variant="default" className="!pt-8 !pb-16">
         <Container>
                      <div className="max-w-4xl mx-auto text-center">
              <H1 className="mb-4">
@@ -262,7 +263,7 @@ const Products: React.FC = () => {
       </Section>
 
       {/* Main Content with Sidebar */}
-      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+      <Section variant="default" background="custom" customBackground="bg-warm-white">
         <Container>
           <div className="flex flex-col lg:flex-row gap-8">
                          {/* Sidebar Filters */}

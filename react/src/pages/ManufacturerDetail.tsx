@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getManufacturerBySlug, getProductsWithCategories, getProductCategories } from '../lib/supabase';
 import { Manufacturer, Product, ProductCategory } from '../lib/supabase';
 import { ProductCard, Section, Container, H1, H2, H3, Body, Button } from '../components/ui';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 export const ManufacturerDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -14,6 +15,24 @@ export const ManufacturerDetail: React.FC = () => {
   const [sortBy, setSortBy] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+
+  // Scroll to products grid function
+  const scrollToProducts = () => {
+    setTimeout(() => {
+      const productsGrid = document.querySelector('.products-grid') || 
+                          document.querySelector('[class*="grid grid-cols"]');
+      if (productsGrid) {
+        const navHeight = 80; // Approximate navigation height
+        const elementTop = productsGrid.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementTop - navHeight - 20; // Extra 20px for breathing room
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100); // Small delay to ensure state updates have processed
+  };
 
   useEffect(() => {
     const loadManufacturerData = async () => {
@@ -78,7 +97,7 @@ export const ManufacturerDetail: React.FC = () => {
         <Container>
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-            <p className="mt-4 text-stone-600">Loading manufacturer...</p>
+            <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
           </div>
         </Container>
       </div>
@@ -108,25 +127,37 @@ export const ManufacturerDetail: React.FC = () => {
         <Container>
           <div className="mb-4">
 
-            <div className="flex items-center justify-between">
-              <div className="flex-1">
-                <H1>{manufacturer.name}</H1>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
+              {/* Logo first on mobile, centered */}
+              {manufacturer.logo && (
+                <div className="flex justify-center lg:order-2 lg:flex-shrink-0 lg:ml-8">
+                  <img
+                    src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${manufacturer.logo}`}
+                    alt={`${manufacturer.name} logo`}
+                    className="h-20 lg:h-16 w-auto"
+                  />
+                  </div>
+              )}
+              
+              {/* Content second on mobile, takes full width */}
+              <div className="flex-1 lg:order-1">
+                <H1 className="text-center lg:text-left">{manufacturer.name}</H1>
                 {manufacturer.description && (
                   <div className="mt-2 max-w-4xl">
-                    <div className="relative">
+                                        <div className="relative">
                       <div 
-                        className={`text-stone-600 text-base font-light tracking-wide transition-all duration-300 ${
-                          isDescriptionExpanded ? '' : 'max-h-[4.5rem] overflow-hidden'
+                        className={`prose prose-stone max-w-none transition-all duration-300 ${
+                          isDescriptionExpanded ? '' : 'max-h-[6.5rem] overflow-hidden'
                         }`}
                         dangerouslySetInnerHTML={{ __html: manufacturer.description }}
                       ></div>
                       {!isDescriptionExpanded && (
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-warm-white to-transparent pointer-events-none"></div>
                       )}
                     </div>
                     <button
                       onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-                      className="mt-2 text-sm text-stone-600 hover:text-stone-900 transition-colors duration-200 font-medium flex items-center space-x-1"
+                      className="mt-2 text-sm text-stone-600 hover:text-stone-900 transition-colors duration-200 font-medium flex items-center space-x-1 mx-auto lg:mx-0"
                     >
                       <span>{isDescriptionExpanded ? 'Show Less' : 'Read More'}</span>
                       <svg 
@@ -141,29 +172,21 @@ export const ManufacturerDetail: React.FC = () => {
                   </div>
                 )}
                 {manufacturer.website && (
+                  <div className="flex justify-center lg:justify-start">
                   <Link
                     to={manufacturer.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center mt-4 text-stone-600 hover:text-stone-700 transition-colors"
+                      className="inline-flex items-center mt-4 text-stone-600 hover:text-stone-700 transition-colors"
                   >
                     Visit Website
                     <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </Link>
+                  </div>
                 )}
               </div>
-              
-              {manufacturer.logo && (
-                <div className="flex-shrink-0 ml-8">
-                  <img
-                    src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${manufacturer.logo}`}
-                    alt={`${manufacturer.name} logo`}
-                    className="h-16 w-auto"
-                  />
-                </div>
-              )}
             </div>
           </div>
         </Container>
@@ -235,9 +258,9 @@ export const ManufacturerDetail: React.FC = () => {
                           </label>
                         ))}
                       </div>
-                    </div>
-                  )}
-
+                  </div>
+                )}
+                
                   {sortedProducts.some(product => product.price) && (
                     <div>
                       <label className="block text-sm font-medium text-stone-700 mb-3">
@@ -251,7 +274,10 @@ export const ManufacturerDetail: React.FC = () => {
                               name="sort"
                               value="price-low"
                               checked={sortBy === 'price-low'}
-                              onChange={(e) => setSortBy(e.target.value)}
+                              onChange={(e) => {
+                                setSortBy(e.target.value);
+                                scrollToProducts();
+                              }}
                               className="sr-only"
                             />
                             <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
@@ -265,7 +291,7 @@ export const ManufacturerDetail: React.FC = () => {
                             </div>
                           </div>
                           <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price Low to High</span>
-                        </label>
+                    </label>
                         
                         <label className="flex items-center space-x-3 cursor-pointer group">
                           <div className="relative">
@@ -274,7 +300,10 @@ export const ManufacturerDetail: React.FC = () => {
                               name="sort"
                               value="price-high"
                               checked={sortBy === 'price-high'}
-                              onChange={(e) => setSortBy(e.target.value)}
+                              onChange={(e) => {
+                                setSortBy(e.target.value);
+                                scrollToProducts();
+                              }}
                               className="sr-only"
                             />
                             <div className={`w-4 h-4 rounded-full border-2 transition-all duration-200 ${
@@ -290,42 +319,42 @@ export const ManufacturerDetail: React.FC = () => {
                           <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price High to Low</span>
                         </label>
                       </div>
-                    </div>
-                  )}
+                  </div>
+                )}
                 </div>
-              </div>
             </div>
+          </div>
 
             {/* Products Grid Section */}
             <div className="flex-1 pt-8 pb-16">
-              {sortedProducts.length === 0 ? (
+          {sortedProducts.length === 0 ? (
                 <div className="text-center py-12">
-                  <svg className="mx-auto h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                  </svg>
-                  <H3 className="mt-2">No products found</H3>
-                  <Body className="mt-1 text-stone-500">
-                    {selectedCategory 
-                      ? 'No products found in the selected category.'
-                      : 'No products are available from this manufacturer at the moment.'
-                    }
-                  </Body>
-                </div>
-              ) : (
+              <svg className="mx-auto h-12 w-12 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <H3 className="mt-2">No products found</H3>
+              <Body className="mt-1 text-stone-500">
+                {selectedCategory 
+                  ? 'No products found in the selected category.'
+                  : 'No products are available from this manufacturer at the moment.'
+                }
+              </Body>
+            </div>
+          ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
-                  {sortedProducts.map((product) => (
-                    <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
-                      <ProductCard
-                        product={product}
-                        showBadges={true}
-                        showPrice={true}
+              {sortedProducts.map((product) => (
+                <Link key={product.id} to={`/products/${product.slug}`} className="block h-full">
+                  <ProductCard
+                    product={product}
+                    showBadges={true}
+                    showPrice={true}
                         showCategory={!selectedCategory}
-                        className="h-full"
-                      />
-                    </Link>
-                  ))}
-                </div>
-              )}
+                    className="h-full"
+                  />
+                </Link>
+              ))}
+            </div>
+          )}
             </div>
           </div>
         </Container>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getManufacturers, getImageUrl, type Manufacturer } from '../lib/supabase';
 import { Section, Grid, Container, Flex, H1, H2, Body, BodyLarge } from '../components/ui';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 
 const Manufacturers: React.FC = () => {
@@ -26,11 +27,11 @@ const Manufacturers: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] flex items-center justify-center">
+      <div className="min-h-screen bg-warm-white flex items-center justify-center">
         <Container>
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-            <p className="mt-4 text-stone-600">Loading manufacturers...</p>
+            <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
           </div>
         </Container>
       </div>
@@ -42,10 +43,10 @@ const Manufacturers: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-[#fffcf9]"
+      className="min-h-screen bg-warm-white"
     >
       {/* Hero Section */}
-      <Section variant="hero" background="white">
+      <Section variant="hero" className="!pt-8 !pb-16">
         <Container>
           <Flex direction="col" align="center" className="text-center">
             <H1 className="mb-4">Manufacturers</H1>
@@ -57,7 +58,7 @@ const Manufacturers: React.FC = () => {
       </Section>
 
       {/* Manufacturers Grid */}
-      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+      <Section variant="default" background="custom" customBackground="bg-warm-white">
         <Container>
           {manufacturers.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
@@ -71,14 +72,14 @@ const Manufacturers: React.FC = () => {
                 >
                   <Link
                     to={`/manufacturers/${manufacturer.slug || manufacturer.id}`}
-                    className="block p-6 rounded-xl transition-all duration-300"
+                    className="block p-6 rounded-xl transition-all duration-300 bg-white/50 hover:bg-white/80"
                   >
                     {manufacturer.logo ? (
                       <div className="flex items-center justify-center h-24">
                         <img
                           src={getImageUrl(manufacturer.logo)}
                           alt={manufacturer.name}
-                          className="max-h-16 max-w-full object-contain mix-blend-multiply group-hover:mix-blend-multiply group-hover:opacity-80 transition-opacity duration-200"
+                          className="max-h-16 max-w-full object-contain mix-blend-multiply transition-opacity duration-200"
                         />
                       </div>
                     ) : (

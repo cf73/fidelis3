@@ -112,7 +112,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
       <div className="border-b border-stone-200 bg-gradient-to-r from-stone-50 to-stone-100">
         <nav className="flex" aria-label="Tabs">
           {tabs.map((tab) => (
-            <button
+          <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex-1 flex items-center justify-center space-x-2 py-4 px-4 font-medium text-sm transition-all duration-300 ${
@@ -123,10 +123,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
             >
               <span>{tab.icon}</span>
               <span>{tab.label}</span>
-            </button>
+          </button>
           ))}
         </nav>
-      </div>
+        </div>
 
       {/* Tab Content */}
       <div className="p-8 lg:p-12">
@@ -150,17 +150,17 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                   value={formData.price}
                   onChange={(e) => handleInputChange('price', parseInt(e.target.value) || 0)}
                   className="w-full border border-stone-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-stone-500 focus:border-transparent"
-                />
-              </div>
-              
-              <div>
+              />
+            </div>
+
+            <div>
                 <label className="block text-sm font-medium text-stone-700 mb-2">Category</label>
                 <div className="text-sm text-stone-600 py-3">
                   {product.categories?.name || 'No category assigned'}
-                </div>
-              </div>
-              
-              <div>
+            </div>
+          </div>
+
+            <div>
                 <label className="block text-sm font-medium text-stone-700 mb-2">Manufacturer</label>
                 <div className="text-sm text-stone-600 py-3">
                   {product.manufacturer?.name || 'No manufacturer assigned'}
@@ -229,7 +229,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
         )}
 
         {activeTab === 'specs' && (
-          <div>
+            <div>
             <label className="block text-sm font-medium text-stone-700 mb-2">Technical Specifications</label>
             <textarea
               value={formData.specs}
@@ -263,7 +263,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                 </div>
                 <h3 className="text-xl font-medium text-stone-900 mb-2">No Reviews Yet</h3>
                 <p className="text-stone-600">Add the first review for this product.</p>
-              </div>
+            </div>
             ) : (
               <div className="space-y-6">
                 {reviews.map((review, index) => (
@@ -276,10 +276,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                       >
                         Remove
                       </button>
-                    </div>
-                    
+          </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                      <div>
+          <div>
                         <label className="block text-sm font-medium text-stone-700 mb-2">Attribution</label>
                         <input
                           type="text"
@@ -287,10 +287,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                           onChange={(e) => updateReview(index, 'attribution', e.target.value)}
                           className="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                           placeholder="Reviewer name or publication"
-                        />
-                      </div>
-                      
-                      <div>
+            />
+          </div>
+
+          <div>
                         <label className="block text-sm font-medium text-stone-700 mb-2">Date</label>
                         <input
                           type="date"
@@ -309,10 +309,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                         onChange={(e) => updateReview(index, 'link', e.target.value)}
                         className="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                         placeholder="https://..."
-                      />
-                    </div>
-                    
-                    <div>
+            />
+          </div>
+
+          <div>
                       <label className="block text-sm font-medium text-stone-700 mb-2">Review Excerpt</label>
                       <textarea
                         value={review.excerpt || ''}
@@ -360,16 +360,16 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                         className="flex-1 border border-stone-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-stone-500 focus:border-transparent"
                         placeholder="Product ID"
                       />
-                      <button
+                          <button
                         onClick={() => {
                           const newPairs = formData.pairs_well_with.filter((_, i) => i !== index);
                           handleInputChange('pairs_well_with', newPairs);
                         }}
                         className="text-red-600 hover:text-red-800 text-sm font-medium"
-                      >
-                        Remove
-                      </button>
-                    </div>
+                          >
+                            Remove
+                          </button>
+                        </div>
                   ))}
                   <button
                     onClick={() => {
@@ -380,8 +380,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                   >
                     Add Product ID
                   </button>
-                </div>
-              </div>
+                      </div>
+                        </div>
 
               {/* Also Consider */}
               <div className="bg-stone-50 rounded-2xl p-6 border border-stone-200">
@@ -425,26 +425,26 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCan
                   </button>
                 </div>
               </div>
-            </div>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
       {/* Action Buttons */}
       <div className="border-t border-stone-200 bg-stone-50 px-8 py-6 flex justify-end space-x-4">
-        <button
+            <button
           onClick={onCancel}
           className="px-6 py-3 border border-stone-300 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors duration-200 font-medium"
-        >
-          Cancel
-        </button>
-        <button
+            >
+              Cancel
+            </button>
+            <button
           onClick={handleSave}
-          disabled={loading}
+              disabled={loading}
           className="px-6 py-3 bg-stone-800 text-white rounded-lg hover:bg-stone-900 transition-colors duration-200 font-medium disabled:opacity-50"
-        >
+            >
           {loading ? 'Saving...' : 'Save Changes'}
-        </button>
+            </button>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getNewsBySlug, getAdjacentNews, getImageUrl, processArticleMentions } from '../lib/supabase';
 import { News } from '../lib/supabase';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 const NewsDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -60,10 +61,10 @@ const NewsDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] py-12">
+      <div className="min-h-screen bg-white py-12">
         <div className="container-custom text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-          <p className="mt-4 text-stone-600">Loading article...</p>
+          <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
         </div>
       </div>
     );
@@ -71,7 +72,7 @@ const NewsDetail: React.FC = () => {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] py-12">
+      <div className="min-h-screen bg-white py-12">
         <div className="container-custom text-center">
           <h1 className="text-2xl font-bold text-stone-900 mb-4">Article Not Found</h1>
           <p className="text-stone-600 mb-6">The news article you're looking for doesn't exist.</p>
@@ -91,11 +92,11 @@ const NewsDetail: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-[#fffcf9]"
+      className="min-h-screen bg-warm-white"
     >
       {/* Hero Section - Full Width */}
       {article.image && (
-        <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
+        <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden mt-24">
           <motion.img
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -152,7 +153,7 @@ const NewsDetail: React.FC = () => {
       )}
 
       {/* Article Content */}
-      <section className="py-12 md:py-16">
+      <section className="pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -163,12 +164,12 @@ const NewsDetail: React.FC = () => {
             >
               {/* Main Content */}
               {processedContent && (
-                <div className="text-stone-700 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: processedContent }} />
+                <div dangerouslySetInnerHTML={{ __html: processedContent }} />
               )}
 
               {/* Fallback to content if main_content is not available */}
               {!processedContent && article.content && (
-                <div className="text-stone-700 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: article.content }} />
+                <div dangerouslySetInnerHTML={{ __html: article.content }} />
               )}
             </motion.div>
           </div>
@@ -177,7 +178,7 @@ const NewsDetail: React.FC = () => {
 
       {/* Mentions Section */}
       {(mentions.manufacturers.length > 0 || mentions.products.length > 0) && (
-        <section className="py-8 bg-stone-50 border-t border-stone-200">
+        <section className="py-8 bg-warm-white border-t border-stone-200">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -251,7 +252,7 @@ const NewsDetail: React.FC = () => {
       )}
 
       {/* Article Navigation */}
-      <section className="py-12 bg-stone-50 border-t border-stone-200">
+      <section className="py-12 bg-warm-white border-t border-stone-200">
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
             <motion.div

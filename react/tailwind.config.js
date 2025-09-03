@@ -31,9 +31,11 @@ export default {
           800: '#92400e',
           900: '#78350f',
         },
+        'warm-cream': '#fffcf9', // Premium warm cream background
+        'warm-white': '#fefcfa', // Premium warm white background
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', '-apple-system', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

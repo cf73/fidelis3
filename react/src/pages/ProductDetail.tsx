@@ -10,6 +10,7 @@ import { DeleteConfirmation } from '../components/DeleteConfirmation';
 import { ProductTabs, hasTabContent } from '../components/ProductTabs';
 import { ProductEditForm } from '../components/ProductEditForm';
 import { ProductCard } from '../components/ui/Card';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 
 export const ProductDetail: React.FC = () => {
@@ -146,10 +147,10 @@ export const ProductDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] py-12">
+      <div className="min-h-screen bg-warm-white py-12">
         <div className="container-custom text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading product...</p>
+          <p className="mt-4 text-gray-600">{getRandomMusicalMessage()}</p>
         </div>
       </div>
     );
@@ -157,7 +158,7 @@ export const ProductDetail: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#fffcf9] py-12">
+      <div className="min-h-screen bg-warm-white py-12">
         <div className="container-custom text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
           <p className="text-gray-600 mb-6">The product you're looking for doesn't exist.</p>
@@ -170,9 +171,9 @@ export const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#fffcf9]">
+    <div className="min-h-screen bg-warm-white">
       {/* Premium Hero Section */}
-      <div className="relative bg-[#fffcf9] border-b border-stone-200">
+      <div className="relative bg-warm-white border-b border-stone-200">
         <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
 
 
@@ -209,7 +210,7 @@ export const ProductDetail: React.FC = () => {
                       alt={product.title}
                       className="w-full h-auto max-h-[600px] object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
                     />
-                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 right-4 bg-warm-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Click to enlarge
                     </div>
                   </div>
@@ -231,7 +232,7 @@ export const ProductDetail: React.FC = () => {
                   {product.product_gallery.map((imagePath, index) => (
                     <div
                       key={index}
-                      className="relative group cursor-pointer overflow-hidden rounded-xl bg-white shadow-md"
+                      className="relative group cursor-pointer overflow-hidden rounded-xl bg-warm-white shadow-md"
                       onClick={() => openImageModal(imagePath)}
                     >
                       <img
@@ -367,7 +368,7 @@ export const ProductDetail: React.FC = () => {
 
       {/* Pairs Well With Products */}
       {pairsWellWithProducts.length > 0 && (
-        <div className="bg-white py-24">
+        <div className="bg-warm-white py-24">
           <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">
@@ -381,7 +382,7 @@ export const ProductDetail: React.FC = () => {
             {relatedLoading ? (
               <div className="text-center py-16">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto mb-4"></div>
-                <p className="text-stone-600">Loading related products...</p>
+                <p className="text-stone-600">{getRandomMusicalMessage()}</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
@@ -409,7 +410,7 @@ export const ProductDetail: React.FC = () => {
 
       {/* Also Consider Products */}
       {alsoConsiderProducts.length > 0 && (
-        <div className="bg-white py-24">
+        <div className="bg-warm-white py-24">
           <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">Also consider</h2>

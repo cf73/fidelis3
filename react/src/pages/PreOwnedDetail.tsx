@@ -56,10 +56,10 @@ const PreOwnedDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-warm-white">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4 text-stone-600">Loading...</p>
         </div>
       </div>
     );
@@ -67,9 +67,9 @@ const PreOwnedDetail: React.FC = () => {
 
   if (!item) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-warm-white">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Item Not Found</h2>
+          <h2 className="text-2xl font-bold text-stone-900 mb-4">Item Not Found</h2>
           <Link to="/pre-owned" className="btn-primary">
             Back to Pre-Owned
           </Link>
@@ -88,12 +88,12 @@ const PreOwnedDetail: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-warm-white"
     >
       {/* Header */}
-      <section className="bg-white shadow-sm">
+      <section className="bg-warm-white border-b border-stone-200">
         <div className="container-custom py-6">
-          <Link to="/pre-owned" className="inline-flex items-center text-gray-600 hover:text-gray-900">
+          <Link to="/pre-owned" className="inline-flex items-center text-stone-600 hover:text-stone-900">
             <ArrowLeftIcon className="h-4 w-4 mr-2" />
             Back to Pre-Owned
           </Link>
@@ -126,7 +126,7 @@ const PreOwnedDetail: React.FC = () => {
                 >
                   {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                      <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden">
+                      <div className="aspect-w-1 aspect-h-1 bg-stone-100 rounded-lg overflow-hidden">
                         <img
                           src={getImageUrl(image)}
                           alt={`${item.title} - Image ${index + 1}`}
@@ -140,13 +140,13 @@ const PreOwnedDetail: React.FC = () => {
                 {/* Custom Navigation Buttons */}
                 {images.length > 1 && (
                   <>
-                    <button className="custom-swiper-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
+                    <button className="custom-swiper-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-warm-white/95 hover:bg-warm-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
                       <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M12.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd"/>
                       </svg>
                     </button>
                     
-                    <button className="custom-swiper-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
+                    <button className="custom-swiper-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-warm-white/95 hover:bg-warm-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-0 disabled:pointer-events-none">
                       <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
                       </svg>
@@ -160,8 +160,8 @@ const PreOwnedDetail: React.FC = () => {
                 )}
               </div>
             ) : (
-              <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">No images available</p>
+              <div className="aspect-w-1 aspect-h-1 bg-stone-100 rounded-lg flex items-center justify-center">
+                <p className="text-stone-500">No images available</p>
               </div>
             )}
           </div>
@@ -169,7 +169,7 @@ const PreOwnedDetail: React.FC = () => {
           {/* Item Info */}
           <div>
             <div className="mb-6">
-                             <h1 className="text-4xl font-bold text-gray-900 mb-4">{item.title}</h1>
+                             <h1 className="text-4xl font-bold text-stone-900 mb-4">{item.title}</h1>
               
               {/* Pricing */}
               <div className="mb-6">
@@ -179,7 +179,7 @@ const PreOwnedDetail: React.FC = () => {
                        {formatPrice(item.your_price)}
                      </span>
                      {item.new_retail_price && (
-                       <span className="text-xl text-gray-500 line-through">
+                       <span className="text-xl text-stone-500 line-through">
                          {formatPrice(item.new_retail_price)}
                        </span>
                      )}
@@ -199,7 +199,7 @@ const PreOwnedDetail: React.FC = () => {
                              {/* Description */}
                {item.description && (
                  <div className="mb-8">
-                   <h3 className="text-lg font-semibold mb-4 text-gray-900">Description</h3>
+                   <h3 className="text-lg font-semibold mb-4 text-stone-900">Description</h3>
                                        <div className="prose max-w-none">
                       <div dangerouslySetInnerHTML={{ __html: item.description }} />
                     </div>
@@ -210,20 +210,20 @@ const PreOwnedDetail: React.FC = () => {
               <div className="space-y-4">
                 {item.original_accessories && (
                   <div className="flex items-start gap-3">
-                                         <CubeIcon className="h-5 w-5 text-gray-500 mt-0.5" />
+                                         <CubeIcon className="h-5 w-5 text-stone-500 mt-0.5" />
                      <div>
-                       <h4 className="font-semibold text-gray-900">Original Accessories</h4>
-                       <p className="text-gray-600">{item.original_accessories}</p>
+                       <h4 className="font-semibold text-stone-900">Original Accessories</h4>
+                       <p className="text-stone-600">{item.original_accessories}</p>
                      </div>
                   </div>
                 )}
                 
                 {item.shipping !== null && (
                   <div className="flex items-start gap-3">
-                                         <TruckIcon className="h-5 w-5 text-gray-500 mt-0.5" />
+                                         <TruckIcon className="h-5 w-5 text-stone-500 mt-0.5" />
                      <div>
-                       <h4 className="font-semibold text-gray-900">Shipping</h4>
-                       <p className="text-gray-600">
+                       <h4 className="font-semibold text-stone-900">Shipping</h4>
+                       <p className="text-stone-600">
                          {item.shipping === 0 ? 'Free shipping' : `Shipping: ${formatPrice(item.shipping || 0)}`}
                        </p>
                      </div>
@@ -232,10 +232,10 @@ const PreOwnedDetail: React.FC = () => {
 
                 {item.date && (
                   <div className="flex items-start gap-3">
-                                         <CalendarIcon className="h-5 w-5 text-gray-500 mt-0.5" />
+                                         <CalendarIcon className="h-5 w-5 text-stone-500 mt-0.5" />
                      <div>
-                       <h4 className="font-semibold text-gray-900">Listed Date</h4>
-                       <p className="text-gray-600">
+                       <h4 className="font-semibold text-stone-900">Listed Date</h4>
+                       <p className="text-stone-600">
                          {new Date(item.date).toLocaleDateString('en-US', {
                            year: 'numeric',
                            month: 'long',
@@ -270,10 +270,10 @@ const PreOwnedDetail: React.FC = () => {
       </section>
 
       {/* Additional Info Section */}
-             <section className="bg-gray-50 py-16">
+             <section className="bg-warm-white py-16">
          <div className="container-custom">
            <div className="max-w-4xl mx-auto">
-             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+             <h2 className="text-2xl font-bold text-stone-900 mb-8 text-center">
                About This Pre-Owned Item
              </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -281,8 +281,8 @@ const PreOwnedDetail: React.FC = () => {
                                  <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                    <TagIcon className="h-6 w-6 text-accent-600" />
                  </div>
-                 <h3 className="font-semibold mb-2 text-gray-900">Exceptional Value</h3>
-                 <p className="text-gray-600 text-sm">
+                 <h3 className="font-semibold mb-2 text-stone-900">Exceptional Value</h3>
+                 <p className="text-stone-600 text-sm">
                    Significant savings on high-end audio equipment that maintains its performance and quality.
                  </p>
                </div>
@@ -290,8 +290,8 @@ const PreOwnedDetail: React.FC = () => {
                  <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                    <CubeIcon className="h-6 w-6 text-accent-600" />
                  </div>
-                 <h3 className="font-semibold mb-2 text-gray-900">Carefully Inspected</h3>
-                 <p className="text-gray-600 text-sm">
+                 <h3 className="font-semibold mb-2 text-stone-900">Carefully Inspected</h3>
+                 <p className="text-stone-600 text-sm">
                    Each item is thoroughly tested and inspected to ensure it meets our quality standards.
                  </p>
                </div>
@@ -299,8 +299,8 @@ const PreOwnedDetail: React.FC = () => {
                  <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                    <TruckIcon className="h-6 w-6 text-accent-600" />
                  </div>
-                 <h3 className="font-semibold mb-2 text-gray-900">Warranty Available</h3>
-                 <p className="text-gray-600 text-sm">
+                 <h3 className="font-semibold mb-2 text-stone-900">Warranty Available</h3>
+                 <p className="text-stone-600 text-sm">
                    Many pre-owned items come with warranty coverage for your peace of mind.
                  </p>
               </div>

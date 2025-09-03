@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product, Review } from '../lib/supabase';
 
 // Helper function to detect if content contains HTML tags
@@ -327,6 +327,11 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
 
   const [activeTab, setActiveTab] = useState<'description' | 'specs' | 'reviews'>(getInitialActiveTab());
 
+  // Reset to first tab when product changes (e.g., navigating between products)
+  useEffect(() => {
+    setActiveTab(getInitialActiveTab());
+  }, [product.id]); // Reset when product ID changes
+
   // If no tabs have content, don't render the component
   if (tabs.length === 0) {
     return null;
@@ -403,7 +408,7 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
                 {reviews.map((review: Review, index: number) => (
                   <div key={index} className="relative">
                 {review.excerpt && (
-                                              <div className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-8 relative transform hover:shadow-md transition-shadow duration-300">
+                                              <div className="bg-warm-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-8 relative transform hover:shadow-md transition-shadow duration-300">
                           {/* Subtle corner accent */}
                           <div className="absolute top-0 left-0 w-1 h-16 bg-stone-300 rounded-l-2xl"></div>
                           
@@ -573,7 +578,7 @@ export const ProductTabs: React.FC<ProductTabsProps> = ({ product }) => {
                   {reviews.map((review: Review, index: number) => (
                     <div key={index} className="relative">
                       {review.excerpt && (
-                        <div className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-6 relative transform hover:shadow-md transition-shadow duration-300">
+                        <div className="bg-warm-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-6 relative transform hover:shadow-md transition-shadow duration-300">
                           {/* Subtle corner accent */}
                           <div className="absolute top-0 left-0 w-1 h-16 bg-stone-300 rounded-l-2xl"></div>
                           

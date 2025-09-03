@@ -32,10 +32,10 @@ export const Section: React.FC<SectionProps> = ({
   };
 
   const backgrounds = {
-    white: 'bg-white',
-    'stone-50': 'bg-stone-50',
-    'stone-100': 'bg-stone-100',
-    custom: customBackground || 'bg-white'
+    white: 'bg-warm-white',
+    'stone-50': 'bg-warm-white',
+    'stone-100': 'bg-warm-white',
+    custom: customBackground || 'bg-warm-white'
   };
 
   return (

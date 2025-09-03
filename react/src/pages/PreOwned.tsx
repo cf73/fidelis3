@@ -29,6 +29,7 @@ import {
   PreOwnedCard,
   ValueCard
 } from '../components/ui';
+import { getRandomMusicalMessage } from '../utils/musicalLoadingMessages';
 
 const PreOwned: React.FC = () => {
   const [preOwnedItems, setPreOwnedItems] = useState<PreOwned[]>([]);
@@ -140,7 +141,7 @@ const PreOwned: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center bg-[#fffcf9]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading pre-owned collection...</p>
+          <p className="mt-4 text-gray-600">{getRandomMusicalMessage()}</p>
         </div>
       </div>
     );

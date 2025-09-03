@@ -30,7 +30,7 @@ export const H1: React.FC<TypographyProps> = ({ children, className = '', as: Co
 export const H2: React.FC<TypographyProps> = ({ children, className = '', as: Component = 'h2' }) => {
   const ComponentType = Component as React.ElementType;
   return (
-    <ComponentType className={`text-3xl lg:text-4xl font-light tracking-wide text-stone-800 ${className}`}>
+    <ComponentType className={`text-3xl lg:text-3xl font-medium tracking-tight text-stone-800 ${className}`}>
       {children}
     </ComponentType>
   );

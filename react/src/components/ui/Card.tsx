@@ -111,7 +111,7 @@ export const Card: React.FC<CardProps> = ({
     default: 'bg-white',
     product: 'bg-[#f4f0ed] hover:bg-[#e8e4e1]',
     news: 'bg-white hover:shadow-xl',
-    manufacturer: 'bg-transparent shadow-none hover:shadow-none border-0',
+    manufacturer: 'bg-white/50 hover:bg-white/80 shadow-none hover:shadow-none border-0',
     category: 'bg-white hover:shadow-xl transform hover:-translate-y-2 group',
     featured: 'bg-gradient-to-br from-stone-600 to-stone-700 text-white',
     value: 'bg-white text-center'
@@ -345,11 +345,11 @@ export const ManufacturerCard: React.FC<ManufacturerCardProps> = ({
           <img
             src={getImageUrl(manufacturer.logo)}
             alt={manufacturer.name}
-            className="h-20 mx-auto object-contain mix-blend-multiply group-hover:mix-blend-multiply transition-opacity"
+            className="h-32 sm:h-20 mx-auto object-contain mix-blend-multiply transition-opacity"
           />
         ) : (
-          <div className="h-20 w-20 mx-auto rounded-lg flex items-center justify-center">
-            <svg className="h-10 w-10 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="h-32 w-32 sm:h-20 sm:w-20 mx-auto rounded-lg flex items-center justify-center">
+            <svg className="h-16 w-16 sm:h-10 sm:w-10 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
