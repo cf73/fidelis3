@@ -94,7 +94,7 @@ export const ManufacturerDetail: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#fffcf9] py-12">
-        <Container>
+        <Container size="6xl">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
             <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
@@ -107,7 +107,7 @@ export const ManufacturerDetail: React.FC = () => {
   if (!manufacturer) {
     return (
       <div className="min-h-screen bg-[#fffcf9] py-12">
-        <Container>
+        <Container size="6xl">
           <div className="text-center">
             <H1 className="mb-4">Manufacturer Not Found</H1>
             <Body className="mb-6 text-stone-600">The manufacturer you're looking for doesn't exist.</Body>
@@ -123,70 +123,46 @@ export const ManufacturerDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
-      <Section variant="hero" background="white">
-        <Container>
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
           <div className="mb-4">
 
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
-              {/* Logo first on mobile, centered */}
-              {manufacturer.logo && (
-                <div className="flex justify-center lg:order-2 lg:flex-shrink-0 lg:ml-8">
-                  <img
-                    src={`https://myrdvcihcqphixvunvkv.supabase.co/storage/v1/object/public/images/${manufacturer.logo}`}
-                    alt={`${manufacturer.name} logo`}
-                    className="h-20 lg:h-16 w-auto"
-                  />
-                  </div>
-              )}
-              
-              {/* Content second on mobile, takes full width */}
-              <div className="flex-1 lg:order-1">
-                <H1 className="text-center lg:text-left">{manufacturer.name}</H1>
+            <div className="max-w-4xl">
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-4">{manufacturer.name}</h1>
                 {manufacturer.description && (
-                  <div className="mt-2 max-w-4xl">
-                                        <div className="relative">
-                      <div 
-                        className={`prose prose-stone max-w-none transition-all duration-300 ${
-                          isDescriptionExpanded ? '' : 'max-h-[6.5rem] overflow-hidden'
-                        }`}
-                        dangerouslySetInnerHTML={{ __html: manufacturer.description }}
-                      ></div>
-                      {!isDescriptionExpanded && (
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-warm-white to-transparent pointer-events-none"></div>
-                      )}
+                  <div className="mb-8">
+                    <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+                      <div dangerouslySetInnerHTML={{ 
+                        __html: isDescriptionExpanded 
+                          ? manufacturer.description 
+                          : (manufacturer.description.length > 300 
+                              ? manufacturer.description.substring(0, 300) + '...' 
+                              : manufacturer.description)
+                      }} />
                     </div>
-                    <button
-                      onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-                      className="mt-2 text-sm text-stone-600 hover:text-stone-900 transition-colors duration-200 font-medium flex items-center space-x-1 mx-auto lg:mx-0"
-                    >
-                      <span>{isDescriptionExpanded ? 'Show Less' : 'Read More'}</span>
-                      <svg 
-                        className={`w-4 h-4 transition-transform duration-200 ${isDescriptionExpanded ? 'rotate-180' : ''}`}
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
+                    {manufacturer.description.length > 300 && (
+                      <button
+                        onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                        className="mt-3 text-sm text-stone-600 hover:text-stone-900 transition-colors duration-200 font-medium underline decoration-stone-300 hover:decoration-stone-600"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
+                        {isDescriptionExpanded ? 'Show less' : 'Read more'}
+                      </button>
+                    )}
                   </div>
                 )}
                 {manufacturer.website && (
-                  <div className="flex justify-center lg:justify-start">
                   <Link
                     to={manufacturer.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                      className="inline-flex items-center mt-4 text-stone-600 hover:text-stone-700 transition-colors"
+                      className="inline-flex items-center px-6 py-3 border-2 border-stone-900 text-stone-900 font-medium tracking-wide hover:bg-stone-900 hover:text-white transition-all duration-300"
                   >
                     Visit Website
                     <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </Link>
-                  </div>
                 )}
-              </div>
             </div>
           </div>
         </Container>
@@ -194,7 +170,7 @@ export const ManufacturerDetail: React.FC = () => {
 
       {/* Products Section */}
       <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
-        <Container>
+        <Container size="6xl">
 
 
           {/* Main Content with Sidebar */}
@@ -255,7 +231,7 @@ export const ManufacturerDetail: React.FC = () => {
                               </div>
                             </div>
                             <span className="text-stone-700 group-hover:text-stone-900 transition-colors">{category.name}</span>
-                          </label>
+                    </label>
                         ))}
                       </div>
                   </div>
@@ -321,7 +297,7 @@ export const ManufacturerDetail: React.FC = () => {
                       </div>
                   </div>
                 )}
-                </div>
+              </div>
             </div>
           </div>
 

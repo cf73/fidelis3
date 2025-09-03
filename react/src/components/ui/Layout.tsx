@@ -88,7 +88,7 @@ export const Grid: React.FC<GridProps> = ({
 export interface ContainerProps {
   children: React.ReactNode;
   className?: string;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '6xl' | 'full';
 }
 
 export const Container: React.FC<ContainerProps> = ({
@@ -101,6 +101,7 @@ export const Container: React.FC<ContainerProps> = ({
     md: 'max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8',
     lg: 'max-w-7xl xl:max-w-none mx-auto px-8 sm:px-12 lg:px-16',
     xl: 'max-w-7xl xl:max-w-none mx-auto px-12 sm:px-16 lg:px-20',
+    '6xl': 'max-w-6xl mx-auto px-4 sm:px-6 lg:px-8',
     full: 'w-full px-4 sm:px-6 lg:px-8'
   };
 

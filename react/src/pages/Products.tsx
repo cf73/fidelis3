@@ -199,81 +199,77 @@ const Products: React.FC = () => {
   return (
     <div>
       {/* Filters */}
-      <Section variant="default" className="!pt-8 !pb-16">
-        <Container>
-                     <div className="max-w-4xl mx-auto text-center">
-             <H1 className="mb-4">
-               {selectedCategory
-                 ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
-                 : 'Products'
-               }
-             </H1>
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">
+              {selectedCategory
+                ? categories.find(c => c.id === selectedCategory)?.name || 'Products'
+                : 'Products'
+              }
+            </h1>
              
-             {selectedCategory ? (
-               <div className="mb-6">
-                 <div className="max-w-3xl mx-auto">
-                   <Body className="text-base leading-relaxed text-stone-700">
-                     {categories.find(c => c.id === selectedCategory)?.category_description || `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`}
-                   </Body>
-                 </div>
-                 
-                 <div className="flex items-center justify-center mt-4 space-x-6">
-                   <Link
-                     to="/products/list"
-                     className="inline-flex items-center text-stone-600 hover:text-stone-700 text-sm font-medium transition-colors"
-                   >
-                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                     </svg>
-                     View All Products
-                   </Link>
-                   
-                   {user && (
-                     <Button
-                       onClick={() => navigate('/products/new')}
-                       variant="primary"
-                       size="sm"
-                     >
-                       Add Product
-                     </Button>
-                   )}
-                 </div>
-               </div>
-             ) : (
-               <div className="mb-6">
-                 <Body className="text-base leading-relaxed text-stone-700 max-w-2xl mx-auto">
-                   Discover our collection of high-quality audio equipment
-                 </Body>
-                 
-                 {user && (
-                   <div className="mt-4">
-                     <Button
-                       onClick={() => navigate('/products/new')}
-                       variant="primary"
-                       size="sm"
-                     >
-                       Add Product
-                     </Button>
-                   </div>
-                 )}
-               </div>
-             )}
-           </div>
+            {selectedCategory ? (
+              <div className="space-y-6">
+                <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+                  {categories.find(c => c.id === selectedCategory)?.category_description || `Browse our ${categories.find(c => c.id === selectedCategory)?.name?.toLowerCase()} collection`}
+                </div>
+                
+                <Link
+                  to="/products/list"
+                  className="inline-flex items-center px-6 py-3 border-2 border-stone-900 text-stone-900 font-medium tracking-wide hover:bg-stone-900 hover:text-white transition-all duration-300"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  View All Products
+                </Link>
+                
+                {user && (
+                  <div className="mt-4">
+                    <Button
+                      onClick={() => navigate('/products/new')}
+                      variant="primary"
+                      size="sm"
+                    >
+                      Add Product
+                    </Button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-6">
+                <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+                  Discover our collection of high-quality audio equipment
+                </div>
+                
+                {user && (
+                  <Button
+                    onClick={() => navigate('/products/new')}
+                    variant="primary"
+                    size="sm"
+                  >
+                    Add Product
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
         </Container>
       </Section>
 
       {/* Main Content with Sidebar */}
       <Section variant="default" background="custom" customBackground="bg-warm-white">
-        <Container>
+        <Container size="6xl">
           <div className="flex flex-col lg:flex-row gap-8">
                          {/* Sidebar Filters */}
              <div className="lg:w-80 lg:flex-shrink-0 pt-16">
                <div className="lg:sticky lg:top-32">
-                 <h3 className="text-lg font-semibold text-stone-900 mb-6">Filters</h3>
+
                  <div className="space-y-8">
                                      {!selectedCategory && (
                     <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-3">
+                      <label className="block text-base font-semibold text-stone-900 mb-4">
                         Filter by Category
                       </label>
                       <div className="space-y-2">
@@ -338,7 +334,7 @@ const Products: React.FC = () => {
                               {categories.length > maxVisibleItems && (
                                 <button
                                   onClick={() => setShowAllCategories(!showAllCategories)}
-                                  className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors mt-2"
+                                  className="text-sm text-stone-700 hover:text-stone-900 font-medium transition-colors mt-2 underline decoration-stone-300 hover:decoration-stone-600"
                                 >
                                   {showAllCategories 
                                     ? `Show Less (${categories.length - maxVisibleItems} fewer)` 
@@ -354,7 +350,7 @@ const Products: React.FC = () => {
                   )}
 
                                        <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-3">
+                      <label className="block text-base font-semibold text-stone-900 mb-4">
                         Filter by Manufacturer
                       </label>
                                              <div className="space-y-2">
@@ -429,7 +425,7 @@ const Products: React.FC = () => {
                                {relevantManufacturers.length > maxVisibleItems && (
                                  <button
                                    onClick={() => setShowAllManufacturers(!showAllManufacturers)}
-                                   className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors mt-2"
+                                   className="text-sm text-stone-700 hover:text-stone-900 font-medium transition-colors mt-2 underline decoration-stone-300 hover:decoration-stone-600"
                                  >
                                    {showAllManufacturers 
                                      ? `Show Less (${relevantManufacturers.length - maxVisibleItems} fewer)` 
@@ -444,8 +440,8 @@ const Products: React.FC = () => {
                     </div>
 
                    <div>
-                     <label className="block text-sm font-medium text-stone-700 mb-3">
-                       Sort by
+                     <label className="block text-base font-semibold text-stone-900 mb-4">
+                       Sort by Price
                      </label>
                      <div className="space-y-2">
                        <label className="flex items-center space-x-3 cursor-pointer group">
@@ -468,7 +464,7 @@ const Products: React.FC = () => {
                              )}
                            </div>
                          </div>
-                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price Low to High</span>
+                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Low to High</span>
                        </label>
                        
                        <label className="flex items-center space-x-3 cursor-pointer group">
@@ -491,7 +487,7 @@ const Products: React.FC = () => {
                              )}
                            </div>
                          </div>
-                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price High to Low</span>
+                         <span className="text-stone-700 group-hover:text-stone-900 transition-colors">High to Low</span>
                        </label>
                      </div>
                    </div>

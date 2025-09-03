@@ -33,7 +33,7 @@ const LayoutWrapper: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-warm-white">
       <Header />
-      <main className={`flex-grow ${isHomePage ? '' : 'pt-24'}`}>
+      <main className={`flex-grow ${isHomePage ? '' : 'pt-24'} pb-80 relative z-10`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/list" element={<Products />} />

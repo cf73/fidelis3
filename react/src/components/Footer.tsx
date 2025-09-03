@@ -41,14 +41,14 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="fixed bottom-0 left-0 right-0 overflow-hidden z-0">
       {/* Sophisticated Background with Subtle Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
       
       {/* Minimalist Footer Content */}
       <div className="relative">
-        <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="py-16" style={{ paddingLeft: '88px', paddingRight: '88px' }}>
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
 
         {/* Minimalist Bottom Bar */}
         <div className="relative border-t border-white/10">
-          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
+          <div style={{ paddingLeft: '88px', paddingRight: '88px' }}>
             <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm text-stone-400">© 2024 Fidelis Audio. All rights reserved.</p>
               

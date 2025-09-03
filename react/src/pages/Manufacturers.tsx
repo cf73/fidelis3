@@ -28,7 +28,7 @@ const Manufacturers: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-warm-white flex items-center justify-center">
-        <Container>
+        <Container size="6xl">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
             <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
@@ -43,25 +43,25 @@ const Manufacturers: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-warm-white"
+      className="min-h-screen bg-[#fffcf9]"
     >
       {/* Hero Section */}
-      <Section variant="hero" className="!pt-8 !pb-16">
-        <Container>
-          <Flex direction="col" align="center" className="text-center">
-            <H1 className="mb-4">Manufacturers</H1>
-            <BodyLarge className="text-stone-600 max-w-2xl">
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Manufacturers</h1>
+            <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
               Discover the world's finest audio equipment manufacturers, each bringing their unique expertise and craftsmanship to create exceptional listening experiences.
-            </BodyLarge>
-          </Flex>
+            </div>
+          </div>
         </Container>
       </Section>
 
       {/* Manufacturers Grid */}
-      <Section variant="default" background="custom" customBackground="bg-warm-white">
-        <Container>
+      <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
+        <Container size="6xl">
           {manufacturers.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
               {manufacturers.map((manufacturer) => (
                 <motion.div
                   key={manufacturer.id}
@@ -72,14 +72,14 @@ const Manufacturers: React.FC = () => {
                 >
                   <Link
                     to={`/manufacturers/${manufacturer.slug || manufacturer.id}`}
-                    className="block p-6 rounded-xl transition-all duration-300 bg-white/50 hover:bg-white/80"
+                    className="block p-6 rounded-xl transition-all duration-300 hover:bg-stone-50"
                   >
                     {manufacturer.logo ? (
                       <div className="flex items-center justify-center h-24">
                         <img
                           src={getImageUrl(manufacturer.logo)}
                           alt={manufacturer.name}
-                          className="max-h-16 max-w-full object-contain mix-blend-multiply transition-opacity duration-200"
+                          className="max-h-16 max-w-full object-contain mix-blend-multiply transition-opacity duration-200 group-hover:opacity-80"
                         />
                       </div>
                     ) : (

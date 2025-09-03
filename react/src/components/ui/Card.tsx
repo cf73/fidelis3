@@ -9,9 +9,11 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getImageUrl } from '../../lib/supabase';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import MiniProductGallery from '../MiniProductGallery';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -802,150 +804,51 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
         transitionDelay: `${animationDelay}ms`
       }}
     >
-      {/* Image Section - White card with carousel */}
+      {/* Image Section - Clean Product Gallery */}
       {item.images && item.images.length > 0 && (
-        <div 
-          className="polaroid-card bg-white rounded-2xl p-4 shadow-md mb-3 transition-transform duration-300 ease-out"
-          style={{ 
-            '--base-rotation': `${cardRotation}deg`,
-            '--hover-rotation': `${hoverRotation}deg`,
-            transform: `rotate(${cardRotation}deg)`
-          } as React.CSSProperties & { '--base-rotation': string; '--hover-rotation': string }}
-        >
-          {item.images.length === 1 ? (
-            /* Single image */
-            <div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-stone-50">
-                <img
-                  src={getImageUrl(item.images[0])}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  style={{ 
-                    imageRendering: 'high-quality',
-                    backfaceVisibility: 'hidden',
-                    transform: 'translateZ(0)'
-                  }}
-                />
-                {/* Polaroid inward shadow */}
-                <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] pointer-events-none"></div>
-                {/* Subtle overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Local pickup badge */}
-                {item.local_only && (
-                  <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
-                      Local Pickup
-                    </span>
-                  </div>
-                )}
-              </div>
-              {/* Empty space for pagination alignment */}
-              <div className="h-[7.2px] mt-3"></div>
-              
-              {/* Polaroid bottom area with title */}
-              <div className="pt-3 pb-2">
-                <h3 className="text-sm font-medium text-stone-800 leading-tight text-center line-clamp-2 min-h-[2.5rem] tracking-wide">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ) : (
-            /* Multiple images - Mini Carousel */
-            <div className="relative">
-              <Swiper
-                modules={[Navigation, Pagination]}
-                spaceBetween={0}
-                slidesPerView={1}
-                navigation={{
-                  nextEl: `.preowned-swiper-next-${item.id}`,
-                  prevEl: `.preowned-swiper-prev-${item.id}`,
-                }}
-                pagination={{
-                  clickable: true,
-                  el: `.preowned-swiper-pagination-${item.id}`,
-                  bulletClass: 'preowned-swiper-bullet',
-                  bulletActiveClass: 'preowned-swiper-bullet-active',
-                }}
-                className="preowned-card-swiper"
-              >
-                {item.images.map((image, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="relative aspect-[4/3] bg-stone-50 rounded-xl overflow-hidden">
-                      <img
-                        src={getImageUrl(image)}
-                        alt={`${item.title} - Image ${index + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                        style={{ 
-                          imageRendering: 'high-quality',
-                          backfaceVisibility: 'hidden',
-                          transform: 'translateZ(0)'
-                        }}
-                      />
-                      {/* Polaroid inward shadow */}
-                      <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] pointer-events-none"></div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              
-              {/* Mini Navigation Buttons */}
-              <button className={`preowned-swiper-prev-${item.id} absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100`}>
-                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M12.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd"/>
-                </svg>
-              </button>
-              
-              <button className={`preowned-swiper-next-${item.id} absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100`}>
-                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-              </button>
-              
-              {/* Mini Pagination */}
-              <div className={`preowned-swiper-pagination-${item.id} flex justify-center items-center space-x-1 mt-3`}></div>
-              
-              {/* Polaroid bottom area with title */}
-              <div className="pt-3 pb-2">
-                <h3 className="text-sm font-medium text-stone-800 leading-tight text-center line-clamp-2 min-h-[2.5rem] tracking-wide">
-                  {item.title}
-                </h3>
-              </div>
-              
-              {/* Local pickup badge */}
-              {item.local_only && (
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
-                    Local Pickup
-                  </span>
-                </div>
-              )}
+        <div className="mb-3">
+          <MiniProductGallery 
+            images={item.images} 
+            itemTitle={item.title}
+            itemId={item.id}
+          />
+          {/* Local pickup badge */}
+          {item.local_only && (
+            <div className="absolute top-3 right-3 z-10">
+              <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
+                Local Pickup
+              </span>
             </div>
           )}
         </div>
       )}
       
       {/* Content Section - Centered */}
-      <div className="space-y-2 text-center">
+      <div className="space-y-3 text-center">
+        {/* Title */}
+        <h3 className="text-base font-medium text-stone-900 leading-tight line-clamp-2 min-h-[2.5rem] tracking-wide group-hover:text-stone-700 transition-colors">
+          {item.title}
+        </h3>
+        
         {/* Pricing Section */}
         {item.your_price && !item.hide_your_price && (
-          <div className="space-y-1">
-            <div className="flex items-center justify-center gap-2">
-              <span className="text-lg font-bold text-stone-900">
+          <div className="space-y-2">
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl font-light text-stone-900">
                 {formatPrice(item.your_price)}
               </span>
               {item.new_retail_price && (
-                <span className="text-xs text-stone-500 line-through">
+                <span className="text-sm text-stone-500 line-through">
                   {formatPrice(item.new_retail_price)}
                 </span>
               )}
             </div>
             
-            {/* Savings Badge */}
+            {/* Savings Info */}
             {savings && (
-              <div>
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-100">
-                  Save {savings.percentage.toFixed(0)}% off
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-stone-600 font-medium text-sm">
+                  Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
                 </span>
               </div>
             )}

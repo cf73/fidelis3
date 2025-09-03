@@ -114,15 +114,28 @@ export const ProductDetail: React.FC = () => {
   const getCallToActionButton = () => {
     if (product?.available_for_demo) {
       return (
-        <div className="space-y-3">
-          <button className="w-full bg-slate-100 text-slate-800 py-3 px-6 rounded-lg border border-slate-300 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 font-medium transition-all duration-200">
-            HOME DEMO AVAILABLE
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link
+            to={`/contact?product=${encodeURIComponent(product.title)}&manufacturer=${encodeURIComponent(product.manufacturer?.name || '')}&demo=home`}
+            className="bg-white border-2 border-stone-900 text-stone-900 py-4 px-6 font-medium tracking-wide hover:bg-stone-900 hover:text-white transition-all duration-300 text-center shadow-sm hover:shadow-md"
+          >
+            <div className="flex items-center justify-center">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home Demo
+            </div>
+          </Link>
           <Link
             to={`/contact?product=${encodeURIComponent(product.title)}&manufacturer=${encodeURIComponent(product.manufacturer?.name || '')}&demo=store`}
-            className="w-full bg-stone-800 text-white py-3 px-6 rounded-lg hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 font-medium transition-colors duration-200 block text-center"
+            className="bg-stone-900 text-white py-4 px-6 font-medium tracking-wide hover:bg-stone-800 transition-all duration-300 text-center shadow-sm hover:shadow-md"
           >
-            BOOK STORE DEMO
+            <div className="flex items-center justify-center">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h10M7 15h10" />
+              </svg>
+              Store Demo
+            </div>
           </Link>
         </div>
       );
@@ -173,8 +186,8 @@ export const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-warm-white">
       {/* Premium Hero Section */}
-      <div className="relative bg-warm-white border-b border-stone-200">
-        <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div className="relative bg-warm-beige border-b border-stone-200 -mt-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
 
 
           {/* Admin Actions */}
@@ -201,18 +214,12 @@ export const ProductDetail: React.FC = () => {
               {/* Main Image - Now sits directly on background */}
               <div className="relative group">
                 {product.product_hero_image ? (
-                  <div 
-                    className="relative cursor-pointer" 
-                    onClick={() => openImageModal(product.product_hero_image!)}
-                  >
+                  <div className="relative">
                     <img
                       src={getImageUrl(product.product_hero_image)}
                       alt={product.title}
-                      className="w-full h-auto max-h-[600px] object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
+                      className="w-full h-auto max-h-[600px] object-contain mix-blend-multiply"
                     />
-                    <div className="absolute bottom-4 right-4 bg-warm-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Click to enlarge
-                    </div>
                   </div>
                 ) : (
                   <div className="w-full h-[500px] bg-gradient-to-br from-stone-100 to-stone-200 rounded-2xl flex items-center justify-center border-2 border-dashed border-stone-300">
@@ -248,13 +255,13 @@ export const ProductDetail: React.FC = () => {
             </div>
 
             {/* Product Information */}
-            <div className="space-y-8">
-              {/* Category and Manufacturer Links */}
-              <div className="flex flex-wrap gap-3">
+            <div className="space-y-10">
+              {/* Category and Manufacturer Badges - Premium Design */}
+              <div className="flex flex-wrap gap-4">
                 {product.categories && (
                   <Link
                     to={`/products/list?category=${product.categories.id}`}
-                    className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium hover:bg-stone-200 transition-colors duration-200"
+                    className="inline-flex items-center px-6 py-3 bg-stone-900 text-white text-sm font-medium tracking-wide uppercase hover:bg-stone-800 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     {product.categories.name}
                   </Link>
@@ -262,24 +269,24 @@ export const ProductDetail: React.FC = () => {
                 {product.manufacturer && (
                   <Link
                     to={`/manufacturers/${product.manufacturer.slug}`}
-                    className="inline-flex items-center px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm font-medium hover:bg-stone-200 transition-colors duration-200"
+                    className="inline-flex items-center px-6 py-3 border-2 border-stone-900 text-stone-900 text-sm font-medium tracking-wide uppercase hover:bg-stone-900 hover:text-white transition-all duration-300"
                   >
                     {product.manufacturer.name}
                   </Link>
                 )}
               </div>
 
-              {/* Product Title */}
+              {/* Product Title - Larger and More Prominent */}
               <div>
-                <h1 className="text-5xl lg:text-6xl font-light text-stone-900 leading-tight tracking-tight mb-4">
+                <h1 className="text-6xl lg:text-7xl xl:text-8xl font-extralight text-stone-900 leading-none tracking-tighter mb-6">
                   {product.title}
                 </h1>
                 {product.manufacturer && (
-                  <p className="text-xl text-stone-600 font-medium">
+                  <p className="text-2xl lg:text-3xl text-stone-600 font-light tracking-wide">
                     by{' '}
                     <Link
                       to={`/manufacturers/${product.manufacturer.slug}`}
-                      className="hover:text-stone-800 transition-colors duration-200 underline decoration-stone-300 hover:decoration-stone-600"
+                      className="hover:text-stone-900 transition-colors duration-300 border-b border-stone-300 hover:border-stone-900"
                     >
                       {product.manufacturer.name}
                     </Link>
@@ -294,18 +301,8 @@ export const ProductDetail: React.FC = () => {
                 </div>
               )}
 
-              {/* Demo Badge */}
-              {product.available_for_demo && (
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Home Demo Available
-                </div>
-              )}
-
-              {/* Call to Action */}
-              <div className="pt-4">
+              {/* Sophisticated Call to Action */}
+              <div className="pt-6 space-y-4">
                 {getCallToActionButton()}
               </div>
 
@@ -328,7 +325,7 @@ export const ProductDetail: React.FC = () => {
       </div>
 
       {/* Content Sections */}
-      <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Quote/Testimonial Section - Timeline-style Layout */}
         {product.quote && (
           <div className="mb-32 flex flex-col items-center">
@@ -338,7 +335,7 @@ export const ProductDetail: React.FC = () => {
             <div className="max-w-4xl mx-auto px-8 text-center">
               <blockquote>
                 {/* Main quote - clean and severe */}
-                <div className="text-3xl lg:text-4xl xl:text-5xl font-light text-stone-900 leading-[1.4] tracking-wide mb-12">
+                <div className="text-2xl lg:text-3xl xl:text-4xl font-light text-stone-900 leading-[1.4] tracking-wide mb-12">
                   {product.quote}
                 </div>
               </blockquote>
@@ -368,15 +365,16 @@ export const ProductDetail: React.FC = () => {
 
       {/* Pairs Well With Products */}
       {pairsWellWithProducts.length > 0 && (
-        <div className="bg-warm-white py-24">
-          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">
-                Good synergies with {product.manufacturer?.name}'s {product.title}
-              </h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-                These products work beautifully together to create an exceptional audio experience.
-              </p>
+        <div className="bg-warm-beige py-12 pb-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12">
+              <div className="flex items-center">
+                <div className="flex-grow border-t border-stone-300"></div>
+                <div className="mx-6 bg-warm-beige px-4">
+                  <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Good synergies with {product.manufacturer?.name}'s <span className="font-bold">{product.title}</span></span>
+                </div>
+                <div className="flex-grow border-t border-stone-300"></div>
+              </div>
             </div>
           
             {relatedLoading ? (
@@ -410,13 +408,16 @@ export const ProductDetail: React.FC = () => {
 
       {/* Also Consider Products */}
       {alsoConsiderProducts.length > 0 && (
-        <div className="bg-warm-white py-24">
-          <div className="max-w-7xl xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-light text-stone-900 mb-4">Also consider</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-                More exceptional products that might interest you.
-              </p>
+        <div className="bg-warm-beige py-12 pb-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12">
+              <div className="flex items-center">
+                <div className="flex-grow border-t border-stone-300"></div>
+                <div className="mx-6 bg-warm-beige px-4">
+                  <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Also consider</span>
+                </div>
+                <div className="flex-grow border-t border-stone-300"></div>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
               {alsoConsiderProducts.map((relatedProduct: Product) => (

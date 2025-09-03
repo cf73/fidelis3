@@ -155,7 +155,7 @@ const NewsDetail: React.FC = () => {
       {/* Article Content */}
       <section className="pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ const NewsDetail: React.FC = () => {
       {(mentions.manufacturers.length > 0 || mentions.products.length > 0) && (
         <section className="py-8 bg-warm-white border-t border-stone-200">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

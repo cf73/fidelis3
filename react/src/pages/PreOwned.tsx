@@ -155,14 +155,14 @@ const PreOwned: React.FC = () => {
       className="min-h-screen bg-[#fffcf9]"
     >
       {/* Hero Section */}
-      <Section variant="compact" background="white">
-        <Container>
-          <Flex direction="col" align="center" className="text-center max-w-4xl mx-auto">
-            <H1 className="mb-4">Pre-Owned Equipment</H1>
-            <BodyLarge className="text-gray-600">
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Pre-Owned Equipment</h1>
+            <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
               Discover exceptional value on carefully inspected, high-end audio equipment with significant savings.
-            </BodyLarge>
-          </Flex>
+            </div>
+          </div>
         </Container>
       </Section>
 
@@ -170,7 +170,7 @@ const PreOwned: React.FC = () => {
 
       {/* Results Grid */}
       <Section variant="compact" background="custom" customBackground="bg-[#fffcf9]">
-        <Container>
+        <Container size="6xl">
           {filteredItems.length > 0 ? (
             <>
               {/* Search, Local Filter, and Results Count */}
@@ -202,9 +202,9 @@ const PreOwned: React.FC = () => {
               </div>
               
               {/* Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                 {filteredItems.map((item, index) => (
-                  <Link key={item.id} to={`/pre-owned/${item.id}`} className="block h-full">
+                  <Link key={item.id} to={`/pre-owned/${item.id}`} className="block h-full group">
                     <PreOwnedCard 
                       item={item} 
                       className="h-full" 
@@ -229,7 +229,7 @@ const PreOwned: React.FC = () => {
 
       {/* Value Proposition - Refined */}
       <Section variant="compact" background="white">
-        <Container>
+        <Container size="6xl">
           <Flex direction="col" align="center" className="max-w-4xl mx-auto">
             <H2 className="text-center mb-8">
               Why Choose Pre-Owned?

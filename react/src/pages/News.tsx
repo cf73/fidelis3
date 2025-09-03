@@ -29,7 +29,7 @@ const News: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-warm-white flex items-center justify-center">
-        <Container>
+        <Container size="6xl">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
             <p className="mt-4 text-stone-600">{getRandomMusicalMessage()}</p>
@@ -48,7 +48,7 @@ const News: React.FC = () => {
     >
       {/* Hero Section */}
       <Section variant="compact" className="!pt-8 !pb-12">
-        <Container>
+        <Container size="6xl">
           <Flex direction="col" align="center" className="text-center">
             <H1 className="mb-4">News & Updates</H1>
             <BodyLarge className="text-stone-600 max-w-2xl">
@@ -60,7 +60,7 @@ const News: React.FC = () => {
 
       {/* News Grid */}
       <Section variant="compact" background="custom" customBackground="bg-warm-white">
-        <Container>
+        <Container size="6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {news.map((article) => {
               const articleSlug = article.slug || slugify(article.title);

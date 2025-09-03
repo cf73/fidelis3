@@ -405,20 +405,19 @@ const Home: React.FC = () => {
               >
                 <div className="max-w-6xl mx-auto">
                   <div className="mb-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex-grow border-t border-stone-300"></div>
-                      <div className="mx-6 bg-[#f8f6f3] px-4">
+                    <div className="flex items-center">
+                      <div className="bg-[#f8f6f3] pr-6">
                         <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Featured Products</span>
                       </div>
                       <div className="flex-grow border-t border-stone-300"></div>
-                    </div>
-                    <div className="text-center">
-                      <Link to="/products" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
-                        Explore Product Categories
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      </Link>
+                      <div className="bg-[#f8f6f3] pl-6">
+                        <Link to="/products" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
+                          View All
+                          <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
