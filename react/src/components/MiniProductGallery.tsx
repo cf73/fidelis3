@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getImageUrl } from '../lib/supabase';
+import LazyImage from './LazyImage';
 
 interface MiniProductGalleryProps {
   images: string[];
@@ -143,14 +144,13 @@ const MiniProductGallery: React.FC<MiniProductGalleryProps> = ({ images, itemTit
                 opacity,
               }}
             >
-              <div className="mini-product-card aspect-[4/3] overflow-hidden rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                <img
-                  src={getImageUrl(image)}
-                  alt={`${itemTitle} - Image ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  draggable={false}
-                />
-              </div>
+                                  <div className="mini-product-card aspect-[4/3] overflow-hidden rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                      <LazyImage
+                        src={getImageUrl(image)}
+                        alt={`${itemTitle} - Image ${index + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                    </div>
             </div>
           );
         })}

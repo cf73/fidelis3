@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEOHead from '../components/SEOHead';
 import { ArrowLeftIcon, TagIcon, TruckIcon, CubeIcon, CalendarIcon } from '@heroicons/react/24/outline';
 import ProductGallery from '../components/PolaroidStack';
 import { getPreOwnedById, getImageUrl, type PreOwned } from '../lib/supabase';
@@ -84,6 +85,18 @@ const PreOwnedDetail: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-warm-white"
     >
+      <SEOHead
+        title={`Pre-Owned: ${item.title}`}
+        description={`${item.title} - ${item.description ? item.description.substring(0, 150) + '...' : 'High-quality pre-owned audio equipment'} Available at Fidelis Audio.`}
+        canonical={`/pre-owned/${item.id}`}
+        type="product"
+        productData={{
+          price: item.your_price?.toString(),
+          availability: 'InStock',
+          category: 'Pre-Owned Audio Equipment'
+        }}
+        image={item.images?.[0] ? getImageUrl(item.images[0]) : undefined}
+      />
       {/* Hero Section */}
       <section className="bg-warm-beige border-b border-stone-200 -mt-4">
         <div className="pt-6 pb-16 lg:pb-24">

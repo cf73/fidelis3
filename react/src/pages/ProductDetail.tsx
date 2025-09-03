@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 import { useAuth } from '../contexts/AuthContext';
 import { getProductBySlug, deleteProduct, getProductsByIds, getImageUrl } from '../lib/supabase';
 import { Product } from '../lib/supabase';
@@ -185,6 +186,20 @@ export const ProductDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-warm-white">
+      <SEOHead
+        title={product.title}
+        description={`${product.title} by ${product.manufacturer?.name || 'Premium Audio'}. ${product.brief_description || 'High-end audio equipment available at Fidelis Audio, New Hampshire.'}`}
+        canonical={`/products/${product.slug}`}
+        type="product"
+        productData={{
+          price: product.price?.toString(),
+          availability: 'InStock',
+          brand: product.manufacturer?.name,
+          category: product.category?.name
+        }}
+        image={product.images?.[0] ? getImageUrl(product.images[0]) : undefined}
+      />
+      
       {/* Premium Hero Section */}
       <div className="relative bg-warm-beige border-b border-stone-200 -mt-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">

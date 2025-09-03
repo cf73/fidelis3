@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import LazyImage from './LazyImage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards, Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -63,11 +64,10 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, itemTitle }) =>
           {images.map((image, index) => (
             <SwiperSlide key={index} className="product-slide">
               <div className="product-card h-full overflow-hidden rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl">
-                <img
+                <LazyImage
                   src={getImageUrl(image)}
                   alt={`${itemTitle} - Image ${index + 1}`}
                   className="w-full h-full object-cover"
-                  draggable={false}
                 />
               </div>
             </SwiperSlide>
