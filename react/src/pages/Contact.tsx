@@ -15,6 +15,8 @@ export const Contact: React.FC = () => {
     const product = searchParams.get('product');
     const manufacturer = searchParams.get('manufacturer');
     const demo = searchParams.get('demo');
+    const urlSubject = searchParams.get('subject');
+    const urlMessage = searchParams.get('message');
     
     if (product && demo === 'store') {
       const productWithManufacturer = manufacturer ? `${manufacturer} ${product}` : product;
@@ -24,6 +26,13 @@ export const Contact: React.FC = () => {
         subject: `Store Demo Request: ${productWithManufacturer}`,
         message: `I would like to schedule a store demo for the ${productWithManufacturer}. Please let me know what times are available.`
       });
+    } else if (urlSubject || urlMessage) {
+      // Handle general subject/message URL parameters
+      setFormData(prev => ({
+        ...prev,
+        subject: urlSubject || prev.subject,
+        message: urlMessage || prev.message
+      }));
     }
   }, [searchParams]);
 
@@ -38,21 +47,21 @@ export const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
-      <Section variant="hero" background="white">
-        <Container>
-          <Flex direction="col" align="center" className="text-center">
-            <H1 className="mb-4">Contact Us</H1>
-            <BodyLarge className="text-stone-600 max-w-2xl">
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Contact Us</h1>
+            <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
               Get in touch with us for any questions about our products or services. We're here to help you find the perfect audio solution.
-            </BodyLarge>
-          </Flex>
+            </div>
+          </div>
         </Container>
       </Section>
 
       {/* Contact Content */}
       <Section variant="default" background="white">
-        <Container>
-          <div className="max-w-4xl mx-auto">
+        <Container size="6xl">
+          <div className="max-w-4xl">
             <Grid cols={2} gap="xl">
               {/* Contact Information */}
               <div>
@@ -178,14 +187,12 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
-                   <Button
+                   <button
                     type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
+                    className="w-full bg-stone-900 text-white py-4 px-6 font-medium tracking-wide hover:bg-stone-800 transition-all duration-300 shadow-sm hover:shadow-md"
                   >
                     Send Message
-                  </Button>
+                  </button>
                 </form>
               </div>
             </Grid>
@@ -193,10 +200,30 @@ export const Contact: React.FC = () => {
         </Container>
       </Section>
 
+      {/* About Fidelis Section */}
+      <Section variant="default" background="white">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <H2 className="mb-8">About Fidelis</H2>
+            <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+              <p className="mb-6">
+                As America's premiere importer of high-end audio gear, we source and import the world's finest equipment directly from manufacturers. What you'll find here comes from decades of relationships with the most respected names in audio, sold through our New Hampshire store and distributed nationwide through our dealer network.
+              </p>
+              <p className="mb-6">
+                In a world of warehouses and return policies that don't support manufacturers, we believe in curation, guidance, and real service. Every recommendation comes from hands-on experience with the gear, not algorithms or sales targets. We're here to help you navigate choices that matter, backed by expertise you can trust.
+              </p>
+              <p>
+                We host listening events, maintain one of New England's finest record collections, and believe the best audio discoveries happen through conversation. Come by the store, bring your favorite music, and experience the difference that genuine expertise and passion make.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* Showroom Section */}
       <Section variant="default" background="stone-50">
-        <Container>
-          <div className="max-w-4xl mx-auto">
+        <Container size="6xl">
+          <div className="max-w-4xl">
             <H2 className="mb-6">Visit Our Showroom</H2>
             <div className="rounded-xl overflow-hidden border border-stone-200 shadow-sm">
               <iframe

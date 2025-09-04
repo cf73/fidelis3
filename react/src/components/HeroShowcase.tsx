@@ -7,20 +7,41 @@ import { Section, Container, H1, BodyLarge } from './ui';
  * HeroShowcase
  * Split-column hero: image on left, text on right, compact 30vh height
  */
-const HeroShowcase: React.FC = () => {
+interface HeroShowcaseProps {
+  onLoadingChange?: (isLoading: boolean) => void;
+}
+
+const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
   const [images, setImages] = useState<HomeHeroImage[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+
+  // Failsafe timeout to prevent infinite loading
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log('🖼️ Hero loading timeout - forcing load');
+      setIsLoading(false);
+      setImageLoaded(true);
+    }, 10000); // 10 second timeout
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
     (async () => {
       try {
+        console.log('🖼️ Loading hero images...');
         const data = await getHomeHeroImages();
+        console.log('🖼️ Hero images loaded:', data?.length);
         if (isMounted) setImages(data);
       } catch (error) {
-        console.error('Error loading hero images', error);
+        console.error('❌ Error loading hero images', error);
       } finally {
-        if (isMounted) setIsLoading(false);
+        if (isMounted) {
+          console.log('🖼️ Hero data loading complete');
+          setIsLoading(false);
+        }
       }
     })();
     return () => {
@@ -34,7 +55,34 @@ const HeroShowcase: React.FC = () => {
     return images[index];
   }, [images]);
 
+  // Reset image loaded state when selected image changes
+  useEffect(() => {
+    if (selected) {
+      console.log('🖼️ Selected image changed, resetting imageLoaded');
+      setImageLoaded(false);
+    }
+  }, [selected]);
+
   const backgroundUrl = selected?.image ? getImageUrl(selected.image) : '';
+
+  const isHeroLoading = isLoading || (backgroundUrl && !imageLoaded);
+  
+  // If no backgroundUrl (no images available), consider it loaded after data fetch
+  useEffect(() => {
+    if (!isLoading && !backgroundUrl) {
+      console.log('🖼️ No background URL available, considering hero loaded');
+      setImageLoaded(true);
+    }
+  }, [isLoading, backgroundUrl]);
+
+  // Notify parent of loading state changes
+  useEffect(() => {
+    console.log('🖼️ Hero loading state changed:', isHeroLoading);
+    onLoadingChange?.(isHeroLoading);
+  }, [isHeroLoading, onLoadingChange]);
+
+  // Always render the hero - no internal loading state
+  // The parent (Home) will handle showing/hiding the entire page
 
   return (
     <div className="relative w-full h-[62vh] min-h-[500px] bg-[#fffcf9] overflow-hidden">
@@ -47,7 +95,8 @@ const HeroShowcase: React.FC = () => {
               alt={selected?.alt_text || 'Homepage hero'}
               className="absolute inset-0 w-full h-full object-cover"
               onLoad={() => {
-                console.log('Hero image loaded');
+                console.log('🖼️ Hero image onLoad fired');
+                setImageLoaded(true);
               }}
             />
           ) : (

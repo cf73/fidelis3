@@ -235,39 +235,48 @@ const PreOwned: React.FC = () => {
         </Container>
       </Section>
 
-      {/* Value Proposition - Refined */}
-      <Section variant="compact" background="white">
+      {/* Trade-In Section */}
+      <Section variant="compact" background="custom" customBackground="bg-warm-beige">
         <Container size="6xl">
-          <Flex direction="col" align="center" className="max-w-4xl mx-auto">
-            <H2 className="text-center mb-8">
-              Why Choose Pre-Owned?
-            </H2>
-            <Grid cols={3} gap="xl">
-              <ValueCard
-                value={{
-                  icon: "🏷️",
-                  title: "Exceptional Value",
-                  description: "Significant savings on high-end audio equipment that maintains its performance and quality."
-                }}
-              />
-              <ValueCard
-                value={{
-                  icon: "📦",
-                  title: "Carefully Inspected",
-                  description: "Each item is thoroughly tested and inspected to ensure it meets our quality standards."
-                }}
-              />
-              <ValueCard
-                value={{
-                  icon: "🚚",
-                  title: "Warranty Available",
-                  description: "Many pre-owned items come with warranty coverage for your peace of mind."
-                }}
-              />
-            </Grid>
-          </Flex>
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8"
+            >
+              <H2 className="text-stone-900 mb-6">Trade In Your Gear</H2>
+              <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+                <p className="mb-6">
+                  Looking to upgrade? We accept quality audio equipment as trade toward new gear. 
+                  Our team evaluates each piece fairly, considering current market value and condition.
+                </p>
+                <p className="mb-8">
+                  From vintage classics to recent high-end components, we're interested in gear that 
+                  meets our standards. Trade values can significantly reduce the cost of your next upgrade.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Link
+                to="/contact?subject=Trade-In%20Inquiry&message=I%27m%20interested%20in%20trading%20in%20my%20audio%20equipment.%20Here%27s%20what%20I%20have%3A%0A%0A"
+                className="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 font-medium tracking-wide hover:bg-stone-800 transition-all duration-300 shadow-sm hover:shadow-md group"
+              >
+                Get Trade-In Quote
+                <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </motion.div>
+          </div>
         </Container>
       </Section>
+
     </motion.div>
   );
 };

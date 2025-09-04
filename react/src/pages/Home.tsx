@@ -39,6 +39,7 @@ const Home: React.FC = () => {
   const [preOwned, setPreOwned] = useState<PreOwned[]>([]);
   const [categories, setCategories] = useState<CategoryWithHero[]>([]);
   const [loading, setLoading] = useState(true);
+  const [heroLoading, setHeroLoading] = useState(true);
   const [showAllManufacturers, setShowAllManufacturers] = useState(false);
 
   useEffect(() => {
@@ -100,21 +101,9 @@ const Home: React.FC = () => {
 
 
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#fffcf9]">
-        {/* Match the actual content structure to prevent layout shift */}
-        <div className="pt-28">
-          <div className="flex items-center justify-center min-h-[50vh]">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
-              <p className="mt-4 text-stone-600">Loading...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  console.log('🏠 Home render: loading =', loading, ', heroLoading =', heroLoading);
+  
+  const isPageLoading = loading || heroLoading;
 
   // Random selection of featured products (until CMS flag added)
   const featuredProducts = [...products]
@@ -124,7 +113,22 @@ const Home: React.FC = () => {
   const recentPreOwned = preOwned.slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen bg-warm-white relative">
+      {/* Loading Overlay */}
+      {isPageLoading && (
+        <div className="fixed inset-0 bg-[#fffcf9] z-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
+            <p className="mt-4 text-stone-600">Loading...</p>
+          </div>
+        </div>
+      )}
+      
+      {/* Main Content */}
+      <div 
+        className={`transition-opacity duration-500 ${isPageLoading ? 'opacity-0' : 'opacity-100'}`}
+        style={{ pointerEvents: isPageLoading ? 'none' : 'auto' }}
+      >
       <SEOHeadBasic
         title="Premium High-End Audio Equipment"
         description="New Hampshire's premier destination for high-end audio equipment. Top brands in speakers, amplifiers, turntables, and components."
@@ -133,7 +137,7 @@ const Home: React.FC = () => {
       />
       
       {/* New Hero Showcase */}
-      <HeroShowcase />
+      <HeroShowcase onLoadingChange={setHeroLoading} />
 
       {/* Product Categories Section */}
       <div className="relative z-20">
@@ -220,15 +224,23 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-16"
             >
               <div className="max-w-6xl mx-auto">
-                <div className="flex items-center">
-                  <div className="flex-grow border-t border-stone-300"></div>
-                  <div className="mx-6 bg-warm-white px-4">
-                    <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">News</span>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="flex-grow border-t border-stone-300 w-16"></div>
+                    <div className="mx-6 bg-warm-white px-4">
+                      <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">News & Events</span>
+                    </div>
+                    <div className="flex-grow border-t border-stone-300"></div>
                   </div>
-                  <div className="flex-grow border-t border-stone-300"></div>
+                  <Link to="/news" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
+                    View All
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -271,13 +283,13 @@ const Home: React.FC = () => {
                       className={`group ${gridClass}`}
                     >
                       <Link to={`/news/${article.slug || article.id}`} className="block h-full">
-                        <div className="h-full flex flex-col bg-[#f4f0ed] rounded-lg p-6 transition-all duration-300 group-hover:translate-y-[-2px] group-hover:bg-[#e8e4e1]">
+                        <div className="h-full flex flex-col bg-white border border-stone-200 rounded-lg overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:border-stone-300">
                           
                           {/* Hero Article (index 0) */}
                           {index === 0 && (
                             <>
                               {article.image && (
-                                <div className="aspect-[16/9] overflow-hidden rounded-lg mb-6">
+                                <div className="aspect-[16/9] overflow-hidden">
                                   <img
                                     src={getImageUrl(article.image)}
                                     alt={article.title}
@@ -285,21 +297,21 @@ const Home: React.FC = () => {
                                   />
                                 </div>
                               )}
-                              <div className="flex-grow">
+                              <div className="flex-grow p-8">
                                 {(article.published_at || article.news_date) && (
-                                  <div className="text-sm text-stone-500 mb-3 font-medium tracking-wide">
+                                  <div className="text-xs text-stone-500 mb-3 font-medium tracking-wider uppercase">
                                     {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
                                       year: 'numeric',
-                                      month: 'long',
+                                      month: 'short',
                                       day: 'numeric'
                                     })}
                                   </div>
                                 )}
-                                <h3 className="text-3xl font-medium text-stone-900 mb-4 leading-tight group-hover:text-stone-600 transition-colors duration-300">
+                                <h3 className="text-2xl font-light text-stone-900 mb-4 leading-tight group-hover:text-stone-700 transition-colors duration-300 tracking-wide">
                                   {article.title}
                                 </h3>
                                 {(article.summary || article.excerpt) && (
-                                  <p className="text-stone-600 text-lg leading-relaxed line-clamp-3">
+                                  <p className="text-stone-600 leading-relaxed line-clamp-3">
                                     {article.summary || article.excerpt}
                                   </p>
                                 )}
@@ -311,7 +323,7 @@ const Home: React.FC = () => {
                           {index === 1 && (
                             <>
                               {article.image && (
-                                <div className="aspect-[4/3] overflow-hidden rounded-lg mb-4">
+                                <div className="aspect-[4/3] overflow-hidden">
                                   <img
                                     src={getImageUrl(article.image)}
                                     alt={article.title}
@@ -319,20 +331,20 @@ const Home: React.FC = () => {
                                   />
                                 </div>
                               )}
-                              <div className="flex-grow">
+                              <div className="flex-grow p-6">
                                 {(article.published_at || article.news_date) && (
-                                  <div className="text-sm text-stone-500 mb-2 font-medium tracking-wide">
+                                  <div className="text-xs text-stone-500 mb-3 font-medium tracking-wider uppercase">
                                     {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
                                       month: 'short',
                                       day: 'numeric'
                                     })}
                                   </div>
                                 )}
-                                <h3 className="text-xl font-medium text-stone-900 mb-3 leading-tight group-hover:text-stone-600 transition-colors duration-300 line-clamp-2">
+                                <h3 className="text-lg font-light text-stone-900 mb-3 leading-tight group-hover:text-stone-700 transition-colors duration-300 tracking-wide line-clamp-2">
                                   {article.title}
                                 </h3>
                                 {(article.summary || article.excerpt) && (
-                                  <p className="text-stone-600 text-base leading-relaxed line-clamp-2">
+                                  <p className="text-stone-600 text-sm leading-relaxed line-clamp-2">
                                     {article.summary || article.excerpt}
                                   </p>
                                 )}
@@ -344,7 +356,7 @@ const Home: React.FC = () => {
                           {index >= 2 && index <= 3 && (
                             <>
                               {article.image && (
-                                <div className="aspect-[3/2] overflow-hidden rounded-lg mb-3">
+                                <div className="aspect-[3/2] overflow-hidden">
                                   <img
                                     src={getImageUrl(article.image)}
                                     alt={article.title}
@@ -352,16 +364,16 @@ const Home: React.FC = () => {
                                   />
                                 </div>
                               )}
-                              <div className="flex-grow">
+                              <div className="flex-grow p-5">
                                 {(article.published_at || article.news_date) && (
-                                  <div className="text-xs text-stone-500 mb-2 font-medium tracking-wide">
+                                  <div className="text-xs text-stone-500 mb-2 font-medium tracking-wider uppercase">
                                     {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
                                       month: 'short',
                                       day: 'numeric'
                                     })}
                                   </div>
                                 )}
-                                <h3 className="text-lg font-medium text-stone-900 leading-tight group-hover:text-stone-600 transition-colors duration-300 line-clamp-2">
+                                <h3 className="text-base font-light text-stone-900 leading-tight group-hover:text-stone-700 transition-colors duration-300 line-clamp-2 tracking-wide">
                                   {article.title}
                                 </h3>
                               </div>
@@ -370,16 +382,16 @@ const Home: React.FC = () => {
 
                           {/* Compact Articles (index 4+) - Title only */}
                           {index >= 4 && (
-                            <div className="py-4 border-b border-stone-200 last:border-b-0">
+                            <div className="p-5 border-b border-stone-100 last:border-b-0">
                               {(article.published_at || article.news_date) && (
-                                <div className="text-xs text-stone-500 mb-2 font-medium tracking-wide">
+                                <div className="text-xs text-stone-500 mb-2 font-medium tracking-wider uppercase">
                                   {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
                                     month: 'short',
                                     day: 'numeric'
                                   })}
                                 </div>
                               )}
-                              <h3 className="text-base font-medium text-stone-900 leading-tight group-hover:text-stone-600 transition-colors duration-300 line-clamp-2">
+                              <h3 className="text-sm font-light text-stone-900 leading-tight group-hover:text-stone-700 transition-colors duration-300 line-clamp-2 tracking-wide">
                                 {article.title}
                               </h3>
                             </div>
@@ -563,7 +575,7 @@ const Home: React.FC = () => {
 
       {/* Pre-Owned Section */}
       <div className="relative z-10">
-        <div className="relative bg-warm-white">
+        <div className="relative bg-warm-beige">
           <Container>
             <div className="pt-16 pb-20">
               <motion.div
@@ -576,7 +588,7 @@ const Home: React.FC = () => {
                   <div className="mb-6">
                     <div className="flex items-center mb-4">
                       <div className="flex-grow border-t border-stone-300"></div>
-                      <div className="mx-6 bg-warm-white px-4">
+                      <div className="mx-6 bg-warm-beige px-4">
                         <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">New in Pre-Owned</span>
                       </div>
                       <div className="flex-grow border-t border-stone-300"></div>
@@ -613,60 +625,132 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="relative bg-stone-900 z-10">
-        <Container>
-          <div className="pt-20 pb-24">
-            <Flex direction="col" align="center" className="text-center text-white">
+      {/* About Fidelis & Stay Informed - Combined Section */}
+      <div className="relative z-10">
+        <div className="flex">
+          {/* Left Column with Warm White Background */}
+          <div className="w-1/2 bg-warm-white" style={{ paddingLeft: '88px' }}>
+            <div className="py-20 pr-16 lg:pr-20 pl-12 lg:pl-16">
+              {/* About Fidelis Content */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="mb-6"
               >
-                <H2 className="text-white">Stay Informed</H2>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-8"
+                >
+                  <H2 className="text-stone-900">About Fidelis</H2>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="text-stone-700 leading-relaxed text-left"
+                >
+                  <p className="mb-6">
+                    As America's premiere importer of high-end audio gear, we source and import the world's finest equipment directly from manufacturers. What you'll find here comes from decades of relationships with the most respected names in audio, sold through our New Hampshire store and distributed nationwide through our dealer network.
+                  </p>
+                  <p className="mb-6">
+                    In a world of warehouses and return policies that don't support manufacturers, we believe in curation, guidance, and real service. Every recommendation comes from hands-on experience with the gear, not algorithms or sales targets. We're here to help you navigate choices that matter, backed by expertise you can trust.
+                  </p>
+                  <p>
+                    We host listening events, maintain one of New England's finest record collections, and believe the best audio discoveries happen through conversation. Come by the store, bring your favorite music, and experience the difference that genuine expertise and passion make.
+                  </p>
+                </motion.div>
               </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <BodyLarge className="text-white mb-8 max-w-2xl">
-                Get updates when we receive new shipments from our manufacturers, host listening sessions in our Nashua showroom, or have insights worth sharing.
-              </BodyLarge>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center gap-4 max-w-md mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 w-full px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 backdrop-blur-sm"
-                style={{
-                  backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
-                }}
-              />
-              <Button variant="primary" size="lg" className="w-full sm:w-auto whitespace-nowrap">
-                Keep Me Posted
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-4"
-            >
-              <p className="text-white/70 text-sm">
-                We don't spam. Just the good stuff when it matters.
-              </p>
-            </motion.div>
-            </Flex>
+            </div>
           </div>
-        </Container>
+          
+          {/* Right Column with Warm White + Pinstripe */}
+          <div 
+            className="w-1/2 bg-warm-white relative" 
+            style={{ paddingRight: '88px' }}
+          >
+            {/* Vertical Pinstripe Pattern */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, transparent 1px, #f4f0ed 1px, #f4f0ed 2px, transparent 2px, transparent 4px)',
+                mixBlendMode: 'multiply'
+              }}
+            ></div>
+            <div className="relative z-10 py-20 pl-16 lg:pl-20 pr-12 lg:pr-16">
+              {/* Stay Informed CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-col justify-center h-full"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="mb-8"
+                >
+                  <H2 className="text-stone-900">Stay Informed</H2>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <p className="text-stone-700 leading-relaxed mb-8">
+                    Get updates when we receive new shipments from our manufacturers, host listening sessions in our Nashua showroom, or have insights worth sharing.
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  className="space-y-4"
+                >
+                  <div className="flex flex-col space-y-3">
+                    <label htmlFor="newsletter-email" className="text-stone-900 text-sm font-medium">
+                      Email Address
+                    </label>
+                    <input
+                      id="newsletter-email"
+                      type="email"
+                      placeholder="Enter your email"
+                      aria-describedby="newsletter-privacy"
+                      className="w-full px-6 py-4 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-stone-500 transition-all duration-300"
+                    />
+                  </div>
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    className="w-full py-4 text-lg font-medium bg-stone-900 hover:bg-stone-800 text-white"
+                    aria-describedby="newsletter-privacy"
+                  >
+                    Keep Me Posted
+                  </Button>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  className="mt-4"
+                >
+                  <p id="newsletter-privacy" className="text-stone-600 text-sm">
+                    We don't spam. Just the good stuff when it matters.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
+      
+      </div> {/* End Main Content */}
     </div>
   );
 };

@@ -55,63 +55,86 @@ const Footer: React.FC = () => {
       
       {/* Minimalist Footer Content */}
       <div className="relative">
-        <div className="py-16" style={{ paddingLeft: '88px', paddingRight: '88px' }}>
+        <div className="py-20" style={{ paddingLeft: '88px', paddingRight: '88px' }}>
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
           >
-            {/* Brand Section - Minimalist */}
-            <motion.div variants={itemVariants}>
+            {/* Brand Section */}
+            <motion.div variants={itemVariants} className="lg:col-span-2">
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl font-light text-white tracking-wide">
-                    Fidelis Audio
+                  <h2 className="text-3xl font-light text-white tracking-[0.2em]">
+                    FIDELIS
                   </h2>
                 </div>
 
-                <p className="text-stone-400 leading-relaxed max-w-sm">
-                  Connecting you to the soul of music through carefully curated listening experiences.
+                <p className="text-stone-400 leading-relaxed max-w-md">
+                  America's premiere importer of high-end audio gear. Decades of relationships with the world's finest manufacturers, because we believe in <span className="font-semibold text-stone-300">Music For Life</span>.
                 </p>
-              </div>
-            </motion.div>
-
-            {/* Contact Information - Streamlined */}
-            <motion.div variants={itemVariants}>
-              <div className="space-y-4">
+                
+                {/* Store Hours */}
                 <div className="space-y-2">
-                  <p className="text-sm text-stone-300">
-                    460 Amherst Street<br />
-                    Nashua, NH 03063
-                  </p>
-                  
-                  <p className="text-sm text-stone-300">
-                    <a href="tel:+1-555-FIDELIS" className="hover:text-white transition-colors duration-300">
-                      +1 (555) FIDELIS
-                    </a>
-                  </p>
-                  
-                  <p className="text-sm text-stone-300">
-                    <a href="mailto:hello@fidelisaudio.com" className="hover:text-white transition-colors duration-300">
-                      hello@fidelisaudio.com
-                    </a>
-                  </p>
+                  <h3 className="text-white font-medium tracking-wide text-sm">Store Hours</h3>
+                  <div className="text-sm text-stone-400 space-y-1">
+                    <div>Monday - Friday: 10:00 AM - 6:00 PM</div>
+                    <div>Saturday: 10:00 AM - 4:00 PM</div>
+                    <div>Sunday: Closed</div>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Navigation - Condensed */}
+            {/* Contact Information */}
             <motion.div variants={itemVariants}>
               <div className="space-y-4">
-                <nav className="space-y-2">
+                <h3 className="text-white font-medium tracking-wide">Visit Us</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <MapPinIcon className="h-4 w-4 text-stone-500 mt-0.5 flex-shrink-0" />
+                    <div className="text-sm text-stone-300">
+                      460 Amherst Street<br />
+                      Nashua, NH 03063
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <PhoneIcon className="h-4 w-4 text-stone-500 flex-shrink-0" />
+                    <a 
+                      href="tel:+1-555-FIDELIS" 
+                      className="text-sm text-stone-300 hover:text-white transition-colors duration-300"
+                    >
+                      +1 (555) FIDELIS
+                    </a>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <EnvelopeIcon className="h-4 w-4 text-stone-500 flex-shrink-0" />
+                    <a 
+                      href="mailto:hello@fidelisaudio.com" 
+                      className="text-sm text-stone-300 hover:text-white transition-colors duration-300"
+                    >
+                      hello@fidelisaudio.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div variants={itemVariants}>
+              <div className="space-y-4">
+                <h3 className="text-white font-medium tracking-wide">Quick Links</h3>
+                <nav className="space-y-3">
                   {[
-                    { to: "/products", label: "Products" },
+                    { to: "/products/list", label: "All Products" },
                     { to: "/manufacturers", label: "Manufacturers" },
                     { to: "/pre-owned", label: "Pre-Owned" },
-                    { to: "/news", label: "News" },
-                    { to: "/contact", label: "Contact" }
+                    { to: "/news", label: "News & Events" },
+                    { to: "/contact", label: "Contact & Demo" }
                   ].map((item) => (
                     <Link
                       key={item.to}
@@ -131,7 +154,7 @@ const Footer: React.FC = () => {
         <div className="relative border-t border-white/10">
           <div style={{ paddingLeft: '88px', paddingRight: '88px' }}>
             <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-stone-400">© 2024 Fidelis Audio. All rights reserved.</p>
+              <p className="text-sm text-stone-400">© 2024 Fidelis. All rights reserved.</p>
               
               <div className="flex items-center gap-6 text-sm">
                 {!user ? (
