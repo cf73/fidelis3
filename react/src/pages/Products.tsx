@@ -240,7 +240,15 @@ const Products: React.FC = () => {
             ) : (
               <div className="space-y-6">
                 <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
-                  Discover our collection of high-quality audio equipment
+                  <p className="mb-6">
+                    As America's premiere importer of high-end audio gear, we source and import the world's finest equipment directly from manufacturers. What you'll find here comes from decades of relationships with the most respected names in audio, sold through our New Hampshire store and distributed nationwide through our dealer network.
+                  </p>
+                  <p className="mb-6">
+                    In a world of warehouses and return policies that don't support manufacturers, we believe in curation, guidance, and real service. Every recommendation comes from hands-on experience with the gear, not algorithms or sales targets. We're here to help you navigate choices that matter, backed by expertise you can trust.
+                  </p>
+                  <p>
+                    We host listening events, maintain one of New England's finest record collections, and believe the best audio discoveries happen through conversation. Come by the store, bring your favorite music, and experience the difference that genuine expertise and passion make.
+                  </p>
                 </div>
                 
                 {user && (
