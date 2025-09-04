@@ -609,7 +609,10 @@ export const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
                     <span 
                       key={index} 
                       className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-white/20 text-white backdrop-blur-sm"
-                      style={{ transitionDelay: `${index * 100}ms` }}
+                      style={{ 
+                        transitionDelay: `${index * 100}ms`,
+                        backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                      }}
                     >
                       {tag}
                     </span>
@@ -650,12 +653,22 @@ export const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
                 textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`} style={{ transitionDelay: '500ms' }}>
                 {activeCategoryData.productCount !== undefined && (
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-white/25 text-white backdrop-blur-sm">
+                  <span 
+                    className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-white/25 text-white backdrop-blur-sm"
+                    style={{
+                      backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                    }}
+                  >
                     {activeCategoryData.productCount} {activeCategoryData.productCount === 1 ? 'Product' : 'Products'}
                   </span>
                 )}
                 {activeCategoryData.brandCount && (
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-white/15 text-white/90 backdrop-blur-sm">
+                  <span 
+                    className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-white/15 text-white/90 backdrop-blur-sm"
+                    style={{
+                      backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                    }}
+                  >
                     {activeCategoryData.brandCount} Brands
                   </span>
                 )}
@@ -834,7 +847,12 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
                 {/* Local pickup badge */}
                 {item.local_only && (
                   <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
+                    <span 
+                      className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm"
+                      style={{
+                        backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                      }}
+                    >
                       Local Pickup
                     </span>
                   </div>
@@ -915,7 +933,12 @@ export const PreOwnedCard: React.FC<PreOwnedCardProps> = ({
               {/* Local pickup badge */}
               {item.local_only && (
                 <div className="absolute top-3 right-3 z-10">
-                  <span className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm">
+                  <span 
+                    className="inline-flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm text-stone-800 shadow-sm"
+                    style={{
+                      backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                    }}
+                  >
                     Local Pickup
                   </span>
                 </div>

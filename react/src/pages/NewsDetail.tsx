@@ -96,7 +96,7 @@ const NewsDetail: React.FC = () => {
     >
       {/* Hero Section - Full Width */}
       {article.image && (
-        <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden mt-24">
+        <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden -mt-4">
           <motion.img
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

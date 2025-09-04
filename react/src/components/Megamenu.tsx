@@ -126,6 +126,9 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
               fixed left-0 right-0 z-50 overflow-hidden top-[88px]
               bg-white/50 backdrop-blur-xl border-b border-white/60 shadow-white/20 shadow-lg
             `}
+            style={{
+              backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+            }}
           >
             <div className="py-8">
               {/* Header - aligned with nav content: left-6 + Container px-8 + Flex px-8 = 88px from left edge */}
