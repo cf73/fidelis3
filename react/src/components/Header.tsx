@@ -91,6 +91,11 @@ export const Header: React.FC = () => {
               }
               transition-all duration-700 ease-out
             `}
+            style={{
+              backgroundImage: hasScrolled || isMegamenuOpen 
+                ? 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)' 
+                : 'none'
+            }}
           />
           
           {/* Content positioned exactly as before */}
@@ -183,6 +188,9 @@ export const Header: React.FC = () => {
               }
               transition-all duration-500 ease-out
             `}
+            style={{
+              backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+            }}
           />
           
           {/* Content positioned exactly as homepage */}
@@ -318,6 +326,9 @@ export const Header: React.FC = () => {
                   }}
                   onClick={() => setIsMenuOpen(false)}
                   className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 text-white hover:bg-white/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                  }}
                 >
                   <span className="sr-only">Close menu</span>
                   <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -45,6 +45,13 @@ const Footer: React.FC = () => {
       {/* Sophisticated Background with Subtle Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      {/* Warm Cream Pinstripe Pattern */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(254,252,250,0.04) 1px, rgba(254,252,250,0.04) 2px, transparent 2px, transparent 4px)'
+        }}
+      ></div>
       
       {/* Minimalist Footer Content */}
       <div className="relative">

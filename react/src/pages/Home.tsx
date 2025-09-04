@@ -645,6 +645,9 @@ const Home: React.FC = () => {
                 type="email"
                 placeholder="Your email"
                 className="flex-1 w-full px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 backdrop-blur-sm"
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                }}
               />
               <Button variant="primary" size="lg" className="w-full sm:w-auto whitespace-nowrap">
                 Keep Me Posted
