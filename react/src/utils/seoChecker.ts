@@ -135,6 +135,24 @@ export function printSEOReport(result: SEOCheckResult): void {
   console.log('==================');
   console.log(`📊 Overall Score: ${result.score}/100`);
   
+  // Debug: Check what meta tags are actually present
+  console.log('\n🔍 DEBUG - Found Meta Tags:');
+  const allMeta = document.querySelectorAll('meta');
+  allMeta.forEach(meta => {
+    const name = meta.getAttribute('name') || meta.getAttribute('property');
+    const content = meta.getAttribute('content');
+    if (name && content) {
+      console.log(`  ${name}: ${content.substring(0, 100)}${content.length > 100 ? '...' : ''}`);
+    }
+  });
+  
+  console.log('\n🔍 DEBUG - Structured Data:');
+  const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+  console.log(`  Found ${scripts.length} structured data scripts`);
+  scripts.forEach((script, i) => {
+    console.log(`  Script ${i + 1}:`, script.textContent?.substring(0, 100) + '...');
+  });
+  
   if (result.score >= 90) {
     console.log('🟢 Excellent SEO implementation!');
   } else if (result.score >= 75) {

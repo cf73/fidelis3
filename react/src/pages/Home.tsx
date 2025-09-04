@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import SEOHead from '../components/SEOHead';
+import SEOHeadBasic from '../components/SEOHeadBasic';
 import { checkPageSEO, printSEOReport } from '../utils/seoChecker';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
     fetchData();
     
     // Run SEO check in development
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       setTimeout(() => {
         const seoResult = checkPageSEO(document);
         printSEOReport(seoResult);
@@ -125,9 +125,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-warm-white">
-      <SEOHead
+      <SEOHeadBasic
         title="Premium High-End Audio Equipment"
-        description="New Hampshire's premier destination for high-end audio equipment. Featuring top brands in speakers, amplifiers, turntables, and audio components. Expert service and in-home demonstrations available."
+        description="New Hampshire's premier destination for high-end audio equipment. Top brands in speakers, amplifiers, turntables, and components."
         canonical="/"
         localBusiness={true}
       />

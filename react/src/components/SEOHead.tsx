@@ -27,7 +27,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 }) => {
   const siteTitle = 'Fidelis Audio';
   const defaultDescription = 'High-end audio equipment dealer in New Hampshire. Specializing in premium speakers, amplifiers, turntables, and audio components from top manufacturers.';
-  const siteUrl = process.env.REACT_APP_SITE_URL || 'https://fidelisaudio.com';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://fidelisaudio.com';
   
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const metaDescription = description || defaultDescription;

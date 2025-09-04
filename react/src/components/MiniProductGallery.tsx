@@ -212,7 +212,7 @@ const MiniProductGallery: React.FC<MiniProductGalleryProps> = ({ images, itemTit
         </div>
       )}
 
-      <style jsx>{`
+                   <style>{`
         .stack-container {
           padding: 0 20px;
           overflow: visible;
