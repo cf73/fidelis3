@@ -160,7 +160,15 @@ const PreOwned: React.FC = () => {
           <div className="max-w-4xl">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Pre-Owned Equipment</h1>
             <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
-              Discover exceptional value on carefully inspected, high-end audio equipment with significant savings.
+              <p className="mb-6">
+                Quality audio gear is built to last. Many of the components we sell pre-owned deliver performance that rivals or exceeds newer equipment at significantly higher prices.
+              </p>
+              <p className="mb-6">
+                We thoroughly test and inspect every item before it goes on our floor. Each piece meets the same standards we apply to new equipment.
+              </p>
+              <p>
+                Pre-owned gear offers serious value for both newcomers and seasoned audiophiles looking to upgrade or complete their systems.
+              </p>
             </div>
           </div>
         </Container>
