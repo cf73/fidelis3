@@ -178,11 +178,10 @@ export const ManufacturerDetail: React.FC = () => {
             {/* Sidebar Filters */}
             <div className="lg:w-80 lg:flex-shrink-0 pt-16">
               <div className="lg:sticky lg:top-32">
-                <h3 className="text-lg font-semibold text-stone-900 mb-6">Filters</h3>
                 <div className="space-y-8">
                   {categories.length > 1 && (
                     <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-3">
+                      <label className="block text-base font-semibold text-stone-900 mb-4">
                         Filter by Category
                       </label>
                       <div className="space-y-2">
@@ -239,8 +238,8 @@ export const ManufacturerDetail: React.FC = () => {
                 
                   {sortedProducts.some(product => product.price) && (
                     <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-3">
-                        Sort by
+                      <label className="block text-base font-semibold text-stone-900 mb-4">
+                        Sort by Price
                       </label>
                       <div className="space-y-2">
                         <label className="flex items-center space-x-3 cursor-pointer group">
@@ -266,7 +265,7 @@ export const ManufacturerDetail: React.FC = () => {
                               )}
                             </div>
                           </div>
-                          <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price Low to High</span>
+                          <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Low to High</span>
                     </label>
                         
                         <label className="flex items-center space-x-3 cursor-pointer group">
@@ -292,7 +291,7 @@ export const ManufacturerDetail: React.FC = () => {
                               )}
                             </div>
                           </div>
-                          <span className="text-stone-700 group-hover:text-stone-900 transition-colors">Price High to Low</span>
+                          <span className="text-stone-700 group-hover:text-stone-900 transition-colors">High to Low</span>
                         </label>
                       </div>
                   </div>
