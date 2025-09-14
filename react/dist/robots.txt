@@ -1,3 +1,18 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Important pages
+Allow: /products/
+Allow: /manufacturers/
+Allow: /news/
+Allow: /pre-owned/
+Allow: /contact
+
+# Disallow admin and demo pages
+Disallow: /admin
+Disallow: /moodboard
+Disallow: /header-demo
+Disallow: /*-demo
+
+# Sitemap location
+Sitemap: https://fidelisaudio.com/sitemap.xml

@@ -438,7 +438,17 @@ const Home: React.FC = () => {
                       <div className="bg-[#f8f6f3] pr-6">
                         <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Featured Products</span>
                       </div>
-                      <div className="flex-grow border-t border-stone-300"></div>
+                      <div className="flex-grow flex items-center">
+                        <svg className="w-full h-6" viewBox="0 0 400 24" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path 
+                            d="M0 12 Q25 4 50 12 Q75 20 100 12 Q125 4 150 12 Q175 20 200 12 Q225 4 250 12 Q275 20 300 12 Q325 4 350 12 Q375 20 400 12" 
+                            stroke="#a8a29e" 
+                            strokeWidth="1.5" 
+                            fill="none"
+                            className="opacity-60"
+                          />
+                        </svg>
+                      </div>
                       <div className="bg-[#f8f6f3] pl-6">
                         <Link to="/products" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
                           View All

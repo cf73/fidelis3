@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './contexts/AuthContext';
 import { CategoriesProvider } from './contexts/CategoriesContext';
 
@@ -98,11 +97,9 @@ function App() {
 
 const AppWithProviders: React.FC = () => {
   return (
-    <HelmetProvider>
-      <CategoriesProvider>
-        <App />
-      </CategoriesProvider>
-    </HelmetProvider>
+    <CategoriesProvider>
+      <App />
+    </CategoriesProvider>
   );
 }
 

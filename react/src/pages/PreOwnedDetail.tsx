@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SEOHead from '../components/SEOHead';
+import SEOHeadBasic from '../components/SEOHeadBasic';
 import { ArrowLeftIcon, TagIcon, TruckIcon, CubeIcon, CalendarIcon } from '@heroicons/react/24/outline';
 import ProductGallery from '../components/PolaroidStack';
+import { PayPalButtonModern } from '../components/PayPalButtonModern';
 import { getPreOwnedById, getImageUrl, type PreOwned } from '../lib/supabase';
 
 const PreOwnedDetail: React.FC = () => {
@@ -85,17 +86,10 @@ const PreOwnedDetail: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-warm-white"
     >
-      <SEOHead
+      <SEOHeadBasic
         title={`Pre-Owned: ${item.title}`}
         description={`${item.title} - ${item.description ? item.description.substring(0, 150) + '...' : 'High-quality pre-owned audio equipment'} Available at Fidelis Audio.`}
         canonical={`/pre-owned/${item.id}`}
-        type="product"
-        productData={{
-          price: item.your_price?.toString(),
-          availability: 'InStock',
-          category: 'Pre-Owned Audio Equipment'
-        }}
-        image={item.images?.[0] ? getImageUrl(item.images[0]) : undefined}
       />
       {/* Hero Section */}
       <section className="bg-warm-beige border-b border-stone-200 -mt-4">
@@ -132,6 +126,18 @@ const PreOwnedDetail: React.FC = () => {
                   <span className="text-stone-600 font-medium">
                    Save {formatPrice(savings.savings)} ({savings.percentage.toFixed(0)}% off)
                  </span>
+                </div>
+              )}
+              
+              {/* PayPal Buy Now Button */}
+              {item.your_price && !item.hide_your_price && (
+                <div className="mt-8 flex justify-center">
+                  <PayPalButtonModern
+                    itemName={item.title}
+                    amount={item.your_price}
+                    shipping={item.shipping || 0}
+                    localOnly={item.local_only || false}
+                  />
                 </div>
               )}
             </div>
