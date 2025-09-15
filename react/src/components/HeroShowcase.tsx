@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { getHomeHeroImages, type HomeHeroImage, getImageUrl } from '../lib/supabase';
 import { Section, Container, H1, BodyLarge } from './ui';
+import { useAuth } from '../contexts/AuthContext';
 
 /**
  * HeroShowcase
@@ -12,9 +13,11 @@ interface HeroShowcaseProps {
 }
 
 const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
+  const { user } = useAuth();
   const [images, setImages] = useState<HomeHeroImage[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+  const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
 
   // Failsafe timeout to prevent infinite loading
   useEffect(() => {
@@ -51,9 +54,17 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
 
   const selected = useMemo(() => {
     if (!images || images.length === 0) return null;
+    
+    // If admin has selected a specific image, use that
+    if (selectedImageId) {
+      const selectedImage = images.find(img => img.id === selectedImageId);
+      if (selectedImage) return selectedImage;
+    }
+    
+    // Otherwise use random selection
     const index = Math.floor(Math.random() * images.length);
     return images[index];
-  }, [images]);
+  }, [images, selectedImageId]);
 
   // Reset image loaded state when selected image changes
   useEffect(() => {
@@ -86,6 +97,41 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
 
   return (
     <div className="relative w-full h-[62vh] min-h-[500px] bg-[#fffcf9] overflow-hidden">
+      {/* Admin Hero Image Selector - Compact Bottom Right */}
+      {user && (
+        <div className="fixed bottom-4 right-4 z-[9999] pointer-events-auto group">
+          <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 shadow-2xl transition-all duration-300 ease-out group-hover:scale-105">
+            {/* Compact State */}
+            <div className="group-hover:hidden p-2">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+            
+            {/* Expanded State */}
+            <div className="hidden group-hover:block p-3 min-w-[220px]">
+              <label className="block text-xs text-white/70 font-medium tracking-wider uppercase mb-2">
+                Preview Hero Image
+              </label>
+              <select
+                value={selectedImageId || ''}
+                onChange={(e) => setSelectedImageId(e.target.value || null)}
+                className="w-full bg-white/10 border border-white/20 rounded text-white text-sm px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 cursor-pointer"
+              >
+                <option value="">Random (Default)</option>
+                {images.map((image) => (
+                  <option key={image.id} value={image.id} className="bg-stone-900 text-white">
+                    {image.alt_text || `Image ${image.id.slice(0, 8)}`}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <div className="relative h-full flex">
         {/* Left Column - Image (Golden ratio: ~61.8%) */}
         <div className="relative w-[61.8%] h-full">
