@@ -61,6 +61,7 @@ export interface ProductCategory {
   slug: string;
   description?: string;
   category_description?: string;
+  hero_product_id?: string;
 }
 
 export interface Manufacturer {
@@ -242,6 +243,23 @@ export const getProductCategories = async (): Promise<ProductCategory[]> => {
   }
 
   return data || [];
+};
+
+// Admin functions for managing category hero products
+export const updateCategoryHeroProduct = async (categoryId: string, productId: string | null) => {
+  const { data, error } = await supabase
+    .from('product_categories')
+    .update({ hero_product_id: productId })
+    .eq('id', categoryId)
+    .select()
+    .single();
+
+  if (error) {
+    console.error('Error updating category hero product:', error);
+    throw error;
+  }
+
+  return data;
 };
 
 export const getManufacturers = async (): Promise<Manufacturer[]> => {

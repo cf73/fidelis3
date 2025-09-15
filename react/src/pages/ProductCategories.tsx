@@ -67,17 +67,25 @@ export const ProductCategories: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#fffcf9]">
       {/* Hero Section */}
-      <Section variant="hero" background="white">
-        <Container>
-          <Flex direction="col" align="center" className="text-center">
-            <H1 className="mb-6">Product Categories</H1>
-          </Flex>
+      <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
+        <Container size="6xl">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Product Categories</h1>
+            <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
+              <p className="mb-6">
+                We organize our inventory by component type to help you find what you need. Each category represents decades of experience in what works and what doesn't.
+              </p>
+              <p>
+                Whether you're starting fresh or upgrading specific components, these categories reflect how we think about building great audio systems.
+              </p>
+            </div>
+          </div>
         </Container>
       </Section>
 
       {/* Categories Grid - refined layout */}
       <Section variant="default" background="custom" customBackground="bg-[#fffcf9]">
-        <Container>
+        <Container size="6xl">
 
 
           <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

@@ -10,6 +10,9 @@ import {
   type HomeHeroImage,
   adminGetAllProducts,
   type Product,
+  getProductCategories,
+  updateCategoryHeroProduct,
+  type ProductCategory,
 } from '../lib/supabase';
 import { Section, Container, H1, Body, Grid, Button } from '../components/ui';
 import { ProductForm } from '../components/ProductForm';
@@ -18,12 +21,13 @@ const Admin: React.FC = () => {
   const { user } = useAuth();
   const [heroItems, setHeroItems] = useState<HomeHeroImage[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<ProductCategory[]>([]);
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [alt, setAlt] = useState('');
   const [credit, setCredit] = useState('');
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-  const [activeTab, setActiveTab] = useState<'hero' | 'products'>('hero');
+  const [activeTab, setActiveTab] = useState<'hero' | 'products' | 'categories'>('hero');
 
   const refreshHeroImages = async () => {
     const data = await adminListHomeHeroImages();
@@ -35,9 +39,15 @@ const Admin: React.FC = () => {
     setProducts(data);
   };
 
+  const refreshCategories = async () => {
+    const data = await getProductCategories();
+    setCategories(data);
+  };
+
   useEffect(() => {
     refreshHeroImages();
     refreshProducts();
+    refreshCategories();
   }, []);
 
   const handleUpload = async () => {
@@ -80,6 +90,15 @@ const Admin: React.FC = () => {
 
   const handleProductCancel = () => {
     setEditingProduct(null);
+  };
+
+  const handleCategoryProductSelect = async (categoryId: string, productId: string | null) => {
+    try {
+      await updateCategoryHeroProduct(categoryId, productId);
+      await refreshCategories();
+    } catch (e) {
+      console.error('Failed to update category hero product', e);
+    }
   };
 
   if (!user) {
@@ -138,6 +157,16 @@ const Admin: React.FC = () => {
               Hero Images
             </button>
             <button
+              onClick={() => setActiveTab('categories')}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                activeTab === 'categories'
+                  ? 'border-stone-900 text-stone-900'
+                  : 'border-transparent text-stone-500 hover:text-stone-700 hover:border-stone-300'
+              }`}
+            >
+              Categories
+            </button>
+            <button
               onClick={() => setActiveTab('products')}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
                 activeTab === 'products'
@@ -194,6 +223,81 @@ const Admin: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </>
+        )}
+
+        {activeTab === 'categories' && (
+          <>
+            <h2 className="text-xl font-medium mb-6">Category Hero Products</h2>
+            <p className="text-stone-600 mb-8">
+              Select which product's hero image to use for each category. This will override the automatic selection.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {categories.map((category) => {
+                // Get products in this category
+                const categoryProducts = products.filter(product => 
+                  product.categories?.id === category.id && product.product_hero_image
+                );
+                
+                // Find the selected product
+                const selectedProduct = categoryProducts.find(product => 
+                  product.id === category.hero_product_id
+                );
+                
+                return (
+                  <div key={category.id} className="border rounded-xl overflow-hidden bg-white shadow-sm">
+                    <div className="aspect-[16/9] bg-stone-100">
+                      {selectedProduct?.product_hero_image ? (
+                        <img 
+                          src={getImageUrl(selectedProduct.product_hero_image)} 
+                          alt={selectedProduct.title} 
+                          className="w-full h-full object-cover" 
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-stone-400">
+                          <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4 space-y-4">
+                      <div>
+                        <h3 className="font-medium text-stone-900">{category.name}</h3>
+                        <p className="text-sm text-stone-500">
+                          {categoryProducts.length} products with images
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <div>
+                          <label className="block text-sm text-stone-600 mb-2">Select Hero Product</label>
+                          <select
+                            value={category.hero_product_id || ''}
+                            onChange={(e) => handleCategoryProductSelect(category.id, e.target.value || null)}
+                            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          >
+                            <option value="">Auto-select (first product)</option>
+                            {categoryProducts.map(product => (
+                              <option key={product.id} value={product.id}>
+                                {product.title}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        
+                        {selectedProduct && (
+                          <div className="text-xs text-stone-500 bg-stone-50 p-2 rounded">
+                            Currently showing: <strong>{selectedProduct.title}</strong>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </>
         )}

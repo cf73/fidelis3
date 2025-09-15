@@ -64,14 +64,28 @@ const Home: React.FC = () => {
             product.categories?.id === category.id
           );
           
-          // Get the first product with a hero image for this category
-          const heroProduct = categoryProducts.find(product => 
-            product.product_hero_image
-          );
+          // Use manually selected product's image if available, otherwise get the first product with a hero image
+          let heroImage;
+          
+          if (category.hero_product_id) {
+            // Find the manually selected product
+            const selectedProduct = productsData.find(product => 
+              product.id === category.hero_product_id
+            );
+            heroImage = selectedProduct?.product_hero_image;
+          }
+          
+          if (!heroImage) {
+            // Fallback to first product with a hero image for this category
+            const heroProduct = categoryProducts.find(product => 
+              product.product_hero_image
+            );
+            heroImage = heroProduct?.product_hero_image;
+          }
 
           return {
             ...category,
-            heroImage: heroProduct?.product_hero_image,
+            heroImage,
             productCount: categoryProducts.length
           };
         });
@@ -154,11 +168,18 @@ const Home: React.FC = () => {
                 className="mb-12 relative"
               >
                 <div className="flex items-center">
-                  <div className="flex-grow border-t border-stone-300"></div>
-                  <div className="mx-6 bg-[#f8f6f3] px-4">
-                    <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">What's Next?</span>
+                  <div className="bg-[#f8f6f3] pr-6">
+                    <span className="text-lg font-light text-stone-700 tracking-widest uppercase">What's Next?</span>
                   </div>
                   <div className="flex-grow border-t border-stone-300"></div>
+                  <div className="bg-[#f8f6f3] pl-6">
+                    <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                      View All Product Categories
+                      <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
@@ -167,7 +188,8 @@ const Home: React.FC = () => {
                   'Integrated Amplifiers', 
                   "DAC's",
                   'Speakers',
-                  'Headphones'
+                  'Headphones',
+                  'Multi Function'
                 ].map((categoryName, index) => {
                   // Find the matching category from our fetched data
                   const category = categories.find(cat => 
@@ -192,22 +214,6 @@ const Home: React.FC = () => {
                     </motion.div>
                   );
                 }).filter(Boolean)}
-                
-                {/* View All Categories Text */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="h-full flex items-center justify-center"
-                >
-                  <Link 
-                    to="/products" 
-                    className="text-stone-600 hover:text-stone-800 transition-colors duration-200 text-lg font-medium text-center"
-                  >
-                    View All Categories
-                  </Link>
-                </motion.div>
               </div>
             </div>
             </div>
@@ -227,20 +233,19 @@ const Home: React.FC = () => {
               className="mb-16"
             >
               <div className="max-w-6xl mx-auto">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="flex-grow border-t border-stone-300 w-16"></div>
-                    <div className="mx-6 bg-warm-white px-4">
-                      <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">News & Events</span>
-                    </div>
-                    <div className="flex-grow border-t border-stone-300"></div>
+                <div className="flex items-center mb-4">
+                  <div className="bg-warm-white pr-6">
+                    <span className="text-lg font-light text-stone-700 tracking-widest uppercase">News & Events</span>
                   </div>
-                  <Link to="/news" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
-                    View All
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
+                  <div className="flex-grow border-t border-stone-300"></div>
+                  <div className="bg-warm-white pl-6">
+                    <Link to="/news" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                      View All
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -405,18 +410,6 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* View All Link */}
-            <div className="max-w-6xl mx-auto mt-12 text-center">
-              <Link 
-                to="/news" 
-                className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium border-b border-stone-300 hover:border-stone-800 pb-1"
-              >
-                View All News
-                <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </Link>
-            </div>
           </div>
         </Container>
       </div>
@@ -433,24 +426,14 @@ const Home: React.FC = () => {
                 className="mb-12"
               >
                 <div className="max-w-6xl mx-auto">
-                  <div className="mb-6">
+                  <div className="mb-16">
                     <div className="flex items-center">
                       <div className="bg-[#f8f6f3] pr-6">
-                        <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Featured Products</span>
+                        <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Featured Products</span>
                       </div>
-                      <div className="flex-grow flex items-center">
-                        <svg className="w-full h-6" viewBox="0 0 400 24" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                          <path 
-                            d="M0 12 Q25 4 50 12 Q75 20 100 12 Q125 4 150 12 Q175 20 200 12 Q225 4 250 12 Q275 20 300 12 Q325 4 350 12 Q375 20 400 12" 
-                            stroke="#a8a29e" 
-                            strokeWidth="1.5" 
-                            fill="none"
-                            className="opacity-60"
-                          />
-                        </svg>
-                      </div>
+                      <div className="flex-grow border-t border-stone-300"></div>
                       <div className="bg-[#f8f6f3] pl-6">
-                        <Link to="/products" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
+                        <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                           View All
                           <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -538,9 +521,8 @@ const Home: React.FC = () => {
               >
                 <div className="max-w-6xl mx-auto">
                   <div className="flex items-center">
-                    <div className="flex-grow border-t border-stone-300"></div>
-                    <div className="mx-6 bg-warm-white px-4">
-                      <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">Our Manufacturers</span>
+                    <div className="bg-warm-white pr-6">
+                      <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Our Manufacturers</span>
                     </div>
                     <div className="flex-grow border-t border-stone-300"></div>
                   </div>
@@ -596,20 +578,19 @@ const Home: React.FC = () => {
               >
                 <div className="max-w-6xl mx-auto">
                   <div className="mb-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex-grow border-t border-stone-300"></div>
-                      <div className="mx-6 bg-warm-beige px-4">
-                        <span className="text-lg font-medium text-stone-600 tracking-wide uppercase">New in Pre-Owned</span>
+                    <div className="flex items-center">
+                      <div className="bg-warm-beige pr-6">
+                        <span className="text-lg font-light text-stone-700 tracking-widest uppercase">New in Pre-Owned</span>
                       </div>
                       <div className="flex-grow border-t border-stone-300"></div>
-                    </div>
-                    <div className="text-center">
-                      <Link to="/pre-owned" className="inline-flex items-center text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium">
-                        View All
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      </Link>
+                      <div className="bg-warm-beige pl-6">
+                        <Link to="/pre-owned" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                          View All
+                          <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -653,7 +634,12 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.6 }}
                   className="mb-8"
                 >
-                  <H2 className="text-stone-900">About Fidelis</H2>
+                  <div className="flex items-center">
+                    <div className="bg-warm-white pr-6">
+                      <span className="text-lg font-light text-stone-700 tracking-widest uppercase">About Fidelis</span>
+                    </div>
+                    <div className="flex-grow border-t border-stone-300"></div>
+                  </div>
                 </motion.div>
                 
                 <motion.div
@@ -703,7 +689,12 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="mb-8"
                 >
-                  <H2 className="text-stone-900">Stay Informed</H2>
+                  <div className="flex items-center">
+                    <div className="bg-warm-white pr-6">
+                      <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Stay Informed</span>
+                    </div>
+                    <div className="flex-grow border-t border-stone-300"></div>
+                  </div>
                 </motion.div>
                 
                 <motion.div
