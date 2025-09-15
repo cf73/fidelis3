@@ -263,62 +263,52 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`bg-[#f4f0ed] rounded-3xl hover:bg-[#e8e4e1] transition-all duration-300 ease-in-out cursor-pointer relative overflow-hidden flex flex-col md:flex-row h-full group ${className}`}>
-      {/* Image */}
-      <div className="relative overflow-hidden w-full md:w-1/2">
-        <div className="w-full h-48 md:h-full">
-          {article.image ? (
-            <img
-              src={getImageUrl(article.image)}
-              alt={article.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center">
-              <svg className="h-16 w-16 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-            </div>
-          )}
+    <div className={`h-full flex flex-col bg-warm-beige rounded-xl overflow-hidden transition-colors duration-300 group hover:bg-[#f4f0ed] ${className}`}>
+      {/* Article Image */}
+      {article.image && (
+        <div className="aspect-[5/4] overflow-hidden relative">
+          <img
+            src={getImageUrl(article.image)}
+            alt={article.title}
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 mix-blend-multiply"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
-      </div>
+      )}
       
-      {/* Content */}
-      <div className="px-4 md:px-6 pb-4 md:pb-6 pt-6 md:pt-8 flex flex-col justify-between w-full md:w-1/2 min-h-48 md:min-h-0">
-        <div>
-          {/* Date */}
-          {article.news_date && (
-            <div className="flex items-center text-sm text-gray-600 mb-2 md:mb-3">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+      {/* Article Content */}
+      <div className="flex-grow space-y-4 p-6">
+        {/* Date with accent bar */}
+        {article.news_date && (
+          <div className="relative pl-4">
+            <div className="text-xs text-stone-500 font-medium tracking-[0.15em] uppercase">
               {new Date(article.news_date).toLocaleDateString('en-US', {
                 year: 'numeric',
-                month: 'long',
+                month: 'short',
                 day: 'numeric'
               })}
             </div>
-          )}
-          
-          {/* Title */}
-          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3 line-clamp-2">
-            {article.title}
-          </h3>
-          
-          {/* Description/Summary */}
-          {(article.summary || article.brief_description) && (
-            <p className="text-gray-600 mb-3 md:mb-4 text-sm leading-relaxed line-clamp-3">
-              {article.summary || article.brief_description}
-            </p>
-          )}
-        </div>
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-amber-400 rounded-full"></div>
+          </div>
+        )}
         
-        {/* Read More */}
-        <div className="flex items-center text-gray-500 group-hover:text-gray-700 font-medium transition-colors duration-200 mt-3 md:mt-4">
-          <span className="text-sm">Read Full Article</span>
-          <svg className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+        {/* Title with refined typography */}
+        <h3 className="text-2xl lg:text-3xl font-light text-stone-900 leading-[1.2] group-hover:text-stone-700 transition-colors duration-300 tracking-[-0.02em] line-clamp-2">
+          {article.title}
+        </h3>
+        
+        {/* Summary with better hierarchy */}
+        {(article.summary || article.brief_description) && (
+          <p className="text-stone-600 text-sm leading-[1.6] line-clamp-3 font-light">
+            {article.summary || article.brief_description}
+          </p>
+        )}
+        
+        {/* Subtle read more indicator */}
+        <div className="pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-xs text-stone-500 font-medium tracking-wider uppercase">
+            Read More
+          </span>
         </div>
       </div>
     </div>

@@ -40,7 +40,6 @@ const Home: React.FC = () => {
   const [categories, setCategories] = useState<CategoryWithHero[]>([]);
   const [loading, setLoading] = useState(true);
   const [heroLoading, setHeroLoading] = useState(true);
-  const [showAllManufacturers, setShowAllManufacturers] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -250,163 +249,72 @@ const Home: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Sophisticated news grid layout */}
+            {/* Simple uniform news grid */}
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-12 gap-8">
-                {news.slice(0, 10).map((article, index) => {
-                  let gridClass = '';
-                  let contentClass = '';
-                  
-                  // First article - hero featured
-                  if (index === 0) {
-                    gridClass = 'col-span-12 lg:col-span-8';
-                    contentClass = 'hero-article';
-                  }
-                  // Second article - secondary featured  
-                  else if (index === 1) {
-                    gridClass = 'col-span-12 lg:col-span-4';
-                    contentClass = 'secondary-article';
-                  }
-                  // Articles 3-4 - medium cards
-                  else if (index <= 3) {
-                    gridClass = 'col-span-12 md:col-span-6 lg:col-span-6';
-                    contentClass = 'medium-article';
-                  }
-                  // Articles 5-10 - compact titles only
-                  else {
-                    gridClass = 'col-span-12 md:col-span-6 lg:col-span-4';
-                    contentClass = 'compact-article';
-                  }
-
-                  return (
-                    <motion.article
-                      key={article.id}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.05 }}
-                      viewport={{ once: true }}
-                      className={`group ${gridClass}`}
-                    >
-                      <Link to={`/news/${article.slug || article.id}`} className="block h-full">
-                        <div className="h-full flex flex-col bg-white border border-stone-200 rounded-lg overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:border-stone-300">
-                          
-                          {/* Hero Article (index 0) */}
-                          {index === 0 && (
-                            <>
-                              {article.image && (
-                                <div className="aspect-[16/9] overflow-hidden">
-                                  <img
-                                    src={getImageUrl(article.image)}
-                                    alt={article.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                  />
-                                </div>
-                              )}
-                              <div className="flex-grow p-8">
-                                {(article.published_at || article.news_date) && (
-                                  <div className="text-xs text-stone-500 mb-3 font-medium tracking-wider uppercase">
-                                    {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
-                                      year: 'numeric',
-                                      month: 'short',
-                                      day: 'numeric'
-                                    })}
-                                  </div>
-                                )}
-                                <h3 className="text-2xl font-light text-stone-900 mb-4 leading-tight group-hover:text-stone-700 transition-colors duration-300 tracking-wide">
-                                  {article.title}
-                                </h3>
-                                {(article.summary || article.excerpt) && (
-                                  <p className="text-stone-600 leading-relaxed line-clamp-3">
-                                    {article.summary || article.excerpt}
-                                  </p>
-                                )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                {news.slice(0, 6).map((article, index) => (
+                  <motion.article
+                    key={article.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group"
+                  >
+                    <Link to={`/news/${article.slug || article.id}`} className="block h-full group">
+                      <div className="h-full flex flex-col bg-warm-beige rounded-xl overflow-hidden transition-colors duration-300 group-hover:bg-[#f4f0ed]">
+                        
+                        {/* Article Image */}
+                        {article.image && (
+                          <div className="aspect-[5/4] overflow-hidden relative">
+                            <img
+                              src={getImageUrl(article.image)}
+                              alt={article.title}
+                              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 mix-blend-multiply"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          </div>
+                        )}
+                        
+                        {/* Article Content */}
+                        <div className="flex-grow space-y-4 p-6">
+                          {/* Date with accent bar */}
+                          {(article.published_at || article.news_date) && (
+                            <div className="relative pl-4">
+                              <div className="text-xs text-stone-500 font-medium tracking-[0.15em] uppercase">
+                                {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'short',
+                                  day: 'numeric'
+                                })}
                               </div>
-                            </>
-                          )}
-
-                          {/* Secondary Article (index 1) */}
-                          {index === 1 && (
-                            <>
-                              {article.image && (
-                                <div className="aspect-[4/3] overflow-hidden">
-                                  <img
-                                    src={getImageUrl(article.image)}
-                                    alt={article.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                  />
-                                </div>
-                              )}
-                              <div className="flex-grow p-6">
-                                {(article.published_at || article.news_date) && (
-                                  <div className="text-xs text-stone-500 mb-3 font-medium tracking-wider uppercase">
-                                    {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
-                                      month: 'short',
-                                      day: 'numeric'
-                                    })}
-                                  </div>
-                                )}
-                                <h3 className="text-lg font-light text-stone-900 mb-3 leading-tight group-hover:text-stone-700 transition-colors duration-300 tracking-wide line-clamp-2">
-                                  {article.title}
-                                </h3>
-                                {(article.summary || article.excerpt) && (
-                                  <p className="text-stone-600 text-sm leading-relaxed line-clamp-2">
-                                    {article.summary || article.excerpt}
-                                  </p>
-                                )}
-                              </div>
-                            </>
-                          )}
-
-                          {/* Medium Articles (index 2-3) */}
-                          {index >= 2 && index <= 3 && (
-                            <>
-                              {article.image && (
-                                <div className="aspect-[3/2] overflow-hidden">
-                                  <img
-                                    src={getImageUrl(article.image)}
-                                    alt={article.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                  />
-                                </div>
-                              )}
-                              <div className="flex-grow p-5">
-                                {(article.published_at || article.news_date) && (
-                                  <div className="text-xs text-stone-500 mb-2 font-medium tracking-wider uppercase">
-                                    {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
-                                      month: 'short',
-                                      day: 'numeric'
-                                    })}
-                                  </div>
-                                )}
-                                <h3 className="text-base font-light text-stone-900 leading-tight group-hover:text-stone-700 transition-colors duration-300 line-clamp-2 tracking-wide">
-                                  {article.title}
-                                </h3>
-                              </div>
-                            </>
-                          )}
-
-                          {/* Compact Articles (index 4+) - Title only */}
-                          {index >= 4 && (
-                            <div className="p-5 border-b border-stone-100 last:border-b-0">
-                              {(article.published_at || article.news_date) && (
-                                <div className="text-xs text-stone-500 mb-2 font-medium tracking-wider uppercase">
-                                  {new Date(article.published_at || article.news_date).toLocaleDateString('en-US', {
-                                    month: 'short',
-                                    day: 'numeric'
-                                  })}
-                                </div>
-                              )}
-                              <h3 className="text-sm font-light text-stone-900 leading-tight group-hover:text-stone-700 transition-colors duration-300 line-clamp-2 tracking-wide">
-                                {article.title}
-                              </h3>
+                              <div className="absolute left-0 top-0 bottom-0 w-1 bg-amber-400 rounded-full"></div>
                             </div>
                           )}
-
+                          
+                          {/* Title with refined typography */}
+                          <h3 className="text-2xl lg:text-3xl font-light text-stone-900 leading-[1.2] group-hover:text-stone-700 transition-colors duration-300 tracking-[-0.02em] line-clamp-2">
+                            {article.title}
+                          </h3>
+                          
+                          {/* Summary with better hierarchy */}
+                          {(article.summary || article.excerpt) && (
+                            <p className="text-stone-600 text-sm leading-[1.6] line-clamp-3 font-light">
+                              {article.summary || article.excerpt}
+                            </p>
+                          )}
+                          
+                          {/* Subtle read more indicator */}
+                          <div className="pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="text-xs text-stone-500 font-medium tracking-wider uppercase">
+                              Read More
+                            </span>
+                          </div>
                         </div>
-                      </Link>
-                    </motion.article>
-                  );
-                })}
+                      </div>
+                    </Link>
+                  </motion.article>
+                ))}
               </div>
             </div>
 
@@ -525,41 +433,74 @@ const Home: React.FC = () => {
                       <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Our Manufacturers</span>
                     </div>
                     <div className="flex-grow border-t border-stone-300"></div>
+                    <div className="bg-warm-white pl-6">
+                      <Link to="/manufacturers" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                        View All
+                        <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>
-          <div className="max-w-6xl mx-auto relative">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {(showAllManufacturers ? manufacturers : manufacturers.slice(0, 12)).map((manufacturer, index) => (
-                <motion.div
-                  key={manufacturer.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+              
+              {/* Swiper Carousel */}
+              <div className="relative max-w-6xl mx-auto overflow-visible">
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  spaceBetween={24}
+                  slidesPerView={2}
+                  navigation={{
+                    nextEl: '.manufacturers-swiper-next',
+                    prevEl: '.manufacturers-swiper-prev',
+                  }}
+                  pagination={{
+                    clickable: true,
+                    el: '.manufacturers-swiper-pagination',
+                    bulletClass: 'custom-swiper-bullet',
+                    bulletActiveClass: 'custom-swiper-bullet-active',
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 3 },
+                    768: { slidesPerView: 4 },
+                    1024: { slidesPerView: 5 },
+                    1280: { slidesPerView: 5 },
+                  }}
+                  className="manufacturers-swiper overflow-visible"
                 >
-                  <Link to={`/manufacturers/${manufacturer.slug}`} className="block h-full">
-                    <ManufacturerCard manufacturer={manufacturer} className="h-full" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-            {!showAllManufacturers && manufacturers.length > 12 && (
-              <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-warm-white to-transparent pointer-events-none" />
-            )}
-            {manufacturers.length > 12 && (
-              <div className="mt-8 flex justify-center relative z-10">
-                <button
-                  onClick={() => setShowAllManufacturers(!showAllManufacturers)}
-                  className="inline-flex items-center px-6 py-3 rounded-xl bg-warm-white text-stone-800 font-medium shadow-sm hover:shadow-md hover:bg-stone-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 border border-stone-200/60 hover:border-stone-300"
-                >
-                  {showAllManufacturers ? 'Show Less' : 'Show All Manufacturers'}
-                  <svg className={`w-4 h-4 ml-2 transition-transform ${showAllManufacturers ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 12a1 1 0 01-.707-.293l-5-5a1 1 0 111.414-1.414L10 9.586l4.293-4.293a1 1 0 111.414 1.414l-5 5A1 1 0 0110 12z" clipRule="evenodd" />
+                  {manufacturers.map((manufacturer, index) => (
+                    <SwiperSlide key={manufacturer.id} className="flex overflow-visible">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.05 }}
+                        viewport={{ once: true }}
+                        className="flex w-full overflow-visible"
+                      >
+                        <Link to={`/manufacturers/${manufacturer.slug}`} className="block w-full">
+                          <ManufacturerCard manufacturer={manufacturer} className="h-full" />
+                        </Link>
+                      </motion.div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom Navigation Buttons */}
+                <div className="manufacturers-swiper-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
+                  <svg className="w-5 h-5 text-stone-600 group-hover:text-stone-800 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
-                </button>
+                </div>
+                <div className="manufacturers-swiper-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
+                  <svg className="w-5 h-5 text-stone-600 group-hover:text-stone-800 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+
+                {/* Custom Pagination */}
+                <div className="manufacturers-swiper-pagination flex justify-center mt-8 space-x-2"></div>
               </div>
-            )}
-          </div>
             </div>
           </Container>
         </div>
