@@ -38,7 +38,7 @@ const megamenuMessages = [
   "Your ears have expensive taste"
 ];
 
-// Custom styles for megamenu cards - brightening instead of darkening
+// Custom styles for megamenu cards - keep light backgrounds but adjust text for dark/light themes
 const megamenuStyles = `
   .megamenu-card .bg-\\[\\#f4f0ed\\] {
     background-color: #f4f0ed !important;
@@ -46,6 +46,16 @@ const megamenuStyles = `
   }
   .megamenu-card:hover .bg-\\[\\#f4f0ed\\] {
     background-color: #fefcfa !important; /* warm-white */
+  }
+  
+  /* Light megamenu - dark text on light cards */
+  .megamenu-light .megamenu-card h3 {
+    color: #1c1917 !important; /* stone-900 */
+  }
+  
+  /* Dark megamenu - light text on light cards for contrast */
+  .megamenu-dark .megamenu-card h3 {
+    color: #f9fafb !important; /* gray-50 */
   }
 `;
 
@@ -151,17 +161,14 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
           <motion.div
             initial={{ 
               opacity: 0, 
-              height: 0,
               y: -20
             }}
             animate={{ 
               opacity: 1, 
-              height: 'auto',
               y: 0
             }}
             exit={{ 
               opacity: 0, 
-              height: 0,
               y: -20
             }}
             transition={{ 
@@ -170,10 +177,15 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
             }}
             className={`
               fixed left-0 right-0 z-50 overflow-hidden top-[88px]
-              bg-white/50 backdrop-blur-xl border-b border-white/60 shadow-white/20 shadow-lg
+              ${hasScrolled 
+                ? 'bg-white/50 backdrop-blur-xl shadow-white/20 shadow-lg megamenu-light' 
+                : 'bg-stone-900/40 backdrop-blur-xl shadow-black/10 shadow-lg megamenu-dark'
+              }
             `}
             style={{
-              backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+              backgroundImage: hasScrolled 
+                ? 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                : 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px)'
             }}
           >
             <div className="py-8">
@@ -181,13 +193,19 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
               <div style={{ paddingLeft: '88px', paddingRight: '88px' }}>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-xl font-light text-stone-900 tracking-wide">
+                    <h3 className={`text-xl font-light tracking-wide ${
+                      hasScrolled ? 'text-stone-900' : 'text-white'
+                    }`}>
                       {currentMessage}
                     </h3>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 text-stone-500 hover:text-stone-700 transition-colors duration-200"
+                    className={`p-2 ${
+                      hasScrolled 
+                        ? 'text-stone-500 hover:text-stone-700' 
+                        : 'text-white/60 hover:text-white'
+                    }`}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -300,3 +318,4 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
     </AnimatePresence>
   );
 };
+

@@ -86,14 +86,23 @@ export const Header: React.FC = () => {
             className={`
               fixed top-0 left-0 right-0 h-[88px]
               ${hasScrolled || isMegamenuOpen
-                ? `${isMegamenuOpen ? 'bg-white/50 backdrop-blur-xl border-b border-white/60 shadow-white/20 shadow-lg' : 'bg-white/8 backdrop-blur-xl border-b border-stone-200/50 shadow-md'} opacity-100` 
+                ? `${isMegamenuOpen 
+                    ? (hasScrolled 
+                        ? 'bg-white/50 backdrop-blur-xl shadow-white/20 shadow-lg' 
+                        : 'bg-stone-900/40 backdrop-blur-xl shadow-black/10 shadow-lg'
+                      )
+                    : 'bg-white/8 backdrop-blur-xl shadow-md'
+                  } opacity-100` 
                 : 'opacity-0'
               }
               transition-all duration-700 ease-out
             `}
             style={{
               backgroundImage: hasScrolled || isMegamenuOpen 
-                ? 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)' 
+                ? (isMegamenuOpen && !hasScrolled
+                    ? 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px)'
+                    : 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
+                  )
                 : 'none'
             }}
           />
@@ -106,7 +115,17 @@ export const Header: React.FC = () => {
               <nav className="hidden lg:flex w-full items-center justify-between">
                 {/* FIDELIS Logo - Left Side */}
                 <div className="flex-shrink-0">
-                  <Link to="/" className={`text-2xl font-light tracking-[0.2em] ${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-900 hover:text-stone-700') : 'text-white hover:text-white/80'} transition-all duration-300`}>
+                  <Link to="/" className={`text-2xl font-light tracking-[0.2em] ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-900 hover:text-stone-700' 
+                              : 'text-white hover:text-white/80'
+                            )
+                          : 'text-stone-900 hover:text-stone-700'
+                        )
+                      : 'text-white hover:text-white/80'
+                  } transition-all duration-300`}>
                     FIDELIS
                   </Link>
                 </div>
@@ -115,35 +134,133 @@ export const Header: React.FC = () => {
                 <div className="flex items-center gap-8">
                   <button 
                     onClick={() => setIsMegamenuOpen(!isMegamenuOpen)}
-                    className={`${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-800 hover:text-stone-900') : 'text-white/90 hover:text-white'} text-sm font-normal tracking-wide transition-colors duration-300 flex items-center gap-1`}
+                    className={`${
+                      hasScrolled || isMegamenuOpen 
+                        ? (isMegamenuOpen 
+                            ? (hasScrolled 
+                                ? 'text-stone-900 hover:text-stone-700' 
+                                : 'text-white/90 hover:text-white'
+                              )
+                            : 'text-stone-800 hover:text-stone-900'
+                          )
+                        : 'text-white/90 hover:text-white'
+                    } text-sm font-normal tracking-wide transition-colors duration-300 flex items-center gap-1`}
                   >
                     Products
                     <svg className={`w-4 h-4 transition-transform duration-200 ${isMegamenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`w-px h-4 ${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'bg-stone-400/60' : 'bg-stone-300/50') : 'bg-white/20'}`}></div>
-                  <Link to="/manufacturers" className={`${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-800 hover:text-stone-900') : 'text-white/90 hover:text-white'} text-sm font-normal tracking-wide transition-colors duration-300`}>Manufacturers</Link>
-                  <div className={`w-px h-4 ${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'bg-stone-400/60' : 'bg-stone-300/50') : 'bg-white/20'}`}></div>
-                  <Link to="/news" className={`${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-800 hover:text-stone-900') : 'text-white/90 hover:text-white'} text-sm font-normal tracking-wide transition-colors duration-300`}>News</Link>
-                  <div className={`w-px h-4 ${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'bg-stone-400/60' : 'bg-stone-300/50') : 'bg-white/20'}`}></div>
-                  <Link to="/pre-owned" className={`${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-800 hover:text-stone-900') : 'text-white/90 hover:text-white'} text-sm font-normal tracking-wide transition-colors duration-300`}>Pre-Owned</Link>
-                  <div className={`w-px h-4 ${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'bg-stone-400/60' : 'bg-stone-300/50') : 'bg-white/20'}`}></div>
-                  <Link to="/contact" className={`${hasScrolled || isMegamenuOpen ? (isMegamenuOpen ? 'text-stone-900 hover:text-stone-700' : 'text-stone-800 hover:text-stone-900') : 'text-white/90 hover:text-white'} text-sm font-normal tracking-wide transition-colors duration-300`}>Contact</Link>
+                  <div className={`w-px h-4 ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled ? 'bg-stone-400/60' : 'bg-white/20')
+                          : 'bg-stone-300/50'
+                        )
+                      : 'bg-white/20'
+                  }`}></div>
+                  <Link to="/manufacturers" className={`${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-900 hover:text-stone-700' 
+                              : 'text-white/90 hover:text-white'
+                            )
+                          : 'text-stone-800 hover:text-stone-900'
+                        )
+                      : 'text-white/90 hover:text-white'
+                  } text-sm font-normal tracking-wide transition-colors duration-300`}>Manufacturers</Link>
+                  <div className={`w-px h-4 ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled ? 'bg-stone-400/60' : 'bg-white/20')
+                          : 'bg-stone-300/50'
+                        )
+                      : 'bg-white/20'
+                  }`}></div>
+                  <Link to="/news" className={`${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-900 hover:text-stone-700' 
+                              : 'text-white/90 hover:text-white'
+                            )
+                          : 'text-stone-800 hover:text-stone-900'
+                        )
+                      : 'text-white/90 hover:text-white'
+                  } text-sm font-normal tracking-wide transition-colors duration-300`}>News</Link>
+                  <div className={`w-px h-4 ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled ? 'bg-stone-400/60' : 'bg-white/20')
+                          : 'bg-stone-300/50'
+                        )
+                      : 'bg-white/20'
+                  }`}></div>
+                  <Link to="/pre-owned" className={`${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-900 hover:text-stone-700' 
+                              : 'text-white/90 hover:text-white'
+                            )
+                          : 'text-stone-800 hover:text-stone-900'
+                        )
+                      : 'text-white/90 hover:text-white'
+                  } text-sm font-normal tracking-wide transition-colors duration-300`}>Pre-Owned</Link>
+                  <div className={`w-px h-4 ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled ? 'bg-stone-400/60' : 'bg-white/20')
+                          : 'bg-stone-300/50'
+                        )
+                      : 'bg-white/20'
+                  }`}></div>
+                  <Link to="/contact" className={`${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-900 hover:text-stone-700' 
+                              : 'text-white/90 hover:text-white'
+                            )
+                          : 'text-stone-800 hover:text-stone-900'
+                        )
+                      : 'text-white/90 hover:text-white'
+                  } text-sm font-normal tracking-wide transition-colors duration-300`}>Contact</Link>
                 </div>
               </nav>
 
               {/* Mobile Logo and Menu */}
               <div className="lg:hidden flex items-center justify-between w-full">
                 {/* Mobile Logo */}
-                <Link to="/" className={`${hasScrolled ? 'text-stone-900 hover:text-stone-700' : 'text-white hover:text-white/80'} text-2xl font-light tracking-[0.2em] transition-all duration-300`}>
+                <Link to="/" className={`${
+                  hasScrolled || isMegamenuOpen 
+                    ? (isMegamenuOpen 
+                        ? (hasScrolled 
+                            ? 'text-stone-900 hover:text-stone-700' 
+                            : 'text-white hover:text-white/80'
+                          )
+                        : 'text-stone-900 hover:text-stone-700'
+                      )
+                    : 'text-white hover:text-white/80'
+                } text-2xl font-light tracking-[0.2em] transition-all duration-300`}>
                   FIDELIS
                 </Link>
                 
                 {/* Mobile menu button */}
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className={`inline-flex items-center justify-center p-2 ${hasScrolled ? 'text-stone-700 hover:text-stone-900' : 'text-white/80 hover:text-white'} focus:outline-none transition-all duration-300`}
+                  className={`inline-flex items-center justify-center p-2 ${
+                    hasScrolled || isMegamenuOpen 
+                      ? (isMegamenuOpen 
+                          ? (hasScrolled 
+                              ? 'text-stone-700 hover:text-stone-900' 
+                              : 'text-white/80 hover:text-white'
+                            )
+                          : 'text-stone-700 hover:text-stone-900'
+                        )
+                      : 'text-white/80 hover:text-white'
+                  } focus:outline-none transition-all duration-300`}
                 >
                   <span className="sr-only">Open main menu</span>
                   <svg
