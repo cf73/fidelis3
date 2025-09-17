@@ -4,6 +4,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CategoryCard } from './ui/Card';
 import { useCategories } from '../contexts/CategoriesContext';
 
+// Cheeky megamenu messages that wink at audiophile behavior
+const megamenuMessages = [
+  "Because you know exactly what you're looking for",
+  "Ready for your next upgrade?",
+  "Just one more component...",
+  "Your system is never really finished",
+  "Because good enough isn't good enough",
+  "Chasing that perfect soundstage",
+  "You've been researching this for months",
+  "Time to justify another purchase",
+  "Your ears deserve better",
+  "Because your neighbors need to hear this too",
+  "Upgrading since before streaming was a thing",
+  "You can hear the difference",
+  "Your vinyl collection demands it",
+  "Because cables do matter",
+  "Pursuing audio perfection, one component at a time",
+  "Your significant other doesn't understand",
+  "But this one goes to eleven",
+  "Because you've outgrown your current setup",
+  "Feeding the audiophile addiction",
+  "Your music deserves this",
+  "Because you know what you heard at the show",
+  "Time to complete the system... again",
+  "Chasing that elusive perfect sound",
+  "Your current gear is holding you back",
+  "Because you've been saving up",
+  "Ready to hear what you've been missing?",
+  "Your demo playlist is ready",
+  "Because good sound is addictive",
+  "Time for the next level",
+  "Your ears have expensive taste"
+];
+
 // Custom styles for megamenu cards - brightening instead of darkening
 const megamenuStyles = `
   .megamenu-card .bg-\\[\\#f4f0ed\\] {
@@ -34,6 +68,18 @@ interface MegamenuProps {
 export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled }) => {
   const { categories, loading } = useCategories();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Random message selection - pick a new one each time the megamenu opens
+  const [currentMessage, setCurrentMessage] = useState(() => 
+    megamenuMessages[Math.floor(Math.random() * megamenuMessages.length)]
+  );
+
+  // Pick a new random message when megamenu opens
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentMessage(megamenuMessages[Math.floor(Math.random() * megamenuMessages.length)]);
+    }
+  }, [isOpen]);
 
   // Track scroll position for arrows
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -135,12 +181,9 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
               <div style={{ paddingLeft: '88px', paddingRight: '88px' }}>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-lg font-medium text-stone-900 tracking-wide uppercase">
-                      Product Categories
+                    <h3 className="text-xl font-light text-stone-900 tracking-wide">
+                      {currentMessage}
                     </h3>
-                    <p className="text-sm text-stone-600 mt-1">
-                      Browse our curated collection of premium audio equipment
-                    </p>
                   </div>
                   <button
                     onClick={onClose}

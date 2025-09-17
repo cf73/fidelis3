@@ -631,7 +631,7 @@ const Home: React.FC = () => {
                   className="mb-8"
                 >
                   <div className="flex items-center">
-                    <div className="bg-warm-white pr-6">
+                    <div className="pr-6">
                       <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Stay Informed</span>
                     </div>
                     <div className="flex-grow border-t border-stone-300"></div>

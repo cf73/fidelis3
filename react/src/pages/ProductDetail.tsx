@@ -403,7 +403,7 @@ export const ProductDetail: React.FC = () => {
                         categories: relatedProduct.categories,
                         featured: relatedProduct.featured
                       }}
-                      showCategory={false}
+                      showCategory={true}
                     />
                   </Link>
                 ))}
@@ -439,7 +439,7 @@ export const ProductDetail: React.FC = () => {
                       categories: relatedProduct.categories,
                       featured: relatedProduct.featured
                     }}
-                    showCategory={false}
+                    showCategory={true}
                   />
                 </Link>
               ))}
