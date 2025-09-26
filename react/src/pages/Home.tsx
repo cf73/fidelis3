@@ -519,12 +519,6 @@ const Home: React.FC = () => {
                     nextEl: '.manufacturers-swiper-next',
                     prevEl: '.manufacturers-swiper-prev',
                   }}
-                  pagination={{
-                    clickable: true,
-                    el: '.manufacturers-swiper-pagination',
-                    bulletClass: 'custom-swiper-bullet',
-                    bulletActiveClass: 'custom-swiper-bullet-active',
-                  }}
                   breakpoints={{
                     640: { slidesPerView: 3 },
                     768: { slidesPerView: 4 },
@@ -562,8 +556,6 @@ const Home: React.FC = () => {
                   </svg>
                 </div>
 
-                {/* Custom Pagination */}
-                <div className="manufacturers-swiper-pagination flex justify-center mt-8 space-x-2"></div>
               </div>
             </div>
           </Container>
