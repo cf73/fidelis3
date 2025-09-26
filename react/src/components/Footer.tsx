@@ -55,17 +55,17 @@ const Footer: React.FC = () => {
       
       {/* Minimalist Footer Content */}
       <div className="relative">
-        <div className="py-20" style={{ paddingLeft: '88px', paddingRight: '88px' }}>
+        <div className="py-12 lg:px-[88px] md:py-20 px-6 md:px-0">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12"
           >
             {/* Brand Section */}
             <motion.div variants={itemVariants} className="lg:col-span-2">
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div>
                   <h2 className="text-3xl font-light text-white tracking-[0.2em]">
                     FIDELIS
@@ -124,8 +124,8 @@ const Footer: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Quick Links */}
-            <motion.div variants={itemVariants}>
+            {/* Quick Links - Desktop Only */}
+            <motion.div variants={itemVariants} className="hidden lg:block">
               <div className="space-y-4">
                 <h3 className="text-white font-medium tracking-wide">Quick Links</h3>
                 <nav className="space-y-3">
@@ -152,9 +152,9 @@ const Footer: React.FC = () => {
 
         {/* Minimalist Bottom Bar */}
         <div className="relative border-t border-white/10">
-          <div style={{ paddingLeft: '88px', paddingRight: '88px' }}>
-            <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-stone-400">© 2024 Fidelis. All rights reserved.</p>
+          <div className="lg-px-[88px] md:px-0">
+            <div className="py-4 md:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
+              <p className="text-sm text-stone-400">© 2025 Fidelis. All rights reserved.</p>
               
               <div className="flex items-center gap-6 text-sm">
                 {!user ? (

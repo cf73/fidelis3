@@ -47,7 +47,7 @@ const LayoutWrapper: React.FC = () => {
   const isHomePage = location.pathname === '/';
   
   return (
-    <div className="min-h-screen flex flex-col bg-warm-white" style={{ paddingBottom: '30rem' }}>
+    <div className="min-h-screen flex flex-col bg-warm-white pb-[40rem] md:pb-[30rem]">
       <Header />
       <main className={`flex-grow ${isHomePage ? '' : 'pt-24'} relative z-10`}>
         <Suspense fallback={<PageLoader />}>
