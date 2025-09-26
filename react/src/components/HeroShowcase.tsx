@@ -96,7 +96,7 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
   // The parent (Home) will handle showing/hiding the entire page
 
   return (
-    <div className="relative w-full h-[62vh] min-h-[500px] bg-[#fffcf9] overflow-hidden">
+    <div className="relative w-full h-[75vh] lg:h-[62vh] min-h-[500px] bg-[#fefcfa] overflow-hidden">
       {/* Admin Hero Image Selector - Compact Bottom Right */}
       {user && (
         <div className="fixed bottom-4 right-4 z-[9999] pointer-events-auto group">
@@ -132,7 +132,8 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
         </div>
       )}
       
-      <div className="relative h-full flex">
+      {/* Desktop Layout - Split Column */}
+      <div className="hidden lg:flex relative h-full">
         {/* Left Column - Image (Golden ratio: ~61.8%) */}
         <div className="relative w-[61.8%] h-full">
           {backgroundUrl ? (
@@ -185,6 +186,118 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
             >
               <p className="text-white/95 text-lg sm:text-xl lg:text-2xl font-light tracking-wide leading-relaxed">
                 bringing home the passion<br />for over six decades
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout - Full Width Image with Overlapping Text */}
+      <div className="lg:hidden relative h-[75vh] min-h-[600px] bg-stone-900">
+        {/* Full Width Image - Same height as before */}
+        <div className="relative w-full h-[60vh] min-h-[450px]">
+          {backgroundUrl ? (
+            <img
+              src={backgroundUrl}
+              alt={selected?.alt_text || 'Homepage hero'}
+              className="absolute inset-0 w-full h-full object-cover"
+              onLoad={() => {
+                console.log('🖼️ Hero image onLoad fired');
+                setImageLoaded(true);
+              }}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-stone-800 to-stone-900" />
+          )}
+          
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+          
+          {/* Optional credit */}
+          {selected?.credit && (
+            <div className="absolute bottom-4 left-4 z-10 text-xs text-white/70 backdrop-blur-md bg-black/30 rounded-lg px-3 py-2 border border-white/10">
+              {selected.credit}
+            </div>
+          )}
+        </div>
+
+        {/* Text Content - Positioned to overlap image and extend beyond */}
+        <div className="absolute bottom-0 left-0 right-0 z-50 pb-12">
+          {/* Gradient background behind text for smooth transition */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
+          
+          {/* Text Content */}
+          <div className="relative z-50 text-center px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 1.6, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.1
+              }}
+              className="mb-6"
+            >
+              <h1 className="text-white font-normal tracking-tight text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] mb-6 leading-[0.85]">
+                <motion.span 
+                  className="block font-light drop-shadow-2xl"
+                  initial={{ opacity: 0, x: -50, scale: 0.8 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 1.4, 
+                    delay: 0.3, 
+                    ease: [0.25, 0.46, 0.45, 0.94] 
+                  }}
+                  style={{
+                    textShadow: '0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.1), 0 0 60px rgba(255,255,255,0.05)',
+                    filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.4))'
+                  }}
+                >
+                  Music
+                </motion.span>
+                <motion.span 
+                  className="block font-bold drop-shadow-2xl"
+                  initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 1.4, 
+                    delay: 0.5, 
+                    ease: [0.25, 0.46, 0.45, 0.94] 
+                  }}
+                  style={{
+                    textShadow: '0 0 20px rgba(255,255,255,0.4), 0 0 40px rgba(255,255,255,0.2), 0 0 60px rgba(255,255,255,0.1)',
+                    filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.5))'
+                  }}
+                >
+                  for Life
+                </motion.span>
+              </h1>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 32, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 1.4, 
+                delay: 0.8, 
+                ease: [0.25, 0.46, 0.45, 0.94] 
+              }}
+            >
+              <p className="text-white/98 text-lg sm:text-xl md:text-2xl font-light tracking-wide leading-relaxed drop-shadow-xl">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.2, delay: 1.0 }}
+                >
+                  bringing home the passion
+                </motion.span>
+                <br />
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.2, delay: 1.2 }}
+                >
+                  for over six decades
+                </motion.span>
               </p>
             </motion.div>
           </div>
