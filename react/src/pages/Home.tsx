@@ -166,12 +166,28 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="mb-12 relative"
               >
-                <div className="flex items-center">
+                {/* Desktop Layout - Horizontal with line separator */}
+                <div className="hidden md:flex items-center">
                   <div className="bg-[#f8f6f3] pr-6">
                     <span className="text-lg font-light text-stone-700 tracking-widest uppercase">What's Next?</span>
                   </div>
                   <div className="flex-grow border-t border-stone-300"></div>
                   <div className="bg-[#f8f6f3] pl-6">
+                    <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                      View All Product Categories
+                      <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Mobile Layout - Stacked and centered */}
+                <div className="md:hidden flex flex-col items-center space-y-3">
+                  <div className="bg-[#f8f6f3] px-4 py-2">
+                    <span className="text-lg font-light text-stone-700 tracking-widest uppercase">What's Next?</span>
+                  </div>
+                  <div className="bg-[#f8f6f3] px-4 py-2">
                     <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                       View All Product Categories
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -232,12 +248,28 @@ const Home: React.FC = () => {
               className="mb-16"
             >
               <div className="max-w-6xl mx-auto">
-                <div className="flex items-center mb-4">
+                {/* Desktop Layout - Horizontal with line separator */}
+                <div className="hidden md:flex items-center mb-4">
                   <div className="bg-warm-white pr-6">
                     <span className="text-lg font-light text-stone-700 tracking-widest uppercase">News & Events</span>
                   </div>
                   <div className="flex-grow border-t border-stone-300"></div>
                   <div className="bg-warm-white pl-6">
+                    <Link to="/news" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                      View All
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Mobile Layout - Stacked and centered */}
+                <div className="md:hidden flex flex-col items-center space-y-2 mb-4">
+                  <div className="bg-warm-white px-4 py-2">
+                    <span className="text-lg font-light text-stone-700 tracking-widest uppercase">News & Events</span>
+                  </div>
+                  <div className="bg-warm-white px-4 py-2">
                     <Link to="/news" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                       View All
                       <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -335,12 +367,28 @@ const Home: React.FC = () => {
               >
                 <div className="max-w-6xl mx-auto">
                   <div className="mb-16">
-                    <div className="flex items-center">
+                    {/* Desktop Layout - Horizontal with line separator */}
+                    <div className="hidden md:flex items-center">
                       <div className="bg-[#f8f6f3] pr-6">
                         <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Featured Products</span>
                       </div>
                       <div className="flex-grow border-t border-stone-300"></div>
                       <div className="bg-[#f8f6f3] pl-6">
+                        <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                          View All
+                          <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Mobile Layout - Stacked and centered */}
+                    <div className="md:hidden flex flex-col items-center space-y-2">
+                      <div className="bg-[#f8f6f3] px-4 py-2">
+                        <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Featured Products</span>
+                      </div>
+                      <div className="bg-[#f8f6f3] px-4 py-2">
                         <Link to="/products" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                           View All
                           <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -428,12 +476,28 @@ const Home: React.FC = () => {
                 className="mb-12"
               >
                 <div className="max-w-6xl mx-auto">
-                  <div className="flex items-center">
+                  {/* Desktop Layout - Horizontal with line separator */}
+                  <div className="hidden md:flex items-center">
                     <div className="bg-warm-white pr-6">
                       <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Our Manufacturers</span>
                     </div>
                     <div className="flex-grow border-t border-stone-300"></div>
                     <div className="bg-warm-white pl-6">
+                      <Link to="/manufacturers" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                        View All
+                        <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Mobile Layout - Stacked and centered */}
+                  <div className="md:hidden flex flex-col items-center space-y-2">
+                    <div className="bg-warm-white px-4 py-2">
+                      <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Our Manufacturers</span>
+                    </div>
+                    <div className="bg-warm-white px-4 py-2">
                       <Link to="/manufacturers" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                         View All
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -519,12 +583,28 @@ const Home: React.FC = () => {
               >
                 <div className="max-w-6xl mx-auto">
                   <div className="mb-6">
-                    <div className="flex items-center">
+                    {/* Desktop Layout - Horizontal with line separator */}
+                    <div className="hidden md:flex items-center">
                       <div className="bg-warm-beige pr-6">
                         <span className="text-lg font-light text-stone-700 tracking-widest uppercase">New in Pre-Owned</span>
                       </div>
                       <div className="flex-grow border-t border-stone-300"></div>
                       <div className="bg-warm-beige pl-6">
+                        <Link to="/pre-owned" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
+                          View All
+                          <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Mobile Layout - Stacked and centered */}
+                    <div className="md:hidden flex flex-col items-center space-y-2">
+                      <div className="bg-warm-beige px-4 py-2">
+                        <span className="text-lg font-light text-stone-700 tracking-widest uppercase">New in Pre-Owned</span>
+                      </div>
+                      <div className="bg-warm-beige px-4 py-2">
                         <Link to="/pre-owned" className="inline-flex items-center text-stone-500 hover:text-stone-700 transition-colors duration-300 text-sm font-light tracking-wide">
                           View All
                           <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -559,7 +639,8 @@ const Home: React.FC = () => {
 
       {/* About Fidelis & Stay Informed - Combined Section */}
       <div className="relative z-10">
-        <div className="flex">
+        {/* Desktop Layout - Two Columns */}
+        <div className="hidden md:flex">
           {/* Left Column with Warm White Background */}
           <div className="w-1/2 bg-warm-white" style={{ paddingLeft: '88px' }}>
             <div className="py-20 pr-16 lg:pr-20 pl-12 lg:pl-16">
@@ -683,6 +764,131 @@ const Home: React.FC = () => {
                   className="mt-4"
                 >
                   <p id="newsletter-privacy" className="text-stone-600 text-sm">
+                    We don't spam. Just the good stuff when it matters.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout - Stacked Vertically */}
+        <div className="md:hidden bg-warm-white">
+          {/* About Fidelis Section */}
+          <div className="px-6 py-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-6"
+              >
+                <div className="flex items-center">
+                  <div className="bg-warm-white pr-6">
+                    <span className="text-lg font-light text-stone-700 tracking-widest uppercase">About Fidelis</span>
+                  </div>
+                  <div className="flex-grow border-t border-stone-300"></div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-stone-700 leading-relaxed text-left"
+              >
+                <p className="mb-4">
+                  As America's premiere importer of high-end audio gear, we source and import the world's finest equipment directly from manufacturers. What you'll find here comes from decades of relationships with the most respected names in audio, sold through our New Hampshire store and distributed nationwide through our dealer network.
+                </p>
+                <p className="mb-4">
+                  In a world of warehouses and return policies that don't support manufacturers, we believe in curation, guidance, and real service. Every recommendation comes from hands-on experience with the gear, not algorithms or sales targets. We're here to help you navigate choices that matter, backed by expertise you can trust.
+                </p>
+                <p>
+                  We host listening events, maintain one of New England's finest record collections, and believe the best audio discoveries happen through conversation. Come by the store, bring your favorite music, and experience the difference that genuine expertise and passion make.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Stay Informed Section */}
+          <div className="px-6 py-12 bg-warm-white relative">
+            {/* Vertical Pinstripe Pattern */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, transparent 1px, #f4f0ed 1px, #f4f0ed 2px, transparent 2px, transparent 4px)',
+              mixBlendMode: 'multiply'
+              }}
+            ></div>
+            <div className="relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="mb-6"
+                >
+                  <div className="flex items-center">
+                    <div className="pr-6">
+                      <span className="text-lg font-light text-stone-700 tracking-widest uppercase">Stay Informed</span>
+                    </div>
+                    <div className="flex-grow border-t border-stone-300"></div>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <p className="text-stone-700 leading-relaxed mb-6">
+                    Get updates when we receive new shipments from our manufacturers, host listening sessions in our Nashua showroom, or have insights worth sharing.
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  className="space-y-4"
+                >
+                  <div className="flex flex-col space-y-3">
+                    <label htmlFor="newsletter-email-mobile" className="text-stone-900 text-sm font-medium">
+                      Email Address
+                    </label>
+                    <input
+                      id="newsletter-email-mobile"
+                      type="email"
+                      placeholder="Enter your email"
+                      aria-describedby="newsletter-privacy-mobile"
+                      className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-stone-500 transition-all duration-300"
+                    />
+                  </div>
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    className="w-full py-3 text-base font-medium bg-stone-900 hover:bg-stone-800 text-white"
+                    aria-describedby="newsletter-privacy-mobile"
+                  >
+                    Keep Me Posted
+                  </Button>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  className="mt-4"
+                >
+                  <p id="newsletter-privacy-mobile" className="text-stone-600 text-sm">
                     We don't spam. Just the good stuff when it matters.
                   </p>
                 </motion.div>
