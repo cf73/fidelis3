@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
 
         {/* Minimalist Bottom Bar */}
         <div className="relative border-t border-white/10">
-          <div className="lg-px-[88px] md:px-0">
+          <div className="lg:px-[88px] md:px-0">
             <div className="py-4 md:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
               <p className="text-sm text-stone-400">© 2025 Fidelis. All rights reserved.</p>
               

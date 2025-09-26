@@ -473,12 +473,11 @@ export const Header: React.FC = () => {
                   >
                     <Link 
                       to="/" 
-                      className="text-5xl font-light tracking-wide text-white hover:text-white/80 transition-colors duration-300"
+                      className="text-5xl font-light tracking-[0.2em] text-white hover:text-white/80 transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Fidelis
+                      FIDELIS
                     </Link>
-                    <div className="mt-4 w-24 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto"></div>
                   </motion.div>
 
                   {/* Navigation Items */}
@@ -500,7 +499,7 @@ export const Header: React.FC = () => {
                       >
                         <Link
                           to={item.to}
-                          className="group inline-block text-2xl font-light text-white/90 hover:text-white transition-all duration-500 relative"
+                          className="group inline-block text-2xl font-light tracking-wide text-white/90 hover:text-white transition-all duration-500 relative"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           <span className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-2px] inline-block">
@@ -528,7 +527,7 @@ export const Header: React.FC = () => {
                   >
                     <Link
                       to="/about"
-                      className="inline-block text-lg font-light text-white/70 hover:text-white/90 transition-colors duration-300"
+                      className="inline-block text-lg font-light tracking-wide text-white/70 hover:text-white/90 transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       About Us
@@ -551,7 +550,7 @@ export const Header: React.FC = () => {
                 }}
                 className="pb-8 px-8 text-center"
               >
-                <p className="text-white/60 text-sm font-light">
+                <p className="text-white/60 text-sm font-light tracking-wide">
                   +1 (555) FIDELIS • hello@fidelisaudio.com
                 </p>
               </motion.div>
