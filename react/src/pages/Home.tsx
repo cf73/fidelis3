@@ -466,7 +466,7 @@ const Home: React.FC = () => {
 
       {/* Manufacturers Section */}
       <div className="relative z-10">
-        <div className="relative bg-warm-white">
+        <div className="relative bg-warm-white overflow-hidden">
           <Container>
             <div className="pt-16 pb-20">
               <motion.div
@@ -510,7 +510,7 @@ const Home: React.FC = () => {
               </motion.div>
               
               {/* Swiper Carousel */}
-              <div className="relative max-w-6xl mx-auto overflow-visible">
+              <div className="relative max-w-6xl mx-auto overflow-hidden">
                 <Swiper
                   modules={[Navigation, Pagination]}
                   spaceBetween={24}
@@ -551,12 +551,12 @@ const Home: React.FC = () => {
                 </Swiper>
 
                 {/* Custom Navigation Buttons */}
-                <div className="manufacturers-swiper-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
+                <div className="manufacturers-swiper-prev absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
                   <svg className="w-5 h-5 text-stone-600 group-hover:text-stone-800 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </div>
-                <div className="manufacturers-swiper-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
+                <div className="manufacturers-swiper-next absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-stone-50 transition-colors duration-200 group">
                   <svg className="w-5 h-5 text-stone-600 group-hover:text-stone-800 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
