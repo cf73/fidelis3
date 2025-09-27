@@ -104,20 +104,20 @@ const Footer: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <PhoneIcon className="h-4 w-4 text-stone-500 flex-shrink-0" />
                     <a 
-                      href="tel:+1-555-FIDELIS" 
+                      href="tel:603-880-4434" 
                       className="text-sm text-stone-300 hover:text-white transition-colors duration-300"
                     >
-                      +1 (555) FIDELIS
+                      603-880-4434
                     </a>
                   </div>
                   
                   <div className="flex items-center gap-3">
                     <EnvelopeIcon className="h-4 w-4 text-stone-500 flex-shrink-0" />
                     <a 
-                      href="mailto:hello@fidelisaudio.com" 
+                      href="mailto:marc@fidelisav.com" 
                       className="text-sm text-stone-300 hover:text-white transition-colors duration-300"
                     >
-                      hello@fidelisaudio.com
+                      marc@fidelisav.com
                     </a>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
+import { TestimonialsSection } from '../components/TestimonialsSection';
 
 export const Contact: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -49,7 +50,7 @@ export const Contact: React.FC = () => {
       {/* Hero Section */}
       <Section variant="hero" background="custom" customBackground="bg-warm-beige" className="-mt-4">
         <Container size="6xl">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-stone-900 leading-tight tracking-wide mb-6">Contact Us</h1>
             <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
               Get in touch with us for any questions about our products or services. We're here to help you find the perfect audio solution.
@@ -61,7 +62,7 @@ export const Contact: React.FC = () => {
       {/* Contact Content */}
       <Section variant="default" background="white">
         <Container size="6xl">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <Grid cols={2} gap="xl">
               {/* Contact Information */}
               <div>
@@ -89,7 +90,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm font-medium text-stone-900">Phone</p>
-                      <p className="text-sm text-stone-600">+1 (555) 123-4567</p>
+                      <p className="text-sm text-stone-600">603-880-4434</p>
                     </div>
                   </div>
 
@@ -101,7 +102,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm font-medium text-stone-900">Email</p>
-                      <p className="text-sm text-stone-600">info@fidelis.com</p>
+                      <p className="text-sm text-stone-600">marc@fidelisav.com</p>
                     </div>
                   </div>
 
@@ -200,10 +201,13 @@ export const Contact: React.FC = () => {
         </Container>
       </Section>
 
+      {/* Testimonials Section */}
+      <TestimonialsSection className="bg-stone-50" />
+
       {/* About Fidelis Section */}
       <Section variant="default" background="white">
         <Container size="6xl">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <H2 className="mb-8">About Fidelis</H2>
             <div className="prose prose-stone prose-lg max-w-none text-stone-700 leading-relaxed">
               <p className="mb-6">
@@ -223,7 +227,7 @@ export const Contact: React.FC = () => {
       {/* Showroom Section */}
       <Section variant="default" background="stone-50">
         <Container size="6xl">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <H2 className="mb-6">Visit Our Showroom</H2>
             <div className="rounded-xl overflow-hidden border border-stone-200 shadow-sm">
               <iframe

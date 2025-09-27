@@ -177,7 +177,7 @@ const About: React.FC = () => {
                   <EnvelopeIcon className="h-6 w-6 text-stone-600 mt-1" />
                   <div>
                     <H4 className="text-stone-900">Email</H4>
-                    <Body className="text-stone-600">info@fidelisav.com</Body>
+                    <Body className="text-stone-600">marc@fidelisav.com</Body>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

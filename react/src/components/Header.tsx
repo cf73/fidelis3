@@ -513,7 +513,7 @@ export const Header: React.FC = () => {
             className="text-center"
           >
             <p className="text-stone-600 text-sm font-light tracking-wide">
-              +1 (555) FIDELIS • hello@fidelisaudio.com
+              603-880-4434 • marc@fidelisav.com
             </p>
           </motion.div>
         </motion.div>

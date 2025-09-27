@@ -29,8 +29,16 @@ export const PayPalButtonModern: React.FC<PayPalButtonModernProps> = ({
   const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID || 'test';
   const environment = import.meta.env.VITE_PAYPAL_ENVIRONMENT || 'sandbox';
   
-  // Calculate total amount including shipping
-  const totalAmount = (amount + shipping).toFixed(2);
+  // Ensure numeric values and calculate total amount including shipping
+  const numericAmount = typeof amount === 'number' ? amount : parseFloat(amount) || 0;
+  const numericShipping = typeof shipping === 'number' ? shipping : parseFloat(shipping) || 0;
+  const totalAmount = (numericAmount + numericShipping).toFixed(2);
+
+  // Don't render if amount is invalid
+  if (numericAmount <= 0) {
+    console.warn('PayPalButtonModern: Invalid amount provided:', amount);
+    return null;
+  }
 
   // PayPal SDK options
   const initialOptions = {
@@ -57,12 +65,12 @@ export const PayPalButtonModern: React.FC<PayPalButtonModernProps> = ({
             breakdown: {
               item_total: {
                 currency_code: 'USD',
-                value: amount.toFixed(2)
+                value: numericAmount.toFixed(2)
               },
-              ...(shipping > 0 && {
+              ...(numericShipping > 0 && {
                 shipping: {
                   currency_code: 'USD',
-                  value: shipping.toFixed(2)
+                  value: numericShipping.toFixed(2)
                 }
               })
             }
@@ -72,7 +80,7 @@ export const PayPalButtonModern: React.FC<PayPalButtonModernProps> = ({
               name: itemName,
               unit_amount: {
                 currency_code: 'USD',
-                value: amount.toFixed(2)
+                value: numericAmount.toFixed(2)
               },
               quantity: '1',
               category: 'PHYSICAL_GOODS'

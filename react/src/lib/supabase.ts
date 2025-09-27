@@ -1039,3 +1039,19 @@ export const getRelatedProducts = async (productId: string, manufacturerId?: str
   
   return data || [];
 };
+
+// Get testimonials
+export const getTestimonials = async (): Promise<Testimonial[]> => {
+  const { data, error } = await supabase
+    .from('testimonials')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching testimonials:', error);
+    return [];
+  }
+
+  return data || [];
+};
