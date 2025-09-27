@@ -41,6 +41,7 @@ const Home: React.FC = () => {
   const [categories, setCategories] = useState<CategoryWithHero[]>([]);
   const [loading, setLoading] = useState(true);
   const [heroLoading, setHeroLoading] = useState(true);
+  const [categoryImagesLoaded, setCategoryImagesLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -91,8 +92,53 @@ const Home: React.FC = () => {
         });
 
         setCategories(enhancedCategories);
+
+        // Preload category images in background without blocking
+        if (enhancedCategories && enhancedCategories.length > 0) {
+          console.log('🏠 HOME: Starting non-blocking category image preload for', enhancedCategories.length, 'categories');
+          
+          // Use requestIdleCallback for optimal performance, fallback to setTimeout
+          const schedulePreload = () => {
+            const preloadPromises = enhancedCategories.map((category, index) => {
+              return new Promise<void>((resolve) => {
+                if (category.heroImage) {
+                  const img = new Image();
+                  img.onload = () => {
+                    console.log(`🏠 HOME: Preloaded ${index + 1}/${enhancedCategories.length}:`, category.name);
+                    resolve();
+                  };
+                  img.onerror = () => {
+                    console.warn(`🏠 HOME: Failed to preload image for ${category.name}`);
+                    resolve(); // Still resolve on error
+                  };
+                  img.src = getImageUrl(category.heroImage);
+                } else {
+                  resolve();
+                }
+              });
+            });
+
+            Promise.all(preloadPromises).then(() => {
+              console.log('🏠 HOME: All category images preloaded successfully!');
+              setCategoryImagesLoaded(true);
+            }).catch(() => {
+              console.warn('🏠 HOME: Some category images failed to preload');
+              setCategoryImagesLoaded(true); // Still mark as done
+            });
+          };
+          
+          // Use requestIdleCallback if available, otherwise setTimeout
+          if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+            window.requestIdleCallback(schedulePreload);
+          } else {
+            setTimeout(schedulePreload, 100);
+          }
+        } else {
+          setCategoryImagesLoaded(true); // No categories to preload
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
+        setCategoryImagesLoaded(true); // Don't block on error
       } finally {
         setLoading(false);
       }
@@ -115,8 +161,9 @@ const Home: React.FC = () => {
 
 
 
-  console.log('🏠 Home render: loading =', loading, ', heroLoading =', heroLoading);
+  console.log('🏠 Home render: loading =', loading, ', heroLoading =', heroLoading, ', categoryImagesLoaded =', categoryImagesLoaded);
   
+  // Only block on essential loading (data + hero), let category images preload in background
   const isPageLoading = loading || heroLoading;
 
   // Random selection of featured products (until CMS flag added)
@@ -140,8 +187,12 @@ const Home: React.FC = () => {
       
       {/* Main Content */}
       <div 
-        className={`transition-opacity duration-500 ${isPageLoading ? 'opacity-0' : 'opacity-100'}`}
-        style={{ pointerEvents: isPageLoading ? 'none' : 'auto' }}
+        className={`transition-opacity duration-700 ease-out ${isPageLoading ? 'opacity-0' : 'opacity-100'}`}
+        style={{ 
+          pointerEvents: isPageLoading ? 'none' : 'auto',
+          // Ensure smooth transition that doesn't interfere with animations
+          transitionDelay: isPageLoading ? '0ms' : '100ms'
+        }}
       >
         <Header />
       <SEOHeadBasic
