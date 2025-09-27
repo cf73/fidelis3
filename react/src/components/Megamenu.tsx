@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CategoryCard } from './ui/Card';
 import { useCategories } from '../contexts/CategoriesContext';
+import { getImageUrl } from '../lib/supabase';
 
 // Cheeky megamenu messages that wink at audiophile behavior
 const megamenuMessages = [
@@ -78,11 +79,40 @@ interface MegamenuProps {
 export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled }) => {
   const { categories, loading } = useCategories();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
 
   // Random message selection - pick a new one each time the megamenu opens
   const [currentMessage, setCurrentMessage] = useState(() => 
     megamenuMessages[Math.floor(Math.random() * megamenuMessages.length)]
   );
+
+  // Preload category images when categories are loaded
+  useEffect(() => {
+    if (categories.length > 0 && !imagesPreloaded) {
+      const preloadPromises = categories.map(category => {
+        return new Promise<void>((resolve) => {
+          if (category.heroImage) {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve(); // Still resolve on error to not block
+            img.src = getImageUrl(category.heroImage);
+          } else {
+            resolve();
+          }
+        });
+      });
+
+      // Preload with timeout to not block UI
+      const preloadWithTimeout = Promise.race([
+        Promise.all(preloadPromises),
+        new Promise(resolve => setTimeout(resolve, 2000)) // 2 second timeout
+      ]);
+
+      preloadWithTimeout.then(() => {
+        setImagesPreloaded(true);
+      });
+    }
+  }, [categories, imagesPreloaded]);
 
   // Pick a new random message when megamenu opens
   useEffect(() => {
