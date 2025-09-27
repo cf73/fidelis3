@@ -6,6 +6,8 @@ import { Container, Flex, Body, BodySmall } from './ui';
 import { motion } from 'framer-motion';
 import { getProductCategories } from '../lib/supabase';
 import { Megamenu } from './Megamenu';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const Header: React.FC = () => {
   const { user, signOut } = useAuth();
@@ -20,31 +22,29 @@ export const Header: React.FC = () => {
   useEffect(() => {
     if (!isHomePage) return;
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Calculate when hero bottom reaches nav bottom
-      // Hero height: 62vh or min-h-[500px], whichever is larger
-      // Nav position: top-6 (1.5rem = 24px) + nav height (h-16 = 4rem = 64px)
-      // So nav bottom is at: 24px + 64px = 88px from top
-      const viewportHeight = window.innerHeight;
-      const heroHeight = Math.max(viewportHeight * 0.62, 500); // 62vh or 500px minimum
-      const navTop = 24; // top-6 in pixels
-      const navHeight = 64; // h-16 in pixels  
-      const navBottom = navTop + navHeight; // 88px
-      const threshold = heroHeight - navBottom;
-      
-      setHasScrolled(currentScrollY > threshold);
-    };
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Initial calculation
-    handleScroll();
+    const hero = document.querySelector('[data-home-hero="main"]') as HTMLElement | null;
+    if (!hero) {
+      setHasScrolled(false);
+      return;
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true }); // Recalculate on resize
+    // Set initial state based on current scroll position
+    const rect = hero.getBoundingClientRect();
+    const initialScrolled = rect.bottom <= 88;
+    setHasScrolled(initialScrolled);
+
+    const trigger = ScrollTrigger.create({
+      trigger: hero,
+      start: 'bottom top+=88',
+      onEnter: () => setHasScrolled(true),
+      onLeaveBack: () => setHasScrolled(false),
+      invalidateOnRefresh: true
+    });
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      trigger.kill();
     };
   }, [isHomePage]);
 
@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
   return (
     <>
       {isHomePage ? (
-        <div className={`fixed z-50 transition-all duration-500 ease-out ${isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`fixed ${isMenuOpen ? 'z-[110]' : 'z-50'} transition-all duration-500 ease-out`}>
           {/* Glass background appears in place with gentle animation */}
           <div 
             className={`
@@ -98,7 +98,7 @@ export const Header: React.FC = () => {
               transition-all duration-700 ease-out
             `}
             style={{
-              backgroundImage: hasScrolled || isMegamenuOpen 
+              backgroundImage: (hasScrolled || isMegamenuOpen) && !isMenuOpen
                 ? (isMegamenuOpen && !hasScrolled
                     ? 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px)'
                     : 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
@@ -275,15 +275,12 @@ export const Header: React.FC = () => {
                     }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <motion.path
+                    {/* Plus icon that rotates to become X */}
+                    <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                      animate={{
-                        d: isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-                      }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      d="M12 4v16m8-8H4"
                     />
                   </motion.svg>
                 </button>
@@ -299,7 +296,7 @@ export const Header: React.FC = () => {
           </header>
         </div>
       ) : (
-        <div className={`fixed z-50 transition-all duration-500 ease-out ${isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`fixed ${isMenuOpen ? 'z-[110]' : 'z-50'} transition-all duration-500 ease-out`}>
           {/* Background always present on non-homepage - using homepage "floating" state */}
           <div 
             className={`
@@ -400,64 +397,81 @@ export const Header: React.FC = () => {
         </div>
       )}
 
-      {/* Mobile Menu Slide-Out */}
+      {/* Mobile Menu Fade-In */}
       <motion.div
-        initial={{ y: '-100%' }}
+        initial={{ opacity: 0 }}
         animate={{ 
-          y: isMenuOpen ? 0 : '-100%'
+          opacity: isMenuOpen ? 1 : 0
         }}
         transition={{ 
-          duration: 0.5, 
-          ease: [0.16, 1, 0.3, 1] 
+          duration: 0.4, 
+          ease: [0.25, 0.46, 0.45, 0.94] 
         }}
-        className={`lg:hidden fixed top-[88px] left-0 right-0 bottom-0 z-[100] ${
+        className={`lg:hidden fixed top-0 left-0 right-0 bottom-0 z-[100] ${
           isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-        }`}
+        } bg-white/50 backdrop-blur-xl`}
         style={{
           backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(173,196,220,0.08) 1px, rgba(173,196,220,0.08) 2px, transparent 2px, transparent 4px)'
         }}
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ 
             opacity: isMenuOpen ? 1 : 0,
-            y: isMenuOpen ? 0 : 20
+            scale: isMenuOpen ? 1 : 0.95
           }}
           transition={{ 
-            duration: 0.6,
-            ease: [0.16, 1, 0.3, 1],
-            delay: isMenuOpen ? 0.2 : 0
+            duration: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          className="relative w-full h-full flex flex-col px-8 py-12"
+          className="relative w-full h-full flex flex-col px-8 pt-32 pb-12"
         >
           {/* Navigation Items */}
-          <nav className="space-y-8 flex-1 flex flex-col justify-center">
+          <nav className="flex-1 flex flex-col justify-center">
             {navigationItems.map((item, index) => (
-              <motion.div
-                key={item.to}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ 
-                  opacity: isMenuOpen ? 1 : 0,
-                  y: isMenuOpen ? 0 : 30
-                }}
-                transition={{ 
-                  duration: 0.6,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: isMenuOpen ? 0.3 + (index * 0.08) : 0
-                }}
-                className="text-center"
-              >
-                <Link
-                  to={item.to}
-                  className="group inline-block text-3xl font-light tracking-wide text-white/90 hover:text-white transition-all duration-500 relative"
-                  onClick={() => setIsMenuOpen(false)}
+              <React.Fragment key={item.to}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ 
+                    opacity: isMenuOpen ? 1 : 0,
+                    y: isMenuOpen ? 0 : 30
+                  }}
+                  transition={{ 
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    delay: isMenuOpen ? 0.1 + (index * 0.1) : 0
+                  }}
+                  className="text-center py-4"
                 >
-                  <span className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-2px] inline-block">
-                    {item.label}
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
-                </Link>
-              </motion.div>
+                  <Link
+                    to={item.to}
+                    className="group inline-block text-3xl font-light tracking-wide text-stone-900 hover:text-stone-700 transition-all duration-500 relative"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-2px] inline-block">
+                      {item.label}
+                    </span>
+                    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-stone-900/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+                  </Link>
+                </motion.div>
+                
+                {/* Horizontal Divider */}
+                {index < navigationItems.length - 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, scaleX: 0 }}
+                    animate={{ 
+                      opacity: isMenuOpen ? 1 : 0,
+                      scaleX: isMenuOpen ? 1 : 0
+                    }}
+                    transition={{ 
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      delay: isMenuOpen ? 0.2 + (index * 0.1) : 0
+                    }}
+                    className="w-16 h-px bg-stone-300/50 mx-auto"
+                  />
+                )}
+              </React.Fragment>
             ))}
           </nav>
 
@@ -477,7 +491,7 @@ export const Header: React.FC = () => {
           >
             <Link
               to="/about"
-              className="inline-block text-lg font-light tracking-wide text-white/70 hover:text-white/90 transition-colors duration-300"
+              className="inline-block text-lg font-light tracking-wide text-stone-700 hover:text-stone-900 transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
@@ -498,7 +512,7 @@ export const Header: React.FC = () => {
             }}
             className="text-center"
           >
-            <p className="text-white/60 text-sm font-light tracking-wide">
+            <p className="text-stone-600 text-sm font-light tracking-wide">
               +1 (555) FIDELIS • hello@fidelisaudio.com
             </p>
           </motion.div>

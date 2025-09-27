@@ -26,6 +26,7 @@ import {
 } from '../lib/supabase';
 import { ProductCard, ManufacturerCard, NewsCard, PreOwnedCard, CategoryCard, Section, Grid, Container, Flex, H1, H2, H3, Body, BodyLarge, Button } from '../components/ui';
 import { HeroShowcase } from '../components/HeroShowcase';
+import { Header } from '../components/Header';
 
 interface CategoryWithHero extends ProductCategory {
   heroImage?: string;
@@ -129,7 +130,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-warm-white relative">
       {/* Loading Overlay */}
       {isPageLoading && (
-        <div className="fixed inset-0 bg-[#fffcf9] z-50 flex items-center justify-center">
+        <div data-loading-overlay className="fixed inset-0 bg-[#fffcf9] z-50 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600 mx-auto"></div>
             <p className="mt-4 text-stone-600">Loading...</p>
@@ -142,6 +143,7 @@ const Home: React.FC = () => {
         className={`transition-opacity duration-500 ${isPageLoading ? 'opacity-0' : 'opacity-100'}`}
         style={{ pointerEvents: isPageLoading ? 'none' : 'auto' }}
       >
+        <Header />
       <SEOHeadBasic
         title="Premium High-End Audio Equipment"
         description="New Hampshire's premier destination for high-end audio equipment. Top brands in speakers, amplifiers, turntables, and components."

@@ -48,7 +48,7 @@ const LayoutWrapper: React.FC = () => {
   
   return (
     <div className="min-h-screen flex flex-col bg-warm-white pb-[40rem] md:pb-[30rem]">
-      <Header />
+      {!isHomePage && <Header />}
       <main className={`flex-grow ${isHomePage ? '' : 'pt-24'} relative z-10`}>
         <Suspense fallback={<PageLoader />}>
           <Routes>

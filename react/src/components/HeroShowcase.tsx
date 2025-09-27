@@ -96,7 +96,11 @@ const HeroShowcase: React.FC<HeroShowcaseProps> = ({ onLoadingChange }) => {
   // The parent (Home) will handle showing/hiding the entire page
 
   return (
-    <div className="relative w-full h-[75vh] lg:h-[62vh] min-h-[500px] bg-[#fefcfa] overflow-hidden">
+    <div
+      data-home-hero="main"
+      className="relative w-full h-[75vh] lg:h-[62vh] min-h-[500px] bg-[#fefcfa] overflow-hidden"
+    >
+      <div data-home-hero="sentinel" />
       {/* Admin Hero Image Selector - Compact Bottom Right */}
       {user && (
         <div className="fixed bottom-4 right-4 z-[9999] pointer-events-auto group">
