@@ -79,10 +79,62 @@ interface MegamenuProps {
 export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled }) => {
   const { categories, loading } = useCategories();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+  
   // Random message selection - pick a new one each time the megamenu opens
   const [currentMessage, setCurrentMessage] = useState(() => 
     megamenuMessages[Math.floor(Math.random() * megamenuMessages.length)]
   );
+
+  // Preload all category images efficiently when categories are available
+  useEffect(() => {
+    if (categories.length > 0 && !imagesPreloaded) {
+      const preloadImages = () => {
+        console.log('🖼️ MEGAMENU: Preloading', categories.length, 'category images');
+        
+        // Create a batch of image preloads
+        const imagePromises = categories.map((category, index) => {
+          return new Promise<void>((resolve) => {
+            if (category.heroImage) {
+              const img = new Image();
+              img.onload = () => resolve();
+              img.onerror = () => resolve(); // Don't block on errors
+              img.src = getImageUrl(category.heroImage);
+            } else {
+              resolve();
+            }
+          });
+        });
+
+        // Preload in small batches to avoid overwhelming the browser
+        const batchSize = 4;
+        const batches = [];
+        for (let i = 0; i < imagePromises.length; i += batchSize) {
+          batches.push(imagePromises.slice(i, i + batchSize));
+        }
+
+        // Process batches sequentially with small delays
+        const processBatches = async () => {
+          for (const batch of batches) {
+            await Promise.all(batch);
+            // Small delay between batches to keep UI responsive
+            await new Promise(resolve => setTimeout(resolve, 50));
+          }
+          console.log('🖼️ MEGAMENU: All images preloaded');
+          setImagesPreloaded(true);
+        };
+
+        processBatches();
+      };
+
+      // Use requestIdleCallback for optimal performance
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(preloadImages);
+      } else {
+        setTimeout(preloadImages, 200);
+      }
+    }
+  }, [categories, imagesPreloaded]);
 
   // Pick a new random message when megamenu opens
   useEffect(() => {
@@ -220,6 +272,11 @@ export const Megamenu: React.FC<MegamenuProps> = ({ isOpen, onClose, hasScrolled
                     <div className="flex items-center justify-center py-12">
                       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-600"></div>
                       <span className="ml-3 text-stone-600">Loading categories...</span>
+                    </div>
+                  ) : !imagesPreloaded ? (
+                    <div className="flex items-center justify-center py-12">
+                      <div className="animate-pulse rounded-full h-8 w-8 bg-stone-300"></div>
+                      <span className="ml-3 text-stone-600">Optimizing images...</span>
                     </div>
                   ) : (
                     <>
